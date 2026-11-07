@@ -393,6 +393,16 @@ footer a{color:var(--gold2)}
 .btn-free .free-tag{display:inline-block;margin-left:10px;background:#e8344a;color:#fff;font-size:12px;font-weight:800;padding:3px 9px;border-radius:999px;box-shadow:0 4px 12px #e8344a66;animation:freeBob 1.6s ease-in-out infinite}
 @keyframes freePulse{0%{box-shadow:0 0 0 0 #f5dda0aa,0 12px 30px #c99a4a55}70%{box-shadow:0 0 0 16px #f5dda000,0 12px 30px #c99a4a55}100%{box-shadow:0 0 0 0 #f5dda000,0 12px 30px #c99a4a55}}
 @keyframes freeBob{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+
+/* banner ban app 7 mau */
+.app-cta{display:block;text-align:center;text-decoration:none;width:min(1000px,100% - 32px);margin:10px auto 40px;padding:26px 18px;border-radius:24px;position:relative;overflow:hidden;border:3px solid transparent;background:linear-gradient(#0d1433,#0d1433) padding-box,linear-gradient(90deg,#ff5e7e,#ffb347,#ffe76a,#5dffa8,#4fd2ff,#7d7bff,#e46bff,#ff5e7e) border-box;background-size:100% 100%,300% auto;animation:appBorder 4s linear infinite;box-shadow:0 0 30px #7d7bff44,0 20px 60px #0008}
+@keyframes appBorder{to{background-position:0 0,300% center}}
+.app-cta:after{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,#ffffff22,transparent);transform:skewX(-20deg);animation:appSweep 3.2s ease-in-out infinite;pointer-events:none}
+.app-cta-k{display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:6px}
+.app-cta-t{display:block;font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(24px,4vw,40px);line-height:1.25;background:linear-gradient(90deg,#ff5e7e,#ffb347,#ffe76a,#5dffa8,#4fd2ff,#7d7bff,#e46bff,#ff5e7e);background-size:300% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:holo 5s linear infinite}
+.app-cta-b{display:inline-block;margin-top:12px;padding:10px 22px;border-radius:999px;background:linear-gradient(120deg,#c99a4a,#f5dda0 45%,#d4a957);color:#1a1205;font-weight:800;font-size:15px}
+@keyframes holo{to{background-position:300% center}}
+@keyframes appSweep{0%{left:-60%}60%,100%{left:130%}}
 </style>
 </head>
 <body>
@@ -693,6 +703,8 @@ footer a{color:var(--gold2)}
     </div>
   </div>
 </section>
+
+<a class="app-cta" href="ban-app/"><span class="app-cta-k">Mới · Kinh doanh cùng cô Thảo</span><span class="app-cta-t">Sở hữu App Giải Mã Năng Lượng Số mang tên bạn</span><span class="app-cta-b">Xem 3 gói →</span></a>
 
 <!-- PAYMENT -->
 <section class="section has-vbg" id="thanh-toan">
