@@ -460,6 +460,23 @@ footer a{color:var(--gold2)}
 .bc-br{display:block;font-style:normal;font-size:14px;color:var(--gold2);margin-top:6px}.bp i+i{color:#d3d8ee;font-size:10.5px}
 .bc-el{font-size:13px;color:var(--muted);margin:14px 0 0}
 @media(max-width:480px){.bc-grid{grid-template-columns:repeat(2,1fr)}.bp{min-width:58px}}
+/* Hiệu ứng bóng + ánh sáng quét: phần chuyển khoản và nút Zalo */
+@keyframes glossSweep{0%{background-position:160% 0}55%,100%{background-position:-60% 0}}
+@keyframes glossGlow{0%,100%{box-shadow:0 10px 30px #e3c27a40,0 0 0 0 #f5dda055}50%{box-shadow:0 14px 40px #e3c27a70,0 0 0 8px #f5dda000}}
+@keyframes zGlow{0%,100%{box-shadow:0 12px 30px #0068ff55,0 0 0 0 #4d9bff66}50%{box-shadow:0 14px 38px #0068ff88,0 0 0 9px #4d9bff00}}
+.pay-done,#zaloPay,.zalo-float,.paycard,.lk-box{position:relative;isolation:isolate}
+.pay-done,#zaloPay{overflow:hidden;animation:glossGlow 2.4s ease-in-out infinite}
+.zalo-float{overflow:hidden;animation:zGlow 2.4s ease-in-out infinite}
+.pay-done:before,#zaloPay:before,.zalo-float:before{content:'';position:absolute;left:6%;right:6%;top:2px;height:48%;border-radius:999px;background:linear-gradient(180deg,#ffffffb0,#ffffff10);pointer-events:none;z-index:1}
+.pay-done:after,#zaloPay:after,.zalo-float:after,.paycard:after,.lk-box:after{content:'';position:absolute;inset:0;left:0;top:0;width:auto;height:auto;transform:none;border-radius:inherit;pointer-events:none;z-index:2;background:linear-gradient(105deg,transparent 40%,#ffffffd0 50%,transparent 60%) no-repeat;background-size:250% 100%;animation:glossSweep 2.8s ease-in-out infinite}
+.paycard:after,.lk-box:after{background-image:linear-gradient(105deg,transparent 42%,#fff3 50%,transparent 58%);animation-duration:4.2s}
+.zalo-float>*{position:relative;z-index:3}
+@media (prefers-reduced-motion:reduce){.pay-done,#zaloPay,.zalo-float{animation:none}.pay-done:after,#zaloPay:after,.zalo-float:after,.paycard:after,.lk-box:after{animation-duration:6s}}
+/* Kênh cô Thảo: sáng hơn */
+.kenh a{position:relative;isolation:isolate;background:linear-gradient(150deg,#3a3270,#1d2458 55%,#2a2048);border:1px solid #f5dda0;box-shadow:0 0 0 1px #f5dda033,0 10px 30px #e3c27a33,inset 0 1px 0 #ffffff40}
+.kenh a:after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(105deg,transparent 40%,#ffffff40 50%,transparent 60%) no-repeat;background-size:250% 100%;animation:glossSweep 3.6s ease-in-out infinite}
+.kenh img{border:2px solid #f5dda0;box-shadow:0 0 14px #f5dda088}
+.kenh b{color:#fff}.kenh small{color:#d9dcf0}.kenh i{color:#ffe9a8;text-shadow:0 0 10px #f5dda066}
 </style>
 </head>
 <body>
