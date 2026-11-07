@@ -119,10 +119,12 @@ details{background:var(--card);border:1px solid var(--line);border-radius:16px;p
 summary{cursor:pointer;font-weight:700;list-style:none}summary::-webkit-details-marker{display:none}summary:before{content:'+ ';color:var(--gold);font-weight:800}
 details[open] summary:before{content:'– '}details p{color:#d3d8ee;margin:10px 0 0}
 @media(max-width:860px){.about{grid-template-columns:1fr}.about-img{max-width:320px;margin:0 auto}}
+.holo.gold-t{background:linear-gradient(100deg,#b8893d,#f6e2ae 35%,#e3c27a 55%,#f6e2ae 75%,#b8893d);background-size:200% auto;-webkit-background-clip:text;background-clip:text;animation:sheen 6s linear infinite;filter:drop-shadow(0 4px 18px #e3c27a33)}
 .zalo-float{position:fixed;right:16px;bottom:16px;z-index:30;display:flex;align-items:center;gap:10px;padding:11px 16px 11px 11px;border-radius:999px;background:#0068ff;color:#fff;text-decoration:none;font-weight:700;font-size:14px;box-shadow:0 12px 30px #0068ff55}
 .zalo-float span{width:32px;height:32px;border-radius:50%;background:#fff;color:#0068ff;display:grid;place-items:center;font-weight:900;font-size:12px}
 footer{text-align:center;color:var(--muted);font-size:13px;padding:0 0 90px}
 @media(max-width:860px){.steps,.packs{grid-template-columns:1fr}.demo{grid-template-columns:1fr}.demo .pages{height:330px;max-width:380px;margin:0 auto;width:100%}.who{grid-template-columns:1fr 1fr}.hero{padding-top:40px}.row .btn{width:100%}}
+@media(max-width:860px){.zalo-float{padding:0;width:52px;height:52px;justify-content:center;right:12px;bottom:12px;font-size:0;gap:0}.zalo-float span{width:52px;height:52px;background:#0068ff;color:#fff;font-size:12px}}
 </style>
 </head>
 <body>
@@ -131,7 +133,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:0 0 90px}
 <header class="hero">
   <div class="wrap">
     <span class="kicker">Kinh doanh cùng cô Thảo</span>
-    <h1 class="holo">Sở hữu App riêng<br>Kinh doanh cùng cô Thảo</h1>
+    <h1 class="holo gold-t">Sở hữu App riêng<br>Kinh doanh cùng cô Thảo</h1>
     <div class="sub gold">2 loại app, chọn cái hợp với bạn</div>
     <div class="pick">
       <a href="#app-master"><b>App Master Thanh Thảo</b><span>Chuyên năng lượng số và tất cả các loại số</span><i>Từ 1.268.000đ →</i></a>
@@ -144,7 +146,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:0 0 90px}
   <div class="wrap">
     <div class="head"><span class="kicker">App 1</span><h2 class="holo" style="font-size:clamp(34px,6vw,64px)">App Master Thanh Thảo</h2><p style="font-size:17px;color:#d3d8ee">Chuyên năng lượng số và tất cả các loại số: họ tên, ngày sinh, số điện thoại, biển số xe, số nhà, số tài khoản. Xuất bản giải mã PDF mang <b>tên và số Zalo của bạn</b>.</p></div>
     <div class="vdemo">
-      <div class="phone"><video controls playsinline preload="metadata" poster="../video/demo-app.jpg" src="../video/demo-app.mp4?v=1"></video></div>
+      <div class="phone"><video controls playsinline preload="none" poster="../video/demo-app.jpg" src="../video/demo-app.mp4?v=1"></video></div>
       <div>
         <span class="kicker">Xem demo</span>
         <h2 style="font-family:'Playfair Display',serif;font-size:clamp(26px,3.4vw,38px);margin:12px 0 16px">App chạy thật <span class="gold">trên điện thoại</span></h2>
@@ -226,6 +228,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:0 0 90px}
           <li>Toàn bộ gói Kinh Doanh</li>
           <li>Quyền bán lại app cho khách của bạn</li>
           <li><b>Cô Thảo hướng dẫn cách bán lại cho khách đến khi thành thạo, trong 30 ngày</b></li>
+          <li>Giá bán lại không thấp hơn giá cô Thảo đang bán, không bán phá giá</li>
         </ul>
         <a class="btn btn-ghost" href="#thanh-toan" data-pk="4868000|DOITAC">Đăng ký gói này</a>
       </article>
@@ -238,7 +241,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:0 0 90px}
   <div class="wrap">
     <div class="head"><span class="kicker">App 2</span><h2 class="holo" style="font-size:clamp(34px,6vw,64px)">App Phong Thủy</h2><p style="font-size:17px;color:#d3d8ee">Công cụ AI giúp bạn làm kịch bản và video giải thích chủ đề con số, phong thủy, dễ theo dõi, để đăng kênh và bán hàng.</p></div>
     <div class="vdemo wide">
-      <div class="land"><video controls playsinline preload="metadata" poster="../../poster-phong-thuy-demo.jpg" src="../../phong-thuy-demo.mp4?v=4"></video></div>
+      <div class="land"><video controls playsinline preload="none" poster="../../poster-phong-thuy-demo.jpg" src="../../phong-thuy-demo.mp4?v=4"></video></div>
       <div class="pack hot">
         <span class="tag">Video hướng dẫn thao tác</span>
         <span class="lv">App 2</span><h3>App Phong Thủy</h3>
@@ -279,7 +282,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:0 0 90px}
     <details><summary>Tôi không rành công nghệ, có dùng được không?</summary><p>Được. App chạy ngay trên trình duyệt điện thoại hoặc máy tính, không cần cài đặt. Nhập họ tên, ngày sinh hoặc dãy số rồi bấm là ra kết quả.</p></details>
     <details><summary>Mua xong thì nhận app thế nào?</summary><p>Bạn chuyển khoản và bấm báo cô Thảo qua Zalo. Cô đối chiếu rồi liên hệ qua Zalo để giao app và hướng dẫn cách dùng.</p></details>
     <details><summary>Gói Kinh Doanh khác gói Tự Dùng thế nào?</summary><p>Gói Kinh Doanh có 1 app riêng mang tên bạn và trang bán hàng riêng với tên, ảnh, mã QR ngân hàng của bạn, để khách tự vào xem và chuyển khoản cho bạn.</p></details>
-    <details><summary>Gói Đối Tác có gì thêm?</summary><p>Bạn có quyền bán lại app cho khách của mình, và cô Thảo hướng dẫn cách bán lại cho khách đến khi bạn thành thạo, trong 30 ngày.</p></details>
+    <details><summary>Gói Đối Tác có gì thêm?</summary><p>Bạn có quyền bán lại app cho khách của mình, tiền bán thuộc về bạn. Giá bán lại không thấp hơn giá cô Thảo đang bán (không bán phá giá). Cô Thảo hướng dẫn cách bán lại cho khách đến khi bạn thành thạo, trong 30 ngày.</p></details>
     <details><summary>App Phong Thủy khác App Master Thanh Thảo thế nào?</summary><p>App Master Thanh Thảo dùng để giải số cho khách và xuất file PDF. App Phong Thủy là công cụ AI giúp bạn làm video kiến thức con số, phong thủy để đăng kênh và bán hàng.</p></details>
     <details><summary>Kết quả giải số có chính xác tuyệt đối không?</summary><p>Thần số học là công cụ tham khảo giúp hiểu bản thân, không phải bói toán hay cam kết kết quả. App tính theo phương pháp Pythagoras.</p></details>
   </div>
@@ -319,7 +322,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:0 0 90px}
 <div class="wrap">
   <div class="final">
     <span class="kicker">Bắt đầu ngay</span>
-    <h2 class="holo">Có app riêng<br>Làm nghề riêng</h2>
+    <h2 class="holo gold-t">Có app riêng<br>Làm nghề riêng</h2>
     <p>Nhắn Zalo cô Thảo 0935 949 141, cô tư vấn gói hợp với bạn.</p>
     <a class="btn btn-gold" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Nhắn Zalo cô Thảo</a>
   </div>
