@@ -225,6 +225,12 @@ h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-heigh
 .exit-reply p{color:#e3e6f5;font-size:15px;white-space:pre-line}
 .exit-reply .row{display:flex;flex-direction:column;gap:10px;margin-top:16px}
 
+/* video nền */
+.has-vbg{position:relative;isolation:isolate;overflow:hidden}
+.vbg{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.vbg video{width:100%;height:100%;object-fit:cover}
+.vbg:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,var(--bg) 0%,#080c1f66 22%,#080c1f80 70%,var(--bg) 100%)}
+
 /* benefits */
 .benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .benefit{padding:30px 24px;border-radius:var(--radius);background:linear-gradient(170deg,#141c42,#0b1129);border:1px solid var(--line);transition:border-color .3s,transform .3s}
@@ -346,7 +352,8 @@ footer a{color:var(--gold2)}
   </div>
 </nav>
 
-<header class="hero" id="top">
+<header class="hero has-vbg" id="top">
+  <div class="vbg" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="video/bg-thien-ha-vang.jpg" style="opacity:.55"><source src="video/bg-thien-ha-vang.mp4" type="video/mp4"></video></div>
   <div class="wrap">
     <div>
       <span class="kicker">Thần số học · Pythagoras</span>
@@ -379,7 +386,8 @@ footer a{color:var(--gold2)}
 </header>
 
 <!-- CALCULATOR -->
-<section class="section" id="tu-xem" style="padding-top:40px">
+<section class="section has-vbg" id="tu-xem" style="padding-top:40px">
+  <div class="vbg" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="video/bg-ngan-ha.jpg" style="opacity:.45"><source src="video/bg-ngan-ha.mp4" type="video/mp4"></video></div>
   <div class="wrap">
     <div class="section-head reveal">
       <span class="kicker">Xem ngay</span>
@@ -608,7 +616,8 @@ footer a{color:var(--gold2)}
 </section>
 
 <!-- PAYMENT -->
-<section class="section" id="thanh-toan">
+<section class="section has-vbg" id="thanh-toan">
+  <div class="vbg" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="video/bg-ngan-ha.jpg" style="opacity:.4"><source src="video/bg-ngan-ha.mp4" type="video/mp4"></video></div>
   <div class="wrap">
     <div class="section-head reveal">
       <span class="kicker">Thanh toán</span>
@@ -701,7 +710,8 @@ footer a{color:var(--gold2)}
   </div>
 </section>
 
-<section class="final">
+<section class="final has-vbg">
+  <div class="vbg" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="video/bg-cuc-quang.jpg" style="opacity:.6"><source src="video/bg-cuc-quang.mp4" type="video/mp4"></video></div>
   <div class="wrap">
     <div class="final-box reveal">
       <span class="kicker">Bắt đầu hôm nay</span>
