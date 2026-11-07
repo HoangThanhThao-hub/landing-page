@@ -90,6 +90,22 @@ h1,h2,h3{margin:0;line-height:1.2}
 .vdemo .land video{width:100%;border-radius:18px;border:1px solid #e3c27a55;box-shadow:0 24px 60px #000a;background:#000;display:block}
 .vlist{list-style:none;padding:0;margin:0 0 22px}.vlist li{padding:9px 0;border-bottom:1px dashed #ffffff1c}.vlist li:before{content:'✦';color:var(--gold);margin-right:10px}
 @media(max-width:860px){.pick,.vdemo,.vdemo.wide{grid-template-columns:1fr}.vdemo .phone{width:min(280px,80vw);margin:0 auto}}
+.paycard{position:relative;max-width:880px;margin:0 auto;padding:40px 30px 28px;border-radius:28px;border:1px solid var(--gold);background:radial-gradient(ellipse at 50% -20%,#4b2f8a88,transparent 60%),linear-gradient(160deg,#1a1442,#0b0f2a);box-shadow:0 0 0 8px #e3c27a10,0 30px 80px #000a}
+.pay-tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);white-space:nowrap;background:linear-gradient(120deg,#c99a4a,#f5dda0);color:#1a1205;font-size:12px;font-weight:800;padding:6px 14px;border-radius:999px}
+.pay-form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px}
+.pay-form label{display:block;font-size:13px;color:var(--gold2);font-weight:600}
+.pay-form .full{grid-column:1/-1}
+.pay-form input,.pay-form select{display:block;width:100%;margin-top:7px;padding:14px 16px;border-radius:14px;border:1px solid #3a4680;background:#070b22;color:var(--text);font:inherit;font-size:16px;outline:none}
+.pay-form input:focus,.pay-form select:focus{border-color:var(--gold)}
+.pay-grid{display:grid;grid-template-columns:250px 1fr;gap:24px;align-items:center}
+.qr{background:#fff;border-radius:16px;padding:10px;text-align:center}.qr img{width:100%;border-radius:8px}.qr small{display:block;color:#333;font-size:11px;margin-top:4px}
+.pay-info{display:grid;gap:6px;padding:18px 20px;border-radius:18px;background:#070b22;border:1px solid var(--line)}
+.kv{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:14px;padding:4px 0;flex-wrap:wrap}.kv span{color:var(--muted)}.kv strong{font-weight:700;letter-spacing:.02em;word-break:break-word}
+.cp{background:#e3c27a1f;border:1px solid #e3c27a66;color:var(--gold2);border-radius:999px;padding:3px 10px;font-size:12px;cursor:pointer;font-family:inherit}
+.amt{color:var(--gold2);font-size:20px}
+.pay-done{width:100%;margin-top:24px;padding:18px;font-size:16px}
+.pay-hint{font-size:13px;color:var(--muted);text-align:center;margin:12px 0 0}
+@media(max-width:760px){.pay-grid,.pay-form{grid-template-columns:1fr}.qr{max-width:260px;margin:0 auto}.paycard{padding:34px 16px 22px}}
 .zalo-float{position:fixed;right:16px;bottom:16px;z-index:30;display:flex;align-items:center;gap:10px;padding:11px 16px 11px 11px;border-radius:999px;background:#0068ff;color:#fff;text-decoration:none;font-weight:700;font-size:14px;box-shadow:0 12px 30px #0068ff55}
 .zalo-float span{width:32px;height:32px;border-radius:50%;background:#fff;color:#0068ff;display:grid;place-items:center;font-weight:900;font-size:12px}
 footer{text-align:center;color:var(--muted);font-size:13px;padding:0 0 90px}
@@ -175,7 +191,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:0 0 90px}
           <li>File PDF mang tên và số Zalo của bạn</li>
           <li>Hướng dẫn cách dùng</li>
         </ul>
-        <a class="btn btn-ghost" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Nhắn Zalo đăng ký</a>
+        <a class="btn btn-ghost" href="#thanh-toan" data-pk="1268000|TUDUNG">Đăng ký gói này</a>
       </article>
       <article class="pack hot">
         <span class="tag">Cô Thảo gợi ý</span>
@@ -187,7 +203,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:0 0 90px}
           <li><b>1 app riêng mang tên của bạn</b></li>
           <li>Trang bán hàng riêng, đổi sang tên, ảnh và mã QR ngân hàng của bạn</li>
         </ul>
-        <a class="btn btn-gold" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Nhắn Zalo đăng ký</a>
+        <a class="btn btn-gold" href="#thanh-toan" data-pk="2668000|KINHDOANH">Đăng ký gói này</a>
       </article>
       <article class="pack">
         <span class="lv">Gói 3</span><h3>Đối Tác</h3>
@@ -198,7 +214,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:0 0 90px}
           <li>Quyền bán lại app cho khách của bạn</li>
           <li><b>Cô Thảo hướng dẫn cách bán lại cho khách đến khi thành thạo, trong 30 ngày</b></li>
         </ul>
-        <a class="btn btn-ghost" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Nhắn Zalo đăng ký</a>
+        <a class="btn btn-ghost" href="#thanh-toan" data-pk="4868000|DOITAC">Đăng ký gói này</a>
       </article>
     </div>
     <p class="note">Bạn muốn xem app chạy thế nào? <a href="../#tu-xem" style="color:var(--gold2)">Dùng thử miễn phí trên trang năng lượng số</a>.</p>
@@ -220,8 +236,39 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:0 0 90px}
           <li>Nhập chủ đề, AI soạn kịch bản và dựng video</li>
           <li>Có video hướng dẫn thao tác từng bước</li>
         </ul>
-        <a class="btn btn-gold" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Nhắn Zalo đăng ký</a>
+        <a class="btn btn-gold" href="#thanh-toan" data-pk="1268000|PHONGTHUY">Đăng ký gói này</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="thanh-toan">
+  <div class="wrap">
+    <div class="head"><span class="kicker">Thanh toán</span><h2>Chuyển khoản <span class="gold">nhận app</span></h2><p>Chọn gói, điền tên và Zalo, quét mã QR. Chuyển xong bấm nút báo cô Thảo.</p></div>
+    <div class="paycard">
+      <span class="pay-tag">✓ Tài khoản chính chủ cô Thảo</span>
+      <div class="pay-form">
+        <label class="full">Gói bạn chọn<select id="pyPk">
+          <option value="2668000|KINHDOANH">App Master Thanh Thảo · Kinh Doanh · 2.668.000đ</option>
+          <option value="1268000|TUDUNG">App Master Thanh Thảo · Tự Dùng · 1.268.000đ</option>
+          <option value="4868000|DOITAC">App Master Thanh Thảo · Đối Tác · 4.868.000đ</option>
+          <option value="1268000|PHONGTHUY">App Phong Thủy · 1.268.000đ</option>
+        </select></label>
+        <label>Họ tên của bạn<input id="pyNm" placeholder="VD: Nguyễn Thị Lan" autocomplete="name"></label>
+        <label>Số Zalo của bạn<input id="pyPh" placeholder="VD: 0912345678" inputmode="tel" autocomplete="tel"></label>
+      </div>
+      <div class="pay-grid">
+        <div class="qr"><img id="pyQr" alt="Mã QR chuyển khoản TPBank cô Thảo" src="../qr-tpbank.jpg"><small id="pyQrNote">Quét bằng app ngân hàng, đã điền sẵn số tiền và nội dung</small></div>
+        <div class="pay-info">
+          <div class="kv"><span>Ngân hàng</span><strong>TPBank</strong></div>
+          <div class="kv"><span>Chủ tài khoản</span><strong>HOANG THI THANH THAO</strong></div>
+          <div class="kv"><span>Số tài khoản</span><strong>8768 1714 131</strong><button class="cp" type="button" data-copy="87681714131">Chép</button></div>
+          <div class="kv"><span>Số tiền</span><strong id="pyAm" class="amt">2.668.000đ</strong><button class="cp" type="button" id="pyAmCp">Chép</button></div>
+          <div class="kv"><span>Nội dung</span><strong id="pyCt">KINHDOANH HO TEN SDT</strong><button class="cp" type="button" id="pyCtCp">Chép</button></div>
+        </div>
+      </div>
+      <a class="btn btn-gold pay-done" id="pyDone" href="https://zalo.me/0935949141" target="_blank" rel="noopener">✓ Tôi đã chuyển khoản · báo cô Thảo qua Zalo</a>
+      <p class="pay-hint" id="pyHint">Bấm nút trên, trang chép sẵn lời nhắn có tên, Zalo và gói bạn mua. Mở Zalo, dán lời nhắn và gửi kèm ảnh chuyển khoản. Cô Thảo đối chiếu rồi liên hệ giao app cho bạn.</p>
     </div>
   </div>
 </section>
@@ -236,5 +283,27 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:0 0 90px}
 </div>
 <footer>© Cô Thảo · <a href="../">Giải mã năng lượng số</a></footer>
 <a class="zalo-float" href="https://zalo.me/0935949141" target="_blank" rel="noopener"><span>Zalo</span>Nhắn cô Thảo</a>
+<script>(function(){
+function $(i){return document.getElementById(i)}
+var GF='https://docs.google.com/forms/d/e/1FAIpQLScoEBjYk6eHmzAXQfLeNSwpMVRsGL_wf08Vj_eyDGFlQUbw2w/formResponse';
+var GE={loai:'entry.596007808',goi:'entry.1684003920',ten:'entry.546302110',zalo:'entry.2058676908',tien:'entry.1353076927',nd:'entry.644535927'};
+function gf(o){try{var f=new URLSearchParams();Object.keys(o).forEach(function(k){if(GE[k]&&o[k]!=null)f.append(GE[k],String(o[k]).slice(0,500))});fetch(GF,{method:'POST',mode:'no-cors',body:f}).catch(function(){})}catch(e){}}
+function copy(t){try{navigator.clipboard.writeText(t).catch(function(){})}catch(e){}}
+function vnd(n){return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+'đ'}
+function un(t){return (t||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d').replace(/Đ/g,'D').replace(/[^a-zA-Z0-9 ]/g,'').replace(/\s+/g,' ').trim().toUpperCase()}
+function upd(){var v=$('pyPk').value.split('|'),am=+v[0],nm=un($('pyNm').value),ph=($('pyPh').value||'').replace(/\D/g,'');
+var ct=v[1]+' '+(nm||'HO TEN')+' '+(ph||'SDT');$('pyCt').textContent=ct;$('pyAm').textContent=vnd(am);$('pyAm').dataset.v=am;
+var q=$('pyQr');q.onerror=function(){this.onerror=null;this.src='../qr-tpbank.jpg';$('pyQrNote').textContent='Quét mã, nhập đúng số tiền và chép nội dung bên cạnh'};
+q.src='https://img.vietqr.io/image/TPB-87681714131-compact2.png?amount='+am+'&addInfo='+encodeURIComponent(ct.slice(0,50))+'&accountName='+encodeURIComponent('HOANG THI THANH THAO')}
+var t;['pyPk','pyNm','pyPh'].forEach(function(i){$(i).addEventListener('input',function(){clearTimeout(t);t=setTimeout(upd,350)});$(i).addEventListener('change',upd)});
+document.querySelectorAll('[data-pk]').forEach(function(b){b.addEventListener('click',function(){$('pyPk').value=b.getAttribute('data-pk');upd()})});
+$('pyAmCp').addEventListener('click',function(){copy($('pyAm').dataset.v);this.textContent='Đã chép'});
+$('pyCtCp').addEventListener('click',function(){copy($('pyCt').textContent);this.textContent='Đã chép'});
+document.querySelectorAll('#thanh-toan [data-copy]').forEach(function(b){b.addEventListener('click',function(){copy(b.getAttribute('data-copy'));b.textContent='Đã chép'})});
+$('pyDone').addEventListener('click',function(){var o=$('pyPk').selectedOptions[0].textContent.replace(/ · [\d.]+đ$/,'').trim();
+copy('Cô Thảo ơi, em đã chuyển khoản '+vnd(+$('pyAm').dataset.v)+' mua '+o+'.\n- Họ tên: '+($('pyNm').value||'...')+'\n- Zalo: '+($('pyPh').value||'...')+'\n- Nội dung CK: '+$('pyCt').textContent+'\nEm gửi ảnh chuyển khoản ạ.');
+if(!this.dataset.sent){this.dataset.sent='1';gf({loai:'Mua app',goi:o,ten:$('pyNm').value,zalo:$('pyPh').value,tien:$('pyAm').dataset.v,nd:$('pyCt').textContent})}
+$('pyHint').innerHTML='<b style="color:var(--gold2)">Đã chép sẵn lời nhắn.</b> Mở Zalo cô Thảo, dán lời nhắn và gửi kèm ảnh chuyển khoản nhé.'});
+upd()})();</script>
 </body>
 </html>
