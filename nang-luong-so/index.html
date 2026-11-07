@@ -880,7 +880,7 @@ footer a{color:var(--gold2)}
 
   document.getElementById('cpNote').addEventListener('click',function(){copy(document.getElementById('payNote').textContent);this.textContent='Đã chép'});
   document.querySelector('[data-copy]').addEventListener('click',function(){copy(this.getAttribute('data-copy'));this.textContent='Đã chép'});
-  document.getElementById('zaloPay').addEventListener('click',function(){var me=window.__dob;if(payText&&me&&!this.dataset.sent){this.dataset.sent='1';gf({loai:'Chuyển khoản',goi:'Mở khóa tự xem 99k · mã khách '+cust,ten:me.name,ns:me.dd+'/'+me.mm+'/'+me.yy,tien:99000,nd:'NLS '+cust})}if(payText)copy(payText,'Đã chép sẵn tin nhắn. Mở Zalo, dán và gửi kèm ảnh chuyển khoản. Mã khách: <strong>'+cust+'</strong>')});
+  document.getElementById('zaloPay').addEventListener('click',function(){var me=window.__dob;if(payText&&me&&!this.dataset.sent){this.dataset.sent='1';store('nls-paid','1');gf({loai:'Chuyển khoản',goi:'Mở khóa tự xem 99k · mã khách '+cust,ten:me.name,ns:me.dd+'/'+me.mm+'/'+me.yy,tien:99000,nd:'NLS '+cust})}if(payText)copy(payText,'Đã chép sẵn tin nhắn. Mở Zalo, dán và gửi kèm ảnh chuyển khoản. Mã khách: <strong>'+cust+'</strong>')});
   document.getElementById('pdfBtn').addEventListener('click',function(){
     var me=window.__dob,b=this,msg=document.getElementById('pdfMsg');if(!me||!window.NLS)return;
     b.disabled=true;b.textContent='Đang tạo file…';
@@ -889,7 +889,7 @@ footer a{color:var(--gold2)}
   document.getElementById('unlockBtn').addEventListener('click',function(){
     var v=document.getElementById('unlockCode').value.replace(/\D/g,'');
     var msg=document.getElementById('unlockMsg');
-    if(cust&&v===unlockFor(cust)){store('nls-ok-'+cust,'1');var r=document.getElementById('results');r.classList.remove('is-locked');msg.textContent='';r.querySelector('.unlocked-ok').scrollIntoView({behavior:'smooth',block:'center'})}
+    if(cust&&v===unlockFor(cust)){store('nls-ok-'+cust,'1');store('nls-paid','1');var r=document.getElementById('results');r.classList.remove('is-locked');msg.textContent='';r.querySelector('.unlocked-ok').scrollIntoView({behavior:'smooth',block:'center'})}
     else{msg.innerHTML='<span class="bad">Mã chưa đúng, bạn kiểm tra lại hoặc nhắn Zalo cô Thảo nhé.</span> Mã khách: <strong>'+cust+'</strong>'}
   });
 
