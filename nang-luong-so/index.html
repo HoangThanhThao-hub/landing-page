@@ -75,7 +75,7 @@ h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-heigh
 .ring{position:absolute;inset:-6%;animation:spin 80s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .portrait{position:absolute;inset:8% 10%;border-radius:220px 220px 26px 26px;overflow:hidden;border:1px solid #e3c27a99;box-shadow:0 0 0 8px #e3c27a12,0 40px 90px #0009}
-.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 5%}
 .badge{position:absolute;background:#0d1432ee;border:1px solid #e3c27a66;border-radius:16px;padding:12px 16px;backdrop-filter:blur(8px);font-size:13px;box-shadow:0 20px 40px #0008}
 .badge b{display:block;font-family:'Playfair Display',serif;color:var(--gold2);font-size:22px;line-height:1.1}
 .badge.b1{left:-2%;bottom:16%}.badge.b2{right:-2%;top:20%}
@@ -186,6 +186,45 @@ h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-heigh
 .chat-in input{flex:1;padding:12px 14px;border-radius:999px;border:1px solid #3a4680;background:#0a1028;color:var(--text);font:inherit;font-size:15px;outline:none;min-width:0}
 .chat-in button{width:46px;border-radius:50%;border:0;background:linear-gradient(120deg,#c99a4a,#f5dda0);color:#1a1205;font-size:18px;cursor:pointer}
 
+/* payment */
+.paycard{position:relative;max-width:880px;margin:0 auto;padding:40px 34px 30px;border-radius:28px;border:1px solid var(--gold);background:radial-gradient(ellipse at 50% -20%,#4b2f8a88,transparent 60%),linear-gradient(160deg,#1a1442,#0b0f2a);box-shadow:0 0 0 8px #e3c27a10,0 0 80px #7d6bd844,0 40px 100px #000a}
+.pay-tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);white-space:nowrap;background:linear-gradient(120deg,#c99a4a,#f5dda0);color:#1a1205;font-size:12px;font-weight:800;padding:6px 14px;border-radius:999px}
+.pay-form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px}
+.pay-form label{display:block;font-size:13px;color:var(--gold2);font-weight:600}
+.pay-form .full{grid-column:1/-1}
+.pay-form input,.pay-form select{display:block;width:100%;margin-top:7px;padding:14px 16px;border-radius:14px;border:1px solid #3a4680;background:#070b22;color:var(--text);font:inherit;font-size:16px;outline:none}
+.pay-form input:focus,.pay-form select:focus{border-color:var(--gold)}
+.pay-grid{display:grid;grid-template-columns:250px 1fr;gap:24px;align-items:center}
+.pay-info{display:grid;gap:6px;padding:18px 20px;border-radius:18px;background:#070b22;border:1px solid var(--line)}
+.pay-info .amt{color:var(--gold2);font-size:20px}
+.pay-done{width:100%;margin-top:24px;padding:18px;font-size:16px}
+.pay-hint{font-size:13px;color:var(--muted);text-align:center;margin:12px 0 0}
+
+/* mystic */
+.mystic{position:fixed;inset:0;z-index:-1;pointer-events:none}
+.geo{position:absolute;left:50%;top:50%;width:min(1100px,160vw);height:min(1100px,160vw);transform:translate(-50%,-50%);opacity:.09;animation:spin 240s linear infinite}
+.hero{position:relative}
+.hero:before{content:'';position:absolute;inset:-20% -10% auto auto;width:700px;height:700px;border-radius:50%;background:radial-gradient(#6d3fd055,transparent 65%);filter:blur(10px);pointer-events:none;animation:breathe 9s ease-in-out infinite}
+@keyframes breathe{50%{opacity:.5;transform:scale(1.12)}}
+.btn-gold{position:relative;overflow:hidden}
+.btn-gold:after{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,#fff9,transparent);transform:skewX(-20deg);animation:shine 4.5s ease-in-out infinite}
+@keyframes shine{0%,70%{left:-60%}100%{left:130%}}
+
+/* exit popup */
+.exit{position:fixed;inset:0;z-index:90;display:none;align-items:center;justify-content:center;padding:16px;background:#03051099;backdrop-filter:blur(6px)}
+.exit.open{display:flex}
+.exit-box{width:min(480px,100%);max-height:calc(100vh - 32px);overflow:auto;padding:30px 24px 24px;border-radius:24px;border:1px solid var(--gold);background:radial-gradient(ellipse at 50% 0%,#4b2f8a,transparent 70%),#0d1133;text-align:center;position:relative;box-shadow:0 0 80px #7d6bd855}
+.exit-box h3{font-size:26px;margin:6px 0 8px}
+.exit-box>p{color:var(--muted);margin:0 0 18px;font-size:14.5px}
+.exit-x{position:absolute;right:14px;top:10px;background:none;border:0;color:var(--muted);font-size:26px;cursor:pointer}
+.reasons{display:grid;gap:8px;text-align:left}
+.reasons button{padding:13px 16px;border-radius:14px;border:1px solid #3a4680;background:#0a0f2b;color:var(--text);font:500 14.5px 'Be Vietnam Pro',sans-serif;cursor:pointer;text-align:left}
+.reasons button:hover{border-color:var(--gold)}
+.reasons textarea{width:100%;min-height:70px;padding:12px;border-radius:14px;border:1px solid #3a4680;background:#070b22;color:var(--text);font:inherit;font-size:15px;display:none}
+.exit-reply{display:none;text-align:left}
+.exit-reply p{color:#e3e6f5;font-size:15px;white-space:pre-line}
+.exit-reply .row{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+
 /* benefits */
 .benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .benefit{padding:30px 24px;border-radius:var(--radius);background:linear-gradient(170deg,#141c42,#0b1129);border:1px solid var(--line);transition:border-color .3s,transform .3s}
@@ -228,7 +267,7 @@ h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-heigh
 /* about */
 .about .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center}
 .about-img{border-radius:26px;overflow:hidden;border:1px solid #e3c27a77;box-shadow:0 30px 80px #0009;aspect-ratio:4/5}
-.about-img img{width:100%;height:100%;object-fit:cover;object-position:50% 0%}
+.about-img img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
 .about h2{font-size:clamp(30px,4vw,44px);margin:14px 0 18px}
 .about p{color:#d3d8ee}
 .quote{font-family:'Playfair Display',serif;font-style:italic;font-size:21px;color:var(--gold2);border-left:2px solid var(--gold);padding-left:20px;margin:26px 0}
@@ -270,7 +309,7 @@ footer a{color:var(--gold2)}
   .indices{grid-template-columns:1fr 1fr}
   .calc-form{grid-template-columns:1fr}
 }
-@media(max-width:760px){.pay{grid-template-columns:1fr}.qr{max-width:260px;margin:0 auto}.mgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.pay-grid{grid-template-columns:1fr}.big-qr{max-width:260px;margin:0 auto}.pay-form{grid-template-columns:1fr}.paycard{padding:34px 18px 24px}.pay{grid-template-columns:1fr}.qr{max-width:260px;margin:0 auto}.mgrid{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){
   .unlock{padding:22px 16px}
   .section{padding:70px 0}
@@ -291,6 +330,7 @@ footer a{color:var(--gold2)}
 </head>
 <body>
 <div class="sky"></div>
+<div class="mystic" aria-hidden="true"><svg class="geo" viewBox="0 0 400 400"><g fill="none" stroke="#e3c27a" stroke-width=".7"><circle cx="200" cy="200" r="60"/><circle cx="200" cy="140" r="60"/><circle cx="200" cy="260" r="60"/><circle cx="252" cy="170" r="60"/><circle cx="148" cy="170" r="60"/><circle cx="252" cy="230" r="60"/><circle cx="148" cy="230" r="60"/><circle cx="200" cy="200" r="120"/><circle cx="200" cy="200" r="180"/><circle cx="200" cy="200" r="190" stroke-dasharray="2 5"/><polygon points="200,20 356,290 44,290"/><polygon points="200,380 44,110 356,110"/></g></svg><canvas id="dust"></canvas></div>
 
 <nav class="nav">
   <div class="wrap">
@@ -493,7 +533,7 @@ footer a{color:var(--gold2)}
           <li>Năm cá nhân hiện tại</li>
           <li>Hỏi đáp thêm qua Zalo trong 3 ngày</li>
         </ul>
-        <a class="btn btn-ghost" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Đăng ký gói này</a>
+        <a class="btn btn-ghost" href="#thanh-toan" data-pk="299000|BANDO">Đăng ký gói này</a>
       </article>
       <article class="pack hot reveal">
         <span class="tag">Con gợi ý</span>
@@ -508,13 +548,13 @@ footer a{color:var(--gold2)}
           <li>Dự báo năm và 12 tháng cá nhân tới</li>
           <li>Nhận file PDF qua Zalo, hỏi thêm qua tin nhắn 7 ngày</li>
         </ul>
-        <a class="btn btn-gold" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Đăng ký gói này</a>
+        <a class="btn btn-gold" href="#thanh-toan" data-pk="899000|CHUYENSAU">Đăng ký gói này</a>
       </article>
       <article class="pack reveal">
         <span class="lv">VIP · Trọn bộ</span>
         <h3>Trọn Bộ Năng Lượng Số</h3>
         <p class="for">Cho chủ doanh nghiệp, người muốn có tấm bản đồ đầy đủ cho cả năm.</p>
-        <div class="price">4.999.000đ</div><span class="price-note"></span>
+        <div class="price">2.999.000đ</div><span class="price-note"></span>
         <ul>
           <li>1 file PDF chuyên sâu trọn bộ, gửi 1 lần qua Zalo</li>
           <li>Toàn bộ nội dung gói Giải Mã Chuyên Sâu</li>
@@ -522,7 +562,7 @@ footer a{color:var(--gold2)}
           <li>Gợi ý ngày tốt khai trương, ký kết trong năm</li>
           <li>Góp ý tên thương hiệu, số điện thoại</li>
         </ul>
-        <a class="btn btn-ghost" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Đăng ký gói này</a>
+        <a class="btn btn-ghost" href="#thanh-toan" data-pk="2999000|TRONBO">Đăng ký gói này</a>
       </article>
       <article class="pack reveal">
         <span class="lv">Gia đình</span>
@@ -535,7 +575,7 @@ footer a{color:var(--gold2)}
           <li>Gợi ý hướng phát triển lâu dài</li>
           <li>Ba mẹ hỏi thêm qua tin nhắn Zalo</li>
         </ul>
-        <a class="btn btn-ghost" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Đăng ký gói này</a>
+        <a class="btn btn-ghost" href="#thanh-toan" data-pk="599000|CONYEU">Đăng ký gói này</a>
       </article>
       <article class="pack reveal">
         <span class="lv">Lứa đôi</span>
@@ -548,7 +588,7 @@ footer a{color:var(--gold2)}
           <li>Cách giao tiếp và cùng nhau phát triển</li>
           <li>Hỏi thêm qua tin nhắn Zalo</li>
         </ul>
-        <a class="btn btn-ghost" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Đăng ký gói này</a>
+        <a class="btn btn-ghost" href="#thanh-toan" data-pk="799000|TINHYEU">Đăng ký gói này</a>
       </article>
       <article class="pack reveal">
         <span class="lv">Kinh doanh</span>
@@ -561,8 +601,47 @@ footer a{color:var(--gold2)}
           <li>Gợi ý ngày đẹp để bắt đầu</li>
           <li>Hỗ trợ qua Zalo đến khi chốt</li>
         </ul>
-        <a class="btn btn-ghost" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Đăng ký gói này</a>
+        <a class="btn btn-ghost" href="#thanh-toan" data-pk="999000|DATTEN">Đăng ký gói này</a>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENT -->
+<section class="section" id="thanh-toan">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">Thanh toán</span>
+      <h2>Mở cánh cửa <span class="gold">năng lượng của bạn</span></h2>
+      <p>Chọn gói, điền thông tin, quét mã. Trang tự soạn sẵn nội dung chuyển khoản để cô Thảo đối chiếu nhanh.</p>
+    </div>
+    <div class="paycard reveal">
+      <span class="pay-tag">✓ Tài khoản chính chủ cô Thảo</span>
+      <div class="pay-form">
+        <label class="full">Gói bạn chọn<select id="pyPk">
+          <option value="899000|CHUYENSAU">Giải Mã Chuyên Sâu · 899.000đ</option>
+          <option value="299000|BANDO">Bản Đồ Năng Lượng · 299.000đ</option>
+          <option value="2999000|TRONBO">Trọn Bộ Năng Lượng Số · 2.999.000đ</option>
+          <option value="599000|CONYEU">Thấu Hiểu Con Yêu · 599.000đ</option>
+          <option value="799000|TINHYEU">Năng Lượng Tình Yêu · 799.000đ</option>
+          <option value="999000|DATTEN">Đặt Tên & Chọn Số · 999.000đ</option>
+        </select></label>
+        <label>Họ tên khai sinh<input id="pyNm" placeholder="VD: Nguyễn Thị Lan" autocomplete="name"></label>
+        <label>Ngày sinh<input id="pyDob" placeholder="VD: 28/03/1988" inputmode="numeric"></label>
+        <label class="full">Số Zalo của bạn<input id="pyPh" placeholder="VD: 0912345678" inputmode="tel" autocomplete="tel"></label>
+      </div>
+      <div class="pay-grid">
+        <div class="qr big-qr"><img id="pyQr" alt="Mã QR chuyển khoản TPBank cô Thảo" loading="lazy" src="qr-tpbank.jpg"><small id="pyQrNote">Quét bằng app ngân hàng, đã điền sẵn số tiền và nội dung</small></div>
+        <div class="pay-info">
+          <div class="kv"><span>Ngân hàng</span><strong>TPBank</strong></div>
+          <div class="kv"><span>Chủ tài khoản</span><strong>HOANG THI THANH THAO</strong></div>
+          <div class="kv"><span>Số tài khoản</span><strong>8768 1714 131</strong><button class="cp" type="button" data-copy="87681714131">Chép</button></div>
+          <div class="kv"><span>Số tiền</span><strong id="pyAm" class="amt">899.000đ</strong><button class="cp" type="button" id="pyAmCp">Chép</button></div>
+          <div class="kv"><span>Nội dung</span><strong id="pyCt">CHUYENSAU HO TEN SDT</strong><button class="cp" type="button" id="pyCtCp">Chép</button></div>
+        </div>
+      </div>
+      <a class="btn btn-gold pay-done" id="pyDone" href="https://zalo.me/0935949141" target="_blank" rel="noopener">✓ Tôi đã chuyển khoản · báo cô Thảo qua Zalo</a>
+      <p class="pay-hint" id="pyHint">Bấm nút trên, trang chép sẵn lời nhắn. Mở Zalo, dán lời nhắn và gửi kèm ảnh chuyển khoản. Cô đối chiếu với ngân hàng rồi gửi bản giải mã cho bạn.</p>
     </div>
   </div>
 </section>
@@ -575,8 +654,8 @@ footer a{color:var(--gold2)}
       <h2>Chỉ <span class="gold">3 bước đơn giản</span></h2>
     </div>
     <div class="steps">
-      <div class="step reveal"><h3>Nhắn Zalo cho cô</h3><p>Gửi họ tên khai sinh, ngày sinh dương lịch và gói bạn muốn xem tới Zalo 0935 949 141.</p></div>
-      <div class="step reveal"><h3>Chuyển khoản & xác nhận</h3><p>Cô Thảo xác nhận thông tin, gửi hướng dẫn thanh toán và báo thời gian bạn nhận bản giải mã.</p></div>
+      <div class="step reveal"><h3>Chọn gói & chuyển khoản</h3><p>Chọn gói ở phần thanh toán, quét mã QR. Số tiền và nội dung chuyển khoản đã điền sẵn.</p></div>
+      <div class="step reveal"><h3>Bấm xác nhận đã chuyển khoản</h3><p>Trang chép sẵn lời nhắn có họ tên, ngày sinh của bạn. Bạn dán vào Zalo cô Thảo, gửi kèm ảnh chuyển khoản.</p></div>
       <div class="step reveal"><h3>Nhận bản giải mã</h3><p>Nhận bản giải mã viết riêng qua Zalo, đọc lại bất cứ lúc nào, có thắc mắc thì nhắn hỏi cô.</p></div>
     </div>
   </div>
@@ -643,6 +722,24 @@ footer a{color:var(--gold2)}
   </div>
 </footer>
 
+<div class="exit" id="exit" role="dialog" aria-label="Góp ý">
+  <div class="exit-box">
+    <button class="exit-x" type="button" id="exitX" aria-label="Đóng">×</button>
+    <span class="kicker">Khoan đã</span>
+    <h3><span class="gold">Vì sao bạn chưa chọn gói?</span></h3>
+    <p>Cho cô Thảo biết lý do nhé, chỉ 1 chạm thôi. Cô sẽ trả lời bạn ngay.</p>
+    <div class="reasons" id="reasons">
+      <button type="button" data-r="gia">💰 Giá còn cao với tôi</button>
+      <button type="button" data-r="tin">🤔 Tôi chưa tin thần số học lắm</button>
+      <button type="button" data-r="chon">📦 Tôi chưa biết chọn gói nào</button>
+      <button type="button" data-r="nghi">⏳ Tôi cần suy nghĩ thêm</button>
+      <button type="button" data-r="hoi">💬 Tôi muốn hỏi cô trước</button>
+      <button type="button" data-r="khac">✍️ Lý do khác</button>
+      <textarea id="exitTxt" placeholder="Bạn viết lý do ở đây..."></textarea>
+    </div>
+    <div class="exit-reply" id="exitReply"><p id="exitMsg"></p><div class="row" id="exitAct"></div></div>
+  </div>
+</div>
 <a class="zalo-float" href="https://zalo.me/0935949141" target="_blank" rel="noopener" aria-label="Zalo cô Thảo"><span>Zalo</span><b>Zalo</b></a>
 <button class="chat-btn" id="chatBtn" type="button"><i>💬</i>Hỏi đáp nhanh</button>
 <div class="chat" id="chat" role="dialog" aria-label="Hỏi đáp nhanh">
@@ -778,7 +875,7 @@ footer a{color:var(--gold2)}
   // ===== CHAT tự trả lời =====
   var ZALO='https://zalo.me/0935949141';
   function nz(t){return t.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d').replace(/Đ/g,'d').toLowerCase()}
-  var PRICES='Bảng giá các gói (bản giải mã viết sẵn, gửi file PDF qua Zalo):\n• Tự xem trọn bộ trên trang: 99.000đ\n• Bản Đồ Năng Lượng: 299.000đ\n• Thấu Hiểu Con Yêu: 599.000đ\n• Năng Lượng Tình Yêu: 799.000đ\n• Giải Mã Chuyên Sâu: 899.000đ\n• Đặt Tên & Chọn Số: 999.000đ\n• Trọn Bộ Năng Lượng Số: 4.999.000đ';
+  var PRICES='Bảng giá các gói (bản giải mã viết sẵn, gửi file PDF qua Zalo):\n• Tự xem trọn bộ trên trang: 99.000đ\n• Bản Đồ Năng Lượng: 299.000đ\n• Thấu Hiểu Con Yêu: 599.000đ\n• Năng Lượng Tình Yêu: 799.000đ\n• Giải Mã Chuyên Sâu: 899.000đ\n• Đặt Tên & Chọn Số: 999.000đ\n• Trọn Bộ Năng Lượng Số: 2.999.000đ';
   var QA=[
     [['chao ','hello',' hi ',' alo','xin chao'],'Chào bạn 🌙 Bạn muốn hỏi về giá các gói, cách mở khóa 99k, hay ý nghĩa con số của mình?'],
     [[' gia ','gia bao','gia goi','gia ca','bao nhieu','chi phi','bang gia',' phi ','bao tien',' bn '],PRICES],
@@ -787,7 +884,7 @@ footer a{color:var(--gold2)}
     [['chua nhan duoc ma','chua nhan ma','chua co ma mo khoa','chua nhan','chua co ma','lau','cho ma','sai ma','ma sai','khong mo duoc'],'Cô Thảo gửi mã ngay khi kiểm tra thấy tiền về. Nếu chờ lâu hoặc mã báo sai, bạn nhắn Zalo cho cô kèm ảnh chuyển khoản và mã khách nhé.','zalo'],
     [['goi video','goi dien','zoom','1:1','gap truc tiep','noi chuyen'],'Các gói không cần gọi video hay gọi điện. Cô Thảo gửi bản giải mã viết sẵn (file PDF) qua Zalo, bạn đọc lại lúc nào cũng được, có thắc mắc thì nhắn tin hỏi thêm.'],
     [['pdf','file','khi nao nhan','bao lau','nhan duoc gi','gui gi'],'Sau khi đăng ký và chuyển khoản, cô Thảo gửi bản giải mã viết sẵn (file PDF) qua Zalo. Thời gian nhận cô sẽ báo khi xác nhận đơn của bạn.'],
-    [['chon goi','goi nao','khac nhau','nen xem','tu van goi'],'Gợi ý chọn gói:\n• Muốn hiểu mình nhanh: Bản Đồ Năng Lượng (299k)\n• Cần định hướng sự nghiệp, tài chính, tình cảm: Giải Mã Chuyên Sâu (899k)\n• Muốn đầy đủ nhất + dự báo 12 tháng: Trọn Bộ Năng Lượng Số (4.999k)\n• Xem cho con: Thấu Hiểu Con Yêu (599k)\n• Xem cho 2 người: Năng Lượng Tình Yêu (799k)\n• Đặt tên, chọn số, ngày khai trương: Đặt Tên & Chọn Số (999k)'],
+    [['chon goi','goi nao','khac nhau','nen xem','tu van goi'],'Gợi ý chọn gói:\n• Muốn hiểu mình nhanh: Bản Đồ Năng Lượng (299k)\n• Cần định hướng sự nghiệp, tài chính, tình cảm: Giải Mã Chuyên Sâu (899k)\n• Muốn đầy đủ nhất + dự báo 12 tháng: Trọn Bộ Năng Lượng Số (2.999k)\n• Xem cho con: Thấu Hiểu Con Yêu (599k)\n• Xem cho 2 người: Năng Lượng Tình Yêu (799k)\n• Đặt tên, chọn số, ngày khai trương: Đặt Tên & Chọn Số (999k)'],
     [['con nho','con toi','con minh','cho con','em be',' be ','tre em','tre con','nuoi day','hoc hanh'],'Gói Thấu Hiểu Con Yêu (599.000đ) giải mã chỉ số của bé: tính cách, năng khiếu, cách học, cách khen phù hợp và hướng phát triển lâu dài. Ba mẹ gửi họ tên khai sinh + ngày sinh dương lịch của bé qua Zalo để đăng ký.'],
     [['nguoi yeu','chong','vo ','tinh cam','tinh yeu','hop nhau','hop khong','cuoi','hon nhan','cap doi'],'Gói Năng Lượng Tình Yêu (799.000đ) giải mã chỉ số của cả 2 người: điểm hợp, điểm dễ va chạm, cách giao tiếp và cùng nhau phát triển. Bạn gửi họ tên + ngày sinh của 2 người qua Zalo nhé.'],
     [['dat ten','ten con','so dien thoai','sim','thuong hieu','ten cong ty','khai truong','ngay dep','ngay tot','chon so','so nha','bien so'],'Gói Đặt Tên & Chọn Số (999.000đ): phân tích năng lượng tên/số hiện tại, đề xuất 3 đến 5 phương án hợp năng lượng và gợi ý ngày đẹp để bắt đầu.'],
@@ -849,6 +946,81 @@ footer a{color:var(--gold2)}
   document.getElementById('chatBtn').onclick=function(){chat.classList.add('open');if(!opened){opened=true;add('Chào bạn 🌙 Mình là trợ lý của cô Thảo. Bạn hỏi gì về thần số học, giá các gói hay cách mở khóa, mình trả lời ngay nhé.','bot')}setTimeout(function(){inp.focus()},50)};
   document.getElementById('chatClose').onclick=function(){chat.classList.remove('open')};
   document.getElementById('chatForm').addEventListener('submit',function(e){e.preventDefault();var q=inp.value;inp.value='';ask(q)});
+
+  // ===== THANH TOÁN =====
+  var OFF=0;
+  function un(t){return nz(t||'').replace(/[^a-z0-9 ]/g,'').replace(/\s+/g,' ').trim().toUpperCase()}
+  function vnd(n){return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+'đ'}
+  function $(i){return document.getElementById(i)}
+  function pyUpd(){
+    var v=$('pyPk').value.split('|'),base=+v[0],am=OFF?Math.round(base*(100-OFF)/100/1000)*1000:base;
+    var nm=un($('pyNm').value),ph=($('pyPh').value||'').replace(/\D/g,'');
+    var ct=v[1]+(OFF?' UD'+OFF:'')+' '+(nm||'HO TEN')+' '+(ph||'SDT');
+    $('pyCt').textContent=ct;$('pyAm').innerHTML=OFF?('<s style="color:var(--muted);font-size:14px">'+vnd(base)+'</s> '+vnd(am)):vnd(am);
+    $('pyAm').dataset.v=am;
+    var q=$('pyQr');q.onerror=function(){this.onerror=null;this.src='qr-tpbank.jpg';$('pyQrNote').textContent='Quét mã, nhập đúng số tiền và chép nội dung bên cạnh'};
+    q.src='https://img.vietqr.io/image/TPB-87681714131-compact2.png?amount='+am+'&addInfo='+encodeURIComponent(ct.slice(0,50))+'&accountName='+encodeURIComponent('HOANG THI THANH THAO');
+  }
+  var qT;['pyPk','pyNm','pyPh','pyDob'].forEach(function(i){$(i).addEventListener('input',function(){clearTimeout(qT);qT=setTimeout(pyUpd,350)});$(i).addEventListener('change',pyUpd)});
+  pyUpd();
+  document.querySelectorAll('[data-pk]').forEach(function(b){b.addEventListener('click',function(){$('pyPk').value=b.getAttribute('data-pk');pyUpd()})});
+  $('pyAmCp').addEventListener('click',function(){copy($('pyAm').dataset.v);this.textContent='Đã chép'});
+  $('pyCtCp').addEventListener('click',function(){copy($('pyCt').textContent);this.textContent='Đã chép'});
+  document.querySelectorAll('#thanh-toan [data-copy]').forEach(function(b){b.addEventListener('click',function(){copy(b.getAttribute('data-copy'));b.textContent='Đã chép'})});
+  $('pyDone').addEventListener('click',function(){
+    var o=$('pyPk').selectedOptions[0].textContent.split('·')[0].trim();
+    copy('Cô Thảo ơi, con đã chuyển khoản '+vnd(+$('pyAm').dataset.v)+' gói '+o+(OFF?' (ưu đãi giảm '+OFF+'%)':'')+'.\n- Họ tên khai sinh: '+($('pyNm').value||'...')+'\n- Ngày sinh: '+($('pyDob').value||'...')+'\n- Zalo: '+($('pyPh').value||'...')+'\n- Nội dung CK: '+$('pyCt').textContent+'\nCon gửi ảnh chuyển khoản ạ.');
+    store('nls-paid','1');
+    $('pyHint').innerHTML='<b style="color:var(--gold2)">Đã chép sẵn lời nhắn.</b> Mở Zalo cô Thảo, dán lời nhắn và gửi kèm ảnh chuyển khoản nhé.';
+  });
+
+  // ===== POPUP KHI KHÁCH ĐỊNH RỜI TRANG =====
+  var ex=$('exit'),shown=false;try{shown=sessionStorage.getItem('nls-exit')==='1'}catch(e){}
+  var READY=Date.now();
+  function showExit(){
+    if(shown||load('nls-paid')==='1'||Date.now()-READY<8000)return false;
+    shown=true;try{sessionStorage.setItem('nls-exit','1')}catch(e){}
+    ex.classList.add('open');return true;
+  }
+  document.addEventListener('mouseout',function(e){if(!e.relatedTarget&&e.clientY<=0)showExit()});
+  try{history.pushState({nls:1},'',location.href)}catch(e){}
+  window.addEventListener('popstate',function(e){if(e.state&&e.state.nls)return;if(location.hash)return;if(showExit()){try{history.pushState({nls:1},'',location.href)}catch(er){}}else{history.back()}});
+  $('exitX').onclick=function(){ex.classList.remove('open')};
+  ex.addEventListener('click',function(e){if(e.target===ex)ex.classList.remove('open')});
+  var RE={
+    gia:'Cô hiểu ạ 🌙 Nếu bạn muốn bắt đầu nhẹ nhàng, có bản tự xem trọn bộ chỉ 99.000đ ngay trên trang, hoặc gói Bản Đồ Năng Lượng 299.000đ.',
+    tin:'Không sao đâu ạ. Thần số học không phải bói toán, mà là công cụ để hiểu mình. Bạn thử xem Số Chủ Đạo miễn phí ở phần "Tự xem", đọc thấy đúng với mình rồi hẵng chọn gói nhé.',
+    chon:'Cô gợi ý nhanh: muốn hiểu mình nhanh chọn Bản Đồ Năng Lượng; cần định hướng sự nghiệp, tài chính, tình cảm chọn Giải Mã Chuyên Sâu; muốn đầy đủ nhất kèm dự báo 12 tháng chọn Trọn Bộ Năng Lượng Số.',
+    nghi:'Dạ bạn cứ suy nghĩ thêm ạ. Cô gửi bạn một ưu đãi riêng để bạn dễ quyết định hơn nhé.',
+    hoi:'Bạn nhắn Zalo cho cô Thảo nhé, cô trả lời trực tiếp cho bạn.',
+    khac:'Cảm ơn bạn đã chia sẻ, cô Thảo sẽ đọc và cải thiện để phục vụ bạn tốt hơn.'
+  };
+  var LB={gia:'Giá còn cao',tin:'Chưa tin thần số học',chon:'Chưa biết chọn gói',nghi:'Cần suy nghĩ thêm',hoi:'Muốn hỏi trước',khac:'Lý do khác'};
+  var picked='';
+  function reply(r){
+    var why=LB[r]+(r==='khac'&&$('exitTxt').value.trim()?': '+$('exitTxt').value.trim():'');
+    try{var log=JSON.parse(load('nls-why')||'[]');log.push(why);store('nls-why',JSON.stringify(log))}catch(e){}
+    $('reasons').style.display='none';$('exitReply').style.display='block';
+    $('exitMsg').textContent=RE[r]+'\n\n🎁 Ưu đãi chốt lần 2: giảm '+10+'% cho mọi gói nếu bạn chuyển khoản ngay hôm nay.';
+    var act=$('exitAct');act.innerHTML='';
+    function mk(txt,cls,fn,href){var b=document.createElement('a');b.className='btn '+cls;b.textContent=txt;b.href=href||'#';if(href&&href.indexOf('http')===0){b.target='_blank';b.rel='noopener'}b.onclick=fn;act.appendChild(b)}
+    mk('Nhận ưu đãi giảm 10% & thanh toán','btn-gold',function(e){e.preventDefault();OFF=10;pyUpd();ex.classList.remove('open');$('thanh-toan').scrollIntoView({behavior:'smooth'})});
+    if(r==='tin'||r==='gia')mk('Tự xem Số Chủ Đạo miễn phí','btn-ghost',function(e){e.preventDefault();ex.classList.remove('open');$('tu-xem').scrollIntoView({behavior:'smooth'})});
+    mk('Gửi ý kiến cho cô qua Zalo','btn-ghost',function(){copy('Cô Thảo ơi, con xem trang Năng lượng số nhưng chưa chọn gói vì: '+why+'.')},ZALO);
+  }
+  document.querySelectorAll('#reasons [data-r]').forEach(function(b){b.addEventListener('click',function(){
+    var r=b.getAttribute('data-r');
+    if(r==='khac'&&$('exitTxt').style.display!=='block'){$('exitTxt').style.display='block';$('exitTxt').focus();b.textContent='✍️ Gửi lý do';return}
+    reply(r)})});
+
+  // ===== bụi sao huyền bí =====
+  (function(){var c=$('dust');if(!c||matchMedia('(prefers-reduced-motion: reduce)').matches)return;var x=c.getContext('2d'),W,H,P=[];
+    function rs(){W=c.width=innerWidth;H=c.height=innerHeight}rs();addEventListener('resize',rs);
+    for(var i=0;i<(innerWidth<700?28:55);i++)P.push({x:Math.random(),y:Math.random(),r:Math.random()*1.6+.4,s:Math.random()*.0004+.0001,t:Math.random()*6,d:Math.random()<.18?String([1,2,3,4,5,6,7,8,9,11,22,33][Math.floor(Math.random()*12)]):''});
+    c.style.position='absolute';c.style.inset='0';
+    (function f(){x.clearRect(0,0,W,H);P.forEach(function(p){p.y-=p.s;p.t+=.02;if(p.y<-.05){p.y=1.05;p.x=Math.random()}var a=.25+.35*Math.sin(p.t);
+      if(p.d){x.font='italic 15px Playfair Display,serif';x.fillStyle='rgba(246,226,174,'+(a*.6)+')';x.fillText(p.d,p.x*W,p.y*H)}else{x.beginPath();x.arc(p.x*W,p.y*H,p.r,0,7);x.fillStyle='rgba(246,226,174,'+a+')';x.fill()}});requestAnimationFrame(f)})();
+  })();
 
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
