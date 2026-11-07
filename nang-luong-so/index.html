@@ -158,6 +158,29 @@ h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-heigh
 .unlocked-ok{display:none;text-align:center;color:var(--gold2);font-weight:700;margin:0 0 16px}
 .results:not(.is-locked) .unlocked-ok{display:block}
 
+/* chat */
+.chat-btn{position:fixed;right:18px;bottom:18px;z-index:61;display:flex;align-items:center;gap:10px;padding:12px 20px 12px 14px;border-radius:999px;border:1px solid #f6e2ae;background:linear-gradient(120deg,#c99a4a,#f5dda0 45%,#d4a957);color:#1a1205;font:700 14px 'Be Vietnam Pro',sans-serif;cursor:pointer;box-shadow:0 12px 30px #0009}
+.chat-btn i{font-style:normal;font-size:18px}
+.zalo-float{bottom:84px!important;padding:0!important;width:52px;height:52px;justify-content:center}
+.zalo-float b{display:none}
+.chat{position:fixed;right:18px;bottom:18px;z-index:70;width:min(380px,calc(100vw - 24px));height:min(600px,calc(100vh - 36px));display:none;flex-direction:column;border-radius:22px;overflow:hidden;border:1px solid #e3c27a88;background:#0b1129;box-shadow:0 30px 80px #000c}
+.chat.open{display:flex}
+.chat-top{display:flex;align-items:center;gap:12px;padding:14px 16px;background:linear-gradient(120deg,#1f2453,#121a3c);border-bottom:1px solid #e3c27a44}
+.chat-top img{width:40px;height:40px;border-radius:50%;object-fit:cover;object-position:50% 10%;border:1px solid var(--gold)}
+.chat-top b{display:block;font-size:14px}.chat-top small{color:var(--gold);font-size:11.5px}
+.chat-top button{margin-left:auto;background:none;border:0;color:var(--muted);font-size:24px;cursor:pointer;line-height:1}
+.chat-body{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+.msg{max-width:86%;padding:10px 14px;border-radius:16px;font-size:14px;line-height:1.55;white-space:pre-line}
+.msg.bot{background:#18224a;border:1px solid #2a3566;border-bottom-left-radius:4px;align-self:flex-start}
+.msg.me{background:linear-gradient(120deg,#d4a957,#f5dda0);color:#1a1205;border-bottom-right-radius:4px;align-self:flex-end}
+.msg a{color:var(--gold2)}
+.msg .mini{display:inline-block;margin-top:8px;padding:7px 14px;border-radius:999px;background:#0068ff;color:#fff;text-decoration:none;font-weight:700;font-size:13px}
+.chips{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:6px;padding:0 16px 10px;scrollbar-width:none}.chips button{flex:none}
+.chips button{background:#ffffff0c;border:1px solid #e3c27a55;color:#f3e6c4;border-radius:999px;padding:6px 11px;font:500 12.5px 'Be Vietnam Pro',sans-serif;cursor:pointer}
+.chat-in{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line);background:#080c1f}
+.chat-in input{flex:1;padding:12px 14px;border-radius:999px;border:1px solid #3a4680;background:#0a1028;color:var(--text);font:inherit;font-size:15px;outline:none;min-width:0}
+.chat-in button{width:46px;border-radius:50%;border:0;background:linear-gradient(120deg,#c99a4a,#f5dda0);color:#1a1205;font-size:18px;cursor:pointer}
+
 /* benefits */
 .benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .benefit{padding:30px 24px;border-radius:var(--radius);background:linear-gradient(170deg,#141c42,#0b1129);border:1px solid var(--line);transition:border-color .3s,transform .3s}
@@ -483,18 +506,18 @@ footer a{color:var(--gold2)}
         <a class="btn btn-gold" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Đăng ký gói này</a>
       </article>
       <article class="pack reveal">
-        <span class="lv">Đồng hành</span>
-        <h3>Đồng Hành 12 Tháng</h3>
-        <p class="for">Cho chủ doanh nghiệp, người muốn có người dẫn đường cả năm.</p>
+        <span class="lv">VIP · Trọn bộ</span>
+        <h3>Trọn Bộ Năng Lượng Số</h3>
+        <p class="for">Cho chủ doanh nghiệp, người muốn có tấm bản đồ đầy đủ cho cả năm.</p>
         <div class="price">4.999.000đ</div><span class="price-note"></span>
         <ul>
-          <li>Trọn gói Giải Mã Chuyên Sâu</li>
-          <li>Mỗi tháng nhận bản xem tháng cá nhân qua Zalo</li>
-          <li>Tư vấn chọn ngày khai trương, ký kết</li>
+          <li>1 file PDF chuyên sâu trọn bộ, gửi 1 lần qua Zalo</li>
+          <li>Toàn bộ nội dung gói Giải Mã Chuyên Sâu</li>
+          <li>Dự báo chi tiết 12 tháng cá nhân tới</li>
+          <li>Gợi ý ngày tốt khai trương, ký kết trong năm</li>
           <li>Góp ý tên thương hiệu, số điện thoại</li>
-          <li>Nhắn Zalo hỏi cô suốt 12 tháng</li>
         </ul>
-        <a class="btn btn-ghost" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Tư vấn gói này</a>
+        <a class="btn btn-ghost" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Đăng ký gói này</a>
       </article>
       <article class="pack reveal">
         <span class="lv">Gia đình</span>
@@ -585,6 +608,10 @@ footer a{color:var(--gold2)}
       <details><summary>Tôi cần chuẩn bị thông tin gì?</summary><p>Chỉ cần họ tên đầy đủ theo giấy khai sinh và ngày tháng năm sinh dương lịch. Nếu đổi tên sau này, bạn gửi cả tên cũ và tên đang dùng.</p></details>
       <details><summary>Tôi ở xa có xem được không?</summary><p>Được. Mọi thứ làm online: bạn gửi thông tin qua Zalo, cô Thảo gửi lại bản giải mã. Ở đâu cũng xem được.</p></details>
       <details><summary>Kết quả tự xem trên trang có chính xác không?</summary><p>Phần tự xem (Số Chủ Đạo miễn phí, trọn bộ 99.000đ) tính đúng 6 chỉ số cơ bản theo công thức Pythagoras. Bản giải mã chuyên sâu sẽ kết hợp nhiều chỉ số với nhau và với hoàn cảnh thực tế của bạn, nên chi tiết và sát hơn nhiều.</p></details>
+      <details><summary>Phần tự xem có mất phí không?</summary><p>Số Chủ Đạo xem miễn phí. Muốn xem trọn bộ 6 chỉ số, biểu đồ ngày sinh và 12 tháng cá nhân thì bạn mở khóa với 99.000đ.</p></details>
+      <details><summary>Chuyển khoản 99.000đ rồi mở khóa thế nào?</summary><p>Bạn quét mã QR (đã có sẵn số tiền và nội dung), sau đó bấm "Gửi Zalo cho cô Thảo" và gửi kèm ảnh chuyển khoản. Cô kiểm tra tiền về sẽ gửi lại mã mở khóa 6 số, bạn nhập vào là xem được hết.</p></details>
+      <details><summary>Các gói có gọi video hay gọi điện không?</summary><p>Không cần. Cô Thảo gửi bản giải mã viết sẵn (file PDF) qua Zalo để bạn đọc lại bất cứ lúc nào. Có thắc mắc bạn nhắn tin hỏi thêm.</p></details>
+      <details><summary>Nên chọn gói nào?</summary><p>Muốn hiểu mình nhanh: Bản Đồ Năng Lượng. Đang cần định hướng sự nghiệp, tài chính, tình cảm: Giải Mã Chuyên Sâu. Muốn đầy đủ nhất kèm dự báo 12 tháng: Trọn Bộ Năng Lượng Số. Xem cho con: Thấu Hiểu Con Yêu. Xem cho 2 người: Năng Lượng Tình Yêu. Đặt tên, chọn số: Đặt Tên & Chọn Số.</p></details>
       <details><summary>Có xem cho con nhỏ hoặc cho cả gia đình được không?</summary><p>Được. Gói Thấu Hiểu Con Yêu dành cho ba mẹ, và gói Năng Lượng Tình Yêu dành cho cặp đôi, vợ chồng.</p></details>
     </div>
   </div>
@@ -611,7 +638,14 @@ footer a{color:var(--gold2)}
   </div>
 </footer>
 
-<a class="zalo-float" href="https://zalo.me/0935949141" target="_blank" rel="noopener"><span>Zalo</span>Hỏi cô Thảo</a>
+<a class="zalo-float" href="https://zalo.me/0935949141" target="_blank" rel="noopener" aria-label="Zalo cô Thảo"><span>Zalo</span><b>Zalo</b></a>
+<button class="chat-btn" id="chatBtn" type="button"><i>💬</i>Hỏi đáp nhanh</button>
+<div class="chat" id="chat" role="dialog" aria-label="Hỏi đáp nhanh">
+  <div class="chat-top"><img src="img/co-thao-toc-xoa.jpg" alt=""><div><b>Hỏi đáp cùng cô Thảo</b><small>Trả lời tự động ngay</small></div><button type="button" id="chatClose" aria-label="Đóng">×</button></div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chips" id="chips"></div>
+  <form class="chat-in" id="chatForm"><input id="chatInput" placeholder="Nhập câu hỏi của bạn..." autocomplete="off"><button type="submit" aria-label="Gửi">➤</button></form>
+</div>
 
 <script>
 (function(){
@@ -652,7 +686,7 @@ footer a{color:var(--gold2)}
   function unlockFor(c){return String(h(SALT+c.toUpperCase())%900000+100000)}
   function store(k,v){try{localStorage.setItem(k,v)}catch(e){}}
   function load(k){try{return localStorage.getItem(k)}catch(e){return null}}
-  function copy(t,msg){try{navigator.clipboard.writeText(t)}catch(e){}if(msg){var c=document.getElementById('unlockMsg');c.innerHTML=msg}}
+  function copy(t,msg){try{navigator.clipboard.writeText(t).catch(function(){})}catch(e){}if(msg){var c=document.getElementById('unlockMsg');c.innerHTML=msg}}
   document.querySelectorAll('.cy').forEach(function(e){e.textContent=CY});
   document.getElementById('calcForm').addEventListener('submit',function(e){
     e.preventDefault();
@@ -670,6 +704,7 @@ footer a{color:var(--gold2)}
     letters.split('').forEach(function(c){var v=val(c);all+=v;if(V.indexOf(c)>-1)vow+=v;else con+=v});
     var ex=reduce(all,true),su=reduce(vow,true),pe=reduce(con,true),bd=reduce(dd,true);
     var py=reduce(reduce(dd)+reduce(mm)+reduce(CY));
+    window.__me={name:name,lp:lp,ex:ex,su:su,pe:pe,bd:bd,py:py};
 
     document.getElementById('helloName').textContent=name;
     document.getElementById('helloDob').textContent='Sinh ngày '+dd+'/'+mm+'/'+yy;
@@ -722,7 +757,7 @@ footer a{color:var(--gold2)}
   document.getElementById('zaloResult').addEventListener('click',function(){
     if(!lastText)return;
     var c=document.getElementById('copied');
-    try{navigator.clipboard.writeText(lastText).then(function(){c.textContent='Đã chép sẵn kết quả. Mở Zalo xong bạn chỉ cần dán và gửi cho cô.'})}catch(e){}
+    try{navigator.clipboard.writeText(lastText).then(function(){c.textContent='Đã chép sẵn kết quả. Mở Zalo xong bạn chỉ cần dán và gửi cho cô.'}).catch(function(){})}catch(e){}
   });
 
   document.getElementById('cpNote').addEventListener('click',function(){copy(document.getElementById('payNote').textContent);this.textContent='Đã chép'});
@@ -734,6 +769,75 @@ footer a{color:var(--gold2)}
     if(cust&&v===unlockFor(cust)){store('nls-ok-'+cust,'1');var r=document.getElementById('results');r.classList.remove('is-locked');msg.textContent='';r.querySelector('.unlocked-ok').scrollIntoView({behavior:'smooth',block:'center'})}
     else{msg.innerHTML='<span class="bad">Mã chưa đúng, bạn kiểm tra lại hoặc nhắn Zalo cô Thảo nhé.</span> Mã khách: <strong>'+cust+'</strong>'}
   });
+
+  // ===== CHAT tự trả lời =====
+  var ZALO='https://zalo.me/0935949141';
+  function nz(t){return t.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d').replace(/Đ/g,'d').toLowerCase()}
+  var PRICES='Bảng giá các gói (bản giải mã viết sẵn, gửi file PDF qua Zalo):\n• Tự xem trọn bộ trên trang: 99.000đ\n• Bản Đồ Năng Lượng: 299.000đ\n• Thấu Hiểu Con Yêu: 599.000đ\n• Năng Lượng Tình Yêu: 799.000đ\n• Giải Mã Chuyên Sâu: 899.000đ\n• Đặt Tên & Chọn Số: 999.000đ\n• Trọn Bộ Năng Lượng Số: 4.999.000đ';
+  var QA=[
+    [['chao ','hello',' hi ',' alo','xin chao'],'Chào bạn 🌙 Bạn muốn hỏi về giá các gói, cách mở khóa 99k, hay ý nghĩa con số của mình?'],
+    [[' gia ','gia bao','gia goi','gia ca','bao nhieu','chi phi','bang gia',' phi ','bao tien',' bn '],PRICES],
+    [['mien phi','free','khong mat','mat phi','co phi'],'Số Chủ Đạo xem miễn phí ngay trên trang. Muốn xem trọn bộ 6 chỉ số, biểu đồ ngày sinh và 12 tháng cá nhân thì bạn mở khóa với 99.000đ nhé.'],
+    [['mo khoa','ma mo','99','chuyen khoan','thanh toan','stk','so tai khoan','qr','ck'],'Cách mở khóa trọn bộ 99.000đ:\n1. Nhập tên + ngày sinh ở phần "Tự xem", bấm Giải mã.\n2. Quét mã QR TPBank (8768 1714 131 · HOANG THI THANH THAO), nội dung ghi "NLS + mã khách" hiện trên trang.\n3. Bấm "Gửi Zalo cho cô Thảo", gửi kèm ảnh chuyển khoản.\n4. Cô gửi lại mã 6 số, bạn nhập vào là xem được hết.'],
+    [['chua nhan duoc ma','chua nhan ma','chua co ma mo khoa','chua nhan','chua co ma','lau','cho ma','sai ma','ma sai','khong mo duoc'],'Cô Thảo gửi mã ngay khi kiểm tra thấy tiền về. Nếu chờ lâu hoặc mã báo sai, bạn nhắn Zalo cho cô kèm ảnh chuyển khoản và mã khách nhé.','zalo'],
+    [['goi video','goi dien','zoom','1:1','gap truc tiep','noi chuyen'],'Các gói không cần gọi video hay gọi điện. Cô Thảo gửi bản giải mã viết sẵn (file PDF) qua Zalo, bạn đọc lại lúc nào cũng được, có thắc mắc thì nhắn tin hỏi thêm.'],
+    [['pdf','file','khi nao nhan','bao lau','nhan duoc gi','gui gi'],'Sau khi đăng ký và chuyển khoản, cô Thảo gửi bản giải mã viết sẵn (file PDF) qua Zalo. Thời gian nhận cô sẽ báo khi xác nhận đơn của bạn.'],
+    [['chon goi','goi nao','khac nhau','nen xem','tu van goi'],'Gợi ý chọn gói:\n• Muốn hiểu mình nhanh: Bản Đồ Năng Lượng (299k)\n• Cần định hướng sự nghiệp, tài chính, tình cảm: Giải Mã Chuyên Sâu (899k)\n• Muốn đầy đủ nhất + dự báo 12 tháng: Trọn Bộ Năng Lượng Số (4.999k)\n• Xem cho con: Thấu Hiểu Con Yêu (599k)\n• Xem cho 2 người: Năng Lượng Tình Yêu (799k)\n• Đặt tên, chọn số, ngày khai trương: Đặt Tên & Chọn Số (999k)'],
+    [['con nho','con toi','con minh','cho con','em be',' be ','tre em','tre con','nuoi day','hoc hanh'],'Gói Thấu Hiểu Con Yêu (599.000đ) giải mã chỉ số của bé: tính cách, năng khiếu, cách học, cách khen phù hợp và hướng phát triển lâu dài. Ba mẹ gửi họ tên khai sinh + ngày sinh dương lịch của bé qua Zalo để đăng ký.'],
+    [['nguoi yeu','chong','vo ','tinh cam','tinh yeu','hop nhau','hop khong','cuoi','hon nhan','cap doi'],'Gói Năng Lượng Tình Yêu (799.000đ) giải mã chỉ số của cả 2 người: điểm hợp, điểm dễ va chạm, cách giao tiếp và cùng nhau phát triển. Bạn gửi họ tên + ngày sinh của 2 người qua Zalo nhé.'],
+    [['dat ten','ten con','so dien thoai','sim','thuong hieu','ten cong ty','khai truong','ngay dep','ngay tot','chon so','so nha','bien so'],'Gói Đặt Tên & Chọn Số (999.000đ): phân tích năng lượng tên/số hiện tại, đề xuất 3 đến 5 phương án hợp năng lượng và gợi ý ngày đẹp để bắt đầu.'],
+    [['su nghiep','nghe','cong viec','kinh doanh','lam an','tai chinh','tien bac','buon ban','dinh huong'],'Về sự nghiệp, tài chính, bạn nên chọn gói Giải Mã Chuyên Sâu (899.000đ): toàn bộ chỉ số, 4 đỉnh cao, 4 thử thách, định hướng nghề nghiệp, tài chính, tình cảm và dự báo năm tới. Muốn thêm dự báo chi tiết 12 tháng và chọn ngày tốt trong năm thì có gói Trọn Bộ Năng Lượng Số.'],
+    [['chinh xac','dung khong','co dung','tin duoc','co that'],'Thần số học là công cụ tham khảo để tự hiểu mình. Phần tự xem tính đúng công thức Pythagoras. Bản giải mã chuyên sâu kết hợp nhiều chỉ số với nhau nên chi tiết và sát hơn nhiều.'],
+    [['xem boi','boi toan','me tin','tam linh','phong thuy','tu vi'],'Thần số học không phải bói toán hay phán vận mệnh. Đây là phương pháp phân tích con số từ họ tên và ngày sinh để hiểu tính cách, điểm mạnh, bài học và thời điểm phù hợp.'],
+    [['am lich','duong lich','lich am'],'Bạn dùng ngày sinh DƯƠNG lịch nhé. Nếu chỉ nhớ ngày âm, bạn đổi sang dương lịch trước khi nhập.'],
+    [['ten khai sinh','doi ten','ten goi','biet danh','ten nao','ho ten'],'Bạn nhập họ tên đầy đủ theo giấy khai sinh. Nếu đã đổi tên, khi đăng ký gói bạn gửi cả tên cũ và tên đang dùng để cô Thảo phân tích kỹ hơn.'],
+    [['o xa','nuoc ngoai','online','tinh khac','truc tuyen'],'Mọi thứ làm online cả. Bạn gửi thông tin qua Zalo, cô Thảo gửi lại bản giải mã. Ở đâu cũng xem được.'],
+    [['nam ca nhan','nam nay','nam toi','nam sau'],'Năm cá nhân là chu kỳ 9 năm, cho biết năm nay là năm gieo hạt, xây nền hay gặt hái. Nhập ngày sinh ở phần "Tự xem" để biết năm cá nhân của bạn nhé.'],
+    [['bieu do','so trong','o trong','mui ten'],'Biểu đồ ngày sinh xếp các con số trong ngày sinh vào 9 ô. Ô có số là năng lượng bạn sẵn có, ô trống là bài học cần bồi đắp. Phần này nằm trong bản tự xem trọn bộ 99.000đ.'],
+    [['master','so bac thay'],'11, 22, 33 là các số Master (bậc thầy): năng lượng mạnh, trực giác và sứ mệnh lớn, nhưng cũng nhiều thử thách hơn. Khi tính, các số này được giữ nguyên, không cộng tiếp.'],
+    [['hoan tien','tra lai tien','doi tra'],'Câu này bạn nhắn trực tiếp cô Thảo qua Zalo giúp mình nhé.','zalo'],
+    [['lien he','zalo','sdt','so dien thoai cua co','facebook','fb','hotline'],'Bạn liên hệ cô Thảo qua Zalo 0935 949 141, hoặc Facebook: facebook.com/thanhthao.hoang.73997861','zalo'],
+    [['co thao la ai','ve co','co thao'],'Cô Hoàng Thanh Thảo đồng hành cùng nhiều chủ doanh nghiệp, chủ spa và người làm kinh doanh online, dùng thần số học như tấm bản đồ để hiểu mình và chọn đúng thời điểm.'],
+    [['cam on','thank',' ok ','duoc roi'],'Cảm ơn bạn 🌟 Cần gì thêm bạn cứ hỏi nhé, hoặc nhắn Zalo cô Thảo 0935 949 141.']
+  ];
+  var LPQ=['so chu dao','duong doi','so menh','su menh','linh hon','nhan cach','so ngay sinh'];
+  function answer(q){
+    var t=' '+nz(q)+' ';
+    var me=window.__me;
+    if(/(cua toi|cua minh|cua em|cua con|toi la so|minh la so|so cua)/.test(t)){
+      if(!me)return ['Bạn nhập họ tên và ngày sinh ở phần "Tự xem" phía trên rồi bấm Giải mã, sau đó hỏi lại mình sẽ giải thích con số của bạn nhé.','tuxem'];
+      return ['Con số của '+me.name+':\n• Số Chủ Đạo '+me.lp+': '+M[me.lp][0]+'. '+M[me.lp][1]+'\n• Năm cá nhân '+CY+': số '+me.py+'. '+PY[me.py]+'\nCác chỉ số còn lại bạn xem trong bản trọn bộ 99.000đ nhé.'];
+    }
+    var mnum=t.match(/(?:so|con so)\s*(\d{1,2})\b/)||t.match(/^\s*(\d{1,2})\s*$/);
+    if(mnum&&M[+mnum[1]]){var n=+mnum[1];return ['Số '+n+' · '+M[n][0]+'\n'+M[n][1]+'\n'+M[n][2]]}
+    var best=null,score=0;
+    QA.forEach(function(it){var sc=0;it[0].forEach(function(k){if(t.indexOf(k)>-1)sc+=k.length});if(sc>score){score=sc;best=it}});
+    if(LPQ.some(function(k){return t.indexOf(k)>-1})&&(!best||score<6))return ['Số Chủ Đạo tính từ ngày sinh, cho biết con đường cuộc đời. Số Sứ Mệnh, Linh Hồn, Nhân Cách tính từ họ tên. Nhập thông tin ở phần "Tự xem" để biết số của bạn, Số Chủ Đạo xem miễn phí.','tuxem'];
+    if(best)return [best[1],best[2]];
+    return null;
+  }
+  var body=document.getElementById('chatBody'),chat=document.getElementById('chat'),inp=document.getElementById('chatInput');
+  function add(text,who,extra){
+    var m=document.createElement('div');m.className='msg '+who;m.textContent=text;
+    if(extra==='zalo'){var a=document.createElement('a');a.className='mini';a.href=ZALO;a.target='_blank';a.rel='noopener';a.textContent='Nhắn Zalo cô Thảo';m.appendChild(document.createElement('br'));m.appendChild(a)}
+    if(extra==='tuxem'){var b2=document.createElement('a');b2.className='mini';b2.href='#tu-xem';b2.style.background='#c99a4a';b2.style.color='#1a1205';b2.textContent='Đến phần Tự xem';b2.onclick=function(){chat.classList.remove('open')};m.appendChild(document.createElement('br'));m.appendChild(b2)}
+    body.appendChild(m);body.scrollTop=body.scrollHeight;
+  }
+  function ask(q){
+    if(!q.trim())return;add(q,'me');
+    setTimeout(function(){
+      var a=answer(q);
+      if(a)add(a[0],'bot',a[1]);
+      else{try{navigator.clipboard.writeText(q).catch(function(){})}catch(e){}add('Câu này để cô Thảo trả lời trực tiếp cho bạn nhé. Mình đã chép sẵn câu hỏi, bạn mở Zalo dán vào là gửi được.','bot','zalo')}
+    },350);
+  }
+  var CH=['Bảng giá các gói','Tự xem có mất phí không?','Cách mở khóa 99k','Nên chọn gói nào?','Xem cho con được không?','Số của tôi nghĩa là gì?'];
+  var chips=document.getElementById('chips');
+  CH.forEach(function(c){var b=document.createElement('button');b.type='button';b.textContent=c;b.onclick=function(){ask(c)};chips.appendChild(b)});
+  var opened=false;
+  document.getElementById('chatBtn').onclick=function(){chat.classList.add('open');if(!opened){opened=true;add('Chào bạn 🌙 Mình là trợ lý của cô Thảo. Bạn hỏi gì về thần số học, giá các gói hay cách mở khóa, mình trả lời ngay nhé.','bot')}setTimeout(function(){inp.focus()},50)};
+  document.getElementById('chatClose').onclick=function(){chat.classList.remove('open')};
+  document.getElementById('chatForm').addEventListener('submit',function(e){e.preventDefault();var q=inp.value;inp.value='';ask(q)});
 
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
