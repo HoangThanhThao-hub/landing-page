@@ -351,7 +351,23 @@ footer a{color:var(--gold2)}
 .mt-box figcaption{font-family:'Playfair Display',serif;font-size:20px;letter-spacing:.12em;color:#f6e2ae;margin-top:4px}
 @keyframes mtSway{0%,100%{transform:rotate(-1.2deg) scale(1)}50%{transform:rotate(1.2deg) scale(1.015)}}
 @keyframes mtGlow{0%,100%{opacity:.55;transform:scale(.95)}50%{opacity:1;transform:scale(1.06)}}
-@media(prefers-reduced-motion:reduce){.mt-box img,.mt-box::before{animation:none}#mua{display:none}}
+
+.mt-box .mt-rays{position:absolute;left:50%;top:40%;width:150%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;z-index:-2;pointer-events:none;
+ background:repeating-conic-gradient(from 0deg,rgba(255,220,130,.32) 0deg 6deg,rgba(255,220,130,0) 6deg 18deg);
+ -webkit-mask:radial-gradient(circle,#000 0,#000 25%,transparent 68%);mask:radial-gradient(circle,#000 0,#000 25%,transparent 68%);animation:mtRays 28s linear infinite}
+@keyframes mtRays{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.tk{position:relative;z-index:4;overflow:hidden;padding:13px 0;background:linear-gradient(90deg,#c99a4a,#f5dda0 50%,#d4a957);box-shadow:0 0 30px rgba(245,221,160,.35);transform:rotate(-1.2deg);margin:10px -10px}
+.tk.alt{transform:rotate(1.2deg);background:#0b1030;border-top:1px solid #e3c27a88;border-bottom:1px solid #e3c27a88}
+.tk-in{display:flex;width:max-content;animation:tkRun 26s linear infinite}
+.tk.alt .tk-in{animation-direction:reverse;animation-duration:32s}
+.tk span{white-space:nowrap;font-family:'Playfair Display',serif;font-weight:700;font-size:20px;letter-spacing:.06em;color:#1a1205;padding:0 18px}
+.tk.alt span{color:#f6e2ae}
+.tk i{font-style:normal;color:#8a5a12;font-size:16px;align-self:center}.tk.alt i{color:#e3c27a}
+@keyframes tkRun{to{transform:translateX(-50%)}}
+@media(max-width:700px){.tk span{font-size:16px;padding:0 12px}.tk{padding:10px 0}}
+.hero h1,.hero .hero-title{position:relative}
+.shine-sweep{position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 30%,rgba(255,246,210,.55) 48%,transparent 62%);background-size:250% 100%;mix-blend-mode:overlay;animation:sweep 4.5s ease-in-out infinite}
+@keyframes sweep{0%{background-position:150% 0}60%,100%{background-position:-60% 0}}
 </style>
 </head>
 <body>
@@ -377,7 +393,7 @@ footer a{color:var(--gold2)}
   <div class="wrap">
     <div>
       <span class="kicker">Thần số học · Pythagoras</span>
-      <h1><span class="gold">Giải Mã<br>Năng Lượng Số</span><em>Hiểu mình để chọn đúng đường</em></h1>
+      <h1><span class="gold">Giải Mã<br>Năng Lượng Số</span><em>Hiểu mình để chọn đúng đường</em><span class="shine-sweep" aria-hidden="true"></span></h1>
       <p class="hero-lead">Họ tên và ngày sinh của bạn ẩn chứa những con số nói lên tính cách, điểm mạnh, bài học và thời điểm phù hợp để hành động. Tự xem miễn phí ngay bên dưới, hoặc để cô Thảo giải mã chuyên sâu cho riêng bạn.</p>
       <div class="hero-ctas">
         <a class="btn btn-gold" href="#tu-xem">✦ Tự xem miễn phí</a>
@@ -404,6 +420,7 @@ footer a{color:var(--gold2)}
     </div>
   </div>
 </header>
+<div class="tk" aria-hidden="true"><div class="tk-in"><span>Xem Số Chủ Đạo miễn phí</span><i>✦</i><span>Tài lộc dồi dào</span><i>✦</i><span>Bản giải mã viết riêng trong 24 giờ</span><i>✦</i><span>Bình an · may mắn</span><i>✦</i><span>Hiểu số, hiểu mình</span><i>✦</i><span>Chọn đúng thời điểm hành động</span><i>✦</i><span>Xem Số Chủ Đạo miễn phí</span><i>✦</i><span>Tài lộc dồi dào</span><i>✦</i><span>Bản giải mã viết riêng trong 24 giờ</span><i>✦</i><span>Bình an · may mắn</span><i>✦</i><span>Hiểu số, hiểu mình</span><i>✦</i><span>Chọn đúng thời điểm hành động</span><i>✦</i></div></div>
 
 <!-- CALCULATOR -->
 <section class="section has-vbg" id="tu-xem" style="padding-top:40px">
@@ -544,10 +561,11 @@ footer a{color:var(--gold2)}
 </section>
 
 <!-- PACKAGES -->
+<div class="tk alt" aria-hidden="true"><div class="tk-in"><span>Chiêu tài đón lộc</span><i>✦</i><span>Sự nghiệp hanh thông</span><i>✦</i><span>Tình duyên viên mãn</span><i>✦</i><span>Gia đạo bình an</span><i>✦</i><span>Năm cá nhân của bạn là số mấy?</span><i>✦</i><span>Nhắn Zalo cô Thảo 0935 949 141</span><i>✦</i><span>Chiêu tài đón lộc</span><i>✦</i><span>Sự nghiệp hanh thông</span><i>✦</i><span>Tình duyên viên mãn</span><i>✦</i><span>Gia đạo bình an</span><i>✦</i><span>Năm cá nhân của bạn là số mấy?</span><i>✦</i><span>Nhắn Zalo cô Thảo 0935 949 141</span><i>✦</i></div></div>
 <section class="section" id="goi-xem">
   <div class="wrap">
     <div class="section-head reveal">
-      <figure class="mt-box"><img src="img/cay-dong-tien.webp?v=1" width="720" height="900" alt="Cây đồng tiền phong thủy chiêu tài đón lộc" loading="lazy"><figcaption>Chiêu tài · Đón lộc</figcaption></figure>
+      <figure class="mt-box"><span class="mt-rays" aria-hidden="true"></span><img src="img/cay-dong-tien.webp?v=1" width="720" height="900" alt="Cây đồng tiền phong thủy chiêu tài đón lộc" loading="lazy"><figcaption>Chiêu tài · Đón lộc</figcaption></figure>
       <span class="kicker">Gói giải mã</span>
       <h2>Chọn gói <span class="gold">phù hợp với bạn</span></h2>
       <p>Mỗi bản giải mã được cô Thảo làm riêng cho từng người, dựa trên họ tên và ngày sinh của bạn.</p>
@@ -1076,7 +1094,7 @@ footer a{color:var(--gold2)}
 <script src="js/nls-report.js" defer></script>
 <canvas id="mua" aria-hidden="true"></canvas>
 <script>
-(function(){var c=document.getElementById('mua');if(!c||!c.getContext||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+(function(){var c=document.getElementById('mua');if(!c||!c.getContext)return;
 var x=c.getContext('2d'),W,H,D=Math.min(devicePixelRatio||1,2),P=[],S=[],nextS=0,mob=innerWidth<700;
 function rs(){W=innerWidth;H=innerHeight;c.width=W*D;c.height=H*D;x.setTransform(D,0,0,D,0,0)}rs();addEventListener('resize',rs);
 function spr(n,draw){var o=document.createElement('canvas');o.width=o.height=n;draw(o.getContext('2d'),n);return o}
@@ -1089,14 +1107,22 @@ var STAR=spr(64,function(g,n){var c2=n/2;g.drawImage(GLOW,0,0,n,n);g.fillStyle='
 function mk(top){var k=Math.random(),t=k<.38?'coin':(k<.7?'star':'orb');var s=t=='coin'?(mob?14:18)+Math.random()*(mob?10:16):t=='star'?(mob?12:16)+Math.random()*14:6+Math.random()*16;
  return{t:t,x:Math.random()*W,y:top?-40:Math.random()*H,v:(t=='coin'?.9:.5)+Math.random()*(t=='coin'?1.1:.7),w:Math.random()*6.28,s:s,rot:Math.random()*6.28,vr:(Math.random()-.5)*.06,a:.65+Math.random()*.35}}
 for(var i=0;i<(mob?22:42);i++)P.push(mk(false));
+var B=[];window.nlsBurst=function(bx,by,n,coins){for(var k=0;k<n;k++){var a=-Math.PI/2+(Math.random()-.5)*2.6,sp=4+Math.random()*7;B.push({x:bx,y:by,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,t:(coins&&Math.random()<.6)?'coin':'star',s:(mob?14:18)+Math.random()*12,rot:Math.random()*6,vr:(Math.random()-.5)*.3,w:Math.random()*6,life:1})}};
 var last=0;function f(t){requestAnimationFrame(f);if(document.hidden||t-last<28)return;var dt=last?Math.min((t-last)/16.7,3):1;last=t;x.clearRect(0,0,W,H);
 P.forEach(function(p){p.y+=p.v*dt;p.w+=.025*dt;p.rot+=p.vr*dt;if(p.y>H+40){Object.assign(p,mk(true))}var px=p.x+Math.sin(p.w)*16;
  if(p.t=='coin'){x.save();x.translate(px,p.y);x.rotate(p.rot);x.scale(.25+.75*Math.abs(Math.cos(p.w*1.6)),1);x.globalAlpha=p.a;x.drawImage(COIN,-p.s,-p.s,p.s*2,p.s*2);x.restore()}
  else{x.globalAlpha=p.a*(.55+.45*Math.sin(p.w*3));x.drawImage(p.t=='star'?STAR:GLOW,px-p.s/2,p.y-p.s/2,p.s,p.s);x.globalAlpha=1}});
+B=B.filter(function(b){b.vy+=.22*dt;b.vx*=.99;b.x+=b.vx*dt;b.y+=b.vy*dt;b.rot+=b.vr*dt;b.w+=.1*dt;b.life-=.009*dt;x.globalAlpha=Math.max(0,Math.min(1,b.life*1.4));
+ if(b.t=='coin'){x.save();x.translate(b.x,b.y);x.rotate(b.rot);x.scale(.25+.75*Math.abs(Math.cos(b.w)),1);x.drawImage(COIN,-b.s,-b.s,b.s*2,b.s*2);x.restore()}else x.drawImage(STAR,b.x-b.s/2,b.y-b.s/2,b.s,b.s);
+ x.globalAlpha=1;return b.life>0&&b.y<H+60});
 if(t>nextS){S.push({x:W*(.25+Math.random()*.85),y:-20,l:0,sp:9+Math.random()*5});nextS=t+2500+Math.random()*3500}
 S=S.filter(function(s){s.l+=dt;var hx=s.x-s.l*s.sp,hy=s.y+s.l*s.sp*.6,L=mob?160:260;var g=x.createLinearGradient(hx,hy,hx+L,hy-L*.6);g.addColorStop(0,'rgba(255,246,210,1)');g.addColorStop(.3,'rgba(255,214,120,.6)');g.addColorStop(1,'rgba(255,214,120,0)');
  x.strokeStyle=g;x.lineWidth=3;x.lineCap='round';x.beginPath();x.moveTo(hx,hy);x.lineTo(hx+L,hy-L*.6);x.stroke();x.drawImage(STAR,hx-18,hy-18,36,36);return hy<H*.85&&hx>-L});x.globalAlpha=1}
-requestAnimationFrame(f)})();
+requestAnimationFrame(f);
+addEventListener('pointerdown',function(e){nlsBurst(e.clientX,e.clientY,mob?10:14,true)},{passive:true});
+setTimeout(function(){var h=document.querySelector('.hero-visual')||document.querySelector('.hero');if(!h)return;var r=h.getBoundingClientRect();nlsBurst(r.left+r.width/2,Math.max(80,r.top+r.height*.35),mob?26:40,true)},700);
+var mt=document.querySelector('.mt-box');if(mt&&'IntersectionObserver' in window){var fired=0;new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting&&Date.now()-fired>6000){fired=Date.now();var r=mt.getBoundingClientRect();var n=0,iv=setInterval(function(){var rr=mt.getBoundingClientRect();nlsBurst(rr.left+rr.width/2,rr.top+rr.height*.3,mob?10:16,true);if(++n>=3)clearInterval(iv)},350)}})},{threshold:.5}).observe(mt)}
+})();
 </script>
 </body>
 </html>
