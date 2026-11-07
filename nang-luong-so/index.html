@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Giải Mã Năng Lượng Số – Cô Thảo</title>
-<meta name="description" content="Tự xem thần số học miễn phí: nhập họ tên và ngày sinh để biết Số Chủ Đạo, Số Sứ Mệnh, Số Linh Hồn, Năm Cá Nhân. Đặt lịch giải mã chuyên sâu cùng cô Thảo qua Zalo 0935 949 141.">
+<meta name="description" content="Tự xem thần số học: nhập họ tên và ngày sinh để biết Số Chủ Đạo, Số Sứ Mệnh, Số Linh Hồn, Năm Cá Nhân. Đặt lịch giải mã chuyên sâu cùng cô Thảo qua Zalo 0935 949 141.">
 <meta name="theme-color" content="#0a0f24">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -123,6 +123,41 @@ h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-heigh
 .locked .row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
 .copied{font-size:13px;color:var(--gold2);margin-top:10px;min-height:20px}
 
+/* paywall */
+.results.is-locked .lockable{filter:blur(8px);opacity:.55;pointer-events:none;user-select:none;max-height:520px;overflow:hidden;-webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent)}
+.results:not(.is-locked) .unlock{display:none}
+.unlock{margin:4px 0 22px;padding:30px;border-radius:24px;border:1px solid var(--gold);background:linear-gradient(150deg,#221d4d,#0e1334);box-shadow:0 0 0 6px #e3c27a12,0 30px 70px #0008}
+.unlock-head{text-align:center;margin-bottom:22px}
+.unlock-head h4{font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,30px);font-weight:600;margin:6px 0}
+.unlock-head .price{font-size:44px;margin:6px 0}
+.unlock-head ul{list-style:none;padding:0;margin:12px auto 0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:720px}
+.unlock-head li{font-size:13px;padding:6px 12px;border-radius:999px;background:#e3c27a14;border:1px solid #e3c27a44;color:#f3e6c4}
+.unlock-head li:before{content:'✓ ';color:var(--gold)}
+.pay{display:grid;grid-template-columns:230px 1fr;gap:26px;align-items:start}
+.qr{background:#fff;border-radius:16px;padding:10px;text-align:center}
+.qr img{width:100%;border-radius:8px}
+.qr small{display:block;color:#333;font-size:11px;margin-top:4px}
+.paysteps{display:grid;gap:14px}
+.ps{padding:16px 18px;border-radius:16px;background:#0a1028;border:1px solid var(--line)}
+.ps b{display:block;color:var(--gold2);font-size:14px;margin-bottom:8px}
+.kv{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:14px;padding:4px 0;flex-wrap:wrap}
+.kv span{color:var(--muted)}
+.kv strong{font-weight:700;letter-spacing:.02em}
+.cp{background:#e3c27a1f;border:1px solid #e3c27a66;color:var(--gold2);border-radius:999px;padding:3px 10px;font-size:12px;cursor:pointer;font-family:inherit}
+.ps .btn{padding:12px 20px;font-size:14px}
+.codebox{display:flex;gap:10px;flex-wrap:wrap}
+.codebox input{flex:1;min-width:150px;padding:13px 16px;border-radius:12px;border:1px solid #3a4680;background:#05091d;color:var(--text);font:inherit;font-size:18px;letter-spacing:.2em;text-transform:uppercase;outline:none}
+.codebox input:focus{border-color:var(--gold)}
+.ps .hint{font-size:12.5px;color:var(--muted);margin:8px 0 0}
+.ps .bad{color:#ff9fae}
+.months{margin-top:20px;padding:26px;border:1px solid var(--line);border-radius:18px;background:#0b1129}
+.months h4{font-family:'Playfair Display',serif;font-size:22px;margin:0 0 16px;font-weight:600}
+.mgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.mgrid div{padding:12px;border-radius:12px;background:#ffffff08;border:1px solid #ffffff12;font-size:12.5px;color:var(--muted);line-height:1.45}
+.mgrid b{display:block;color:var(--gold2);font-size:13px;margin-bottom:3px}
+.unlocked-ok{display:none;text-align:center;color:var(--gold2);font-weight:700;margin:0 0 16px}
+.results:not(.is-locked) .unlocked-ok{display:block}
+
 /* benefits */
 .benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .benefit{padding:30px 24px;border-radius:var(--radius);background:linear-gradient(170deg,#141c42,#0b1129);border:1px solid var(--line);transition:border-color .3s,transform .3s}
@@ -207,7 +242,9 @@ footer a{color:var(--gold2)}
   .indices{grid-template-columns:1fr 1fr}
   .calc-form{grid-template-columns:1fr}
 }
+@media(max-width:760px){.pay{grid-template-columns:1fr}.qr{max-width:260px;margin:0 auto}.mgrid{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){
+  .unlock{padding:22px 16px}
   .section{padding:70px 0}
   .calc{padding:26px 18px;border-radius:22px}
   .benefits,.packs,.steps,.num-grid,.indices{grid-template-columns:1fr}
@@ -253,7 +290,7 @@ footer a{color:var(--gold2)}
       </div>
       <ul class="hero-points">
         <li>Chỉ cần họ tên + ngày sinh</li>
-        <li>Có kết quả ngay</li>
+        <li>Số chủ đạo miễn phí</li>
         <li>Tư vấn 1:1 qua Zalo / Zoom</li>
       </ul>
     </div>
@@ -267,7 +304,7 @@ footer a{color:var(--gold2)}
         </g>
       </svg>
       <div class="portrait"><img src="img/co-thao-toc-xoa.jpg" alt="Cô Hoàng Thanh Thảo" fetchpriority="high"></div>
-      <div class="badge b1"><b>6 chỉ số</b>xem miễn phí ngay</div>
+      <div class="badge b1"><b>Số chủ đạo</b>xem miễn phí ngay</div>
       <div class="badge b2"><b>1:1</b>giải mã cùng cô Thảo</div>
     </div>
   </div>
@@ -277,9 +314,9 @@ footer a{color:var(--gold2)}
 <section class="section" id="tu-xem" style="padding-top:40px">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="kicker">Miễn phí</span>
+      <span class="kicker">Xem ngay</span>
       <h2>Tự xem <span class="gold">con số của bạn</span></h2>
-      <p>Nhập họ tên đầy đủ theo giấy khai sinh và ngày sinh dương lịch. Kết quả hiện ngay trên trang, không cần đăng ký.</p>
+      <p>Nhập họ tên đầy đủ theo giấy khai sinh và ngày sinh dương lịch. Số Chủ Đạo hiện ngay miễn phí. Muốn xem đủ 6 chỉ số, biểu đồ ngày sinh và 12 tháng cá nhân, bạn mở khóa với 99.000đ.</p>
     </div>
     <div class="calc reveal">
       <form class="calc-form" id="calcForm" autocomplete="off">
@@ -313,6 +350,36 @@ footer a{color:var(--gold2)}
           </div>
         </div>
 
+        <div class="unlock" id="unlock">
+          <div class="unlock-head">
+            <span class="kicker">Xem trọn bộ</span>
+            <h4>Mở khóa bản tự xem đầy đủ</h4>
+            <div class="price">99.000đ</div>
+            <ul><li>5 chỉ số còn lại</li><li>Biểu đồ ngày sinh</li><li>Năm cá nhân năm nay & năm tới</li><li>12 tháng cá nhân năm <span class="cy"></span></li></ul>
+          </div>
+          <div class="pay">
+            <div class="qr"><img id="qrImg" alt="Mã QR chuyển khoản TPBank" loading="lazy"><small>Quét bằng app ngân hàng, đã điền sẵn số tiền và nội dung</small></div>
+            <div class="paysteps">
+              <div class="ps"><b>Bước 1 · Chuyển khoản 99.000đ</b>
+                <div class="kv"><span>Ngân hàng</span><strong>TPBank</strong></div>
+                <div class="kv"><span>Số tài khoản</span><strong>8768 1714 131</strong><button class="cp" type="button" data-copy="87681714131">Chép</button></div>
+                <div class="kv"><span>Chủ tài khoản</span><strong>HOANG THI THANH THAO</strong></div>
+                <div class="kv"><span>Nội dung</span><strong id="payNote"></strong><button class="cp" type="button" id="cpNote">Chép</button></div>
+              </div>
+              <div class="ps"><b>Bước 2 · Gửi ảnh chuyển khoản cho cô Thảo</b>
+                <a class="btn btn-gold" id="zaloPay" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Gửi Zalo cho cô Thảo</a>
+                <p class="hint">Bấm nút là thông tin của bạn được chép sẵn, mở Zalo ra bạn chỉ cần dán và gửi kèm ảnh chuyển khoản.</p>
+              </div>
+              <div class="ps"><b>Bước 3 · Nhập mã mở khóa cô gửi lại</b>
+                <div class="codebox"><input id="unlockCode" maxlength="6" placeholder="Mã 6 số" inputmode="numeric"><button class="btn btn-gold" type="button" id="unlockBtn">Mở khóa</button></div>
+                <p class="hint" id="unlockMsg">Mã khách của bạn: <strong id="custCode"></strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="unlocked-ok">✦ Bạn đã mở khóa bản tự xem đầy đủ ✦</p>
+
+        <div class="lockable">
         <div class="num-grid" id="numGrid"></div>
 
         <div class="chart-row">
@@ -323,15 +390,17 @@ footer a{color:var(--gold2)}
             <p class="miss" id="missText"></p>
           </div>
         </div>
+        <div class="months"><h4>12 tháng cá nhân năm <span class="cy"></span></h4><div class="mgrid" id="mgrid"></div></div>
+        </div>
 
         <div class="locked">
-          <h4>Đây mới là phần mở đầu</h4>
-          <p style="color:var(--muted);margin:0 0 18px">Bản giải mã đầy đủ còn nhiều chỉ số quan trọng mà cô Thảo sẽ phân tích riêng cho bạn:</p>
+          <h4>Muốn hiểu sâu hơn?</h4>
+          <p style="color:var(--muted);margin:0 0 18px">Bản giải mã chuyên sâu cùng cô Thảo còn nhiều chỉ số quan trọng được phân tích riêng cho bạn:</p>
           <ul>
             <li>4 đỉnh cao cuộc đời</li><li>4 thử thách</li><li>Các mũi tên sức mạnh & trống</li><li>Số thái độ</li><li>Số trưởng thành</li><li>Năm, tháng cá nhân 12 tháng tới</li><li>Nghề nghiệp phù hợp</li><li>Tương hợp tình cảm</li>
           </ul>
           <div class="row">
-            <a class="btn btn-gold" id="zaloResult" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Gửi kết quả cho cô Thảo qua Zalo</a>
+            <a class="btn btn-gold" id="zaloResult" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Hỏi cô Thảo qua Zalo</a>
             <a class="btn btn-ghost" href="#goi-xem">Xem các gói giải mã</a>
           </div>
           <p class="copied" id="copied"></p>
@@ -515,7 +584,7 @@ footer a{color:var(--gold2)}
       <details open><summary>Thần số học là gì? Có phải bói toán không?</summary><p>Thần số học (theo trường phái Pythagoras) phân tích các con số từ họ tên và ngày sinh để mô tả tính cách, điểm mạnh và bài học của mỗi người. Đây không phải bói toán hay phán vận mệnh, mà là công cụ để tự soi chiếu và định hướng.</p></details>
       <details><summary>Tôi cần chuẩn bị thông tin gì?</summary><p>Chỉ cần họ tên đầy đủ theo giấy khai sinh và ngày tháng năm sinh dương lịch. Nếu đổi tên sau này, bạn gửi cả tên cũ và tên đang dùng.</p></details>
       <details><summary>Tôi ở xa có xem được không?</summary><p>Được. Cô Thảo xem online qua Zoom hoặc gọi Zalo, bạn ở bất cứ đâu cũng tham gia được.</p></details>
-      <details><summary>Kết quả tự xem trên trang có chính xác không?</summary><p>Phần tự xem tính đúng 6 chỉ số cơ bản theo công thức Pythagoras. Bản giải mã chuyên sâu sẽ kết hợp nhiều chỉ số với nhau và với hoàn cảnh thực tế của bạn, nên chi tiết và sát hơn nhiều.</p></details>
+      <details><summary>Kết quả tự xem trên trang có chính xác không?</summary><p>Phần tự xem (Số Chủ Đạo miễn phí, trọn bộ 99.000đ) tính đúng 6 chỉ số cơ bản theo công thức Pythagoras. Bản giải mã chuyên sâu sẽ kết hợp nhiều chỉ số với nhau và với hoàn cảnh thực tế của bạn, nên chi tiết và sát hơn nhiều.</p></details>
       <details><summary>Có xem cho con nhỏ hoặc cho cả gia đình được không?</summary><p>Được. Gói Thấu Hiểu Con Yêu dành cho ba mẹ, và gói Năng Lượng Tình Yêu dành cho cặp đôi, vợ chồng.</p></details>
     </div>
   </div>
@@ -526,7 +595,7 @@ footer a{color:var(--gold2)}
     <div class="final-box reveal">
       <span class="kicker">Bắt đầu hôm nay</span>
       <h2><span class="gold">Hiểu con số, hiểu chính mình</span></h2>
-      <p>Nhắn Zalo cho cô Thảo để được tư vấn gói phù hợp, hoặc tự xem miễn phí 6 chỉ số ngay bây giờ.</p>
+      <p>Nhắn Zalo cho cô Thảo để được tư vấn gói phù hợp, hoặc tự xem Số Chủ Đạo miễn phí ngay bây giờ.</p>
       <div class="row">
         <a class="btn btn-gold" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Nhắn Zalo 0935 949 141</a>
         <a class="btn btn-ghost" href="#tu-xem">Tự xem miễn phí</a>
@@ -576,7 +645,15 @@ footer a{color:var(--gold2)}
   function val(ch){return ((ch.charCodeAt(0)-65)%9)+1}
   var V='AEIOUY';
 
-  var lastText='';
+  var lastText='',payText='',cust='';
+  var SALT='ctnls26';
+  function h(str){var x=2166136261;for(var i=0;i<str.length;i++){x^=str.charCodeAt(i);x=Math.imul(x,16777619)>>>0}return x}
+  function custCode(name,dd,mm,yy){var a='ABCDEFGHJKLMNPQRSTUVWXYZ23456789',x=h(clean(name)+'|'+dd+'/'+mm+'/'+yy),o='';for(var i=0;i<5;i++){o+=a[x%a.length];x=Math.floor(x/a.length)}return o}
+  function unlockFor(c){return String(h(SALT+c.toUpperCase())%900000+100000)}
+  function store(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+  function load(k){try{return localStorage.getItem(k)}catch(e){return null}}
+  function copy(t,msg){try{navigator.clipboard.writeText(t)}catch(e){}if(msg){var c=document.getElementById('unlockMsg');c.innerHTML=msg}}
+  document.querySelectorAll('.cy').forEach(function(e){e.textContent=CY});
   document.getElementById('calcForm').addEventListener('submit',function(e){
     e.preventDefault();
     var err=document.getElementById('err');err.style.display='none';
@@ -624,7 +701,21 @@ footer a{color:var(--gold2)}
     document.getElementById('missText').textContent=missing.length?('Số trống: '+missing.join(', ')+'. Bạn nên bồi đắp thêm: '+missing.map(function(x){return MISS[x]}).join('; ')+'.'):'Biểu đồ của bạn có đủ 9 con số, một năng lượng khá cân bằng.';
 
     lastText='Chào cô Thảo, con/em vừa tự xem thần số học trên trang của cô:\n- Họ tên: '+name+'\n- Ngày sinh: '+dd+'/'+mm+'/'+yy+'\n- Số Chủ Đạo: '+lp+' | Sứ Mệnh: '+ex+' | Linh Hồn: '+su+' | Nhân Cách: '+pe+' | Năm cá nhân '+CY+': '+py+'\nNhờ cô tư vấn gói giải mã chuyên sâu ạ.';
-    var r=document.getElementById('results');r.classList.add('show');
+    // months
+    var mg=document.getElementById('mgrid');mg.innerHTML='';
+    for(var k=1;k<=12;k++){var pm=reduce(py+k);var el2=document.createElement('div');el2.innerHTML='<b></b><span></span>';el2.querySelector('b').textContent='Tháng '+k+' · số '+pm;el2.querySelector('span').textContent=PY[pm].split(':')[1].trim();mg.appendChild(el2)}
+
+    cust=custCode(name,dd,mm,yy);
+    var note='NLS '+cust;
+    document.getElementById('payNote').textContent=note;
+    document.getElementById('custCode').textContent=cust;
+    document.getElementById('qrImg').src='https://img.vietqr.io/image/TPB-87681714131-compact2.png?amount=99000&addInfo='+encodeURIComponent(note)+'&accountName='+encodeURIComponent('HOANG THI THANH THAO');
+    document.getElementById('qrImg').onerror=function(){this.onerror=null;this.src='qr-tpbank.jpg';this.nextElementSibling.textContent='Quét mã, nhập số tiền 99.000đ và chép nội dung bên cạnh'};
+    payText='Chào cô Thảo, con/em đã chuyển khoản 99.000đ để mở khóa bản tự xem thần số học.\n- Mã khách: '+cust+'\n- Họ tên: '+name+'\n- Ngày sinh: '+dd+'/'+mm+'/'+yy+'\nCon/em gửi kèm ảnh chuyển khoản, nhờ cô gửi mã mở khóa ạ.';
+    var r=document.getElementById('results');
+    if(load('nls-ok-'+cust)==='1')r.classList.remove('is-locked');else r.classList.add('is-locked');
+    document.getElementById('unlockCode').value='';
+    r.classList.add('show');
     setTimeout(function(){r.scrollIntoView({behavior:'smooth',block:'start'})},60);
   });
 
@@ -632,6 +723,16 @@ footer a{color:var(--gold2)}
     if(!lastText)return;
     var c=document.getElementById('copied');
     try{navigator.clipboard.writeText(lastText).then(function(){c.textContent='Đã chép sẵn kết quả. Mở Zalo xong bạn chỉ cần dán và gửi cho cô.'})}catch(e){}
+  });
+
+  document.getElementById('cpNote').addEventListener('click',function(){copy(document.getElementById('payNote').textContent);this.textContent='Đã chép'});
+  document.querySelector('[data-copy]').addEventListener('click',function(){copy(this.getAttribute('data-copy'));this.textContent='Đã chép'});
+  document.getElementById('zaloPay').addEventListener('click',function(){if(payText)copy(payText,'Đã chép sẵn tin nhắn. Mở Zalo, dán và gửi kèm ảnh chuyển khoản. Mã khách: <strong>'+cust+'</strong>')});
+  document.getElementById('unlockBtn').addEventListener('click',function(){
+    var v=document.getElementById('unlockCode').value.replace(/\D/g,'');
+    var msg=document.getElementById('unlockMsg');
+    if(cust&&v===unlockFor(cust)){store('nls-ok-'+cust,'1');var r=document.getElementById('results');r.classList.remove('is-locked');msg.textContent='';r.querySelector('.unlocked-ok').scrollIntoView({behavior:'smooth',block:'center'})}
+    else{msg.innerHTML='<span class="bad">Mã chưa đúng, bạn kiểm tra lại hoặc nhắn Zalo cô Thảo nhé.</span> Mã khách: <strong>'+cust+'</strong>'}
   });
 
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});

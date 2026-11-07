@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Lấy mã mở khóa – cô Thảo</title>
+<style>
+:root{--bg:#080c1f;--gold:#e3c27a;--text:#eef0fa;--muted:#aeb6d6}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 0%,#2b2470,transparent 60%),var(--bg);color:var(--text);font-family:system-ui,'Segoe UI',sans-serif;padding:16px}
+.box{width:min(440px,100%);padding:32px 24px;border-radius:24px;border:1px solid #e3c27a77;background:#0e1433;text-align:center}
+h1{font-size:24px;margin:0 0 6px;color:#f6e2ae}
+p{color:var(--muted);font-size:15px;margin:0 0 20px}
+input{width:100%;padding:16px;border-radius:14px;border:1px solid #3a4680;background:#05091d;color:var(--text);font-size:24px;letter-spacing:.25em;text-align:center;text-transform:uppercase;outline:none}
+input:focus{border-color:var(--gold)}
+.out{margin-top:22px;font-size:46px;font-weight:800;letter-spacing:.12em;color:#f6e2ae;min-height:56px}
+button{margin-top:10px;padding:14px 26px;border-radius:999px;border:0;background:linear-gradient(120deg,#c99a4a,#f5dda0 45%,#d4a957);color:#1a1205;font-weight:800;font-size:16px;cursor:pointer;display:none}
+small{display:block;margin-top:18px;color:#7f88ad;font-size:12.5px}
+</style>
+</head>
+<body>
+<div class="box">
+  <h1>Lấy mã mở khóa</h1>
+  <p>Cô nhập <b>mã khách</b> (5 chữ trong tin nhắn Zalo của khách, VD: K7MPA) sau khi đã thấy tiền 99.000đ về tài khoản.</p>
+  <input id="c" maxlength="5" placeholder="MÃ KHÁCH" autocomplete="off" autofocus>
+  <div class="out" id="o"></div>
+  <button id="b" type="button">Chép mã để gửi khách</button>
+  <small>Trang này chỉ dành cho cô, không gửi link cho khách.</small>
+</div>
+<script>
+function h(s){var x=2166136261;for(var i=0;i<s.length;i++){x^=s.charCodeAt(i);x=Math.imul(x,16777619)>>>0}return x}
+var c=document.getElementById('c'),o=document.getElementById('o'),b=document.getElementById('b');
+c.addEventListener('input',function(){var v=c.value.toUpperCase().replace(/[^A-Z0-9]/g,'');c.value=v;if(v.length===5){o.textContent=String(h('ctnls26'+v)%900000+100000);b.style.display='inline-block';b.textContent='Chép mã để gửi khách'}else{o.textContent='';b.style.display='none'}});
+b.addEventListener('click',function(){try{navigator.clipboard.writeText(o.textContent)}catch(e){}b.textContent='Đã chép, cô dán vào Zalo gửi khách'});
+</script>
+</body>
+</html>
