@@ -442,6 +442,22 @@ footer a{color:var(--gold2)}
 .lk-x{position:absolute;top:8px;right:10px;width:36px;height:36px;border-radius:50%;border:1px solid #ffffff33;background:#ffffff10;color:#fff;font-size:22px;cursor:pointer}
 @media(max-width:760px){.lk-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:420px){.lk-grid{grid-template-columns:1fr}}
+
+/* bat cuc linh so */
+.bc-sum{margin-top:18px;padding:14px 16px;border-radius:14px;border:1px solid #ffffff22;background:#ffffff08}.bc-sum small{display:block;color:var(--muted);font-size:12.5px;margin-bottom:4px}.bc-sum b{font-size:16px}
+.bc-sum.ok{border-color:#5dd39e88;background:#5dd39e14}.bc-sum.mid{border-color:#e3c27a88;background:#e3c27a12}.bc-sum.warn{border-color:#f0a35e88;background:#f0a35e10}
+.bc-h{font-family:'Playfair Display',serif;font-size:18px;margin:18px 0 8px;color:var(--gold2)}
+.bc-pairs{display:flex;flex-wrap:wrap;gap:6px}
+.bp{display:flex;flex-direction:column;align-items:center;min-width:64px;padding:6px 8px;border-radius:10px;border:1px solid #ffffff22;background:#ffffff08}
+.bp b{font-size:18px;letter-spacing:.08em}.bp i{font-style:normal;font-size:11px;color:var(--muted)}
+.bp.g{border-color:#5dd39e88;background:#5dd39e14}.bp.g i{color:#8fe8bf}.bp.b{border-color:#f0a35e88;background:#f0a35e12}.bp.b i{color:#f6c08d}.bp.u{opacity:.75}
+.bc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.bc-grid div{text-align:center;padding:8px 4px;border-radius:10px;background:#ffffff08;border:1px solid #ffffff1a}.bc-grid b{display:block;font-size:20px}.bc-grid span{font-size:12px;color:var(--muted)}
+.bc-grid .g b{color:#8fe8bf}.bc-grid .b b{color:#f6c08d}.bc-grid .z{opacity:.45}
+.bc-mean ul{margin:0;padding-left:18px;color:#d3d8ee}.bc-mean li{margin:4px 0}
+.bc-br{display:block;font-style:normal;font-size:14px;color:var(--gold2);margin-top:6px}.bp i+i{color:#d3d8ee;font-size:10.5px}
+.bc-el{font-size:13px;color:var(--muted);margin:14px 0 0}
+@media(max-width:480px){.bc-grid{grid-template-columns:repeat(2,1fr)}.bp{min-width:58px}}
 </style>
 </head>
 <body>
@@ -454,6 +470,7 @@ footer a{color:var(--gold2)}
     <div class="navlinks">
       <a href="#tu-xem">Tự xem miễn phí</a>
       <a href="#chi-so">Các chỉ số</a>
+      <a href="#cac-loai-so">Các loại số</a>
       <a href="#goi-xem">Gói giải mã</a>
       <a href="#co-thao">Về cô Thảo</a>
       <a href="#hoi-dap">Hỏi đáp</a>
@@ -594,15 +611,24 @@ footer a{color:var(--gold2)}
 </section>
 
 <!-- CAC LOAI SO -->
-<section class="section" id="cac-loai-so" style="padding-top:30px" hidden>
+<section class="section" id="cac-loai-so" style="padding-top:30px">
   <div class="wrap">
-    <div class="section-head reveal"><span class="kicker">Miễn phí</span><h2>Xem năng lượng <span class="gold">các loại số</span></h2><p>Số điện thoại, biển số xe, số nhà, số tài khoản... Nhập dãy số, app cộng các chữ số và cho biết con số năng lượng của nó.</p></div>
+    <div class="section-head reveal"><span class="kicker">Miễn phí · Bát Cực Linh Số</span><h2>Xem năng lượng <span class="gold">các loại số</span></h2><p>Số điện thoại, căn cước, biển số xe, số tài khoản... App tách dãy thành từng cặp số liền nhau và xếp vào 8 nhóm: 4 nhóm cát (Thiên Y, Sinh Khí, Diên Niên, Phục Vị) và 4 nhóm cần lưu ý.</p></div>
     <div class="ls-box reveal">
-      <div class="ls-tabs" id="lsTabs"><button type="button" class="on" data-t="Số điện thoại">📱 Điện thoại</button><button type="button" data-t="Biển số xe">🚗 Biển số xe</button><button type="button" data-t="Số nhà">🏠 Số nhà</button><button type="button" data-t="Số tài khoản">💳 Số tài khoản</button></div>
+      <div class="ls-tabs" id="lsTabs"><button type="button" class="on" data-t="Số điện thoại">📱 Điện thoại</button><button type="button" data-t="Căn cước">🪪 Căn cước</button><button type="button" data-t="Biển số xe">🚗 Biển số xe</button><button type="button" data-t="Số tài khoản">💳 Số tài khoản</button><button type="button" data-t="Dãy số">🔢 Dãy khác</button></div>
       <form class="ls-form" id="lsForm" autocomplete="off"><input id="lsIn" inputmode="numeric" placeholder="Nhập dãy số, VD: 0935 949 141"><button class="btn btn-gold" type="submit">Xem ✦</button></form>
       <p class="err" id="lsErr"></p>
-      <div class="ls-res" id="lsRes" hidden><div class="ls-num" id="lsNum"></div><div><small id="lsKind"></small><h3 id="lsTitle"></h3><p id="lsDesc"></p><p class="ls-sum" id="lsSum"></p></div></div>
-      <p class="ls-note">Kết quả mang tính tham khảo, giúp bạn hiểu năng lượng con số. Muốn cô Thảo chọn số hợp với riêng bạn, xem gói <a href="#goi-xem">Đặt Tên &amp; Chọn Số</a>.</p>
+      <div id="lsRes" hidden>
+        <div class="bc-sum" id="bcSum"></div>
+        <h4 class="bc-h">Các cặp số liền nhau</h4>
+        <div class="bc-pairs" id="bcPairs"></div>
+        <div id="bcBridge"></div>
+        <h4 class="bc-h">Thống kê 8 nhóm</h4>
+        <div class="bc-grid" id="bcGrid"></div>
+        <div class="bc-mean" id="bcMean"></div>
+        <p class="bc-el" id="bcEl"></p>
+      </div>
+      <p class="ls-note">Dãy số chỉ được tính ngay trên máy của bạn, không gửi đi đâu. Đây là diễn giải biểu tượng theo quy ước Bát Cực Linh Số để tham khảo, không dự đoán chắc chắn tài chính, sức khỏe hay tương lai. Muốn cô Thảo chọn số, chọn SIM hợp với riêng bạn, xem gói <a href="#goi-xem">Đặt Tên &amp; Chọn Số</a>.</p>
     </div>
   </div>
 </section>
@@ -1231,11 +1257,36 @@ var mt=document.querySelector('.mt-box');if(mt&&'IntersectionObserver' in window
 </script>
 <script>(function(){var vs=[].slice.call(document.querySelectorAll('video[preload="none"]'));if(!vs.length)return;var sd=navigator.connection&&navigator.connection.saveData;if(sd)return;if(!('IntersectionObserver' in window)){vs.forEach(function(v){v.play&&v.play().catch(function(){})});return}var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){v.play().catch(function(){})}else{v.pause()}})},{rootMargin:'200px'});vs.forEach(function(v){v.removeAttribute('autoplay');io.observe(v)})})();</script>
 <script>(function(){var f=document.getElementById('lsForm');if(!f)return;var kind='Số điện thoại';
-var E={1:['Năng lượng khởi đầu','Chủ động, mạnh mẽ, dẫn dắt. Hợp người muốn tự làm chủ, bắt đầu việc mới.'],2:['Năng lượng kết nối','Hòa hợp, mềm mỏng, giỏi hợp tác. Hợp việc cần giữ quan hệ, làm ăn chung.'],3:['Năng lượng giao tiếp','Vui vẻ, sáng tạo, nói chuyện cuốn hút. Hợp bán hàng, truyền thông, dạy học.'],4:['Năng lượng ổn định','Chắc chắn, bền bỉ, có kế hoạch. Hợp người cần sự an toàn, tích lũy lâu dài.'],5:['Năng lượng chuyển động','Năng động, linh hoạt, nhiều cơ hội giao thương. Hợp kinh doanh, đi lại nhiều.'],6:['Năng lượng yêu thương','Gia đình, trách nhiệm, chăm sóc. Hợp nhà ở, dịch vụ chăm sóc, làm đẹp.'],7:['Năng lượng chiêm nghiệm','Sâu sắc, chuyên môn, tĩnh lặng. Hợp người làm nghiên cứu, chuyên gia, tâm linh.'],8:['Năng lượng tài chính','Bản lĩnh, quản lý tiền bạc, kinh doanh lớn. Hợp chủ doanh nghiệp, người làm tài chính.'],9:['Năng lượng lan tỏa','Bao dung, hoàn thành, giúp đỡ cộng đồng. Hợp giáo dục, thiện nguyện, chữa lành.']};
-document.getElementById('lsTabs').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;[].forEach.call(this.children,function(x){x.classList.remove('on')});b.classList.add('on');kind=b.getAttribute('data-t')});
-f.addEventListener('submit',function(e){e.preventDefault();var v=document.getElementById('lsIn').value.replace(/\D/g,''),er=document.getElementById('lsErr');if(v.length<2){er.textContent='Bạn nhập dãy số có ít nhất 2 chữ số nha.';document.getElementById('lsRes').hidden=true;return}er.textContent='';
-var t=0;for(var i=0;i<v.length;i++)t+=+v[i];var n=t;while(n>9){n=String(n).split('').reduce(function(a,c){return a+(+c)},0)}
-document.getElementById('lsNum').textContent=n;document.getElementById('lsKind').textContent=kind+' '+v;document.getElementById('lsTitle').textContent=E[n][0];document.getElementById('lsDesc').textContent=E[n][1];document.getElementById('lsSum').textContent='Cách tính: cộng các chữ số = '+t+(t>9?' → rút gọn còn '+n:'');document.getElementById('lsRes').hidden=false})})();</script>
+var G=[['Thiên Y','13 31 68 86 49 94 27 72',1],['Sinh Khí','14 41 67 76 93 39 82 28',1],['Diên Niên','19 91 78 87 34 43 26 62',1],['Phục Vị','11 22 33 44 66 77 88 99',1],['Họa Hại','17 71 89 98 46 64 23 32',0],['Lục Sát','16 61 47 74 38 83 29 92',0],['Ngũ Quỷ','18 81 79 97 36 63 24 42',0],['Tuyệt Mệnh','12 21 69 96 48 84 37 73',0]];
+var L={},GOOD={};G.forEach(function(g){g[1].split(' ').forEach(function(p){L[p]=g[0]});if(g[2])GOOD[g[0]]=1});
+var MEAN={'Thiên Y':'tượng trưng tài lộc, điền sản, tình cảm','Sinh Khí':'tượng trưng quý nhân, nhân duyên','Diên Niên':'tượng trưng sự nghiệp, gia đạo','Phục Vị':'tượng trưng sự củng cố, giữ vững'};
+var EL={1:'Thủy',2:'Thổ',3:'Mộc',4:'Mộc',5:'Thổ',6:'Kim',7:'Kim',8:'Thổ',9:'Hỏa'};
+function $(i){return document.getElementById(i)}
+function esc(t){return String(t).replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+$('lsTabs').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;[].forEach.call(this.children,function(x){x.classList.remove('on')});b.classList.add('on');kind=b.getAttribute('data-t')});
+f.addEventListener('submit',function(e){e.preventDefault();var raw=$('lsIn').value,er=$('lsErr');var v=raw.replace(/[\s.\-]/g,'');
+if(/[^0-9]/.test(v)){er.textContent='Biển số có chữ cái thì bạn chỉ nhập phần chữ số nha (VD: 51G-888.68 nhập 88868).';v=v.replace(/[^0-9]/g,'');if(v.length<2){$('lsRes').hidden=true;return}}else er.textContent='';
+if(v.length<2){er.textContent='Bạn nhập dãy có ít nhất 2 chữ số nha.';$('lsRes').hidden=true;return}
+var rows=[],cnt={};G.forEach(function(g){cnt[g[0]]=0});
+for(var i=0;i<v.length-1;i++){var p=v.substr(i,2),g=L[p]||null;rows.push([i+1,p,g]);if(g)cnt[g]++}
+var BR=[];for(i=1;i<v.length-1;i++){var z=v[i];if(z!=='0'&&z!=='5')continue;var a1=v[i-1],b1=v[i+1];if('05'.indexOf(a1)>-1||'05'.indexOf(b1)>-1)continue;var bp=a1+b1,bg=L[bp];if(!bg)continue;var good=!!GOOD[bg],eff=z==='0'?(good?'làm hư cặp tốt':'hóa giải cặp xấu'):(good?'tăng cái tốt lên':'làm cặp xấu mạnh thêm');BR.push({t:a1+z+b1,p:bp,g:bg,z:z,good:good,eff:eff,cls:(z==='0'?(good?'b':'g'):(good?'g':'b'))})}
+var bad=rows.filter(function(r){return r[2]&&!GOOD[r[2]]}),unk=rows.filter(function(r){return !r[2]}),miss=G.filter(function(g){return g[2]&&!cnt[g[0]]}).map(function(g){return g[0]});
+var tot=0;for(i=0;i<v.length;i++)tot+=+v[i];var r=tot;while(r>9){r=String(r).split('').reduce(function(a,c){return a+(+c)},0)}
+var shown=(kind==='Căn cước'||kind==='Số tài khoản')&&v.length>6?v.slice(0,3)+'•••'+v.slice(-3):v;
+var verdict,cls;if(!bad.length&&!miss.length&&!unk.length){verdict='Dãy đẹp theo quy ước: đủ 4 nhóm cát và không có cặp cần lưu ý.';cls='ok'}
+else if(!bad.length&&!unk.length){verdict='Dãy không có cặp cần lưu ý, nhưng còn thiếu nhóm: '+miss.join(', ')+'.';cls='mid'}
+else{var parts=[];if(bad.length)parts.push(bad.length+' cặp thuộc nhóm cần lưu ý');if(unk.length)parts.push(unk.length+' cặp có số 0 hoặc 5 nằm ngoài bảng');if(miss.length)parts.push('thiếu nhóm '+miss.join(', '));verdict='Dãy có '+parts.join(', ')+'.';cls='warn'}
+$('bcSum').className='bc-sum '+cls;$('bcSum').innerHTML='<small>'+esc(kind)+' '+esc(shown)+' · '+v.length+' chữ số · '+rows.length+' cặp</small><b>'+esc(verdict)+'</b>';
+var bsum=[];var c0h=BR.filter(function(x){return x.z==='0'&&x.good}).length,c0g=BR.filter(function(x){return x.z==='0'&&!x.good}).length,c5g=BR.filter(function(x){return x.z==='5'&&x.good}).length,c5b=BR.filter(function(x){return x.z==='5'&&!x.good}).length;if(c0h)bsum.push(c0h+' cặp tốt bị số 0 làm hư');if(c0g)bsum.push(c0g+' cặp xấu được số 0 hóa giải');if(c5g)bsum.push(c5g+' cặp tốt được số 5 tăng lên');if(c5b)bsum.push(c5b+' cặp xấu bị số 5 làm mạnh thêm');if(bsum.length)$('bcSum').innerHTML+='<em class="bc-br">Số 0 / 5 nằm giữa: '+bsum.join(', ')+'.</em>';
+$('bcPairs').innerHTML=rows.map(function(r){var c=r[2]?(GOOD[r[2]]?'g':'b'):'u';return '<span class="bp '+c+'"><b>'+r[1]+'</b><i>'+(r[2]||'Ngoài bảng')+'</i></span>'}).join('');
+$('bcBridge').innerHTML=BR.length?'<h4 class="bc-h">Số 0 và 5 nằm giữa cặp</h4><div class="bc-pairs">'+BR.map(function(x){return '<span class="bp '+x.cls+'"><b>'+x.t+'</b><i>'+x.p+' '+x.g+'</i><i>Số '+x.z+' '+x.eff+'</i></span>'}).join('')+'</div>':'';
+$('bcGrid').innerHTML=G.map(function(g){return '<div class="'+(g[2]?'g':'b')+(cnt[g[0]]?'':' z')+'"><b>'+cnt[g[0]]+'</b><span>'+g[0]+'</span></div>'}).join('');
+var m=G.filter(function(g){return g[2]&&cnt[g[0]]}).map(function(g){return '<li><b>'+g[0]+'</b> '+MEAN[g[0]]+'</li>'}).join('');
+var notes='';if(bad.length)notes+='<li>Các cặp '+bad.map(function(r){return r[1]}).join(', ')+' thuộc nhóm cần lưu ý. Tên nhóm chỉ là nhãn phân loại, không phải dự báo điều xấu.</li>';
+if(unk.length)notes+='<li>Cặp có số 0 hoặc 5 ('+unk.map(function(r){return r[1]}).join(', ')+') nằm ngoài bảng 8 nhóm. Theo quy ước: số 0 nằm giữa cặp tốt thì làm hư, nằm giữa cặp xấu thì hóa giải; số 5 nằm giữa cặp nào thì làm cặp đó mạnh thêm, tốt càng tốt, xấu càng xấu.'+(kind==='Số điện thoại'&&v[0]==='0'?' Số 0 đầu số điện thoại là bắt buộc nên chỉ ghi nhận.':'')+'</li>';
+$('bcMean').innerHTML=(m?'<h4 class="bc-h">Nhóm cát có trong dãy</h4><ul>'+m+'</ul>':'')+(notes?'<h4 class="bc-h">Điểm cần biết</h4><ul>'+notes+'</ul>':'');
+$('bcEl').textContent='Lớp bổ sung: tổng các chữ số = '+tot+(tot>9?' → rút gọn '+r:'')+', phối Lạc Thư thuộc hành '+(EL[r]||'chưa xác định')+'. Đây là lớp tham khảo riêng, không phải cách xác định mệnh của dãy.';
+$('lsRes').hidden=false;$('lsRes').scrollIntoView({behavior:'smooth',block:'nearest'})})})();</script>
 <div class="lk-modal" id="lkM" hidden><div class="lk-box" role="dialog" aria-modal="true" aria-labelledby="lkT">
   <button type="button" class="lk-x" id="lkX" aria-label="Đóng">×</button>
   <span class="kicker">Mở gói</span><h3 id="lkT"></h3><div class="lk-am" id="lkAm"></div>
