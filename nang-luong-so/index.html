@@ -397,7 +397,7 @@ footer a{color:var(--gold2)}
 @keyframes freeBob{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
 
 /* banner ban app 7 mau */
-.app-cta{display:block;text-align:center;text-decoration:none;width:min(1000px,100% - 32px);margin:10px auto 40px;padding:26px 18px;border-radius:24px;position:relative;overflow:hidden;border:3px solid transparent;background:linear-gradient(#0d1433,#0d1433) padding-box,linear-gradient(90deg,#ff5e7e,#ffb347,#ffe76a,#5dffa8,#4fd2ff,#7d7bff,#e46bff,#ff5e7e) border-box;background-size:100% 100%,300% auto;animation:appBorder 4s linear infinite;box-shadow:0 0 30px #7d7bff44,0 20px 60px #0008}
+.app-cta{display:block;text-align:center;text-decoration:none;width:min(1000px,100% - 32px);max-width:calc(100vw - 32px);margin:10px auto 40px;padding:26px 18px;border-radius:24px;position:relative;overflow:hidden;border:3px solid transparent;background:linear-gradient(#0d1433,#0d1433) padding-box,linear-gradient(90deg,#ff5e7e,#ffb347,#ffe76a,#5dffa8,#4fd2ff,#7d7bff,#e46bff,#ff5e7e) border-box;background-size:100% 100%,300% auto;animation:appBorder 4s linear infinite;box-shadow:0 0 30px #7d7bff44,0 20px 60px #0008}
 @keyframes appBorder{to{background-position:0 0,300% center}}
 .app-cta:after{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,#ffffff22,transparent);transform:skewX(-20deg);animation:appSweep 3.2s ease-in-out infinite;pointer-events:none}
 .app-cta-k{display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:6px}
@@ -521,7 +521,16 @@ h2 .gold,.holo{animation:holoTxt 5s ease-in-out infinite}
 @media(max-width:700px){.app-show{grid-template-columns:1fr;padding:24px 16px;text-align:center}.as-vis{height:270px;max-width:320px;width:100%;margin:0 auto}.as-laban{width:250px;height:250px;margin:-125px 0 0 -125px}.as-co{width:130px;height:175px;margin:-95px 0 0 -65px}.as-phone{width:74px}.as-tree{width:78px}.as-chips{justify-content:center}}
 @media (prefers-reduced-motion:reduce){.as-laban{animation:none}}
 /* Nút nổi không che chữ trên điện thoại */
-@media(max-width:560px){.chat-btn{padding:0!important;width:52px;height:52px;justify-content:center;font-size:0!important;gap:0}.chat-btn i{font-size:22px}footer,.footer{padding-bottom:150px!important}}
+html{overflow-x:hidden}html,body{overflow-x:clip}
+@media(max-width:560px){
+body{padding-bottom:54px}
+.zalo-float,.chat-btn{bottom:0!important;top:auto!important;height:54px!important;width:50%!important;border-radius:0!important;padding:0 10px!important;justify-content:center!important;gap:8px!important;font-size:14px!important;box-shadow:0 -6px 20px #0008!important;animation:none!important}
+.zalo-float{left:0!important;right:auto!important;background:linear-gradient(180deg,#1b2154,#0d1236)!important;color:#f5dda0!important;border-top:1px solid #e3c27a99}
+.zalo-float span{width:28px!important;height:28px!important;font-size:9px!important;background:linear-gradient(120deg,#c99a4a,#f5dda0 45%,#d4a957)!important;color:#1a1205!important}
+.zalo-float b{display:inline!important}.zalo-float:before,.zalo-float:after{display:none}
+.chat-btn{right:0!important;left:auto!important;border:0!important;border-top:1px solid #f6e2ae!important}
+.chat-btn i{font-size:18px}
+}
 </style>
 </head>
 <body>
@@ -991,7 +1000,7 @@ h2 .gold,.holo{animation:holoTxt 5s ease-in-out infinite}
     <div class="exit-reply" id="exitReply"><p id="exitMsg"></p><div class="row" id="exitAct"></div></div>
   </div>
 </div>
-<a class="zalo-float" href="https://zalo.me/0935949141" target="_blank" rel="noopener" aria-label="Zalo cô Thảo"><span>Zalo</span><b>Zalo</b></a>
+<a class="zalo-float" href="https://zalo.me/0935949141" target="_blank" rel="noopener" aria-label="Zalo cô Thảo"><span>Zalo</span><b>Zalo cô Thảo</b></a>
 <button class="chat-btn" id="chatBtn" type="button"><i>💬</i>Hỏi đáp nhanh</button>
 <div class="chat" id="chat" role="dialog" aria-label="Hỏi đáp nhanh">
   <div class="chat-top"><img src="img/co-thao-suon-xam-do.webp" alt="" loading="lazy"><div><b>Hỏi đáp cùng cô Thảo</b><small>Trả lời tự động ngay</small></div><button type="button" id="chatClose" aria-label="Đóng">×</button></div>
