@@ -345,19 +345,13 @@ footer a{color:var(--gold2)}
 
 /* phong thuy: cay dong tien + mua sao */
 #mua{position:fixed;inset:0;width:100%;height:100%;z-index:3;pointer-events:none}
-.mt-box{width:190px;margin:0 auto 6px;position:relative}
-.mt-box .mt{width:100%;height:auto;display:block;filter:drop-shadow(0 6px 18px rgba(227,194,122,.25))}
-.mt-box figcaption{font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);opacity:.85;margin-top:2px}
-.mt-tree{transform-origin:100px 205px;animation:mtSway 6s ease-in-out infinite}
-.mt-c{animation:mtSwing 3.2s ease-in-out infinite}
-.mt-bg{transform-origin:100px 112px;animation:mtSpin 80s linear infinite}
-.mt-c circle{animation:mtGlint 4s ease-in-out infinite}
-@keyframes mtSway{0%,100%{transform:rotate(-1.4deg)}50%{transform:rotate(1.4deg)}}
-@keyframes mtSwing{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
-@keyframes mtSpin{to{transform:rotate(360deg)}}
-@keyframes mtGlint{0%,100%{filter:none}50%{filter:brightness(1.35)}}
-@media(max-width:700px){.mt-box{width:150px}}
-@media(prefers-reduced-motion:reduce){.mt-tree,.mt-c,.mt-bg,.mt-c circle{animation:none}#mua{display:none}}
+.mt-box{width:min(400px,78vw);margin:-20px auto 10px;position:relative}
+.mt-box::before{content:"";position:absolute;inset:8% 6% 18%;border-radius:50%;background:radial-gradient(circle,rgba(255,214,120,.45),rgba(255,214,120,0) 68%);animation:mtGlow 3.6s ease-in-out infinite;z-index:-1}
+.mt-box img{width:100%;height:auto;display:block;transform-origin:50% 92%;animation:mtSway 5s ease-in-out infinite;filter:drop-shadow(0 14px 30px rgba(0,0,0,.45))}
+.mt-box figcaption{font-family:'Playfair Display',serif;font-size:20px;letter-spacing:.12em;color:#f6e2ae;margin-top:4px}
+@keyframes mtSway{0%,100%{transform:rotate(-1.2deg) scale(1)}50%{transform:rotate(1.2deg) scale(1.015)}}
+@keyframes mtGlow{0%,100%{opacity:.55;transform:scale(.95)}50%{opacity:1;transform:scale(1.06)}}
+@media(prefers-reduced-motion:reduce){.mt-box img,.mt-box::before{animation:none}#mua{display:none}}
 </style>
 </head>
 <body>
@@ -553,6 +547,7 @@ footer a{color:var(--gold2)}
 <section class="section" id="goi-xem">
   <div class="wrap">
     <div class="section-head reveal">
+      <figure class="mt-box"><img src="img/cay-dong-tien.webp?v=1" width="720" height="900" alt="Cây đồng tiền phong thủy chiêu tài đón lộc" loading="lazy"><figcaption>Chiêu tài · Đón lộc</figcaption></figure>
       <span class="kicker">Gói giải mã</span>
       <h2>Chọn gói <span class="gold">phù hợp với bạn</span></h2>
       <p>Mỗi bản giải mã được cô Thảo làm riêng cho từng người, dựa trên họ tên và ngày sinh của bạn.</p>
@@ -1082,17 +1077,25 @@ footer a{color:var(--gold2)}
 <canvas id="mua" aria-hidden="true"></canvas>
 <script>
 (function(){var c=document.getElementById('mua');if(!c||!c.getContext||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-var x=c.getContext('2d'),W,H,D=Math.min(devicePixelRatio||1,2),P=[],S=null,nextS=0,mob=innerWidth<700;
+var x=c.getContext('2d'),W,H,D=Math.min(devicePixelRatio||1,2),P=[],S=[],nextS=0,mob=innerWidth<700;
 function rs(){W=innerWidth;H=innerHeight;c.width=W*D;c.height=H*D;x.setTransform(D,0,0,D,0,0)}rs();addEventListener('resize',rs);
-function mk(top){var k=Math.random();return{x:Math.random()*W,y:top?-20:Math.random()*H,v:.25+Math.random()*.55,w:Math.random()*6.28,r:k<.12?5.5:(1.2+Math.random()*2),coin:k<.12,a:.35+Math.random()*.5}}
-for(var i=0;i<(mob?20:40);i++)P.push(mk(false));
-function star(px,py,r,a){x.save();x.translate(px,py);x.globalAlpha=a;x.fillStyle='#fff3c4';x.beginPath();x.moveTo(0,-r*2.4);x.quadraticCurveTo(0,0,r*2.4,0);x.quadraticCurveTo(0,0,0,r*2.4);x.quadraticCurveTo(0,0,-r*2.4,0);x.quadraticCurveTo(0,0,0,-r*2.4);x.fill();x.restore()}
-function coin(px,py,r,a,rot){x.save();x.translate(px,py);x.rotate(rot);x.scale(Math.abs(Math.cos(rot*1.7))*.8+.2,1);x.globalAlpha=a;x.fillStyle='#e3c27a';x.beginPath();x.arc(0,0,r,0,6.29);x.fill();x.fillStyle='#2a1f45';x.fillRect(-r*.3,-r*.3,r*.6,r*.6);x.restore()}
-var last=0;function f(t){requestAnimationFrame(f);if(document.hidden||t-last<30)return;last=t;x.clearRect(0,0,W,H);
-P.forEach(function(p){p.y+=p.v;p.w+=.02;var px=p.x+Math.sin(p.w)*12;if(p.y>H+20){Object.assign(p,mk(true))}
-var tw=p.a*(.6+.4*Math.sin(p.w*3));if(p.coin)coin(px,p.y,p.r,tw*.8,p.w);else star(px,p.y,p.r,tw)});
-if(!S&&t>nextS){S={x:W*(.3+Math.random()*.7),y:-10,l:0};nextS=t+5000+Math.random()*6000}
-if(S){S.l+=1;var hx=S.x-S.l*7,hy=S.y+S.l*4.2,g=x.createLinearGradient(hx,hy,hx+110,hy-66);g.addColorStop(0,'rgba(255,243,196,.95)');g.addColorStop(1,'rgba(255,243,196,0)');x.strokeStyle=g;x.lineWidth=2;x.beginPath();x.moveTo(hx,hy);x.lineTo(hx+110,hy-66);x.stroke();star(hx,hy,1.6,.95);if(hy>H*.7||hx<-120)S=null}}
+function spr(n,draw){var o=document.createElement('canvas');o.width=o.height=n;draw(o.getContext('2d'),n);return o}
+var COIN=spr(128,function(g,n){var r=n*.36,cx=n/2;var gl=g.createRadialGradient(cx,cx,r*.6,cx,cx,n/2);gl.addColorStop(0,'rgba(255,215,120,.55)');gl.addColorStop(1,'rgba(255,215,120,0)');g.fillStyle=gl;g.fillRect(0,0,n,n);
+ var gr=g.createRadialGradient(cx-r*.35,cx-r*.4,r*.1,cx,cx,r);gr.addColorStop(0,'#fff6cf');gr.addColorStop(.45,'#f2cf74');gr.addColorStop(1,'#a8741f');g.fillStyle=gr;g.beginPath();g.arc(cx,cx,r,0,6.29);g.fill();
+ g.lineWidth=r*.09;g.strokeStyle='#8a5a12';g.beginPath();g.arc(cx,cx,r*.82,0,6.29);g.stroke();g.fillStyle='#4a2e08';var h=r*.26;g.fillRect(cx-h,cx-h,h*2,h*2);g.strokeStyle='#fff1b8';g.lineWidth=r*.06;g.strokeRect(cx-h,cx-h,h*2,h*2);
+ g.fillStyle='#7a4e0e';g.font='bold '+(r*.42)+'px serif';g.textAlign='center';g.textBaseline='middle';['福','祿','壽','財'].forEach(function(ch,i){var a=i*Math.PI/2;g.fillText(ch,cx+Math.sin(a)*r*.56,cx-Math.cos(a)*r*.56)})});
+var GLOW=spr(64,function(g,n){var gr=g.createRadialGradient(n/2,n/2,0,n/2,n/2,n/2);gr.addColorStop(0,'rgba(255,248,215,1)');gr.addColorStop(.18,'rgba(255,224,140,.85)');gr.addColorStop(.5,'rgba(255,200,90,.25)');gr.addColorStop(1,'rgba(255,200,90,0)');g.fillStyle=gr;g.fillRect(0,0,n,n)});
+var STAR=spr(64,function(g,n){var c2=n/2;g.drawImage(GLOW,0,0,n,n);g.fillStyle='#fffbe8';g.beginPath();g.moveTo(c2,2);g.quadraticCurveTo(c2,c2,n-2,c2);g.quadraticCurveTo(c2,c2,c2,n-2);g.quadraticCurveTo(c2,c2,2,c2);g.quadraticCurveTo(c2,c2,c2,2);g.fill()});
+function mk(top){var k=Math.random(),t=k<.38?'coin':(k<.7?'star':'orb');var s=t=='coin'?(mob?14:18)+Math.random()*(mob?10:16):t=='star'?(mob?12:16)+Math.random()*14:6+Math.random()*16;
+ return{t:t,x:Math.random()*W,y:top?-40:Math.random()*H,v:(t=='coin'?.9:.5)+Math.random()*(t=='coin'?1.1:.7),w:Math.random()*6.28,s:s,rot:Math.random()*6.28,vr:(Math.random()-.5)*.06,a:.65+Math.random()*.35}}
+for(var i=0;i<(mob?22:42);i++)P.push(mk(false));
+var last=0;function f(t){requestAnimationFrame(f);if(document.hidden||t-last<28)return;var dt=last?Math.min((t-last)/16.7,3):1;last=t;x.clearRect(0,0,W,H);
+P.forEach(function(p){p.y+=p.v*dt;p.w+=.025*dt;p.rot+=p.vr*dt;if(p.y>H+40){Object.assign(p,mk(true))}var px=p.x+Math.sin(p.w)*16;
+ if(p.t=='coin'){x.save();x.translate(px,p.y);x.rotate(p.rot);x.scale(.25+.75*Math.abs(Math.cos(p.w*1.6)),1);x.globalAlpha=p.a;x.drawImage(COIN,-p.s,-p.s,p.s*2,p.s*2);x.restore()}
+ else{x.globalAlpha=p.a*(.55+.45*Math.sin(p.w*3));x.drawImage(p.t=='star'?STAR:GLOW,px-p.s/2,p.y-p.s/2,p.s,p.s);x.globalAlpha=1}});
+if(t>nextS){S.push({x:W*(.25+Math.random()*.85),y:-20,l:0,sp:9+Math.random()*5});nextS=t+2500+Math.random()*3500}
+S=S.filter(function(s){s.l+=dt;var hx=s.x-s.l*s.sp,hy=s.y+s.l*s.sp*.6,L=mob?160:260;var g=x.createLinearGradient(hx,hy,hx+L,hy-L*.6);g.addColorStop(0,'rgba(255,246,210,1)');g.addColorStop(.3,'rgba(255,214,120,.6)');g.addColorStop(1,'rgba(255,214,120,0)');
+ x.strokeStyle=g;x.lineWidth=3;x.lineCap='round';x.beginPath();x.moveTo(hx,hy);x.lineTo(hx+L,hy-L*.6);x.stroke();x.drawImage(STAR,hx-18,hy-18,36,36);return hy<H*.85&&hx>-L});x.globalAlpha=1}
 requestAnimationFrame(f)})();
 </script>
 </body>
