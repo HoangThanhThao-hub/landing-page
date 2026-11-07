@@ -81,7 +81,7 @@ h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-heigh
 .hero-points{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:30px;padding:0;list-style:none;font-size:14px;color:var(--muted)}
 .hero-points li:before{content:'✦';color:var(--gold);margin-right:8px}
 .hero-visual{position:relative;aspect-ratio:4/5;max-width:470px;justify-self:center;width:100%}
-.ring{position:absolute;inset:-6%;animation:spin 22s linear infinite}
+.ring{position:absolute;inset:-6%;animation:spin 80s linear infinite}
 .ring text{animation:numGlow 2.4s ease-in-out infinite}.ring text:nth-child(2n){animation-delay:.8s}.ring text:nth-child(3n){animation-delay:1.6s}
 @keyframes numGlow{0%,100%{fill:#f6e2ae;opacity:.75}50%{fill:#fff6cf;opacity:1;filter:drop-shadow(0 0 6px #f5dda0)}}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -499,6 +499,10 @@ h2 .gold,.holo{animation:holoTxt 5s ease-in-out infinite}
 .kenh a{background:linear-gradient(150deg,#55479a,#2b3480 50%,#45306e);box-shadow:0 0 0 1px #f5dda066,0 0 26px #e3c27a66,0 12px 30px #0008,inset 0 1px 0 #ffffff66;animation:zGold 2.6s ease-in-out infinite}
 @keyframes zGold{0%,100%{box-shadow:0 0 0 1px #f5dda066,0 0 18px #e3c27a55,0 12px 30px #0008,inset 0 1px 0 #ffffff66}50%{box-shadow:0 0 0 1px #f5dda0,0 0 34px #f5dda099,0 12px 30px #0008,inset 0 1px 0 #ffffff66}}
 .kenh a>*{position:relative;z-index:3}
+/* Nút "Tôi đã CK · báo Zalo": CTA chính, sáng nổi bật */
+@keyframes keyHalo{0%,100%{box-shadow:0 0 0 2px #fff3d0,0 0 22px 4px #f5dda099,0 14px 34px #e3c27a66}50%{box-shadow:0 0 0 2px #fff8e6,0 0 44px 12px #ffe7a3cc,0 14px 40px #e3c27a99}}
+.pay-done,#zaloPay{text-align:center;justify-content:center;background:linear-gradient(120deg,#e9b955,#fff1c4 42%,#ffd977 58%,#e2ac46)!important;color:#1a1205!important;font-weight:800;letter-spacing:.01em;animation:keyHalo 2.6s ease-in-out infinite!important;border:0!important}
+.pay-done:after,#zaloPay:after{background-image:linear-gradient(105deg,transparent 38%,#ffffffee 50%,transparent 62%)!important;animation:glossSweep 3.4s ease-in-out infinite!important}
 </style>
 </head>
 <body>
