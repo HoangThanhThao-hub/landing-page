@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>App Giải Mã Năng Lượng Số – Kinh doanh cùng cô Thảo</title>
+<meta name="description" content="Sở hữu app giải mã năng lượng số: nhập họ tên, ngày sinh là ra bản giải mã PDF mang tên và Zalo của bạn. 3 gói: Tự Dùng, Kinh Doanh, Đối Tác.">
+<meta name="theme-color" content="#080c1f">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hoangthanhthao.com/nang-luong-so/ban-app/">
+<meta property="og:title" content="App Giải Mã Năng Lượng Số – Kinh doanh cùng cô Thảo">
+<meta property="og:description" content="Nhập họ tên, ngày sinh là ra bản giải mã PDF mang tên và Zalo của bạn.">
+<meta property="og:image" content="https://hoangthanhthao.com/nang-luong-so/og-image.jpg?v=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080c1f;--card:#121a3c;--gold:#e3c27a;--gold2:#f6e2ae;--gold3:#b8893d;--text:#eef0fa;--muted:#aeb6d6;--line:#2a3566}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Be Vietnam Pro',system-ui,sans-serif;background:radial-gradient(ellipse at 80% 0%,#2b2470 0%,transparent 50%),radial-gradient(ellipse at 0% 60%,#132a5e 0%,transparent 45%),var(--bg);background-attachment:fixed;color:var(--text);line-height:1.65;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:min(1120px,100% - 32px);margin:0 auto}
+h1,h2,h3{margin:0;line-height:1.2}
+.gold{background:linear-gradient(100deg,var(--gold3),var(--gold2) 35%,var(--gold) 55%,var(--gold2) 75%,var(--gold3));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% auto;animation:sheen 6s linear infinite}
+@keyframes sheen{to{background-position:200% center}}
+.holo{font-family:'Anton',Impact,sans-serif;text-transform:uppercase;letter-spacing:.01em;padding-top:.12em;line-height:1.15;background:linear-gradient(90deg,#ff5e7e,#ffb347,#ffe76a,#5dffa8,#4fd2ff,#7d7bff,#e46bff,#ff5e7e);background-size:300% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:holo 5s linear infinite;filter:drop-shadow(0 4px 18px #ffffff22)}
+@keyframes holo{to{background-position:300% center}}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.kicker:before,.kicker:after{content:'';width:26px;height:1px;background:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 28px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;border:1px solid transparent;font-family:inherit;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:linear-gradient(120deg,#c99a4a,#f5dda0 45%,#d4a957);color:#1a1205;box-shadow:0 10px 30px #e3c27a40}
+.btn-ghost{border-color:#e3c27a88;color:var(--gold2)}
+.nav{position:sticky;top:0;z-index:20;background:#080c1fd9;backdrop-filter:blur(12px);border-bottom:1px solid #e3c27a2a}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.nav a.back{text-decoration:none;color:#d5daf0;font-size:14px}
+.nav b{font-family:'Playfair Display',serif;color:var(--gold2)}
+.hero{text-align:center;padding:64px 0 50px;position:relative}
+.hero h1{font-size:clamp(40px,8vw,92px)}
+.hero .sub{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(20px,3vw,30px);margin:10px 0 18px}
+.hero p{max-width:640px;margin:0 auto 26px;color:#d3d8ee;font-size:17px}
+.row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.sec{padding:70px 0}
+.head{text-align:center;max-width:720px;margin:0 auto 40px}
+.head h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,42px);margin:12px 0}
+.head p{color:var(--muted);margin:0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px}
+.step b{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#c99a4a,#f5dda0);color:#1a1205;font-size:18px;margin-bottom:12px}
+.step h3{font-size:19px;margin-bottom:6px}
+.step p{color:var(--muted);margin:0;font-size:15px}
+.demo{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;margin-top:40px}
+.demo .pages{position:relative;height:430px}
+.demo .pages img{position:absolute;width:52%;height:auto;border-radius:10px;box-shadow:0 24px 50px #000a}
+.demo .pages img:first-child{left:4%;top:0;transform:rotate(-6deg)}
+.demo .pages img:last-child{right:4%;top:28px;transform:rotate(5deg)}
+.demo ul{padding:0;list-style:none;margin:0 0 22px}
+.demo li{padding:9px 0;border-bottom:1px dashed #ffffff1c}
+.demo li:before{content:'✦';color:var(--gold);margin-right:10px}
+.who{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.who div{background:#0e1433;border:1px solid #e3c27a33;border-radius:16px;padding:18px;text-align:center;font-weight:600}
+.who span{display:block;font-size:28px;margin-bottom:6px}
+.packs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+.pack{position:relative;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 26px;display:flex;flex-direction:column}
+.pack.hot{border-color:var(--gold);box-shadow:0 0 0 6px #e3c27a12,0 30px 70px #0008;background:linear-gradient(170deg,#1f2453,#0e1334)}
+.pack .tag{position:absolute;top:-13px;left:26px;background:linear-gradient(120deg,#c99a4a,#f5dda0);color:#1a1205;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+.pack .lv{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.pack h3{font-family:'Playfair Display',serif;font-size:26px;margin:8px 0 6px}
+.pack .for{color:var(--muted);font-size:14px;margin:0 0 14px}
+.price{font-family:'Playfair Display',serif;font-size:36px;color:var(--gold2);line-height:1;margin-bottom:16px}
+.pack ul{list-style:none;padding:0;margin:0 0 22px;flex:1}
+.pack li{padding:8px 0;border-bottom:1px solid #ffffff12;font-size:15px}
+.pack li:before{content:'✓';color:var(--gold);margin-right:10px;font-weight:800}
+.note{text-align:center;color:var(--muted);font-size:14px;margin-top:22px}
+.final{text-align:center;padding:70px 20px;margin:40px 0 90px;border:1px solid #e3c27a55;border-radius:28px;background:radial-gradient(ellipse at 50% 0%,#3a2f7a77,transparent 70%),#0d1433}
+.final h2{font-size:clamp(30px,5vw,56px);margin-bottom:12px}
+.final p{color:var(--muted);max-width:560px;margin:0 auto 24px}
+.zalo-float{position:fixed;right:16px;bottom:16px;z-index:30;display:flex;align-items:center;gap:10px;padding:11px 16px 11px 11px;border-radius:999px;background:#0068ff;color:#fff;text-decoration:none;font-weight:700;font-size:14px;box-shadow:0 12px 30px #0068ff55}
+.zalo-float span{width:32px;height:32px;border-radius:50%;background:#fff;color:#0068ff;display:grid;place-items:center;font-weight:900;font-size:12px}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:0 0 90px}
+@media(max-width:860px){.steps,.packs{grid-template-columns:1fr}.demo{grid-template-columns:1fr}.demo .pages{height:330px;max-width:380px;margin:0 auto;width:100%}.who{grid-template-columns:1fr 1fr}.hero{padding-top:40px}.row .btn{width:100%}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap"><a class="back" href="../">← Năng lượng số</a><b>Cô Thảo</b></div></nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">Kinh doanh cùng cô Thảo</span>
+    <h1 class="holo">Sở hữu App<br>Giải Mã Năng Lượng Số</h1>
+    <div class="sub gold">Có app riêng, tự làm nghề giải số</div>
+    <p>Khách nhập họ tên và ngày sinh, app tự tính các con số và xuất bản giải mã PDF đẹp mang <b>tên và số Zalo của bạn</b>. Bạn có thêm một nghề để tư vấn và bán cho khách của mình.</p>
+    <div class="row">
+      <a class="btn btn-gold" href="#goi">✦ Xem 3 gói</a>
+      <a class="btn btn-ghost" href="../#tu-xem">Dùng thử app miễn phí</a>
+    </div>
+  </div>
+</header>
+
+<section class="sec" style="padding-top:20px">
+  <div class="wrap">
+    <div class="head"><span class="kicker">App làm được gì</span><h2>Ba bước, <span class="gold">ra bản giải mã</span></h2></div>
+    <div class="steps">
+      <div class="step"><b>1</b><h3>Nhập họ tên, ngày sinh</h3><p>Khách tự nhập trên trang của bạn, hoặc bạn nhập giúp khách.</p></div>
+      <div class="step"><b>2</b><h3>App tự tính các con số</h3><p>Số Chủ Đạo, Sứ Mệnh, Linh Hồn, Nhân Cách, Ngày Sinh, Năm Cá Nhân.</p></div>
+      <div class="step"><b>3</b><h3>Xuất file PDF đẹp</h3><p>Bản giải mã trình bày sang trọng, mang tên và Zalo của bạn, gửi cho khách.</p></div>
+    </div>
+    <div class="demo">
+      <div class="pages"><img src="../img/pdf-mau-bia.webp" width="560" height="792" alt="Bìa bản giải mã mẫu" loading="lazy"><img src="../img/pdf-mau-trang-2.webp" width="560" height="792" alt="Trang Số Chủ Đạo mẫu" loading="lazy"></div>
+      <div>
+        <span class="kicker">File PDF mẫu</span>
+        <h2 style="font-family:'Playfair Display',serif;font-size:clamp(26px,3.4vw,38px);margin:12px 0 16px">Đây là bản <span class="gold">khách của bạn nhận</span></h2>
+        <ul>
+          <li>Bìa có ảnh và tên của bạn</li>
+          <li>Giải nghĩa từng con số dễ hiểu</li>
+          <li>Đọc đẹp trên điện thoại, gửi qua Zalo</li>
+        </ul>
+        <p style="color:var(--muted);font-size:13px;font-style:italic;margin:0">Ảnh là bản mẫu, tên và ngày sinh chỉ để minh họa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="head"><span class="kicker">Hợp với ai</span><h2>Ai nên có <span class="gold">app này</span></h2></div>
+    <div class="who">
+      <div><span>🔮</span>Người làm phong thủy, thần số học</div>
+      <div><span>💆‍♀️</span>Chủ spa, thẩm mỹ, làm đẹp</div>
+      <div><span>🛍️</span>Người bán hàng online muốn quà tặng khách</div>
+      <div><span>🎓</span>Người làm tư vấn, đào tạo, coaching</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="goi">
+  <div class="wrap">
+    <div class="head"><span class="kicker">3 gói</span><h2>Chọn gói <span class="gold">phù hợp với bạn</span></h2><p>Nhắn Zalo cô Thảo để được tư vấn và nhận app.</p></div>
+    <div class="packs">
+      <article class="pack">
+        <span class="lv">Gói 1</span><h3>Tự Dùng</h3>
+        <p class="for">Cho người muốn có app riêng để giải số cho khách.</p>
+        <div class="price">1.268.000đ</div>
+        <ul>
+          <li>App giải mã năng lượng số</li>
+          <li>File PDF mang tên và số Zalo của bạn</li>
+          <li>Hướng dẫn cách dùng</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Nhắn Zalo đăng ký</a>
+      </article>
+      <article class="pack hot">
+        <span class="tag">Cô Thảo gợi ý</span>
+        <span class="lv">Gói 2</span><h3>Kinh Doanh</h3>
+        <p class="for">Cho người muốn có app riêng mang tên mình để kinh doanh.</p>
+        <div class="price">2.668.000đ</div>
+        <ul>
+          <li>Toàn bộ gói Tự Dùng</li>
+          <li><b>1 app riêng mang tên của bạn</b></li>
+          <li>Trang bán hàng riêng, đổi sang tên, ảnh và mã QR ngân hàng của bạn</li>
+        </ul>
+        <a class="btn btn-gold" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Nhắn Zalo đăng ký</a>
+      </article>
+      <article class="pack">
+        <span class="lv">Gói 3</span><h3>Đối Tác</h3>
+        <p class="for">Cho người muốn làm nghề bài bản cùng cô Thảo.</p>
+        <div class="price">4.868.000đ</div>
+        <ul>
+          <li>Toàn bộ gói Kinh Doanh</li>
+          <li>Quyền bán lại app cho khách của bạn</li>
+          <li><b>Cô Thảo hướng dẫn cách bán lại cho khách đến khi thành thạo, trong 30 ngày</b></li>
+        </ul>
+        <a class="btn btn-ghost" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Nhắn Zalo đăng ký</a>
+      </article>
+    </div>
+    <p class="note">Bạn muốn xem app chạy thế nào? <a href="../#tu-xem" style="color:var(--gold2)">Dùng thử miễn phí trên trang năng lượng số</a>.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="final">
+    <span class="kicker">Bắt đầu ngay</span>
+    <h2 class="holo">Có app riêng<br>Làm nghề riêng</h2>
+    <p>Nhắn Zalo cô Thảo 0935 949 141, cô tư vấn gói hợp với bạn.</p>
+    <a class="btn btn-gold" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Nhắn Zalo cô Thảo</a>
+  </div>
+</div>
+<footer>© Cô Thảo · <a href="../">Giải mã năng lượng số</a></footer>
+<a class="zalo-float" href="https://zalo.me/0935949141" target="_blank" rel="noopener"><span>Zalo</span>Nhắn cô Thảo</a>
+</body>
+</html>
