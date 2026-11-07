@@ -83,7 +83,7 @@
 
   function build(o){
     var CY=o.year||new Date().getFullYear(),r=calc(o.name,o.dd,o.mm,o.yy,CY),dob=o.dd+'/'+o.mm+'/'+o.yy,full=!!o.full;
-    var h='<div class="nr-pg nr-cv"><img src="'+BASE+'img/co-thao-ao-dai-do.jpg" alt=""><div class="nr-sh"></div><div class="nr-tx"><small>Thần số học · Pythagoras</small><h1>Bản Giải Mã<br>Năng Lượng Số</h1>'+
+    var h='<div class="nr-pg nr-cv"><img src="'+BASE+'img/co-thao-suon-xam-do.jpg" alt=""><div class="nr-sh"></div><div class="nr-tx"><small>Thần số học · Pythagoras</small><h1>Bản Giải Mã<br>Năng Lượng Số</h1>'+
       '<div class="nr-who"><b>'+esc(o.name)+'</b>Sinh ngày '+dob+'</div><div class="nr-pk">'+esc(o.pkg||'Bản tự xem trọn bộ')+'</div></div>'+
       '<div class="nr-ft"><b>Cô Thảo</b>Giải mã năng lượng số · Zalo 0935 949 141</div></div>';
     h+='<div class="nr-pg"><h2>Số Chủ Đạo của bạn</h2><div class="nr-sub">Con số quan trọng nhất</div>'+
