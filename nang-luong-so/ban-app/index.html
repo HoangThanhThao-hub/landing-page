@@ -62,10 +62,10 @@ h1,h2,h3{margin:0;line-height:1.2}
 .who{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .who div{background:#0e1433;border:1px solid #e3c27a33;border-radius:16px;padding:18px;text-align:center;font-weight:600}
 .who span{display:block;font-size:28px;margin-bottom:6px}
-.combo{max-width:760px;margin:0 auto;text-align:center;padding:38px 28px}
+.combo .price{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
 .combo .old{color:var(--muted);text-decoration:line-through;font-size:18px;margin-right:10px}
 .combo .save{display:inline-block;margin:6px 0 16px;background:#e3c27a22;color:var(--gold2);border:1px solid var(--gold);border-radius:999px;padding:5px 14px;font-weight:800;font-size:14px}
-.combo ul{text-align:left;max-width:520px;margin:0 auto 22px}
+
 .packs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
 .pack{position:relative;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 26px;display:flex;flex-direction:column}
 .pack.hot{border-color:var(--gold);box-shadow:0 0 0 6px #e3c27a12,0 30px 70px #0008;background:linear-gradient(170deg,#1f2453,#0e1334)}
@@ -181,7 +181,7 @@ h2 .gold,.holo{animation:holoTxt 5s ease-in-out infinite}
     <div class="pick">
       <a href="#app-master"><b>App Master Thanh Thảo</b><span>Chuyên năng lượng số và tất cả các loại số</span><i>Từ 1.268.000đ →</i></a>
       <a href="#app-phong-thuy"><b>App Phong Thủy</b><span>Làm video kiến thức con số, phong thủy bằng AI</span><i>1.268.000đ →</i></a>
-      <a href="#combo-2-app"><b>Gói Ưu Tiên 2 App</b><span>Sở hữu cả 2 app + đồng hành 30 ngày</span><i>1.999.000đ →</i></a>
+      <a href="#combo-2-app"><b>Gói Ưu Tiên 2 App</b><span>Cả 2 app, quyền bán lại + đồng hành 30 ngày</span><i>5.268.000đ →</i></a>
     </div>
   </div>
 </header>
@@ -304,19 +304,19 @@ h2 .gold,.holo{animation:holoTxt 5s ease-in-out infinite}
 
 <section class="sec" id="combo-2-app">
   <div class="wrap">
-    <div class="head"><span class="kicker">Gói ưu tiên · mua 1 lần</span><h2 class="holo" style="font-size:clamp(32px,5.5vw,58px)">Sở Hữu Trọn 2 App</h2><p style="font-size:17px;color:#d3d8ee">Mua 1 lần, sở hữu cả App Master Thanh Thảo và App Phong Thủy, kèm Thảo đồng hành 30 ngày: vừa giải số cho khách, vừa làm video phong thủy để đăng kênh.</p></div>
-    <div class="pack hot combo">
-      <span class="tag">Ưu tiên · Tiết kiệm nhất</span>
-      <span class="lv">2 app + đồng hành 30 ngày</span><h3>Gói Ưu Tiên 2 App</h3>
-      <div class="price"><span class="old">2.536.000đ</span>1.999.000đ</div>
-      <div><span class="save">Tiết kiệm 537.000đ so với mua lẻ</span></div>
-      <ul>
-        <li>App Master Thanh Thảo (gói Tự Dùng): năng lượng số và tất cả các loại số</li>
-        <li>App Phong Thủy: AI soạn kịch bản và dựng video phong thủy</li>
+    <div class="head"><span class="kicker">Gói ưu tiên · mua 1 lần</span><h2 class="holo" style="font-size:clamp(32px,5.5vw,58px)">Sở Hữu Trọn 2 App</h2><p style="font-size:17px;color:#d3d8ee">Mua 1 lần, sở hữu cả App Master Thanh Thảo (có quyền bán lại) và App Phong Thủy, kèm Thảo đồng hành 30 ngày đến khi bạn tự bán được cho khách.</p></div>
+    <div class="pack hot combo" style="max-width:760px;margin:0 auto;text-align:center;padding:38px 28px">
+      <span class="tag">Ưu tiên · Cao nhất</span>
+      <span class="lv">2 app + quyền bán lại + đồng hành 30 ngày</span><h3>Gói Ưu Tiên Đối Tác 2 App</h3>
+      <div class="price" style="justify-content:center"><span class="old">6.136.000đ</span>5.268.000đ</div>
+      <div><span class="save">Tiết kiệm 868.000đ so với mua lẻ</span></div>
+      <ul style="text-align:left;max-width:540px;margin:0 auto 22px">
+        <li>App Master Thanh Thảo gói <b>Đối Tác</b>: có quyền bán lại app</li>
+        <li>App Phong Thủy: AI soạn kịch bản, dựng video phong thủy</li>
         <li>Video hướng dẫn thao tác cho cả 2 app</li>
-        <li><b>Thảo đồng hành 30 ngày qua Zalo</b>: hỏi gì Thảo chỉ nấy đến khi bạn dùng thành thạo</li>
+        <li><b>Thảo đồng hành 30 ngày qua Zalo</b>: hướng dẫn cách bán lại cho khách đến khi thành thạo</li>
       </ul>
-      <a class="btn btn-gold" href="#thanh-toan" data-pk="1999000|COMBO2APP">Đăng ký Gói Ưu Tiên 2 App</a>
+      <a class="btn btn-gold" href="#thanh-toan" data-pk="5268000|UUTIEN2APP">Đăng ký Gói Ưu Tiên</a>
     </div>
   </div>
 </section>
@@ -358,7 +358,7 @@ h2 .gold,.holo{animation:holoTxt 5s ease-in-out infinite}
       <span class="pay-tag">✓ Tài khoản chính chủ cô Thảo</span>
       <div class="pay-form">
         <label class="full">Gói bạn chọn<select id="pyPk">
-          <option value="1999000|COMBO2APP">Gói Ưu Tiên 2 App · Master + Phong Thủy · 1.999.000đ</option>
+          <option value="5268000|UUTIEN2APP">Gói Ưu Tiên Đối Tác 2 App · 5.268.000đ</option>
           <option value="2668000|KINHDOANH">App Master Thanh Thảo · Kinh Doanh · 2.668.000đ</option>
           <option value="1268000|TUDUNG">App Master Thanh Thảo · Tự Dùng · 1.268.000đ</option>
           <option value="4868000|DOITAC">App Master Thanh Thảo · Đối Tác · 4.868.000đ</option>
