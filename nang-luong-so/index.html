@@ -424,6 +424,24 @@ footer a{color:var(--gold2)}
 .kenh span{display:flex;flex-direction:column;line-height:1.3}.kenh small{font-size:11px;color:var(--muted)}.kenh b{font-size:15px;color:var(--text)}.kenh i{font-style:normal;font-weight:800;color:var(--gold2);font-size:14px}
 .trust13{display:inline-block;margin:6px 0 4px;padding:6px 14px;border-radius:999px;background:#e3c27a1f;border:1px solid #e3c27a66;color:var(--gold2);font-weight:800;font-size:14px}
 @media(max-width:560px){.kenh{grid-template-columns:1fr}}
+
+/* goi khoa trong ket qua */
+.lk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:left}
+.lk{position:relative;display:flex;flex-direction:column;gap:6px;padding:16px 14px 14px;border-radius:16px;border:1px solid #e3c27a55;background:linear-gradient(160deg,#1a1f4d,#0c1131);color:var(--text);font:inherit;cursor:pointer;text-align:left;overflow:hidden;transition:transform .2s,border-color .2s}
+.lk:hover{transform:translateY(-2px);border-color:var(--gold)}
+.lk-ic{position:absolute;top:10px;right:12px;font-size:18px}
+.lk b{font-family:'Playfair Display',serif;font-size:17px;padding-right:26px}
+.lk-blur{font-size:13px;color:#cfd5ef;filter:blur(3.5px);user-select:none;min-height:38px}
+.lk-ft{display:flex;justify-content:space-between;align-items:center;margin-top:4px}.lk-ft em{font-style:normal;font-weight:800;color:var(--gold2)}
+.lk-ft i{font-style:normal;font-size:12px;font-weight:800;color:#1a1205;background:linear-gradient(120deg,#c99a4a,#f5dda0);padding:5px 10px;border-radius:999px}
+.lk-modal{position:fixed;inset:0;z-index:90;background:#000b;display:grid;place-items:center;padding:16px;overflow:auto}
+.lk-modal[hidden]{display:none}
+.lk-box{position:relative;width:min(440px,100%);max-height:calc(100vh - 32px);overflow:auto;padding:26px 20px 20px;border-radius:24px;border:1px solid var(--gold);background:linear-gradient(160deg,#1a1442,#0b0f2a);text-align:center}
+.lk-box h3{font-size:24px;margin:8px 0 2px}.lk-am{font:700 30px 'Playfair Display',serif;color:var(--gold2);margin-bottom:12px}
+.lk-box .qr{max-width:190px;margin:0 auto}.lk-box .pay-info{padding:12px 14px;gap:2px}.lk-box .kv{text-align:left}
+.lk-x{position:absolute;top:8px;right:10px;width:36px;height:36px;border-radius:50%;border:1px solid #ffffff33;background:#ffffff10;color:#fff;font-size:22px;cursor:pointer}
+@media(max-width:760px){.lk-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.lk-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -436,7 +454,6 @@ footer a{color:var(--gold2)}
     <div class="navlinks">
       <a href="#tu-xem">Tự xem miễn phí</a>
       <a href="#chi-so">Các chỉ số</a>
-      <a href="#cac-loai-so">Các loại số</a>
       <a href="#goi-xem">Gói giải mã</a>
       <a href="#co-thao">Về cô Thảo</a>
       <a href="#hoi-dap">Hỏi đáp</a>
@@ -566,15 +583,9 @@ footer a{color:var(--gold2)}
         <div class="pdf-dl"><button class="btn btn-gold" type="button" id="pdfBtn">📄 Tải bản giải mã PDF</button><p class="hint" id="pdfMsg">File PDF có tên và ngày sinh của bạn, lưu lại đọc lúc nào cũng được.</p></div>
 
         <div class="locked">
-          <h4>Muốn cô Thảo xem kỹ hơn cho bạn?</h4>
-          <p style="color:var(--muted);margin:0 0 18px">Phần tự xem ở trên chỉ là cơ bản. Ở các gói giải mã, cô Thảo viết riêng cho bạn một bản phân tích kỹ hơn, gửi file PDF qua Zalo trong 24 giờ, gồm thêm:</p>
-          <ul>
-            <li>4 đỉnh cao cuộc đời</li><li>4 thử thách</li><li>Các mũi tên sức mạnh & trống</li><li>Số thái độ</li><li>Số trưởng thành</li><li>Năm, tháng cá nhân 12 tháng tới</li><li>Nghề nghiệp phù hợp</li><li>Tương hợp tình cảm</li>
-          </ul>
-          <div class="row">
-            <a class="btn btn-gold" id="zaloResult" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Hỏi cô Thảo qua Zalo</a>
-            <a class="btn btn-ghost" href="#goi-xem">Xem các gói giải mã</a>
-          </div>
+          <h4>Các bản giải mã <span class="gold">dành riêng cho bạn</span></h4>
+          <p style="color:var(--muted);margin:0 0 18px">Chọn gói muốn mở. Cô Thảo viết riêng theo họ tên và ngày sinh của bạn, gửi file PDF qua Zalo trong 24 giờ.</p>
+          <div class="lk-grid"><button type="button" class="lk" data-lk="299000|BANDO|Bản Đồ Năng Lượng"><span class="lk-ic">🔒</span><b>Bản Đồ Năng Lượng</b><span class="lk-blur">8 chỉ số chính · biểu đồ mũi tên · năm cá nhân</span><span class="lk-ft"><em>299.000đ</em><i>Mở gói này</i></span></button><button type="button" class="lk" data-lk="899000|CHUYENSAU|Giải Mã Chuyên Sâu"><span class="lk-ic">🔒</span><b>Giải Mã Chuyên Sâu</b><span class="lk-blur">4 đỉnh cao · 4 thử thách · nghề nghiệp · tài chính · tình cảm · 12 tháng tới</span><span class="lk-ft"><em>899.000đ</em><i>Mở gói này</i></span></button><button type="button" class="lk" data-lk="2999000|TRONBO|Trọn Bộ Năng Lượng Số"><span class="lk-ic">🔒</span><b>Trọn Bộ Năng Lượng Số</b><span class="lk-blur">Toàn bộ chuyên sâu · ngày tốt khai trương · tên thương hiệu, số điện thoại</span><span class="lk-ft"><em>2.999.000đ</em><i>Mở gói này</i></span></button><button type="button" class="lk" data-lk="599000|CONYEU|Thấu Hiểu Con Yêu"><span class="lk-ic">🔒</span><b>Thấu Hiểu Con Yêu</b><span class="lk-blur">Năng khiếu · cách học · cách khen hợp với bé</span><span class="lk-ft"><em>599.000đ</em><i>Mở gói này</i></span></button><button type="button" class="lk" data-lk="799000|TINHYEU|Năng Lượng Tình Yêu"><span class="lk-ic">🔒</span><b>Năng Lượng Tình Yêu</b><span class="lk-blur">Điểm hợp · điểm dễ va chạm · cách giao tiếp của 2 người</span><span class="lk-ft"><em>799.000đ</em><i>Mở gói này</i></span></button><button type="button" class="lk" data-lk="999000|DATTEN|Đặt Tên & Chọn Số"><span class="lk-ic">🔒</span><b>Đặt Tên & Chọn Số</b><span class="lk-blur">3–5 phương án tên / số hợp năng lượng · ngày đẹp</span><span class="lk-ft"><em>999.000đ</em><i>Mở gói này</i></span></button></div>
           <p class="copied" id="copied"></p>
         </div>
       </div>
@@ -583,7 +594,7 @@ footer a{color:var(--gold2)}
 </section>
 
 <!-- CAC LOAI SO -->
-<section class="section" id="cac-loai-so" style="padding-top:30px">
+<section class="section" id="cac-loai-so" style="padding-top:30px" hidden>
   <div class="wrap">
     <div class="section-head reveal"><span class="kicker">Miễn phí</span><h2>Xem năng lượng <span class="gold">các loại số</span></h2><p>Số điện thoại, biển số xe, số nhà, số tài khoản... Nhập dãy số, app cộng các chữ số và cho biết con số năng lượng của nó.</p></div>
     <div class="ls-box reveal">
@@ -1001,7 +1012,7 @@ footer a{color:var(--gold2)}
     setTimeout(function(){r.scrollIntoView({behavior:'smooth',block:'start'})},60);
   });
 
-  document.getElementById('zaloResult').addEventListener('click',function(){
+  (document.getElementById('zaloResult')||document.createElement('a')).addEventListener('click',function(){
     if(!lastText)return;
     var c=document.getElementById('copied');
     try{navigator.clipboard.writeText(lastText).then(function(){c.textContent='Đã chép sẵn kết quả. Mở Zalo xong bạn chỉ cần dán và gửi cho cô.'}).catch(function(){})}catch(e){}
@@ -1225,5 +1236,38 @@ document.getElementById('lsTabs').addEventListener('click',function(e){var b=e.t
 f.addEventListener('submit',function(e){e.preventDefault();var v=document.getElementById('lsIn').value.replace(/\D/g,''),er=document.getElementById('lsErr');if(v.length<2){er.textContent='Bạn nhập dãy số có ít nhất 2 chữ số nha.';document.getElementById('lsRes').hidden=true;return}er.textContent='';
 var t=0;for(var i=0;i<v.length;i++)t+=+v[i];var n=t;while(n>9){n=String(n).split('').reduce(function(a,c){return a+(+c)},0)}
 document.getElementById('lsNum').textContent=n;document.getElementById('lsKind').textContent=kind+' '+v;document.getElementById('lsTitle').textContent=E[n][0];document.getElementById('lsDesc').textContent=E[n][1];document.getElementById('lsSum').textContent='Cách tính: cộng các chữ số = '+t+(t>9?' → rút gọn còn '+n:'');document.getElementById('lsRes').hidden=false})})();</script>
+<div class="lk-modal" id="lkM" hidden><div class="lk-box" role="dialog" aria-modal="true" aria-labelledby="lkT">
+  <button type="button" class="lk-x" id="lkX" aria-label="Đóng">×</button>
+  <span class="kicker">Mở gói</span><h3 id="lkT"></h3><div class="lk-am" id="lkAm"></div>
+  <div class="qr"><img id="lkQr" alt="Mã QR chuyển khoản TPBank cô Thảo" src="qr-tpbank.jpg"><small id="lkQrN">Quét bằng app ngân hàng, đã điền sẵn số tiền và nội dung</small></div>
+  <div class="pay-info" style="margin-top:12px">
+    <div class="kv"><span>Ngân hàng</span><strong>TPBank</strong></div>
+    <div class="kv"><span>Chủ tài khoản</span><strong>HOANG THI THANH THAO</strong></div>
+    <div class="kv"><span>Số tài khoản</span><strong>8768 1714 131</strong><button class="cp" type="button" data-lkcp="87681714131">Chép</button></div>
+    <div class="kv"><span>Nội dung</span><strong id="lkCt"></strong><button class="cp" type="button" id="lkCtCp">Chép</button></div>
+  </div>
+  <a class="btn btn-gold pay-done" id="lkDone" href="https://zalo.me/0935949141" target="_blank" rel="noopener">✓ Tôi đã chuyển khoản · báo cô Thảo qua Zalo</a>
+  <p class="pay-hint" id="lkHint">Bấm nút trên, trang chép sẵn lời nhắn có tên, ngày sinh và gói bạn chọn. Mở Zalo, dán và gửi kèm ảnh chuyển khoản.</p>
+</div></div>
+<script>(function(){var M=document.getElementById('lkM');if(!M)return;function $(i){return document.getElementById(i)}var cur=null;
+function vnd(n){return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+'đ'}
+function cp(t){try{navigator.clipboard.writeText(t).catch(function(){})}catch(e){}}
+function un(t){return (t||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d').replace(/Đ/g,'D').replace(/[^a-zA-Z0-9 ]/g,'').replace(/\s+/g,' ').trim().toUpperCase()}
+document.querySelectorAll('[data-lk]').forEach(function(b){b.addEventListener('click',function(){var v=b.getAttribute('data-lk').split('|');cur={am:+v[0],code:v[1],name:v[2]};
+var nm=$('helloName').textContent||'',cc=($('custCode')&&$('custCode').textContent)||'';var ct=(v[1]+' '+(cc||'')+' '+un(nm)).replace(/\s+/g,' ').trim().slice(0,50);cur.ct=ct;
+$('lkT').textContent=v[2];$('lkAm').textContent=vnd(cur.am);$('lkCt').textContent=ct;$('lkDone').textContent='✓ Tôi đã chuyển khoản · báo cô Thảo qua Zalo';$('lkDone').dataset.sent='';
+$('lkHint').textContent='Bấm nút trên, trang chép sẵn lời nhắn có tên, ngày sinh và gói bạn chọn. Mở Zalo, dán và gửi kèm ảnh chuyển khoản.';
+var q=$('lkQr');q.onerror=function(){this.onerror=null;this.src='qr-tpbank.jpg';$('lkQrN').textContent='Quét mã, nhập đúng số tiền và chép nội dung bên dưới'};
+q.src='https://img.vietqr.io/image/TPB-87681714131-compact2.png?amount='+cur.am+'&addInfo='+encodeURIComponent(ct)+'&accountName='+encodeURIComponent('HOANG THI THANH THAO');
+M.hidden=false;document.body.style.overflow='hidden'})});
+function close(){M.hidden=true;document.body.style.overflow=''}
+$('lkX').addEventListener('click',close);M.addEventListener('click',function(e){if(e.target===M)close()});
+document.querySelector('[data-lkcp]').addEventListener('click',function(){cp(this.getAttribute('data-lkcp'));this.textContent='Đã chép'});
+$('lkCtCp').addEventListener('click',function(){cp($('lkCt').textContent);this.textContent='Đã chép'});
+$('lkDone').addEventListener('click',function(){if(!cur)return;var nm=$('helloName').textContent,dob=$('helloDob').textContent.replace('Sinh ngày ','');
+cp('Cô Thảo ơi, con đã chuyển khoản '+vnd(cur.am)+' gói '+cur.name+'.\n- Họ tên khai sinh: '+(nm||'...')+'\n- Ngày sinh: '+(dob||'...')+'\n- Nội dung CK: '+cur.ct+'\nCon gửi ảnh chuyển khoản ạ.');
+if(!this.dataset.sent){this.dataset.sent='1';if(window.__gf)window.__gf({loai:'Mở gói (tự xem)',goi:cur.name,ten:nm,ns:dob,tien:cur.am,nd:cur.ct})}
+try{localStorage.setItem('nls-paid','1')}catch(e){}
+$('lkHint').innerHTML='<b style="color:var(--gold2)">Đã chép sẵn lời nhắn.</b> Mở Zalo cô Thảo, dán lời nhắn và gửi kèm ảnh chuyển khoản. Cô Thảo gửi bản giải mã gói '+cur.name+' cho bạn qua Zalo trong 24 giờ.'})})();</script>
 </body>
 </html>
