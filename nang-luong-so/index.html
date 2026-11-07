@@ -524,7 +524,7 @@ footer a{color:var(--gold2)}
           <div class="unlock-head">
             <span class="kicker">Bản tự xem đầy đủ</span>
             <h4>Xem toàn bộ kết quả của bạn</h4>
-            <p style="color:var(--muted);margin:6px 0 0;font-size:14.5px">Phần bị làm mờ bên dưới là kết quả của bạn. Chuyển khoản 99.000đ, cô Thảo gửi mã 6 số qua Zalo, bạn nhập mã là xem được hết và tải file PDF về máy.</p>
+            <p style="color:var(--muted);margin:6px 0 0;font-size:14.5px">Phần bị làm mờ bên dưới là kết quả của bạn. Chuyển khoản 99.000đ, cô Thảo gửi mã 6 số qua Zalo <b style="color:var(--gold2)">trong vòng 30 phút (từ 8h đến 22h)</b>, bạn nhập mã là xem được hết và tải file PDF về máy.</p>
             <div class="price">99.000đ</div>
             <ul><li>5 chỉ số còn lại</li><li>Biểu đồ ngày sinh</li><li>Năm cá nhân năm nay & năm tới</li><li>12 tháng cá nhân năm <span class="cy"></span></li></ul>
           </div>
@@ -541,7 +541,7 @@ footer a{color:var(--gold2)}
                 <a class="btn btn-gold" id="zaloPay" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Gửi Zalo cho cô Thảo</a>
                 <p class="hint">Bấm nút là thông tin của bạn được chép sẵn, mở Zalo ra bạn chỉ cần dán và gửi kèm ảnh chuyển khoản.</p>
               </div>
-              <div class="ps"><b>Bước 3 · Nhập mã 6 số cô Thảo gửi lại để xem hết</b>
+              <div class="ps"><b>Bước 3 · Nhập mã 6 số cô Thảo gửi lại (trong vòng 30 phút, 8h–22h)</b>
                 <div class="codebox"><input id="unlockCode" maxlength="6" placeholder="Mã 6 số" inputmode="numeric"><button class="btn btn-gold" type="button" id="unlockBtn">Xem kết quả</button></div>
                 <p class="hint" id="unlockMsg">Mã khách của bạn: <strong id="custCode"></strong></p>
               </div>
@@ -1194,8 +1194,8 @@ var COIN=spr(128,function(g,n){var r=n*.36,cx=n/2;var gl=g.createRadialGradient(
 var GLOW=spr(64,function(g,n){var gr=g.createRadialGradient(n/2,n/2,0,n/2,n/2,n/2);gr.addColorStop(0,'rgba(255,248,215,1)');gr.addColorStop(.18,'rgba(255,224,140,.85)');gr.addColorStop(.5,'rgba(255,200,90,.25)');gr.addColorStop(1,'rgba(255,200,90,0)');g.fillStyle=gr;g.fillRect(0,0,n,n)});
 var STAR=spr(64,function(g,n){var c2=n/2;g.drawImage(GLOW,0,0,n,n);g.fillStyle='#fffbe8';g.beginPath();g.moveTo(c2,2);g.quadraticCurveTo(c2,c2,n-2,c2);g.quadraticCurveTo(c2,c2,c2,n-2);g.quadraticCurveTo(c2,c2,2,c2);g.quadraticCurveTo(c2,c2,c2,2);g.fill()});
 function mk(top){var k=Math.random(),t=k<.38?'coin':(k<.7?'star':'orb');var s=t=='coin'?(mob?14:18)+Math.random()*(mob?10:16):t=='star'?(mob?12:16)+Math.random()*14:6+Math.random()*16;
- return{t:t,x:Math.random()*W,y:top?-40:Math.random()*H,v:(t=='coin'?.9:.5)+Math.random()*(t=='coin'?1.1:.7),w:Math.random()*6.28,s:s,rot:Math.random()*6.28,vr:(Math.random()-.5)*.06,a:.65+Math.random()*.35}}
-for(var i=0;i<(mob?13:26);i++)P.push(mk(false));
+ var ex=Math.random()*(mob?.1:.13)*W;return{t:t,x:Math.random()<.5?ex:W-ex,y:top?-40:Math.random()*H,v:(t=='coin'?.9:.5)+Math.random()*(t=='coin'?1.1:.7),w:Math.random()*6.28,s:s,rot:Math.random()*6.28,vr:(Math.random()-.5)*.06,a:.65+Math.random()*.35}}
+for(var i=0;i<(mob?6:12);i++)P.push(mk(false));
 var AV=[],AVSEL='.portrait,h1,h2,h3,p,.btn,.hero-points li,.price,input,select,textarea,label,.pack li,.badge,.kicker,.num-card,.chip';
 function av(){var o=[];var els=document.querySelectorAll(AVSEL);for(var i=0;i<els.length;i++){var r=els[i].getBoundingClientRect();if(r.bottom<-20||r.top>H+20||!r.width)continue;o.push([r.left-14,r.top-14,r.right+14,r.bottom+14])}AV=o}
 av();setInterval(av,350);addEventListener('scroll',function(){av()},{passive:true});
