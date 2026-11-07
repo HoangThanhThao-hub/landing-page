@@ -104,6 +104,11 @@
     h+='<div class="nr-pg"><h2>12 tháng cá nhân năm '+CY+'</h2><div class="nr-sub">Nhịp năng lượng từng tháng</div><div class="nr-m12">';
     for(var k=1;k<=12;k++){var pm=rd(r.py+k);h+='<div><b>Tháng '+k+' · số '+pm+'</b>'+PY[pm].split(':')[1].trim()+'</div>'}
     h+='</div></div>';
+    if(o.gift&&!full){
+      h+='<div class="nr-pg"><h2>Quà tặng: 12 tháng cá nhân năm '+(CY+1)+'</h2><div class="nr-sub">Năm cá nhân số '+r.py2+' · '+PY[r.py2].split(':')[0]+'</div><div class="nr-m12">';
+      for(var g=1;g<=12;g++){var pg2=rd(r.py2+g);h+='<div><b>Tháng '+g+' · số '+pg2+'</b>'+PY[pg2].split(':')[1].trim()+'</div>'}
+      h+='</div></div>';
+    }
     if(full){
       var x=X[r.lp];
       h+='<div class="nr-pg"><h2>Định hướng theo Số Chủ Đạo '+r.lp+'</h2><div class="nr-sub">Sự nghiệp · Tình cảm · Tài chính</div>'+
