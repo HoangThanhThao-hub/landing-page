@@ -157,6 +157,7 @@ h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-heigh
 .mgrid b{display:block;color:var(--gold2);font-size:13px;margin-bottom:3px}
 .unlocked-ok{display:none;text-align:center;color:var(--gold2);font-weight:700;margin:0 0 16px}
 .results:not(.is-locked) .unlocked-ok{display:block}
+.pdf-dl{display:none;text-align:center;margin:18px 0 6px}.results:not(.is-locked) .pdf-dl{display:block}.pdf-dl .hint{margin-top:8px}
 
 /* chat */
 .chat-btn{position:fixed;right:18px;bottom:18px;z-index:61;display:flex;align-items:center;gap:10px;padding:12px 20px 12px 14px;border-radius:999px;border:1px solid #f6e2ae;background:linear-gradient(120deg,#c99a4a,#f5dda0 45%,#d4a957);color:#1a1205;font:700 14px 'Be Vietnam Pro',sans-serif;cursor:pointer;box-shadow:0 12px 30px #0009}
@@ -468,6 +469,7 @@ footer a{color:var(--gold2)}
         </div>
         <div class="months"><h4>12 tháng cá nhân năm <span class="cy"></span></h4><div class="mgrid" id="mgrid"></div></div>
         </div>
+        <div class="pdf-dl"><button class="btn btn-gold" type="button" id="pdfBtn">📄 Tải bản giải mã PDF</button><p class="hint" id="pdfMsg">File PDF có tên và ngày sinh của bạn, lưu lại đọc lúc nào cũng được.</p></div>
 
         <div class="locked">
           <h4>Muốn hiểu sâu hơn?</h4>
@@ -796,6 +798,11 @@ footer a{color:var(--gold2)}
   function h(str){var x=2166136261;for(var i=0;i<str.length;i++){x^=str.charCodeAt(i);x=Math.imul(x,16777619)>>>0}return x}
   function custCode(name,dd,mm,yy){var a='ABCDEFGHJKLMNPQRSTUVWXYZ23456789',x=h(clean(name)+'|'+dd+'/'+mm+'/'+yy),o='';for(var i=0;i<5;i++){o+=a[x%a.length];x=Math.floor(x/a.length)}return o}
   function unlockFor(c){return String(h(SALT+c.toUpperCase())%900000+100000)}
+  // Gửi 1 dòng vào bảng Google Sheet của cô Thảo (qua Google Form, chạy ngầm)
+  var GF='https://docs.google.com/forms/d/e/1FAIpQLScoEBjYk6eHmzAXQfLeNSwpMVRsGL_wf08Vj_eyDGFlQUbw2w/formResponse';
+  var GE={loai:'entry.596007808',goi:'entry.1684003920',ten:'entry.546302110',ns:'entry.1529654079',zalo:'entry.2058676908',tien:'entry.1353076927',nd:'entry.644535927',ly:'entry.625288539'};
+  function gf(o){try{var f=new URLSearchParams();Object.keys(o).forEach(function(k){if(GE[k]&&o[k]!=null)f.append(GE[k],String(o[k]).slice(0,500))});fetch(GF,{method:'POST',mode:'no-cors',body:f}).catch(function(){})}catch(e){}}
+  window.__gf=gf;
   function store(k,v){try{localStorage.setItem(k,v)}catch(e){}}
   function load(k){try{return localStorage.getItem(k)}catch(e){return null}}
   function copy(t,msg){try{navigator.clipboard.writeText(t).catch(function(){})}catch(e){}if(msg){var c=document.getElementById('unlockMsg');c.innerHTML=msg}}
@@ -816,7 +823,7 @@ footer a{color:var(--gold2)}
     letters.split('').forEach(function(c){var v=val(c);all+=v;if(V.indexOf(c)>-1)vow+=v;else con+=v});
     var ex=reduce(all,true),su=reduce(vow,true),pe=reduce(con,true),bd=reduce(dd,true);
     var py=reduce(reduce(dd)+reduce(mm)+reduce(CY));
-    window.__me={name:name,lp:lp,ex:ex,su:su,pe:pe,bd:bd,py:py};
+    window.__me={name:name,lp:lp,ex:ex,su:su,pe:pe,bd:bd,py:py};window.__dob={name:name,dd:dd,mm:mm,yy:yy};
 
     document.getElementById('helloName').textContent=name;
     document.getElementById('helloDob').textContent='Sinh ngày '+dd+'/'+mm+'/'+yy;
@@ -874,7 +881,12 @@ footer a{color:var(--gold2)}
 
   document.getElementById('cpNote').addEventListener('click',function(){copy(document.getElementById('payNote').textContent);this.textContent='Đã chép'});
   document.querySelector('[data-copy]').addEventListener('click',function(){copy(this.getAttribute('data-copy'));this.textContent='Đã chép'});
-  document.getElementById('zaloPay').addEventListener('click',function(){if(payText)copy(payText,'Đã chép sẵn tin nhắn. Mở Zalo, dán và gửi kèm ảnh chuyển khoản. Mã khách: <strong>'+cust+'</strong>')});
+  document.getElementById('zaloPay').addEventListener('click',function(){var me=window.__dob;if(payText&&me&&!this.dataset.sent){this.dataset.sent='1';gf({loai:'Chuyển khoản',goi:'Mở khóa tự xem 99k · mã khách '+cust,ten:me.name,ns:me.dd+'/'+me.mm+'/'+me.yy,tien:99000,nd:'NLS '+cust})}if(payText)copy(payText,'Đã chép sẵn tin nhắn. Mở Zalo, dán và gửi kèm ảnh chuyển khoản. Mã khách: <strong>'+cust+'</strong>')});
+  document.getElementById('pdfBtn').addEventListener('click',function(){
+    var me=window.__dob,b=this,msg=document.getElementById('pdfMsg');if(!me||!window.NLS)return;
+    b.disabled=true;b.textContent='Đang tạo file…';
+    NLS.pdf({name:me.name,dd:me.dd,mm:me.mm,yy:me.yy,pkg:'Bản tự xem trọn bộ'}).then(function(){b.textContent='📄 Tải lại bản PDF';msg.textContent='Đã tải xong. File nằm trong mục Tải xuống (Downloads) của máy bạn.'},function(){msg.textContent='Chưa tạo được file, bạn thử lại hoặc nhắn Zalo cô Thảo nhé.';b.textContent='📄 Tải bản giải mã PDF'}).then(function(){b.disabled=false});
+  });
   document.getElementById('unlockBtn').addEventListener('click',function(){
     var v=document.getElementById('unlockCode').value.replace(/\D/g,'');
     var msg=document.getElementById('unlockMsg');
@@ -981,6 +993,7 @@ footer a{color:var(--gold2)}
     var o=$('pyPk').selectedOptions[0].textContent.split('·')[0].trim();
     copy('Cô Thảo ơi, con đã chuyển khoản '+vnd(+$('pyAm').dataset.v)+' gói '+o+(OFF?' (ưu đãi giảm '+OFF+'%)':'')+'.\n- Họ tên khai sinh: '+($('pyNm').value||'...')+'\n- Ngày sinh: '+($('pyDob').value||'...')+'\n- Zalo: '+($('pyPh').value||'...')+'\n- Nội dung CK: '+$('pyCt').textContent+'\nCon gửi ảnh chuyển khoản ạ.');
     store('nls-paid','1');
+    if(!this.dataset.sent){this.dataset.sent='1';gf({loai:'Chuyển khoản',goi:o,ten:$('pyNm').value,ns:$('pyDob').value,zalo:$('pyPh').value,tien:$('pyAm').dataset.v,nd:$('pyCt').textContent})}
     $('pyHint').innerHTML='<b style="color:var(--gold2)">Đã chép sẵn lời nhắn.</b> Mở Zalo cô Thảo, dán lời nhắn và gửi kèm ảnh chuyển khoản nhé.';
   });
 
@@ -1010,6 +1023,7 @@ footer a{color:var(--gold2)}
   function reply(r){
     var why=LB[r]+(r==='khac'&&$('exitTxt').value.trim()?': '+$('exitTxt').value.trim():'');
     try{var log=JSON.parse(load('nls-why')||'[]');log.push(why);store('nls-why',JSON.stringify(log))}catch(e){}
+    gf({loai:'Lý do chưa chọn gói',ly:why});
     $('reasons').style.display='none';$('exitReply').style.display='block';
     $('exitMsg').textContent=RE[r]+'\n\n🎁 Ưu đãi chốt lần 2: giảm '+10+'% cho mọi gói nếu bạn chuyển khoản ngay hôm nay.';
     var act=$('exitAct');act.innerHTML='';
@@ -1036,5 +1050,6 @@ footer a{color:var(--gold2)}
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
 })();
 </script>
+<script src="js/nls-report.js" defer></script>
 </body>
 </html>
