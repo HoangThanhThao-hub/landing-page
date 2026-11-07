@@ -62,6 +62,10 @@ h1,h2,h3{margin:0;line-height:1.2}
 .who{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .who div{background:#0e1433;border:1px solid #e3c27a33;border-radius:16px;padding:18px;text-align:center;font-weight:600}
 .who span{display:block;font-size:28px;margin-bottom:6px}
+.combo{max-width:760px;margin:0 auto;text-align:center;padding:38px 28px}
+.combo .old{color:var(--muted);text-decoration:line-through;font-size:18px;margin-right:10px}
+.combo .save{display:inline-block;margin:6px 0 16px;background:#e3c27a22;color:var(--gold2);border:1px solid var(--gold);border-radius:999px;padding:5px 14px;font-weight:800;font-size:14px}
+.combo ul{text-align:left;max-width:520px;margin:0 auto 22px}
 .packs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
 .pack{position:relative;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 26px;display:flex;flex-direction:column}
 .pack.hot{border-color:var(--gold);box-shadow:0 0 0 6px #e3c27a12,0 30px 70px #0008;background:linear-gradient(170deg,#1f2453,#0e1334)}
@@ -258,6 +262,25 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:0 0 90px}
   </div>
 </section>
 
+<section class="sec" id="combo-2-app">
+  <div class="wrap">
+    <div class="head"><span class="kicker">Ưu đãi trọn bộ</span><h2 class="holo" style="font-size:clamp(32px,5.5vw,58px)">Combo 2 App</h2><p style="font-size:17px;color:#d3d8ee">Lấy cả App Master Thanh Thảo và App Phong Thủy: vừa xem năng lượng các loại số, vừa làm video phong thủy để đăng kênh.</p></div>
+    <div class="pack hot combo">
+      <span class="tag">Tiết kiệm nhất</span>
+      <span class="lv">2 app trong 1 gói</span><h3>Combo Master + Phong Thủy</h3>
+      <div class="price"><span class="old">2.536.000đ</span>1.999.000đ</div>
+      <div><span class="save">Tiết kiệm 537.000đ so với mua lẻ</span></div>
+      <ul>
+        <li>App Master Thanh Thảo (gói Tự Dùng): năng lượng số và tất cả các loại số</li>
+        <li>App Phong Thủy: AI soạn kịch bản và dựng video phong thủy</li>
+        <li>Video hướng dẫn thao tác cho cả 2 app</li>
+        <li>Hỏi đáp cách dùng qua Zalo với Thảo</li>
+      </ul>
+      <a class="btn btn-gold" href="#thanh-toan" data-pk="1999000|COMBO2APP">Đăng ký Combo 2 App</a>
+    </div>
+  </div>
+</section>
+
 <section class="sec" id="co-thao">
   <div class="wrap">
     <div class="about">
@@ -295,6 +318,7 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:0 0 90px}
       <span class="pay-tag">✓ Tài khoản chính chủ cô Thảo</span>
       <div class="pay-form">
         <label class="full">Gói bạn chọn<select id="pyPk">
+          <option value="1999000|COMBO2APP">Combo 2 App · Master + Phong Thủy · 1.999.000đ</option>
           <option value="2668000|KINHDOANH">App Master Thanh Thảo · Kinh Doanh · 2.668.000đ</option>
           <option value="1268000|TUDUNG">App Master Thanh Thảo · Tự Dùng · 1.268.000đ</option>
           <option value="4868000|DOITAC">App Master Thanh Thảo · Đối Tác · 4.868.000đ</option>
