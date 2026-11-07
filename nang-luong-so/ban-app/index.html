@@ -142,6 +142,17 @@ footer{text-align:center;color:var(--muted);font-size:13px;padding:0 0 90px}
 .kenh a:after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(105deg,transparent 40%,#ffffff40 50%,transparent 60%) no-repeat;background-size:250% 100%;animation:glossSweep 3.6s ease-in-out infinite}
 .kenh img{border:2px solid #f5dda0;box-shadow:0 0 14px #f5dda088}
 .kenh b{color:#fff}.kenh small{color:#d9dcf0}.kenh i{color:#ffe9a8;text-shadow:0 0 10px #f5dda066}
+/* Huyền ảo + công nghệ */
+@keyframes hudPulse{0%,100%{opacity:.8}50%{opacity:1}}
+@keyframes scanY{0%{top:-12%}100%{top:105%}}
+@keyframes gridDrift{from{background-position:0 0,0 0}to{background-position:0 48px,48px 0}}
+@keyframes holoTxt{0%,100%{text-shadow:0 0 18px #f5dda055,0 0 2px #fff4}50%{text-shadow:0 0 26px #9db4ff66,0 0 2px #fff8}}
+body:after{content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.07;background-image:linear-gradient(#8fb0ff 1px,transparent 1px),linear-gradient(90deg,#8fb0ff 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:radial-gradient(ellipse at 50% 50%,transparent 35%,#000 95%);mask-image:radial-gradient(ellipse at 50% 50%,transparent 35%,#000 95%);animation:gridDrift 14s linear infinite}
+.hud{position:absolute;inset:-7px;pointer-events:none;z-index:3;border-radius:inherit;animation:hudPulse 3.2s ease-in-out infinite;--c:#bff1ff;--l:30px;
+background:linear-gradient(var(--c),var(--c)) 0 0/var(--l) 2px,linear-gradient(var(--c),var(--c)) 0 0/2px var(--l),linear-gradient(var(--c),var(--c)) 100% 0/var(--l) 2px,linear-gradient(var(--c),var(--c)) 100% 0/2px var(--l),linear-gradient(var(--c),var(--c)) 0 100%/var(--l) 2px,linear-gradient(var(--c),var(--c)) 0 100%/2px var(--l),linear-gradient(var(--c),var(--c)) 100% 100%/var(--l) 2px,linear-gradient(var(--c),var(--c)) 100% 100%/2px var(--l);background-repeat:no-repeat;filter:drop-shadow(0 0 6px #7fdcff) drop-shadow(0 0 2px #fff)}
+.scan{position:absolute;left:0;right:0;height:14%;pointer-events:none;z-index:4;background:linear-gradient(180deg,transparent,#8fe3ff22 70%,#c9f3ffaa 98%,transparent);border-bottom:1px solid #bdefff99;box-shadow:0 2px 12px #7fdcff88;animation:scanY 4.5s linear infinite;mix-blend-mode:screen}
+h2 .gold,.holo{animation:holoTxt 5s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){body:after,.scan,.hud{animation:none}.scan{display:none}}
 </style>
 </head>
 <body>
@@ -368,5 +379,6 @@ copy('Cô Thảo ơi, em đã chuyển khoản '+vnd(+$('pyAm').dataset.v)+' mua
 if(!this.dataset.sent){this.dataset.sent='1';gf({loai:'Mua app',goi:o,ten:$('pyNm').value,zalo:$('pyPh').value,tien:$('pyAm').dataset.v,nd:$('pyCt').textContent})}
 $('pyHint').innerHTML='<b style="color:var(--gold2)">Đã chép sẵn lời nhắn.</b> Mở Zalo cô Thảo, dán lời nhắn và gửi kèm ảnh chuyển khoản nhé.'});
 upd()})();</script>
+<script>/* HUD góc + tia quét */(function(){document.querySelectorAll('.paycard,.pack.hot,.lk-box').forEach(function(e){if(getComputedStyle(e).position==='static')e.style.position='relative';var h=document.createElement('i');h.className='hud';h.setAttribute('aria-hidden','true');e.appendChild(h)});document.querySelectorAll('.portrait,.phone').forEach(function(e){if(getComputedStyle(e).position==='static')e.style.position='relative';e.style.overflow='hidden';var s=document.createElement('i');s.className='scan';s.setAttribute('aria-hidden','true');e.appendChild(s)})})();</script>
 </body>
 </html>
