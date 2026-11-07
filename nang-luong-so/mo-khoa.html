@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Trang riêng của cô Thảo</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080c1f;--gold:#e3c27a;--text:#eef0fa;--muted:#aeb6d6}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 0%,#2b2470,transparent 60%),var(--bg);color:var(--text);font-family:'Be Vietnam Pro',system-ui,'Segoe UI',sans-serif;padding:24px 16px}
+.box{width:min(480px,100%);margin:0 auto 22px;padding:28px 22px;border-radius:24px;border:1px solid #e3c27a77;background:#0e1433;text-align:center}
+h1{font-size:23px;margin:0 0 6px;color:#f6e2ae}
+p{color:var(--muted);font-size:15px;margin:0 0 18px}
+input,select,textarea{width:100%;padding:14px;border-radius:14px;border:1px solid #3a4680;background:#05091d;color:var(--text);font-size:16px;outline:none;font-family:inherit;margin-bottom:10px}
+input:focus,select:focus,textarea:focus{border-color:var(--gold)}
+#c{font-size:24px;letter-spacing:.25em;text-align:center;text-transform:uppercase}
+.row{display:flex;gap:8px}.row input{text-align:center}
+label{display:block;text-align:left;font-size:13.5px;color:var(--muted);margin:4px 2px 6px}
+.out{margin-top:18px;font-size:46px;font-weight:800;letter-spacing:.12em;color:#f6e2ae;min-height:56px}
+button{margin-top:10px;padding:14px 26px;border-radius:999px;border:0;background:linear-gradient(120deg,#c99a4a,#f5dda0 45%,#d4a957);color:#1a1205;font-weight:800;font-size:16px;cursor:pointer;font-family:inherit}
+#b{display:none}
+button:disabled{opacity:.6}
+.msg{margin-top:12px;font-size:14px;color:#f6e2ae;min-height:20px}
+small{display:block;margin-top:16px;color:#7f88ad;font-size:12.5px}
+</style>
+</head>
+<body>
+<div class="box">
+  <h1>Lấy mã mở khóa</h1>
+  <p>Cô nhập <b>mã khách</b> (5 chữ trong tin nhắn Zalo của khách, VD: K7MPA) sau khi đã thấy tiền 99.000đ về tài khoản.</p>
+  <input id="c" maxlength="5" placeholder="MÃ KHÁCH" autocomplete="off">
+  <div class="out" id="o"></div>
+  <button id="b" type="button">Chép mã để gửi khách</button>
+</div>
+
+<div class="box">
+  <h1>Tạo file PDF cho khách</h1>
+  <p>Khi thấy tiền về, cô nhập tên và ngày sinh của khách rồi bấm nút. Máy tự làm file PDF, cô gửi file đó qua Zalo cho khách.</p>
+  <label>Họ tên khai sinh của khách</label>
+  <input id="nm" placeholder="VD: Nguyễn Thị Lan" autocomplete="off">
+  <label>Ngày sinh (dương lịch)</label>
+  <div class="row"><input id="dd" inputmode="numeric" maxlength="2" placeholder="Ngày"><input id="mm" inputmode="numeric" maxlength="2" placeholder="Tháng"><input id="yy" inputmode="numeric" maxlength="4" placeholder="Năm"></div>
+  <label>Gói khách đã mua</label>
+  <select id="pk">
+    <option value="Bản Đồ Năng Lượng">Bản Đồ Năng Lượng · 299k</option>
+    <option value="Giải Mã Chuyên Sâu">Giải Mã Chuyên Sâu · 899k</option>
+    <option value="Trọn Bộ Năng Lượng Số">Trọn Bộ Năng Lượng Số · 2.999k</option>
+    <option value="Thấu Hiểu Con Yêu">Thấu Hiểu Con Yêu · 599k</option>
+    <option value="Năng Lượng Tình Yêu">Năng Lượng Tình Yêu · 799k</option>
+    <option value="Đặt Tên &amp; Chọn Số">Đặt Tên &amp; Chọn Số · 999k</option>
+    <option value="Bản tự xem trọn bộ">Bản tự xem trọn bộ · 99k</option>
+  </select>
+  <label>Lời nhắn riêng của cô (không bắt buộc, gói lớn nên viết vài dòng)</label>
+  <textarea id="nt" rows="4" placeholder="VD: Lan ơi, năm nay em ở năm số 8, rất hợp để mở rộng việc kinh doanh..."></textarea>
+  <button id="mk" type="button">Tạo file PDF</button>
+  <div class="msg" id="ms"></div>
+  <small>Trang này chỉ dành cho cô, không gửi link cho khách.</small>
+</div>
+<script>
+function h(s){var x=2166136261;for(var i=0;i<s.length;i++){x^=s.charCodeAt(i);x=Math.imul(x,16777619)>>>0}return x}
+var c=document.getElementById('c'),o=document.getElementById('o'),b=document.getElementById('b');
+c.addEventListener('input',function(){var v=c.value.toUpperCase().replace(/[^A-Z0-9]/g,'');c.value=v;if(v.length===5){o.textContent=String(h('ctnls26'+v)%900000+100000);b.style.display='inline-block';b.textContent='Chép mã để gửi khách'}else{o.textContent='';b.style.display='none'}});
+b.addEventListener('click',function(){try{navigator.clipboard.writeText(o.textContent).catch(function(){})}catch(e){}b.textContent='Đã chép, cô dán vào Zalo gửi khách'});
+
+document.getElementById('mk').addEventListener('click',function(){
+  var g=function(i){return document.getElementById(i).value.trim()},ms=document.getElementById('ms'),btn=this;
+  var nm=g('nm').replace(/\s+/g,' '),dd=+g('dd'),mm=+g('mm'),yy=+g('yy');
+  var dt=new Date(yy,mm-1,dd);
+  if(nm.length<2){ms.textContent='Cô nhập họ tên của khách giúp con nha.';return}
+  if(!dd||!mm||yy<1900||dt.getMonth()!==mm-1){ms.textContent='Ngày sinh chưa đúng, cô kiểm tra lại nha.';return}
+  var pk=g('pk');
+  btn.disabled=true;btn.textContent='Đang tạo file…';ms.textContent='';
+  NLS.pdf({name:nm,dd:dd,mm:mm,yy:yy,pkg:pk,full:pk!=='Bản tự xem trọn bộ',note:document.getElementById('nt').value})
+    .then(function(fn){ms.textContent='Xong rồi cô! File "'+fn+'" nằm trong mục Tải xuống. Cô gửi file này qua Zalo cho khách.'},function(){ms.textContent='Chưa tạo được file, cô bấm lại giúp con nha.'})
+    .then(function(){btn.disabled=false;btn.textContent='Tạo file PDF'});
+});
+</script>
+<script src="js/nls-report.js"></script>
+</body>
+</html>
