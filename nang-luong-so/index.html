@@ -387,6 +387,12 @@ footer a{color:var(--gold2)}
   .hero-lead{margin-bottom:18px}
   .hero-points{margin-top:18px}
 }
+
+/* nut tu xem mien phi noi bat */
+.btn-free{position:relative;font-size:17px;padding-left:30px;padding-right:30px;animation:freePulse 2.2s ease-out infinite}
+.btn-free .free-tag{display:inline-block;margin-left:10px;background:#e8344a;color:#fff;font-size:12px;font-weight:800;padding:3px 9px;border-radius:999px;box-shadow:0 4px 12px #e8344a66;animation:freeBob 1.6s ease-in-out infinite}
+@keyframes freePulse{0%{box-shadow:0 0 0 0 #f5dda0aa,0 12px 30px #c99a4a55}70%{box-shadow:0 0 0 16px #f5dda000,0 12px 30px #c99a4a55}100%{box-shadow:0 0 0 0 #f5dda000,0 12px 30px #c99a4a55}}
+@keyframes freeBob{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
 </style>
 </head>
 <body>
@@ -415,7 +421,7 @@ footer a{color:var(--gold2)}
       <h1><span class="gold">Giải Mã<br>Năng Lượng Số</span><em>Hiểu mình để chọn đúng đường</em><span class="shine-sweep" aria-hidden="true"></span></h1>
       <p class="hero-lead">Họ tên và ngày sinh của bạn ẩn chứa những con số nói lên tính cách, điểm mạnh, bài học và thời điểm phù hợp để hành động. Tự xem miễn phí ngay bên dưới, hoặc để cô Thảo giải mã chuyên sâu cho riêng bạn.</p>
       <div class="hero-ctas">
-        <a class="btn btn-gold" href="#tu-xem">✦ Tự xem miễn phí</a>
+        <a class="btn btn-gold btn-free" href="#tu-xem">✦ Tự xem miễn phí<span class="free-tag">0đ</span></a>
         <a class="btn btn-ghost" href="#goi-xem">Xem các gói giải mã</a>
       </div>
       <ul class="hero-points">
