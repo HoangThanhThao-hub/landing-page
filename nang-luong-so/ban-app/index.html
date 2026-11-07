@@ -175,12 +175,24 @@ h2 .gold,.holo{animation:holoTxt 5s ease-in-out infinite}
 .pay-done:before,#zaloPay:before{opacity:.5}
 .pay-done:after,#zaloPay:after{background-image:linear-gradient(105deg,transparent 42%,#ffffff70 50%,transparent 58%)!important;animation:glossSweep 5s ease-in-out infinite!important}
 .pk2{display:grid;gap:10px}.pk2 .btn{width:100%}
+/* Phong thủy + sửa lỗi review */
+.hero{overflow:hidden}
+.hero-laban{position:absolute;left:50%;top:50%;width:min(760px,130vw);height:min(760px,130vw);margin:calc(min(760px,130vw)/-2) 0 0 calc(min(760px,130vw)/-2);opacity:.12;animation:spin 300s linear infinite;pointer-events:none;z-index:0}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(30px,6.4vw,78px);text-wrap:balance}
+@media(max-width:560px){.hero h1{font-size:clamp(26px,7.6vw,40px)}}
+.zalo-float{background:linear-gradient(180deg,#1b2154,#0d1236)!important;color:#f5dda0!important;border:1px solid #e3c27a99;box-shadow:0 10px 26px #0009!important;animation:none!important}
+.zalo-float span{background:linear-gradient(120deg,#c99a4a,#f5dda0 45%,#d4a957)!important;color:#1a1205!important}
+.zalo-float:before{display:none}
+@media(max-width:560px){.zalo-float{border-width:1px 0 0;border-radius:0}}
+@media (prefers-reduced-motion:reduce){.hero-laban{animation:none}}
 </style>
 </head>
 <body>
 <nav class="nav"><div class="wrap"><a class="back" href="../">← Năng lượng số</a><b>Cô Thảo</b></div></nav>
 
 <header class="hero">
+  <img class="hero-laban" src="../img/la-ban.svg" alt="" aria-hidden="true">
   <div class="wrap">
     <span class="kicker">Kinh doanh cùng cô Thảo</span>
     <h1 class="holo gold-t">Sở hữu App riêng<br>Kinh doanh cùng cô Thảo</h1>
