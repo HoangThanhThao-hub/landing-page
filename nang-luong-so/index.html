@@ -532,6 +532,32 @@ body{padding-bottom:54px}
 .chat-btn i{font-size:18px}
 }
 @media(min-width:861px){.packs.packs-mini{grid-template-columns:repeat(2,1fr);max-width:900px;margin-left:auto;margin-right:auto}}
+
+/* giá trị gói + nỗi đau */
+.pk-meta{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.pk-meta span{font-size:12.5px;padding:5px 10px;border-radius:999px;background:#e3c27a14;border:1px solid #e3c27a40;color:#f1e2b6}
+.pk-meta b{color:#f5dda0}
+.pk-ben{font-size:13.5px;color:#f3e9cc;margin:0 0 10px;line-height:1.5}
+.pk-more{margin:0 0 14px;border:1px dashed #e3c27a55;border-radius:12px;padding:8px 12px;background:#0a0f2a80}
+.pk-more summary{cursor:pointer;font-size:13.5px;font-weight:700;color:var(--gold);list-style:none}
+.pk-more summary::-webkit-details-marker{display:none}
+.pk-more summary:after{content:' ▾'}.pk-more[open] summary:after{content:' ▴'}
+.pk-more ol{margin:8px 0 2px;padding-left:20px;font-size:13px;color:#cfd5ec;line-height:1.55}
+.pack .pk-more li{padding:2px 0;border:0;font-size:13px}.pack .pk-more li:before{content:none}
+.pains{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pain{padding:20px 20px 18px;border-radius:18px;background:linear-gradient(170deg,#151c44,#0b1029);border:1px solid #ffffff14;border-left:3px solid #e3c27a}
+.pain b{display:block;font-size:16px;margin-bottom:6px;color:#f4ead0}
+.pain p{margin:0;font-size:14px;color:var(--muted);line-height:1.55}
+.pain-bridge{max-width:760px;margin:26px auto 0;text-align:center;font-size:16px;line-height:1.65}
+.pain-bridge a{color:var(--gold)}
+.how-deep{margin:0 0 30px;padding:22px;border-radius:20px;border:1px solid #e3c27a40;background:#0c1232b3}
+.hd-t{display:block;text-align:center;font-size:19px;margin-bottom:16px}
+.hd-g{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.hd-g i{font-style:normal;font-weight:800;color:var(--gold);font-size:13px;letter-spacing:.1em}
+.hd-g b{display:block;margin:4px 0 4px;font-size:15px}
+.hd-g p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.5}
+@media(max-width:860px){.pains{grid-template-columns:1fr 1fr}.hd-g{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.pains,.hd-g{grid-template-columns:1fr}.pack .for{min-height:0}}
 </style>
 </head>
 <body>
@@ -707,6 +733,26 @@ body{padding-bottom:54px}
   </div>
 </section>
 
+<!-- NỖI ĐAU -->
+<section class="section pain-sec" id="noi-bo-khoan">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">Bạn có đang như vậy?</span>
+      <h2>Cố gắng nhiều mà <span class="gold">vẫn thấy lạc hướng</span></h2>
+      <p>Rất nhiều người tìm đến cô Thảo với cùng một cảm giác: mình đã cố hết sức, nhưng không hiểu vì sao mọi thứ chưa như ý.</p>
+    </div>
+    <div class="pains">
+      <div class="pain reveal"><b>😔 Làm hoài mà không biết mình hợp nghề gì</b><p>Đổi việc nhiều lần, làm gì cũng nửa vời, không biết điểm mạnh thật sự của mình nằm ở đâu.</p></div>
+      <div class="pain reveal"><b>💸 Kiếm được nhưng tiền không giữ được</b><p>Có lúc lên lúc xuống, không biết năm nào nên mạnh dạn, năm nào nên giữ.</p></div>
+      <div class="pain reveal"><b>💔 Thương nhau mà hay cãi nhau</b><p>Nói một đằng người kia hiểu một nẻo, càng cố giải thích càng xa nhau.</p></div>
+      <div class="pain reveal"><b>👩‍👧 Con không chịu nghe mẹ</b><p>La thì con buồn, chiều thì con hư. Mẹ không biết con mình thật sự cần gì.</p></div>
+      <div class="pain reveal"><b>🏪 Sắp mở tiệm, đặt tên, chọn số mà phân vân</b><p>Sợ chọn sai tên, sai số, sai ngày rồi phải đổi lại, tốn tiền tốn công.</p></div>
+      <div class="pain reveal"><b>🌫️ Hay lo âu, không hiểu chính mình</b><p>Biết mình chưa ổn nhưng không biết bắt đầu sửa từ đâu.</p></div>
+    </div>
+    <p class="pain-bridge reveal">Những con số trong họ tên và ngày sinh của bạn chỉ ra <b class="gold">gốc rễ</b> của các vấn đề này: bạn mạnh ở đâu, dễ vấp ở đâu, và lúc nào nên hành động. <a href="#tu-xem">Xem thử Số Chủ Đạo miễn phí</a> hoặc <a href="#goi-xem">chọn gói giải mã</a>.</p>
+  </div>
+</section>
+
 <!-- BENEFITS -->
 <section class="section">
   <div class="wrap">
@@ -752,12 +798,13 @@ body{padding-bottom:54px}
       <h2>Chọn gói <span class="gold">phù hợp với bạn</span></h2>
       <p>Mỗi bản giải mã được cô Thảo làm riêng cho từng người, dựa trên họ tên và ngày sinh của bạn.</p>
     </div>
+<div class="how-deep reveal"><b class="hd-t">Vì sao bản giải mã của cô Thảo <span class="gold">không qua loa</span></b><div class="hd-g"><div><i>01</i><b>Tính đúng công thức</b><p>Pythagoras từ họ tên khai sinh và ngày sinh dương lịch, kết hợp Bát Cực Linh Số cho các dãy số bạn dùng.</p></div><div><i>02</i><b>Đối chiếu chéo các chỉ số</b><p>Không đọc từng số rời rạc. Các chỉ số được đặt cạnh nhau để thấy chỗ nào bổ trợ, chỗ nào giằng co.</p></div><div><i>03</i><b>Viết riêng cho hoàn cảnh của bạn</b><p>Bạn kể điều đang băn khoăn, lời khuyên được viết đúng vào chuyện đó, không phải bài in sẵn.</p></div><div><i>04</i><b>Hỏi lại khi chưa rõ</b><p>Đọc xong còn thắc mắc, bạn nhắn Zalo hỏi thêm, cô trả lời bằng tin nhắn.</p></div></div></div>
         <div class="packs">
       <article class="pack reveal">
         <span class="lv">Khởi đầu</span>
         <h3>Bản Đồ Năng Lượng</h3>
         <p class="for">Cho người mới muốn hiểu mình nhanh, rõ, dễ đọc.</p>
-        <div class="price">299.000đ</div><span class="price-note"></span>
+        <div class="price">299.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 PDF khoảng <b>10–12 trang</b></span><span>🔎 <b>6</b> mục phân tích</span></div><p class="pk-ben">✨ Hiểu mình trong 15 phút đọc, biết ngay điểm mạnh để phát huy.</p><details class="pk-more"><summary>Xem 6 mục cô Thảo phân tích</summary><ol><li>Bìa riêng có tên và ngày sinh của bạn</li><li>Bảng tổng hợp 8 chỉ số chính</li><li>Giải nghĩa từng chỉ số: điểm mạnh, điểm cần lưu ý</li><li>Biểu đồ ngày sinh và các mũi tên mạnh / trống</li><li>Năm cá nhân hiện tại: nên làm, nên tránh</li><li>Lời nhắn riêng của cô Thảo</li></ol></details>
         <ul>
           <li>File PDF giải mã 8 chỉ số chính</li>
           <li>Biểu đồ ngày sinh và các mũi tên</li>
@@ -771,7 +818,7 @@ body{padding-bottom:54px}
         <span class="lv">Chuyên sâu</span>
         <h3>Giải Mã Chuyên Sâu</h3>
         <p class="for">Cho người đang đứng trước lựa chọn lớn, cần hiểu sâu và có lộ trình.</p>
-        <div class="price">899.000đ</div><span class="price-note"></span>
+        <div class="price">899.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 PDF khoảng <b>25–30 trang</b></span><span>🔎 <b>10</b> mục phân tích</span></div><p class="pk-ben">✨ Có lộ trình rõ ràng cho quyết định lớn, biết thời điểm nào nên tiến, nên giữ.</p><details class="pk-more"><summary>Xem 10 mục cô Thảo phân tích</summary><ol><li>Bìa + lời mở đầu viết cho riêng bạn</li><li>8 chỉ số chính giải nghĩa chi tiết, đối chiếu chéo với nhau</li><li>Biểu đồ ngày sinh + mũi tên</li><li>4 Đỉnh Cao: tuổi nào, chủ đề gì</li><li>4 Thử Thách: bài học cần vượt qua</li><li>Định hướng nghề nghiệp</li><li>Định hướng tài chính</li><li>Định hướng tình cảm, gia đình</li><li>Năm cá nhân + 12 tháng cá nhân tới</li><li>Lộ trình gợi ý + lời nhắn của cô Thảo</li></ol></details>
         <ul>
           <li>Bản giải mã chuyên sâu cô Thảo viết riêng cho bạn</li>
           <li>Toàn bộ chỉ số + 4 đỉnh cao, 4 thử thách</li>
@@ -785,7 +832,7 @@ body{padding-bottom:54px}
         <span class="lv">VIP · Trọn bộ</span>
         <h3>Trọn Bộ Năng Lượng Số</h3>
         <p class="for">Cho chủ doanh nghiệp, người muốn có tấm bản đồ đầy đủ cho cả năm.</p>
-        <div class="price">2.999.000đ</div><span class="price-note"></span>
+        <div class="price">2.999.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 PDF khoảng <b>40–50 trang</b></span><span>🔎 <b>5</b> phần lớn, gồm trọn gói chuyên sâu</span></div><p class="pk-ben">✨ Một tấm bản đồ cho cả năm làm ăn, mở ra là biết tháng này nên làm gì.</p><details class="pk-more"><summary>Xem 5 mục cô Thảo phân tích</summary><ol><li>Toàn bộ nội dung gói Giải Mã Chuyên Sâu</li><li>Dự báo từng tháng trong 12 tháng tới: tháng nào đẩy mạnh, tháng nào giữ sức</li><li>Gợi ý ngày tốt khai trương, ký kết trong năm</li><li>Góp ý tên thương hiệu, số điện thoại (Bát Cực Linh Số)</li><li>Lộ trình cả năm + lời nhắn của cô Thảo</li></ol></details>
         <ul>
           <li>1 file PDF chuyên sâu trọn bộ, gửi qua Zalo trong 24 giờ</li>
           <li>Toàn bộ nội dung gói Giải Mã Chuyên Sâu</li>
@@ -802,7 +849,7 @@ body{padding-bottom:54px}
         <span class="lv">Gia đình</span>
         <h3>Thấu Hiểu Con Yêu</h3>
         <p class="for">Cho ba mẹ muốn hiểu tính cách, năng khiếu của con để nuôi dạy phù hợp.</p>
-        <div class="price">599.000đ</div><span class="price-note"></span>
+        <div class="price">599.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 PDF khoảng <b>15–18 trang</b></span><span>🔎 <b>8</b> mục phân tích</span></div><p class="pk-ben">✨ Bớt la mắng sai cách, biết nuôi đúng năng khiếu của con từ sớm.</p><details class="pk-more"><summary>Xem 8 mục cô Thảo phân tích</summary><ol><li>Bìa riêng có tên bé</li><li>Các chỉ số chính của bé</li><li>Tính cách và cảm xúc của bé</li><li>Năng khiếu nổi bật, môn học / hoạt động hợp</li><li>Cách học hợp với bé, cách khen và nhắc nhở hiệu quả</li><li>Biểu đồ ngày sinh: điểm mạnh và điểm cần giúp bé rèn</li><li>Gợi ý hướng phát triển lâu dài</li><li>Lời nhắn cho ba mẹ</li></ol></details>
         <ul>
           <li>Giải mã chỉ số của 1 bé</li>
           <li>Năng khiếu, cách học, cách khen phù hợp</li>
@@ -815,7 +862,7 @@ body{padding-bottom:54px}
         <span class="lv">Mẹ và con</span>
         <h3>Năng Lượng 2 Mẹ Con</h3>
         <p class="for">Cho mẹ muốn hiểu mình, hiểu con và biết cách gần con hơn.</p>
-        <div class="price">799.000đ</div><span class="price-note"></span>
+        <div class="price">799.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 PDF khoảng <b>18–22 trang</b></span><span>🔎 <b>8</b> mục phân tích</span></div><p class="pk-ben">✨ Hiểu vì sao 2 mẹ con hay “lệch sóng” và cách nói để con chịu nghe.</p><details class="pk-more"><summary>Xem 8 mục cô Thảo phân tích</summary><ol><li>Bìa có tên mẹ và tên con</li><li>Chỉ số chính của mẹ</li><li>Chỉ số chính của con</li><li>So 2 mẹ con: điểm hợp, điểm dễ va chạm</li><li>Cách mẹ nói để con nghe, cách khen và nhắc hợp với con</li><li>Gợi ý nuôi dạy, hoạt động 2 mẹ con nên làm cùng</li><li>Năm cá nhân của mẹ và con: năm nay cần lưu ý gì</li><li>Lời nhắn của cô Thảo</li></ol></details>
         <ul>
           <li>Giải mã chỉ số của cả mẹ và con</li>
           <li>Điểm hợp, điểm dễ va chạm giữa 2 mẹ con</li>
@@ -828,7 +875,7 @@ body{padding-bottom:54px}
         <span class="lv">Lứa đôi</span>
         <h3>Năng Lượng Tình Yêu</h3>
         <p class="for">Cho cặp đôi, vợ chồng muốn hiểu nhau và hòa hợp hơn.</p>
-        <div class="price">799.000đ</div><span class="price-note"></span>
+        <div class="price">799.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 PDF khoảng <b>18–22 trang</b></span><span>🔎 <b>7</b> mục phân tích</span></div><p class="pk-ben">✨ Hiểu nửa kia để bớt cãi vã, biết cách yêu đúng “ngôn ngữ” của người ấy.</p><details class="pk-more"><summary>Xem 7 mục cô Thảo phân tích</summary><ol><li>Bìa có tên 2 người</li><li>Chỉ số chính của từng người</li><li>So sánh: điểm hợp, điểm dễ va chạm</li><li>Cách giao tiếp, cách thể hiện yêu thương hợp với người kia</li><li>Cùng phát triển: mục tiêu chung, tài chính, gia đình</li><li>Năm cá nhân của 2 người: năm nay nên lưu ý gì</li><li>Lời nhắn của cô Thảo</li></ol></details>
         <ul>
           <li>Giải mã chỉ số của cả 2 người</li>
           <li>Điểm hợp, điểm dễ va chạm</li>
@@ -841,7 +888,7 @@ body{padding-bottom:54px}
         <span class="lv">Kinh doanh</span>
         <h3>Đặt Tên & Chọn Số</h3>
         <p class="for">Cho người đặt tên con, tên thương hiệu, chọn số điện thoại, ngày khai trương.</p>
-        <div class="price">999.000đ</div><span class="price-note"></span>
+        <div class="price">999.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 PDF khoảng <b>12–15 trang</b></span><span>🔎 <b>4</b> mục phân tích</span></div><p class="pk-ben">✨ Chọn một lần, dùng cả đời: tên con, tên thương hiệu, số điện thoại hợp năng lượng.</p><details class="pk-more"><summary>Xem 4 mục cô Thảo phân tích</summary><ol><li>Phân tích năng lượng tên / số đang dùng: hợp hay chưa hợp với Số Chủ Đạo</li><li>Đề xuất 3–5 phương án tên / số hợp năng lượng, giải thích từng phương án</li><li>Gợi ý ngày đẹp để bắt đầu</li><li>Hỗ trợ qua Zalo đến khi bạn chốt</li></ol></details>
         <ul>
           <li>Phân tích năng lượng tên / số hiện tại</li>
           <li>Đề xuất 3 đến 5 phương án hợp năng lượng</li>
@@ -856,7 +903,7 @@ body{padding-bottom:54px}
       <div class="pdf-txt">
         <span class="kicker">Bạn sẽ nhận được gì</span>
         <h3>Bản giải mã <span class="gold">viết riêng cho bạn</span></h3>
-        <p>File PDF trình bày đẹp, dễ đọc trên điện thoại: Số Chủ Đạo, Sứ Mệnh, Linh Hồn, Nhân Cách, Ngày Sinh và lời khuyên cụ thể. Gửi qua Zalo trong 24 giờ.</p>
+        <p>File PDF trình bày đẹp, dễ đọc trên điện thoại: Số Chủ Đạo, Sứ Mệnh, Linh Hồn, Nhân Cách, Ngày Sinh và lời khuyên cụ thể. Gói khởi đầu khoảng 10–12 trang, gói chuyên sâu 25–30 trang, trọn bộ 40–50 trang. Gửi qua Zalo trong 24 giờ.</p>
         <p class="pdf-note">Ảnh trên là bản mẫu, tên và ngày sinh chỉ để minh họa.</p>
         <a class="btn btn-gold" href="#tu-xem">✦ Tự xem miễn phí trước</a>
       </div>
