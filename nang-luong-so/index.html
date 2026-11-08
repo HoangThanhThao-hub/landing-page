@@ -595,6 +595,51 @@ body{padding-bottom:54px}
 .paid-thx{margin-top:14px;padding:18px 16px;border-radius:18px;border:1px solid #3ddc84;background:linear-gradient(160deg,#0f2a1f,#0b1a24);text-align:center}
 .paid-thx h4{margin:0 0 6px;font-size:20px;color:#7dffb0}.paid-thx p{margin:0 0 12px;color:#e8e2cf;font-size:14.5px;line-height:1.6}.paid-thx code{background:#ffffff14;padding:2px 8px;border-radius:6px;color:var(--gold);font-weight:700}
 .zalo-big{display:flex;align-items:center;justify-content:center;gap:10px;padding:16px;border-radius:999px;background:#0068ff;color:#fff!important;font-weight:800;font-size:17px;text-decoration:none;box-shadow:0 10px 26px #0068ff66}.zalo-big i{font-style:normal;background:#fff;color:#0068ff;border-radius:50%;width:34px;height:34px;display:grid;place-items:center;font-size:12px;font-weight:900}
+
+/* === xem trước bố cục mới === */
+.ld-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.ld{position:relative;display:block;padding:26px 22px;border-radius:22px;border:1px solid var(--line);background:linear-gradient(165deg,#1b1650,#0b1129);color:var(--text);text-decoration:none;transition:.25s;overflow:hidden}
+.ld:hover{transform:translateY(-3px);border-color:var(--gold)}
+.ld i{font-style:normal;font-size:34px}.ld b{display:block;margin:10px 0 6px;font:700 22px 'Playfair Display',serif;color:var(--gold2)}.ld p{margin:0 0 14px;color:#cfd5ee;font-size:14.5px}.ld span{color:var(--gold);font-weight:700;font-size:14px}
+.ld-hot{border-color:var(--gold);box-shadow:0 0 0 5px #e3c27a14,0 20px 50px #0007}
+.ld:before{content:'';position:absolute;inset:-40% -40% auto auto;width:180px;height:180px;border-radius:50%;background:radial-gradient(#e3c27a33,transparent 70%)}
+@media(max-width:860px){.ld-grid{grid-template-columns:1fr}}
+.pk-filter{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 0 26px}
+.pk-filter button{padding:10px 16px;border-radius:999px;border:1px solid #e3c27a66;background:#0b1129;color:var(--gold2);font:600 14px 'Be Vietnam Pro',sans-serif;cursor:pointer}
+.pk-filter button.on{background:linear-gradient(120deg,#c99a4a,#f5dda0 45%,#d4a957);color:#1a1205;border-color:transparent}
+@media(max-width:600px){.pk-filter{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:4px}.pk-filter button{flex:0 0 auto}}
+.pack.pk-hide{display:none!important}
+.app-link{text-align:center;margin:30px 0 0;color:var(--muted);font-size:14px}.app-link a{color:var(--gold)}
+.lk-one{text-align:center;margin-top:10px}
+.more-fold{border:1px solid var(--line);border-radius:18px;padding:6px 18px;background:#0b112980}.more-fold>summary{cursor:pointer;padding:14px 0;color:var(--gold2);font-weight:700;text-align:center;list-style:none}
+.am-open{background:none;border:0;padding:0;color:var(--gold);text-decoration:underline;font:inherit;cursor:pointer}
+.am-box{margin-top:10px;padding:14px;border:1px dashed #e3c27a88;border-radius:14px;background:#0b1129}
+.am-box .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.am-box input{width:70px;padding:10px;border-radius:10px;border:1px solid #3a4680;background:#070b22;color:var(--text);font:inherit}
+.am-box label{font-size:13px;color:var(--muted)}.am-box .am-out{margin-top:8px;font-size:14px;color:var(--gold2)}
+
+/* === làm đẹp hơn: màu huyền ảo === */
+.hero{position:relative}
+.hero:after{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;background:radial-gradient(60% 50% at 15% 20%,#7b3fe455,transparent 70%),radial-gradient(50% 45% at 85% 30%,#1fb5c444,transparent 70%),radial-gradient(55% 50% at 50% 100%,#e3527a33,transparent 70%);mix-blend-mode:screen;animation:aurora 14s ease-in-out infinite alternate}
+@keyframes aurora{0%{opacity:.65;filter:hue-rotate(0)}100%{opacity:1;filter:hue-rotate(35deg)}}
+.hero>.wrap{position:relative;z-index:1}
+.hero h1 .gold{background:linear-gradient(100deg,#f5dda0 0%,#e3c27a 25%,#ffb3d1 45%,#b9a6ff 60%,#f5dda0 80%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:nameShine 7s linear infinite}
+@keyframes nameShine{to{background-position:-250% 0}}
+.section+.section:before{content:'✦  ☯  ✦';position:absolute;top:-12px;left:50%;transform:translateX(-50%);padding:0 18px;color:var(--gold);letter-spacing:.5em;font-size:13px;text-shadow:0 0 12px #e3c27aaa;background:radial-gradient(closest-side,#070b1f,#070b1f00);white-space:nowrap;z-index:2}
+.section+.section{border-top:1px solid transparent;border-image:linear-gradient(90deg,transparent,#e3c27a66,#b9a6ff66,#e3c27a66,transparent) 1}
+.ld{border:1px solid transparent;background:linear-gradient(165deg,#1d1656,#0b1129) padding-box,linear-gradient(140deg,#e3c27a,#7b3fe4,#1fb5c4) border-box}
+.ld:nth-child(1){background:linear-gradient(165deg,#2a1866,#0b1129) padding-box,linear-gradient(140deg,#b9a6ff,#7b3fe4 50%,#e3c27a) border-box}
+.ld:nth-child(2){background:linear-gradient(165deg,#0f2e4d,#0b1129) padding-box,linear-gradient(140deg,#5fe0e8,#1f7fc4 50%,#e3c27a) border-box}
+.ld:nth-child(3){background:linear-gradient(165deg,#3a2210,#0b1129) padding-box,linear-gradient(140deg,#f5dda0,#c99a4a 50%,#ff9fc4) border-box}
+.ld:nth-child(1):before{background:radial-gradient(#b9a6ff55,transparent 70%)}
+.ld:nth-child(2):before{background:radial-gradient(#5fe0e855,transparent 70%)}
+.ld:nth-child(3):before{background:radial-gradient(#f5dda066,transparent 70%)}
+.ld:after{content:'☰ ☱ ☲ ☳ ☴ ☵ ☶ ☷';position:absolute;right:-30px;bottom:-34px;width:150px;height:150px;border-radius:50%;display:grid;place-items:center;text-align:center;font-size:15px;line-height:1.5;padding:22px;color:#e3c27a40;border:1px dashed #e3c27a33;animation:spinSlow 40s linear infinite;pointer-events:none}
+@keyframes spinSlow{to{transform:rotate(360deg)}}
+.ld i{display:inline-grid;place-items:center;width:58px;height:58px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffffff22,#ffffff05);box-shadow:0 0 22px #e3c27a44,inset 0 0 0 1px #e3c27a55}
+.ld:hover{box-shadow:0 18px 50px #0009,0 0 30px #b9a6ff33}
+@media (prefers-reduced-motion:reduce){.hero:after,.hero h1 .gold,.ld:after{animation:none}}
+/* 1 điểm liên hệ: chỉ giữ nút Zalo */
+.chat-btn,#chat,.exit{display:none!important}
 </style>
 </head>
 <body>
@@ -620,12 +665,12 @@ body{padding-bottom:54px}
   <div class="vbg" aria-hidden="true"><video autoplay muted loop playsinline preload="metadata" poster="video/bg-thien-ha-vang.jpg" style="opacity:.55"><source src="video/bg-thien-ha-vang.mp4?v=2" type="video/mp4"></video></div>
   <div class="wrap">
     <div>
-      <span class="kicker">Thần số học Pythagoras · Bát Cực Linh Số</span>
-      <h1><span class="gold">Giải Mã<br>Năng Lượng Số</span><em>Hiểu mình để chọn đúng đường</em><span class="shine-sweep" aria-hidden="true"></span></h1>
-      <p class="hero-lead">Họ tên và ngày sinh của bạn ẩn chứa những con số nói lên tính cách, điểm mạnh, bài học và thời điểm phù hợp để hành động. Tự xem miễn phí ngay bên dưới, hoặc để cô Thảo giải mã chuyên sâu cho riêng bạn.</p>
+      <span class="kicker">Master Hoàng Thanh Thảo · Pythagoras · Bát Cực Linh Số</span>
+      <h1><span class="gold">Giải Mã<br>Năng Lượng Số</span><em>Thêm một góc nhìn về chính mình</em><span class="shine-sweep" aria-hidden="true"></span></h1>
+      <p class="hero-lead">Khám phá họ tên, ngày sinh và những dãy số quen thuộc qua Pythagoras và Bát Cực Linh Số, như một góc nhìn để tự chiêm nghiệm và đối chiếu với trải nghiệm của chính bạn.</p>
       <div class="hero-ctas">
         <a class="btn btn-gold btn-free" href="#tu-xem">✦ Tự xem miễn phí<span class="free-tag">0đ</span></a>
-        <a class="btn btn-ghost" href="#goi-xem">Xem các gói giải mã</a>
+        <a class="btn btn-ghost" href="#mau-pdf">Xem bản giải mã mẫu</a>
       </div>
       <ul class="hero-points">
         <li>Chỉ cần họ tên + ngày sinh</li>
@@ -649,7 +694,16 @@ body{padding-bottom:54px}
   </div>
 </header>
 <div class="tk" aria-hidden="true"><div class="tk-in"><span>Xem Số Chủ Đạo miễn phí</span><i>✦</i><span>Hiểu điểm mạnh của chính mình</span><i>✦</i><span>Bản giải mã viết riêng trong 24 giờ</span><i>✦</i><span>Biết năm nay nên tập trung vào việc gì</span><i>✦</i><span>Hiểu số, hiểu mình</span><i>✦</i><span>Chọn đúng thời điểm hành động</span><i>✦</i><span>Xem Số Chủ Đạo miễn phí</span><i>✦</i><span>Hiểu điểm mạnh của chính mình</span><i>✦</i><span>Bản giải mã viết riêng trong 24 giờ</span><i>✦</i><span>Biết năm nay nên tập trung vào việc gì</span><i>✦</i><span>Hiểu số, hiểu mình</span><i>✦</i><span>Chọn đúng thời điểm hành động</span><i>✦</i></div></div>
-
+<section class="section" id="loi-di">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="kicker">Bắt đầu từ đâu?</span><h2>Tôi muốn <span class="gold">…</span></h2></div>
+    <div class="ld-grid reveal">
+      <a class="ld" href="#tu-xem"><i>🔮</i><b>Hiểu bản thân</b><p>Nhập họ tên và ngày sinh, xem ngay Số Chủ Đạo miễn phí.</p><span>Khám phá miễn phí →</span></a>
+      <a class="ld" href="#cac-loai-so"><i>📱</i><b>Khám phá dãy số</b><p>Số điện thoại, biển số, số nhà, số tài khoản đang dùng hợp hay chưa.</p><span>Xem dãy số →</span></a>
+      <a class="ld ld-hot" href="#goi-xem"><i>📜</i><b>Nhận bản giải mã riêng</b><p>Cô Thảo viết riêng cho bạn, gửi file PDF qua Zalo trong 24 giờ.</p><span>Chọn gói →</span></a>
+    </div>
+  </div>
+</section>
 <!-- CALCULATOR -->
 <section class="section has-vbg" id="tu-xem" style="padding-top:40px">
   <div class="vbg" aria-hidden="true"><video autoplay muted loop playsinline preload="none" poster="video/bg-ngan-ha.jpg" style="opacity:.45"><source src="video/bg-ngan-ha.mp4?v=2" type="video/mp4"></video></div>
@@ -666,13 +720,13 @@ body{padding-bottom:54px}
           <input id="fullname" name="fullname" placeholder="VD: Nguyễn Thị Minh Anh" required>
         </div>
         <div class="field">
-          <label>Ngày sinh <b style="color:var(--gold)">DƯƠNG lịch</b> (ngày trên giấy khai sinh, căn cước)</label>
+          <label>Ngày sinh <b style="color:var(--gold)">DƯƠNG lịch</b> </label>
           <div class="dob">
             <select id="d" aria-label="Ngày"><option value="">Ngày</option></select>
             <select id="m" aria-label="Tháng"><option value="">Tháng</option></select>
             <select id="y" aria-label="Năm"><option value="">Năm</option></select>
           </div>
-          <small style="display:block;margin-top:6px;font-size:12.5px;opacity:.85">Chỉ nhớ ngày âm? Ngày trên căn cước chính là ngày dương, bạn lấy ngày đó nhập vào nhé.</small>
+          <small style="display:block;margin-top:6px;font-size:12.5px;opacity:.85">Hãy nhập ngày sinh <b>dương lịch</b> bạn chắc chắn. Chỉ nhớ ngày âm? <button type="button" class="am-open" id="amOpen">Đổi ngày âm sang dương</button></small>
         </div>
         <button class="btn btn-gold" type="submit" style="padding:16px 30px">Giải mã ✦</button>
       </form>
@@ -741,14 +795,13 @@ body{padding-bottom:54px}
         <div class="locked">
           <h4>Các bản giải mã <span class="gold">dành riêng cho bạn</span></h4>
           <p style="color:var(--muted);margin:0 0 18px">Chọn gói muốn mở. Cô Thảo viết riêng theo họ tên và ngày sinh của bạn, gửi file PDF qua Zalo trong 24 giờ.</p>
-          <div class="lk-grid"><button type="button" class="lk" data-lk="199000|NAM2027|Năm Cá Nhân 2027"><span class="lk-ic">🔒</span><b>Năm Cá Nhân 2027</b><span class="lk-blur">Số năm 2027 · dự báo 12 tháng · tháng nên tiến, nên giữ</span><span class="lk-ft"><em>199.000đ</em><i>Mở gói này</i></span></button><button type="button" class="lk" data-lk="199000|SODEP|Xem 1 Số Điện Thoại / Biển Số"><span class="lk-ic">🔒</span><b>Xem 1 Số Điện Thoại / Biển Số</b><span class="lk-blur">Cặp số tốt · cặp số xấu · nên giữ hay đổi</span><span class="lk-ft"><em>199.000đ</em><i>Mở gói này</i></span></button><button type="button" class="lk" data-lk="299000|BANDO|Bản Đồ Năng Lượng"><span class="lk-ic">🔒</span><b>Bản Đồ Năng Lượng</b><span class="lk-blur">8 chỉ số chính · biểu đồ mũi tên · năm cá nhân</span><span class="lk-ft"><em>299.000đ</em><i>Mở gói này</i></span></button><button type="button" class="lk" data-lk="399000|LAMCHU|Làm Chủ Hay Làm Thuê"><span class="lk-ic">🔒</span><b>Làm Chủ Hay Làm Thuê</b><span class="lk-blur">Hợp làm chủ hay làm thuê · 3 nhóm nghề hợp</span><span class="lk-ft"><em>399.000đ</em><i>Mở gói này</i></span></button><button type="button" class="lk" data-lk="599000|CONYEU|Thấu Hiểu Con Yêu"><span class="lk-ic">🔒</span><b>Thấu Hiểu Con Yêu</b><span class="lk-blur">Năng khiếu · cách học · cách khen hợp với bé</span><span class="lk-ft"><em>599.000đ</em><i>Mở gói này</i></span></button><button type="button" class="lk" data-lk="799000|MECON|Năng Lượng 2 Mẹ Con"><span class="lk-ic">🔒</span><b>Năng Lượng 2 Mẹ Con</b><span class="lk-blur">Điểm hợp · cách nói chuyện · nuôi dạy hợp con</span><span class="lk-ft"><em>799.000đ</em><i>Mở gói này</i></span></button><button type="button" class="lk" data-lk="799000|TINHYEU|Năng Lượng Tình Yêu"><span class="lk-ic">🔒</span><b>Năng Lượng Tình Yêu</b><span class="lk-blur">Điểm hợp · điểm dễ va chạm · cách giao tiếp của 2 người</span><span class="lk-ft"><em>799.000đ</em><i>Mở gói này</i></span></button><button type="button" class="lk" data-lk="899000|CHUYENSAU|Giải Mã Chuyên Sâu"><span class="lk-ic">🔒</span><b>Giải Mã Chuyên Sâu</b><span class="lk-blur">4 đỉnh cao · 4 thử thách · nghề nghiệp · tài chính · tình cảm · 12 tháng tới</span><span class="lk-ft"><em>899.000đ</em><i>Mở gói này</i></span></button><button type="button" class="lk" data-lk="999000|DATTEN|Đặt Tên & Chọn Số"><span class="lk-ic">🔒</span><b>Đặt Tên & Chọn Số</b><span class="lk-blur">3–5 phương án tên / số hợp năng lượng · ngày đẹp</span><span class="lk-ft"><em>999.000đ</em><i>Mở gói này</i></span></button><button type="button" class="lk" data-lk="1499000|DOIDOI|Combo Đổi Đời"><span class="lk-ic">🔒</span><b>Combo Đổi Đời</b><span class="lk-blur">Số điện thoại + số tài khoản đẹp · hóa giải căn cước xấu</span><span class="lk-ft"><em>1.499.000đ</em><i>Mở gói này</i></span></button><button type="button" class="lk" data-lk="2999000|TRONBO|Trọn Bộ Năng Lượng Số"><span class="lk-ic">🔒</span><b>Trọn Bộ Năng Lượng Số</b><span class="lk-blur">Toàn bộ chuyên sâu · ngày tốt khai trương · tên thương hiệu, số điện thoại</span><span class="lk-ft"><em>2.999.000đ</em><i>Mở gói này</i></span></button><button type="button" class="lk" data-lk="3999000|TRONDOI|Luận Giải Trọn Đời"><span class="lk-ic">🔒</span><b>Luận Giải Trọn Đời</b><span class="lk-blur">Từng giai đoạn · tình duyên · sự nghiệp · tiền bạc · sức khỏe</span><span class="lk-ft"><em>3.999.000đ</em><i>Mở gói này</i></span></button></div>
+          <div class="lk-one"><a class="btn btn-gold" href="#goi-xem">✦ Xem các bản giải mã viết riêng</a></div>
           <p class="copied" id="copied"></p>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 <!-- CAC LOAI SO -->
 <section class="section" id="cac-loai-so" style="padding-top:30px">
   <div class="wrap">
@@ -771,77 +824,20 @@ body{padding-bottom:54px}
     </div>
   </div>
 </section>
-
-<!-- NỖI ĐAU -->
-<section class="section pain-sec" id="noi-bo-khoan">
+<section class="section has-vbg" id="mau-pdf">
   <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Bạn có đang như vậy?</span>
-      <h2>Cố gắng nhiều mà <span class="gold">vẫn thấy lạc hướng</span></h2>
-      <p>Rất nhiều người tìm đến cô Thảo với cùng một cảm giác: mình đã cố hết sức, nhưng không hiểu vì sao mọi thứ chưa như ý.</p>
-    </div>
-    <div class="pains">
-      <div class="pain reveal"><b>😔 Làm hoài mà không biết mình hợp nghề gì</b><p>Đổi việc nhiều lần, làm gì cũng nửa vời, không biết điểm mạnh thật sự của mình nằm ở đâu.</p></div>
-      <div class="pain reveal"><b>💸 Kiếm được nhưng tiền không giữ được</b><p>Có lúc lên lúc xuống, không biết năm nào nên mạnh dạn, năm nào nên giữ.</p></div>
-      <div class="pain reveal"><b>💔 Thương nhau mà hay cãi nhau</b><p>Nói một đằng người kia hiểu một nẻo, càng cố giải thích càng xa nhau.</p></div>
-      <div class="pain reveal"><b>👩‍👧 Con không chịu nghe mẹ</b><p>La thì con buồn, chiều thì con hư. Mẹ không biết con mình thật sự cần gì.</p></div>
-      <div class="pain reveal"><b>🏪 Sắp mở tiệm, đặt tên, chọn số mà phân vân</b><p>Sợ chọn sai tên, sai số, sai ngày rồi phải đổi lại, tốn tiền tốn công.</p></div>
-      <div class="pain reveal"><b>🌫️ Hay lo âu, không hiểu chính mình</b><p>Biết mình chưa ổn nhưng không biết bắt đầu sửa từ đâu.</p></div>
-    </div>
-    <p class="pain-bridge reveal">Những con số trong họ tên và ngày sinh của bạn chỉ ra <b class="gold">gốc rễ</b> của các vấn đề này: bạn mạnh ở đâu, dễ vấp ở đâu, và lúc nào nên hành động. <a href="#tu-xem">Xem thử Số Chủ Đạo miễn phí</a> hoặc <a href="#goi-xem">chọn gói giải mã</a>.</p>
-  </div>
-</section>
-
-<!-- BENEFITS -->
-<section class="section">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Vì sao nên xem</span>
-      <h2>Con số giúp bạn <span class="gold">hiểu mình rõ hơn</span></h2>
-      <p>Thần số học là một công cụ để tự soi chiếu: nhìn lại điểm mạnh, điểm cần bồi đắp, và chọn thời điểm phù hợp cho các quyết định lớn.</p>
-    </div>
-    <div class="benefits">
-      <div class="benefit reveal"><div class="ico">🪞</div><h3>Hiểu bản thân</h3><p>Biết rõ tính cách, điểm mạnh tự nhiên và những bài học lặp lại trong cuộc sống của mình.</p></div>
-      <div class="benefit reveal"><div class="ico">💼</div><h3>Sự nghiệp & tài chính</h3><p>Nhận ra hướng đi, lĩnh vực và cách làm việc hợp với năng lượng của bạn.</p></div>
-      <div class="benefit reveal"><div class="ico">💞</div><h3>Tình cảm & gia đình</h3><p>Hiểu người thương, hiểu con cái để giao tiếp nhẹ nhàng và thấu cảm hơn.</p></div>
-      <div class="benefit reveal"><div class="ico">🧭</div><h3>Thời điểm hành động</h3><p>Biết năm, tháng nào nên khởi đầu, nên tích lũy hay nên nghỉ ngơi nhìn lại.</p></div>
+    <div class="pdf-mau reveal">
+      <div class="pdf-pages"><img src="img/pdf-mau-bia.webp" width="560" height="792" alt="Bìa bản giải mã năng lượng số mẫu" loading="lazy"><img src="img/pdf-mau-trang-2.webp" width="560" height="792" alt="Trang Số Chủ Đạo trong bản giải mã mẫu" loading="lazy"></div>
+      <div class="pdf-txt">
+        <span class="kicker">Bạn sẽ nhận được gì</span>
+        <h3>Bản giải mã <span class="gold">viết riêng cho bạn</span></h3>
+        <p>File PDF trình bày đẹp, dễ đọc trên điện thoại: Số Chủ Đạo, Sứ Mệnh, Linh Hồn, Nhân Cách, Ngày Sinh và lời khuyên cụ thể. Gói khởi đầu khoảng 10–12 trang, gói chuyên sâu 25–30 trang, trọn bộ 40–50 trang. Gửi qua Zalo trong 24 giờ.</p>
+        <p class="pdf-note">Ảnh trên là bản mẫu, tên và ngày sinh chỉ để minh họa.</p>
+        <a class="btn btn-gold" href="#tu-xem">✦ Tự xem miễn phí trước</a>
+      </div>
     </div>
   </div>
 </section>
-
-<!-- INDICES -->
-<section class="section" id="chi-so">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Các chỉ số chính</span>
-      <h2>Mỗi con số <span class="gold">kể một câu chuyện</span></h2>
-    </div>
-    <div class="indices reveal">
-      <div><span>Từ ngày sinh</span><b>Số Chủ Đạo</b><p>Con đường cuộc đời, bài học lớn nhất và hướng phát triển của bạn.</p></div>
-      <div><span>Từ họ tên</span><b>Số Sứ Mệnh</b><p>Tài năng bạn mang theo và điều bạn sinh ra để làm.</p></div>
-      <div><span>Từ nguyên âm</span><b>Số Linh Hồn</b><p>Điều trái tim bạn thật sự khao khát, động lực bên trong.</p></div>
-      <div><span>Từ phụ âm</span><b>Số Nhân Cách</b><p>Ấn tượng đầu tiên người khác cảm nhận ở bạn.</p></div>
-      <div><span>Từ ngày sinh</span><b>Số Ngày Sinh</b><p>Năng khiếu bẩm sinh, món quà đặc biệt của riêng bạn.</p></div>
-      <div><span>Theo từng năm</span><b>Năm Cá Nhân</b><p>Chu kỳ 9 năm, cho biết năm nay là năm gieo hạt hay gặt hái.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- Ý NGHĨA 12 SỐ CHỦ ĐẠO -->
-<section class="section" id="y-nghia-so-chu-dao" style="padding-top:20px">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Hỏi nhiều nhất</span>
-      <h2>Số Chủ Đạo của bạn là <span class="gold">số mấy?</span></h2>
-      <p>Cộng hết các chữ số trong ngày tháng năm sinh <b>dương lịch</b>, ra 2 chữ số thì cộng tiếp tới khi còn 1 chữ số. Ra 11, 22, 33 thì dừng lại, đó là 3 số bậc thầy. Bấm vào số của bạn để xem ý nghĩa.</p>
-    </div>
-    <div class="yn-grid" id="ynGrid"></div>
-    <p class="pain-bridge reveal">Mỗi người còn có Sứ Mệnh, Linh Hồn, Nhân Cách, Năm Cá Nhân khác nhau. <a href="#tu-xem">Nhập tên và ngày sinh để xem của riêng bạn</a>.</p>
-  </div>
-</section>
-
-<!-- PACKAGES -->
-<div class="tk alt" aria-hidden="true"><div class="tk-in"><span>Định hướng nghề nghiệp hợp với bạn</span><i>✦</i><span>Hiểu nửa kia để bớt va chạm</span><i>✦</i><span>Hiểu con để nuôi dạy đúng cách</span><i>✦</i><span>Chọn tên, số, ngày khai trương hợp năng lượng</span><i>✦</i><span>Năm cá nhân của bạn là số mấy?</span><i>✦</i><span>Nhắn Zalo cô Thảo 0935 949 141</span><i>✦</i><span>Định hướng nghề nghiệp hợp với bạn</span><i>✦</i><span>Hiểu nửa kia để bớt va chạm</span><i>✦</i><span>Hiểu con để nuôi dạy đúng cách</span><i>✦</i><span>Chọn tên, số, ngày khai trương hợp năng lượng</span><i>✦</i><span>Năm cá nhân của bạn là số mấy?</span><i>✦</i><span>Nhắn Zalo cô Thảo 0935 949 141</span><i>✦</i></div></div>
 <section class="section" id="co-so">
   <div class="wrap">
     <div class="section-head reveal">
@@ -857,7 +853,36 @@ body{padding-bottom:54px}
     <div class="cs-ex reveal"><span>Ví dụ cách tính</span><p>Sinh ngày <b>28/03/1988</b>: 2+8+0+3+1+9+8+8 = 39 → 3+9 = 12 → 1+2 = <b class="gold">3</b>. Số Chủ Đạo là 3. Nếu ra 11, 22, 33 thì giữ nguyên vì đó là số bậc thầy.</p></div>
   </div>
 </section>
+<section class="section" id="chi-so-them"><div class="wrap"><details class="more-fold"><summary>✦ Tìm hiểu thêm: các chỉ số và ý nghĩa 12 con số chủ đạo</summary><!-- INDICES -->
 
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">Các chỉ số chính</span>
+      <h2>Mỗi con số <span class="gold">kể một câu chuyện</span></h2>
+    </div>
+    <div class="indices reveal">
+      <div><span>Từ ngày sinh</span><b>Số Chủ Đạo</b><p>Con đường cuộc đời, bài học lớn nhất và hướng phát triển của bạn.</p></div>
+      <div><span>Từ họ tên</span><b>Số Sứ Mệnh</b><p>Tài năng bạn mang theo và điều bạn sinh ra để làm.</p></div>
+      <div><span>Từ nguyên âm</span><b>Số Linh Hồn</b><p>Điều trái tim bạn thật sự khao khát, động lực bên trong.</p></div>
+      <div><span>Từ phụ âm</span><b>Số Nhân Cách</b><p>Ấn tượng đầu tiên người khác cảm nhận ở bạn.</p></div>
+      <div><span>Từ ngày sinh</span><b>Số Ngày Sinh</b><p>Gợi ý về thế mạnh tự nhiên của bạn.</p></div>
+      <div><span>Theo từng năm</span><b>Năm Cá Nhân</b><p>Chu kỳ 9 năm, cho biết năm nay là năm gieo hạt hay gặt hái.</p></div>
+    </div>
+  </div>
+
+<!-- Ý NGHĨA 12 SỐ CHỦ ĐẠO -->
+
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">Hỏi nhiều nhất</span>
+      <h2>Số Chủ Đạo của bạn là <span class="gold">số mấy?</span></h2>
+      <p>Cộng hết các chữ số trong ngày tháng năm sinh <b>dương lịch</b>, ra 2 chữ số thì cộng tiếp tới khi còn 1 chữ số. Ra 11, 22, 33 thì dừng lại, đó là 3 số bậc thầy. Bấm vào số của bạn để xem ý nghĩa.</p>
+    </div>
+    <div class="yn-grid" id="ynGrid"></div>
+    <p class="pain-bridge reveal">Mỗi người còn có Sứ Mệnh, Linh Hồn, Nhân Cách, Năm Cá Nhân khác nhau. <a href="#tu-xem">Nhập tên và ngày sinh để xem của riêng bạn</a>.</p>
+  </div>
+
+</details></div></section>
 <section class="section" id="goi-xem">
   <div class="wrap">
     <div class="section-head reveal">
@@ -868,8 +893,9 @@ body{padding-bottom:54px}
       <p class="offer-line">🎁 Tự xem đầy đủ chỉ <b>99.000đ</b> · Gói viết riêng từ <b>199.000đ</b> · Nhận file PDF qua Zalo <b>trong 24 giờ</b> · Hỏi thêm cô Thảo qua tin nhắn</p>
     </div>
 <div class="how-deep reveal"><b class="hd-t">Vì sao bản giải mã của cô Thảo <span class="gold">không qua loa</span></b><div class="hd-g"><div><i>01</i><b>Tính đúng công thức</b><p>Pythagoras từ họ tên khai sinh và ngày sinh dương lịch, kết hợp Bát Cực Linh Số cho các dãy số bạn dùng.</p></div><div><i>02</i><b>Đối chiếu chéo các chỉ số</b><p>Không đọc từng số rời rạc. Các chỉ số được đặt cạnh nhau để thấy chỗ nào bổ trợ, chỗ nào giằng co.</p></div><div><i>03</i><b>Viết riêng cho hoàn cảnh của bạn</b><p>Bạn kể điều đang băn khoăn, lời khuyên được viết đúng vào chuyện đó, không phải bài in sẵn.</p></div><div><i>04</i><b>Hỏi lại khi chưa rõ</b><p>Đọc xong còn thắc mắc, bạn nhắn Zalo hỏi thêm, cô trả lời bằng tin nhắn.</p></div></div></div>
+<div class="pk-filter" role="tablist"><button type="button" class="on" data-f="all">Tất cả</button><button type="button" data-f="ban">🔮 Hiểu bản thân</button><button type="button" data-f="so">📱 Dãy số, tên</button><button type="button" data-f="nha">💞 Tình cảm, gia đình</button><button type="button" data-f="nghe">💼 Sự nghiệp, tài lộc</button></div>
         <div class="packs">
-      <article class="pack reveal pack-99">
+      <article data-cat="ban" class="pack reveal pack-99">
         <span class="lv">Rẻ nhất · Xem ngay</span>
         <h3>Tự Xem Đầy Đủ</h3>
         <p class="for">Xem ngay trên trang, không cần chờ: nhập họ tên và ngày sinh, Số Chủ Đạo hiện miễn phí, mở khóa phần còn lại chỉ 99k.</p>
@@ -882,7 +908,7 @@ body{padding-bottom:54px}
         </ul>
         <a class="btn btn-gold go-99" href="#tu-xem">Xem ngay · 99k</a>
       </article>
-      <article class="pack reveal">
+      <article data-cat="ban" class="pack reveal">
         <span class="lv">Dự báo năm mới</span>
         <h3>Năm Cá Nhân 2027</h3>
         <p class="for">Biết trước năm 2027 của mình là năm gieo hạt, bứt phá hay nên giữ sức.</p>
@@ -895,7 +921,7 @@ body{padding-bottom:54px}
         </ul>
         <a class="btn btn-ghost" href="#thanh-toan" data-pk="199000|NAM2027">Đăng ký gói này</a>
       </article>
-      <article class="pack reveal">
+      <article data-cat="so" class="pack reveal">
         <span class="lv">Số đẹp</span>
         <h3>Xem 1 Số Điện Thoại / Biển Số</h3>
         <p class="for">Số mình đang dùng hợp hay khắc, có nên đổi không. Chuyển khoản xong bạn gửi số cần xem qua Zalo cô Thảo.</p>
@@ -908,7 +934,7 @@ body{padding-bottom:54px}
         </ul>
         <a class="btn btn-ghost" href="#thanh-toan" data-pk="199000|SODEP">Đăng ký gói này</a>
       </article>
-      <article class="pack reveal">
+      <article data-cat="ban" class="pack reveal">
         <span class="lv">Khởi đầu</span>
         <h3>Bản Đồ Năng Lượng</h3>
         <p class="for">Cho người mới muốn hiểu mình nhanh, rõ, dễ đọc.</p>
@@ -921,7 +947,7 @@ body{padding-bottom:54px}
         </ul>
         <a class="btn btn-ghost" href="#thanh-toan" data-pk="299000|BANDO">Đăng ký gói này</a>
       </article>
-      <article class="pack reveal">
+      <article data-cat="nghe" class="pack reveal">
         <span class="lv">Sự nghiệp</span>
         <h3>Làm Chủ Hay Làm Thuê</h3>
         <p class="for">Cho người đang phân vân nghỉ việc, mở kinh doanh hay chọn nghề.</p>
@@ -934,7 +960,7 @@ body{padding-bottom:54px}
         </ul>
         <a class="btn btn-ghost" href="#thanh-toan" data-pk="399000|LAMCHU">Đăng ký gói này</a>
       </article>
-      <article class="pack reveal">
+      <article data-cat="nha" class="pack reveal">
         <span class="lv">Gia đình</span>
         <h3>Thấu Hiểu Con Yêu</h3>
         <p class="for">Cho ba mẹ muốn hiểu tính cách, năng khiếu của con để nuôi dạy phù hợp.</p>
@@ -947,7 +973,7 @@ body{padding-bottom:54px}
         </ul>
         <a class="btn btn-ghost" href="#thanh-toan" data-pk="599000|CONYEU">Đăng ký gói này</a>
       </article>
-      <article class="pack reveal">
+      <article data-cat="nha" class="pack reveal">
         <span class="lv">Mẹ và con</span>
         <h3>Năng Lượng 2 Mẹ Con</h3>
         <p class="for">Cho mẹ muốn hiểu mình, hiểu con và biết cách gần con hơn.</p>
@@ -960,7 +986,7 @@ body{padding-bottom:54px}
         </ul>
         <a class="btn btn-ghost" href="#thanh-toan" data-pk="799000|MECON">Đăng ký gói này</a>
       </article>
-      <article class="pack reveal">
+      <article data-cat="nha" class="pack reveal">
         <span class="lv">Lứa đôi</span>
         <h3>Năng Lượng Tình Yêu</h3>
         <p class="for">Cho cặp đôi, vợ chồng muốn hiểu nhau và hòa hợp hơn.</p>
@@ -973,7 +999,7 @@ body{padding-bottom:54px}
         </ul>
         <a class="btn btn-ghost" href="#thanh-toan" data-pk="799000|TINHYEU">Đăng ký gói này</a>
       </article>
-      <article class="pack hot reveal">
+      <article data-cat="ban nghe" class="pack hot reveal">
         <span class="tag">Cô Thảo gợi ý</span>
         <span class="lv">Chuyên sâu</span>
         <h3>Giải Mã Chuyên Sâu</h3>
@@ -988,7 +1014,7 @@ body{padding-bottom:54px}
         </ul>
         <a class="btn btn-gold" href="#thanh-toan" data-pk="899000|CHUYENSAU">Đăng ký gói này</a>
       </article>
-      <article class="pack reveal">
+      <article data-cat="so nghe" class="pack reveal">
         <span class="lv">Kinh doanh</span>
         <h3>Đặt Tên & Chọn Số</h3>
         <p class="for">Cho người đặt tên con, tên thương hiệu, chọn số điện thoại, ngày khai trương.</p>
@@ -1001,7 +1027,7 @@ body{padding-bottom:54px}
         </ul>
         <a class="btn btn-ghost" href="#thanh-toan" data-pk="999000|DATTEN">Đăng ký gói này</a>
       </article>
-      <article class="pack reveal">
+      <article data-cat="so" class="pack reveal">
         <span class="lv">Số đẹp · Đổi vận</span>
         <h3>Combo Đổi Đời</h3>
         <p class="for">Cô Thảo chọn cho bạn số điện thoại và số tài khoản ngân hàng hợp năng lượng, để hóa giải số căn cước xấu. Chuyển khoản xong bạn gửi số căn cước, số điện thoại, số tài khoản đang dùng qua Zalo.</p>
@@ -1014,7 +1040,7 @@ body{padding-bottom:54px}
         </ul>
         <a class="btn btn-ghost" href="#thanh-toan" data-pk="1499000|DOIDOI">Đăng ký gói này</a>
       </article>
-      <article class="pack reveal">
+      <article data-cat="ban nghe" class="pack reveal">
         <span class="lv">VIP · Trọn bộ</span>
         <h3>Trọn Bộ Năng Lượng Số</h3>
         <p class="for">Cho chủ doanh nghiệp, người muốn có tấm bản đồ đầy đủ cho 12 tháng tới và việc kinh doanh.</p>
@@ -1028,7 +1054,7 @@ body{padding-bottom:54px}
         </ul>
         <a class="btn btn-ghost" href="#thanh-toan" data-pk="2999000|TRONBO">Đăng ký gói này</a>
       </article>
-      <article class="pack reveal">
+      <article data-cat="ban nha nghe" class="pack reveal">
         <span class="lv">VIP · Cả cuộc đời</span>
         <h3>Luận Giải Trọn Đời</h3>
         <p class="for">Gói đầy đủ nhất. Bức tranh cả cuộc đời từ họ tên và ngày sinh: từng giai đoạn, tình duyên, sự nghiệp, tiền bạc, sức khỏe và những năm cần lưu ý.</p>
@@ -1043,31 +1069,51 @@ body{padding-bottom:54px}
         <a class="btn btn-ghost" href="#thanh-toan" data-pk="3999000|TRONDOI">Đăng ký gói này</a>
       </article>
     </div>
-    <div class="pdf-mau reveal">
-      <div class="pdf-pages"><img src="img/pdf-mau-bia.webp" width="560" height="792" alt="Bìa bản giải mã năng lượng số mẫu" loading="lazy"><img src="img/pdf-mau-trang-2.webp" width="560" height="792" alt="Trang Số Chủ Đạo trong bản giải mã mẫu" loading="lazy"></div>
-      <div class="pdf-txt">
-        <span class="kicker">Bạn sẽ nhận được gì</span>
-        <h3>Bản giải mã <span class="gold">viết riêng cho bạn</span></h3>
-        <p>File PDF trình bày đẹp, dễ đọc trên điện thoại: Số Chủ Đạo, Sứ Mệnh, Linh Hồn, Nhân Cách, Ngày Sinh và lời khuyên cụ thể. Gói khởi đầu khoảng 10–12 trang, gói chuyên sâu 25–30 trang, trọn bộ 40–50 trang. Gửi qua Zalo trong 24 giờ.</p>
-        <p class="pdf-note">Ảnh trên là bản mẫu, tên và ngày sinh chỉ để minh họa.</p>
-        <a class="btn btn-gold" href="#tu-xem">✦ Tự xem miễn phí trước</a>
+    <p class="app-link">Bạn muốn có app giải số mang tên mình? <a href="/nang-luong-so/ban-app/">Xem App Master Thanh Thảo →</a></p>
+  </div>
+</section>
+<!-- ABOUT -->
+<section class="section about" id="co-thao">
+  <div class="wrap">
+    <div class="about-img reveal"><img src="img/co-thao-ao-dai-nga.jpg" alt="Cô Hoàng Thanh Thảo mặc áo dài màu ngà" loading="lazy"></div>
+    <div class="reveal">
+      <span class="kicker">Người đồng hành</span>
+      <h2>Cô <span class="gold">Hoàng Thanh Thảo</span></h2>
+      <p>Cô Thảo dùng thần số học như một tấm bản đồ để giúp mỗi người hiểu mình hơn, chọn đúng hướng đi và đúng thời điểm.</p>
+      <p>Cô đam mê và nghiên cứu thần số học từ nhỏ. Mỗi bản giải mã cô viết riêng cho từng người, dựa trên họ tên và ngày sinh của bạn.</p>
+      <p class="quote">“Khi hiểu đúng con số của mình, mình sẽ bớt so sánh, bớt lo âu và bước đi vững vàng hơn.”</p>
+      <span class="trust13">✦ Hơn 13.000 người theo dõi cô Thảo trên Facebook</span>
+      <div class="kenh">
+        <a href="https://www.facebook.com/thanhthao.hoang.73997861/" target="_blank" rel="noopener"><img src="../fb-avatar.png?v=11" alt="" loading="lazy" width="52" height="52"><span><small>Facebook cá nhân</small><b>Hoàng Thanh Thảo</b><i>7,1K người theo dõi</i></span></a>
+        <a href="https://www.facebook.com/Nhacochuyen88/" target="_blank" rel="noopener"><img src="../fb-page-avatar.png?v=11" alt="" loading="lazy" width="52" height="52"><span><small>Fanpage</small><b>Nhà Có Chuyện</b><i>6,5K người theo dõi</i></span></a>
+      </div>
+      <div class="socials">
+        <a class="btn btn-gold" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Zalo 0935 949 141</a>
       </div>
     </div>
   </div>
 </section>
-
-<a class="app-cta app-show" href="ban-app/">
-  <span class="as-vis" aria-hidden="true"><img class="as-laban" src="img/la-ban.svg" alt=""><img class="as-co" src="img/co-thao-ao-dai-card.webp" alt="" loading="lazy"><img class="as-phone" src="img/app-master-thumb.webp" alt="" loading="lazy" width="240" height="480"><img class="as-tree" src="img/cay-dong-tien-sm.webp" alt="" loading="lazy"></span>
-  <span class="as-txt">
-    <span class="app-cta-k">Mới · Kinh doanh cùng cô Thảo</span>
-    <span class="app-cta-t">Sở hữu App Master Thanh Thảo &amp; App Phong Thủy</span>
-    <span class="as-sub">Có app riêng để giải mọi loại số cho khách và làm video phong thủy bằng AI, ngay trên điện thoại.</span>
-    <span class="as-chips"><span>✦ Giải số tên, ngày sinh, SĐT, biển số</span><span>✦ AI dựng video phong thủy</span><span>✦ App mang tên bạn, được bán lại</span></span>
-    <span class="as-price">Cùng 1 giá cho cả 2 app · <b>từ 1.268.000đ</b></span>
-    <span class="app-cta-b">Xem demo và bảng giá →</span>
-  </span>
-</a>
-
+<!-- FAQ -->
+<section class="section" id="hoi-dap">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">Hỏi đáp</span>
+      <h2>Bạn <span class="gold">thường hỏi</span></h2>
+    </div>
+    <div class="faq reveal">
+      <details open><summary>Thần số học là gì? Có phải bói toán không?</summary><p>Thần số học (theo trường phái Pythagoras) phân tích các con số từ họ tên và ngày sinh để mô tả tính cách, điểm mạnh và bài học của mỗi người. Đây không phải bói toán hay phán vận mệnh, mà là công cụ để tự soi chiếu và định hướng.</p></details>
+      <details><summary>Tôi cần chuẩn bị thông tin gì?</summary><p>Chỉ cần họ tên đầy đủ theo giấy khai sinh và ngày tháng năm sinh dương lịch. Nếu đổi tên sau này, bạn gửi cả tên cũ và tên đang dùng.</p></details>
+      <details><summary>Tôi ở xa có xem được không?</summary><p>Được. Mọi thứ làm online: bạn gửi thông tin qua Zalo, cô Thảo gửi lại bản giải mã. Ở đâu cũng xem được.</p></details>
+      <details><summary>Kết quả tự xem trên trang có chính xác không?</summary><p>Phần tự xem (Số Chủ Đạo miễn phí, trọn bộ 99.000đ) tính đúng 6 chỉ số cơ bản theo công thức Pythagoras. Bản giải mã chuyên sâu sẽ kết hợp nhiều chỉ số với nhau và với hoàn cảnh thực tế của bạn, nên chi tiết và sát hơn nhiều.</p></details>
+      <details><summary>Phần tự xem có mất phí không?</summary><p>Số Chủ Đạo xem miễn phí. Muốn xem trọn bộ 6 chỉ số, biểu đồ ngày sinh và 12 tháng cá nhân thì bạn mở khóa với 99.000đ.</p></details>
+      <details><summary>Chuyển khoản 99.000đ rồi mở khóa thế nào?</summary><p>Bạn quét mã QR (đã có sẵn số tiền và nội dung), sau đó bấm "Gửi Zalo cho cô Thảo" và gửi kèm ảnh chuyển khoản. Cô kiểm tra tiền về sẽ gửi lại mã mở khóa 6 số, bạn nhập vào là xem được hết.</p></details>
+      <details><summary>Chuyển khoản xong bao lâu tôi nhận được, nhận những gì?</summary><p>Trong vòng 24 giờ, cô Thảo gửi qua Zalo 1 file PDF viết riêng cho bạn (số trang và các mục phân tích ghi rõ ở từng gói). Bạn chỉ cần chuyển khoản đúng nội dung đã điền sẵn và nhắn Zalo cô Thảo họ tên, ngày sinh. Đọc xong có chỗ chưa rõ, bạn nhắn hỏi thêm.</p></details>
+      <details><summary>Các gói có gọi video hay gọi điện không?</summary><p>Không cần. Cô Thảo gửi bản giải mã viết riêng (file PDF) qua Zalo trong vòng 24 giờ để bạn đọc lại bất cứ lúc nào. Có thắc mắc bạn nhắn tin hỏi thêm.</p></details>
+      <details><summary>Nên chọn gói nào?</summary><p>Muốn hiểu mình nhanh: Bản Đồ Năng Lượng. Đang cần định hướng sự nghiệp, tài chính, tình cảm: Giải Mã Chuyên Sâu. Muốn đầy đủ nhất kèm dự báo 12 tháng: Trọn Bộ Năng Lượng Số. Xem cho con: Thấu Hiểu Con Yêu. Xem cho 2 người: Năng Lượng Tình Yêu. Đặt tên, chọn số: Đặt Tên & Chọn Số.</p></details>
+      <details><summary>Có xem cho con nhỏ hoặc cho cả gia đình được không?</summary><p>Được. Gói Thấu Hiểu Con Yêu xem riêng cho bé, gói Năng Lượng 2 Mẹ Con xem cho cả mẹ và con, và gói Năng Lượng Tình Yêu dành cho cặp đôi, vợ chồng.</p></details>
+    </div>
+  </div>
+</section>
 <!-- PAYMENT -->
 <section class="section has-vbg" id="thanh-toan">
   <div class="vbg" aria-hidden="true"><video autoplay muted loop playsinline preload="none" poster="video/bg-ngan-ha.jpg" style="opacity:.4"><source src="video/bg-ngan-ha.mp4?v=2" type="video/mp4"></video></div>
@@ -1117,6 +1163,34 @@ body{padding-bottom:54px}
   </div>
 </section>
 
+
+
+
+<!-- BENEFITS -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">Vì sao nên xem</span>
+      <h2>Con số giúp bạn <span class="gold">hiểu mình rõ hơn</span></h2>
+      <p>Thần số học là một công cụ để tự soi chiếu: nhìn lại điểm mạnh, điểm cần bồi đắp, và chọn thời điểm phù hợp cho các quyết định lớn.</p>
+    </div>
+    <div class="benefits">
+      <div class="benefit reveal"><div class="ico">🪞</div><h3>Hiểu bản thân</h3><p>Biết rõ tính cách, điểm mạnh tự nhiên và những bài học lặp lại trong cuộc sống của mình.</p></div>
+      <div class="benefit reveal"><div class="ico">💼</div><h3>Sự nghiệp & tài chính</h3><p>Nhận ra hướng đi, lĩnh vực và cách làm việc hợp với năng lượng của bạn.</p></div>
+      <div class="benefit reveal"><div class="ico">💞</div><h3>Tình cảm & gia đình</h3><p>Hiểu người thương, hiểu con cái để giao tiếp nhẹ nhàng và thấu cảm hơn.</p></div>
+      <div class="benefit reveal"><div class="ico">🧭</div><h3>Thời điểm hành động</h3><p>Biết năm, tháng nào nên khởi đầu, nên tích lũy hay nên nghỉ ngơi nhìn lại.</p></div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- PACKAGES -->
+<div class="tk alt" aria-hidden="true"><div class="tk-in"><span>Định hướng nghề nghiệp hợp với bạn</span><i>✦</i><span>Hiểu nửa kia để bớt va chạm</span><i>✦</i><span>Hiểu con để nuôi dạy đúng cách</span><i>✦</i><span>Chọn tên, số, ngày khai trương hợp năng lượng</span><i>✦</i><span>Năm cá nhân của bạn là số mấy?</span><i>✦</i><span>Nhắn Zalo cô Thảo 0935 949 141</span><i>✦</i><span>Định hướng nghề nghiệp hợp với bạn</span><i>✦</i><span>Hiểu nửa kia để bớt va chạm</span><i>✦</i><span>Hiểu con để nuôi dạy đúng cách</span><i>✦</i><span>Chọn tên, số, ngày khai trương hợp năng lượng</span><i>✦</i><span>Năm cá nhân của bạn là số mấy?</span><i>✦</i><span>Nhắn Zalo cô Thảo 0935 949 141</span><i>✦</i></div></div>
+
+
+
+
 <!-- STEPS -->
 <section class="section">
   <div class="wrap">
@@ -1132,49 +1206,7 @@ body{padding-bottom:54px}
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="section about" id="co-thao">
-  <div class="wrap">
-    <div class="about-img reveal"><img src="img/co-thao-ao-dai-nga.jpg" alt="Cô Hoàng Thanh Thảo mặc áo dài màu ngà" loading="lazy"></div>
-    <div class="reveal">
-      <span class="kicker">Người đồng hành</span>
-      <h2>Cô <span class="gold">Hoàng Thanh Thảo</span></h2>
-      <p>Cô Thảo dùng thần số học như một tấm bản đồ để giúp mỗi người hiểu mình hơn, chọn đúng hướng đi và đúng thời điểm.</p>
-      <p>Cô đam mê và nghiên cứu thần số học từ nhỏ. Mỗi bản giải mã cô viết riêng cho từng người, dựa trên họ tên và ngày sinh của bạn.</p>
-      <p class="quote">“Khi hiểu đúng con số của mình, mình sẽ bớt so sánh, bớt lo âu và bước đi vững vàng hơn.”</p>
-      <span class="trust13">✦ Hơn 13.000 người theo dõi cô Thảo trên Facebook</span>
-      <div class="kenh">
-        <a href="https://www.facebook.com/thanhthao.hoang.73997861/" target="_blank" rel="noopener"><img src="../fb-avatar.png?v=11" alt="" loading="lazy" width="52" height="52"><span><small>Facebook cá nhân</small><b>Hoàng Thanh Thảo</b><i>7,1K người theo dõi</i></span></a>
-        <a href="https://www.facebook.com/Nhacochuyen88/" target="_blank" rel="noopener"><img src="../fb-page-avatar.png?v=11" alt="" loading="lazy" width="52" height="52"><span><small>Fanpage</small><b>Nhà Có Chuyện</b><i>6,5K người theo dõi</i></span></a>
-      </div>
-      <div class="socials">
-        <a class="btn btn-gold" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Zalo 0935 949 141</a>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- FAQ -->
-<section class="section" id="hoi-dap">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="kicker">Hỏi đáp</span>
-      <h2>Bạn <span class="gold">thường hỏi</span></h2>
-    </div>
-    <div class="faq reveal">
-      <details open><summary>Thần số học là gì? Có phải bói toán không?</summary><p>Thần số học (theo trường phái Pythagoras) phân tích các con số từ họ tên và ngày sinh để mô tả tính cách, điểm mạnh và bài học của mỗi người. Đây không phải bói toán hay phán vận mệnh, mà là công cụ để tự soi chiếu và định hướng.</p></details>
-      <details><summary>Tôi cần chuẩn bị thông tin gì?</summary><p>Chỉ cần họ tên đầy đủ theo giấy khai sinh và ngày tháng năm sinh dương lịch. Nếu đổi tên sau này, bạn gửi cả tên cũ và tên đang dùng.</p></details>
-      <details><summary>Tôi ở xa có xem được không?</summary><p>Được. Mọi thứ làm online: bạn gửi thông tin qua Zalo, cô Thảo gửi lại bản giải mã. Ở đâu cũng xem được.</p></details>
-      <details><summary>Kết quả tự xem trên trang có chính xác không?</summary><p>Phần tự xem (Số Chủ Đạo miễn phí, trọn bộ 99.000đ) tính đúng 6 chỉ số cơ bản theo công thức Pythagoras. Bản giải mã chuyên sâu sẽ kết hợp nhiều chỉ số với nhau và với hoàn cảnh thực tế của bạn, nên chi tiết và sát hơn nhiều.</p></details>
-      <details><summary>Phần tự xem có mất phí không?</summary><p>Số Chủ Đạo xem miễn phí. Muốn xem trọn bộ 6 chỉ số, biểu đồ ngày sinh và 12 tháng cá nhân thì bạn mở khóa với 99.000đ.</p></details>
-      <details><summary>Chuyển khoản 99.000đ rồi mở khóa thế nào?</summary><p>Bạn quét mã QR (đã có sẵn số tiền và nội dung), sau đó bấm "Gửi Zalo cho cô Thảo" và gửi kèm ảnh chuyển khoản. Cô kiểm tra tiền về sẽ gửi lại mã mở khóa 6 số, bạn nhập vào là xem được hết.</p></details>
-      <details><summary>Chuyển khoản xong bao lâu tôi nhận được, nhận những gì?</summary><p>Trong vòng 24 giờ, cô Thảo gửi qua Zalo 1 file PDF viết riêng cho bạn (số trang và các mục phân tích ghi rõ ở từng gói). Bạn chỉ cần chuyển khoản đúng nội dung đã điền sẵn và nhắn Zalo cô Thảo họ tên, ngày sinh. Đọc xong có chỗ chưa rõ, bạn nhắn hỏi thêm.</p></details>
-      <details><summary>Các gói có gọi video hay gọi điện không?</summary><p>Không cần. Cô Thảo gửi bản giải mã viết riêng (file PDF) qua Zalo trong vòng 24 giờ để bạn đọc lại bất cứ lúc nào. Có thắc mắc bạn nhắn tin hỏi thêm.</p></details>
-      <details><summary>Nên chọn gói nào?</summary><p>Muốn hiểu mình nhanh: Bản Đồ Năng Lượng. Đang cần định hướng sự nghiệp, tài chính, tình cảm: Giải Mã Chuyên Sâu. Muốn đầy đủ nhất kèm dự báo 12 tháng: Trọn Bộ Năng Lượng Số. Xem cho con: Thấu Hiểu Con Yêu. Xem cho 2 người: Năng Lượng Tình Yêu. Đặt tên, chọn số: Đặt Tên & Chọn Số.</p></details>
-      <details><summary>Có xem cho con nhỏ hoặc cho cả gia đình được không?</summary><p>Được. Gói Thấu Hiểu Con Yêu xem riêng cho bé, gói Năng Lượng 2 Mẹ Con xem cho cả mẹ và con, và gói Năng Lượng Tình Yêu dành cho cặp đôi, vợ chồng.</p></details>
-    </div>
-  </div>
-</section>
 
 <section class="final has-vbg">
   <div class="vbg" aria-hidden="true"><video autoplay muted loop playsinline preload="none" poster="video/bg-cuc-quang.jpg" style="opacity:.6"><source src="video/bg-cuc-quang.mp4" type="video/mp4"></video></div>
@@ -1304,7 +1336,7 @@ body{padding-bottom:54px}
     var cards=[['Số Sứ Mệnh',ex,M[ex][0],'Tài năng bạn mang theo: '+M[ex][1].charAt(0).toLowerCase()+M[ex][1].slice(1)],
       ['Số Linh Hồn',su,M[su][0],'Trái tim bạn khao khát được sống đúng với năng lượng này.'],
       ['Số Nhân Cách',pe,M[pe][0],'Người khác thường thấy ở bạn hình ảnh '+M[pe][0].replace('Số Master · ','').toLowerCase()+'.'],
-      ['Số Ngày Sinh',bd,M[bd][0],'Món quà bẩm sinh giúp bạn tỏa sáng trong công việc và cuộc sống.'],
+      ['Số Ngày Sinh',bd,M[bd][0],'Gợi ý về thế mạnh tự nhiên để bạn chiêm nghiệm.'],
       ['Năm Cá Nhân '+CY,py,'Năm số '+py,PY[py]],
       ['Năm Cá Nhân '+(CY+1),reduce(reduce(dd)+reduce(mm)+reduce(CY+1)),'Năm số '+reduce(reduce(dd)+reduce(mm)+reduce(CY+1)),PY[reduce(reduce(dd)+reduce(mm)+reduce(CY+1))]]];
     var g=document.getElementById('numGrid');g.innerHTML='';
@@ -1656,5 +1688,30 @@ var pk=document.getElementById('pyPk');if(pk)pk.addEventListener('change',functi
 show(document.getElementById('lkDone'),document.getElementById('lkThx'),function(){var t=(document.getElementById('lkCt').textContent||'').split(' ');return t[0]||''});
 })();</script>
 <script>document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest(".go-99");if(!a)return;e.preventDefault();var t=document.getElementById("tu-xem");t.scrollIntoView({behavior:"smooth"});setTimeout(function(){var f=document.getElementById("fullname");if(f&&!f.value)f.focus({preventScroll:true})},700)});</script>
+<script>/* lọc gói */(function(){var f=document.querySelector('.pk-filter');if(!f)return;f.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
+[].forEach.call(f.children,function(x){x.classList.toggle('on',x===b)});var v=b.dataset.f;
+document.querySelectorAll('#goi-xem article.pack').forEach(function(a){a.classList.toggle('pk-hide',v!=='all'&&(' '+a.dataset.cat+' ').indexOf(' '+v+' ')<0)})})})();</script>
+<script>/* đổi ngày âm -> dương (thuật toán Hồ Ngọc Đức, múi giờ +7) */(function(){
+var PI=Math.PI,TZ=7;function INT(d){return Math.floor(d)}
+function jdFromDate(dd,mm,yy){var a=INT((14-mm)/12),y=yy+4800-a,m=mm+12*a-3,jd=dd+INT((153*m+2)/5)+365*y+INT(y/4)-INT(y/100)+INT(y/400)-32045;if(jd<2299161)jd=dd+INT((153*m+2)/5)+365*y+INT(y/4)-32083;return jd}
+function jdToDate(jd){var a,b,c;if(jd>2299160){a=jd+32044;b=INT((4*a+3)/146097);c=a-INT((b*146097)/4)}else{b=0;c=jd+32082}var d=INT((4*c+3)/1461),e=c-INT((1461*d)/4),m=INT((5*e+2)/153);return[e-INT((153*m+2)/5)+1,m+3-12*INT(m/10),b*100+d-4800+INT(m/10)]}
+function newMoon(k){var T=k/1236.85,T2=T*T,T3=T2*T,dr=PI/180,Jd1=2415020.75933+29.53058868*k+0.0001178*T2-0.000000155*T3;Jd1+=0.00033*Math.sin((166.56+132.87*T-0.009173*T2)*dr);
+var M=359.2242+29.10535608*k-0.0000333*T2-0.00000347*T3,Mpr=306.0253+385.81691806*k+0.0107306*T2+0.00001236*T3,F=21.2964+390.67050646*k-0.0016528*T2-0.00000239*T3;
+var C1=(0.1734-0.000393*T)*Math.sin(M*dr)+0.0021*Math.sin(2*dr*M)-0.4068*Math.sin(Mpr*dr)+0.0161*Math.sin(dr*2*Mpr)-0.0004*Math.sin(dr*3*Mpr)+0.0104*Math.sin(dr*2*F)-0.0051*Math.sin(dr*(M+Mpr))-0.0074*Math.sin(dr*(M-Mpr))+0.0004*Math.sin(dr*(2*F+M))-0.0004*Math.sin(dr*(2*F-M))-0.0006*Math.sin(dr*(2*F+Mpr))+0.0010*Math.sin(dr*(2*F-Mpr))+0.0005*Math.sin(dr*(2*Mpr+M));
+var dt=T<-11?0.001+0.000839*T+0.0002261*T2-0.00000845*T3-0.000000081*T*T3:-0.000278+0.000265*T+0.000262*T2;return Jd1+C1-dt}
+function getNewMoonDay(k){return INT(newMoon(k)+0.5+TZ/24)}
+function sunLong(jdn){var T=(jdn-2451545.5-TZ/24)/36525,T2=T*T,dr=PI/180,M=357.52910+35999.05030*T-0.0001559*T2-0.00000048*T*T2,L0=280.46645+36000.76983*T+0.0003032*T2,DL=(1.914600-0.004817*T-0.000014*T2)*Math.sin(dr*M)+(0.019993-0.000101*T)*Math.sin(dr*2*M)+0.000290*Math.sin(dr*3*M),L=(L0+DL)*dr;L=L-PI*2*INT(L/(PI*2));return INT(L/PI*6)}
+function month11(yy){var off=jdFromDate(31,12,yy)-2415021,k=INT(off/29.530588853),nm=getNewMoonDay(k);if(sunLong(nm)>=9)nm=getNewMoonDay(k-1);return nm}
+function leapOff(a11){var k=INT((a11-2415021.076998695)/29.530588853+0.5),last=0,i=1,arc=sunLong(getNewMoonDay(k+i));do{last=arc;i++;arc=sunLong(getNewMoonDay(k+i))}while(arc!=last&&i<14);return i-1}
+function lunar2solar(ld,lm,ly,leap){var a11,b11;if(lm<11){a11=month11(ly-1);b11=month11(ly)}else{a11=month11(ly);b11=month11(ly+1)}var k=INT(0.5+(a11-2415021.076998695)/29.530588853),off=lm-11;if(off<0)off+=12;
+if(b11-a11>365){var lo=leapOff(a11),lmn=lo-2;if(lmn<0)lmn+=12;if(leap&&lm!=lmn)return null;if(leap||off>=lo)off+=1}var ms=getNewMoonDay(k+off);return jdToDate(ms+ld-1)}
+var b=document.getElementById('amOpen');if(!b)return;var box=document.createElement('div');box.className='am-box';box.hidden=true;
+box.innerHTML='<div class="row"><label>Ngày âm <input id="amD" inputmode="numeric" maxlength="2" placeholder="Ngày"></label><label>Tháng <input id="amM" inputmode="numeric" maxlength="2" placeholder="Tháng"></label><label>Năm <input id="amY" inputmode="numeric" maxlength="4" placeholder="Năm" style="width:84px"></label><label><input type="checkbox" id="amL" style="width:auto"> Tháng nhuận</label><button type="button" class="btn btn-gold" id="amGo" style="padding:10px 18px">Đổi</button></div><div class="am-out" id="amOut"></div>';
+b.parentNode.parentNode.appendChild(box);b.addEventListener('click',function(){box.hidden=!box.hidden});
+document.getElementById('amGo').addEventListener('click',function(){var d=+amD.value,m=+amM.value,y=+amY.value,o=document.getElementById('amOut');
+if(!(d>=1&&d<=30&&m>=1&&m<=12&&y>=1900&&y<=2100)){o.textContent='Bạn nhập đủ ngày, tháng, năm âm lịch nhé.';return}var r=lunar2solar(d,m,y,amL.checked);
+if(!r){o.textContent='Năm '+y+' không có tháng '+m+' nhuận, bạn bỏ chọn "Tháng nhuận" nhé.';return}
+['d','m','y'].forEach(function(id,i){var s=document.getElementById(id);if(s){s.value=String(r[i]);s.dispatchEvent(new Event('change'))}});
+o.innerHTML='Ngày dương lịch là <b>'+r[0]+'/'+r[1]+'/'+r[2]+'</b>. Con đã điền sẵn vào ô ngày sinh ở trên, bạn kiểm tra lại rồi bấm Giải mã.'})})();</script>
 <!--paymodal--><style>.pm-ov{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:10px;background:#000c;backdrop-filter:blur(4px)}.pm-ov.on{display:flex}.pm-box{position:relative;width:min(680px,100%);max-height:94vh;overflow:auto;-webkit-overflow-scrolling:touch;border-radius:20px;background:#0d0f1c;box-shadow:0 20px 80px #000;padding-top:16px}.pm-box>*:not(.pm-x){margin:0!important;opacity:1!important;transform:none!important;visibility:visible!important}.pm-box .reveal{opacity:1!important;transform:none!important}.pm-x{position:sticky;top:8px;float:right;margin:8px 8px -48px 0;z-index:5;width:40px;height:40px;border-radius:50%;border:1px solid #e3b675;background:#0d0f1ce6;color:#f3d48b;font-size:26px;line-height:1;cursor:pointer}</style><script>(function(){var card=document.querySelector("#thanh-toan .paycard");if(!card)return;var ph=document.createComment("pay"),ov=document.createElement("div");ov.className="pm-ov";ov.setAttribute("role","dialog");ov.setAttribute("aria-label","Chuyển khoản");ov.innerHTML='<div class="pm-box"><button class="pm-x" type="button" aria-label="Đóng">×</button></div>';document.body.appendChild(ov);var box=ov.firstChild;function open(v){var s=document.getElementById("pyPk");if(v&&s){s.value=v;s.dispatchEvent(new Event("change"))}if(!ph.parentNode){card.parentNode.insertBefore(ph,card);box.appendChild(card)}ov.classList.add("on");document.documentElement.style.overflow="hidden";box.scrollTop=0;setTimeout(function(){var f=document.getElementById("pyNm");if(f&&!f.value)f.focus({preventScroll:true})},300)}function close(){if(!ph.parentNode)return;ph.parentNode.insertBefore(card,ph);ph.parentNode.removeChild(ph);ov.classList.remove("on");document.documentElement.style.overflow=""}ov.querySelector(".pm-x").onclick=close;ov.addEventListener("click",function(e){if(e.target===ov)close()});document.addEventListener("keydown",function(e){if(e.key==="Escape")close()});document.querySelectorAll("[data-pk]").forEach(function(b){b.addEventListener("click",function(e){e.preventDefault();open(b.getAttribute("data-pk"))})})})();</script><!--/paymodal--></body>
 </html>
