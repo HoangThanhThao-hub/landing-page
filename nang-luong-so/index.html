@@ -592,6 +592,9 @@ body{padding-bottom:54px}
 .cs-it i{font-style:normal;font-size:28px}.cs-it>b{display:block;margin:10px 0 6px;font-size:18px;color:var(--gold)}.cs-it p{margin:0;font-size:14.5px;color:#d3d8ee;line-height:1.65}
 .cs-ex{max-width:760px;margin:22px auto 0;padding:16px 20px;border:1px dashed #e3c27a77;border-radius:16px;text-align:center}.cs-ex span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}.cs-ex p{margin:6px 0 0;color:#e8e2cf}
 @media(max-width:860px){.cs-grid{grid-template-columns:1fr}}
+.paid-thx{margin-top:14px;padding:18px 16px;border-radius:18px;border:1px solid #3ddc84;background:linear-gradient(160deg,#0f2a1f,#0b1a24);text-align:center}
+.paid-thx h4{margin:0 0 6px;font-size:20px;color:#7dffb0}.paid-thx p{margin:0 0 12px;color:#e8e2cf;font-size:14.5px;line-height:1.6}.paid-thx code{background:#ffffff14;padding:2px 8px;border-radius:6px;color:var(--gold);font-weight:700}
+.zalo-big{display:flex;align-items:center;justify-content:center;gap:10px;padding:16px;border-radius:999px;background:#0068ff;color:#fff!important;font-weight:800;font-size:17px;text-decoration:none;box-shadow:0 10px 26px #0068ff66}.zalo-big i{font-style:normal;background:#fff;color:#0068ff;border-radius:50%;width:34px;height:34px;display:grid;place-items:center;font-size:12px;font-weight:900}
 </style>
 </head>
 <body>
@@ -1060,13 +1063,14 @@ body{padding-bottom:54px}
           <div class="kv"><span>Nội dung</span><strong id="pyCt">CHUYENSAU HO TEN SDT</strong><button class="cp" type="button" id="pyCtCp">Chép</button></div>
         </div>
       </div>
+      <a class="btn btn-gold pay-done" id="pyDone" href="https://zalo.me/0935949141" target="_blank" rel="noopener">✅ Em đã chuyển khoản</a>
+      <p class="pay-hint" id="pyHint">Chuyển khoản xong bạn bấm nút trên để báo cô Thảo.</p>
+      <div class="paid-thx" id="pyThx" hidden></div>
       <div class="pay-form pay-opt"><p class="full pay-opt-t">Điền để cô Thảo xác nhận nhanh <span>(không bắt buộc)</span></p>
         <label>Họ tên khai sinh<input id="pyNm" placeholder="VD: Nguyễn Thị Lan" autocomplete="name"></label>
         <label>Ngày sinh<input id="pyDob" placeholder="VD: 28/03/1988" inputmode="numeric"></label>
         <label class="full">Số Zalo của bạn<input id="pyPh" placeholder="VD: 0912345678" inputmode="tel" autocomplete="tel"></label>
       </div>
-      <a class="btn btn-gold pay-done" id="pyDone" href="https://zalo.me/0935949141" target="_blank" rel="noopener">✓ Tôi đã chuyển khoản · báo cô Thảo qua Zalo</a>
-      <p class="pay-hint" id="pyHint">Bấm nút trên, trang chép sẵn lời nhắn. Mở Zalo, dán lời nhắn và gửi kèm ảnh chuyển khoản. Cô đối chiếu với ngân hàng rồi gửi bản giải mã viết riêng cho bạn trong vòng 24 giờ.</p>
     </div>
   </div>
 </section>
@@ -1425,7 +1429,7 @@ body{padding-bottom:54px}
   $('pyCtCp').addEventListener('click',function(){copy($('pyCt').textContent);this.textContent='Đã chép'});
   document.querySelectorAll('#thanh-toan [data-copy]').forEach(function(b){b.addEventListener('click',function(){copy(b.getAttribute('data-copy'));b.textContent='Đã chép'})});
   $('pyDone').addEventListener('click',function(e){
-if(!$('pyNm').value.trim()||$('pyPh').value.replace(/\D/g,'').length<9){e.preventDefault();var f=!$('pyNm').value.trim()?$('pyNm'):$('pyPh');f.focus();f.scrollIntoView({block:'center'});$('pyHint').innerHTML='<b style="color:#ffb4a8">Bạn nhập họ tên và số Zalo trước</b> để cô Thảo biết ai đã chuyển khoản nhé.';return}    var o=$('pyPk').selectedOptions[0].textContent.split('·')[0].trim();
+e.preventDefault();    var o=$('pyPk').selectedOptions[0].textContent.split('·')[0].trim();
     copy('Cô Thảo ơi, con đã chuyển khoản '+vnd(+$('pyAm').dataset.v)+' gói '+o+(OFF&&+$('pyPk').value.split('|')[0]>=299000?' (ưu đãi giảm '+OFF+'%)':'')+'.\n- Họ tên khai sinh: '+($('pyNm').value||'...')+'\n- Ngày sinh: '+($('pyDob').value||'...')+'\n- Zalo: '+($('pyPh').value||'...')+'\n- Nội dung CK: '+$('pyCt').textContent+'\nCon gửi ảnh chuyển khoản ạ.');
     store('nls-paid','1');
     if(!this.dataset.sent){this.dataset.sent='1';gf({loai:'Chuyển khoản',goi:o,ten:$('pyNm').value,ns:$('pyDob').value,zalo:$('pyPh').value,tien:$('pyAm').dataset.v,nd:$('pyCt').textContent})}
@@ -1565,8 +1569,9 @@ $('lsRes').hidden=false;$('lsRes').scrollIntoView({behavior:'smooth',block:'near
     <div class="kv"><span>Số tài khoản</span><strong>8768 1714 131</strong><button class="cp" type="button" data-lkcp="87681714131">Chép</button></div>
     <div class="kv"><span>Nội dung</span><strong id="lkCt"></strong><button class="cp" type="button" id="lkCtCp">Chép</button></div>
   </div>
-  <a class="btn btn-gold pay-done" id="lkDone" href="https://zalo.me/0935949141" target="_blank" rel="noopener">✓ Tôi đã chuyển khoản · báo cô Thảo qua Zalo</a>
-  <p class="pay-hint" id="lkHint">Bấm nút trên, trang chép sẵn lời nhắn có tên, ngày sinh và gói bạn chọn. Mở Zalo, dán và gửi kèm ảnh chuyển khoản.</p>
+  <a class="btn btn-gold pay-done" id="lkDone" href="https://zalo.me/0935949141" target="_blank" rel="noopener">✅ Em đã chuyển khoản</a>
+  <p class="pay-hint" id="lkHint">Chuyển khoản xong bạn bấm nút trên để báo cô Thảo.</p>
+  <div class="paid-thx" id="lkThx" hidden></div>
 </div></div>
 <script>(function(){var M=document.getElementById('lkM');if(!M)return;function $(i){return document.getElementById(i)}var cur=null;
 function vnd(n){return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+'đ'}
@@ -1598,5 +1603,15 @@ var sent={},t;function ok(){return nm.value.trim().length>=2&&ph.value.replace(/
 function chk(){if(!ok())return;clearTimeout(t);t=setTimeout(function(){var z=ph.value.replace(/\D/g,'');if(sent[z]||!window.__gf)return;sent[z]=1;var opt=pk.selectedOptions[0];window.__gf({loai:'Để lại số (chưa CK)',goi:opt?opt.textContent.trim():'',ten:nm.value.trim(),zalo:z,tien:(opt&&opt.value.split('|')[0])||'',nd:'Khách mở mã QR'})},2500)}
 ['input','change','blur'].forEach(function(ev){nm.addEventListener(ev,chk);ph.addEventListener(ev,chk)});chk();})();</script>
 <script>(function(){[["goi-xem"],["thanh-toan"]].forEach(function(a){var sec=document.getElementById(a[0]);if(!sec)return;var w=document.createElement("img");w.src="img/la-ban.svg";w.alt="";w.className="mys-wheel";w.setAttribute("aria-hidden","true");sec.insertBefore(w,sec.firstChild);if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;var n=window.innerWidth<700?5:9;for(var k=0;k<n;k++){var d=document.createElement("span");d.className="mys-num";d.setAttribute("aria-hidden","true");d.textContent=[1,2,3,4,5,6,7,8,9,11,22,33][(k*5+a[0].length)%12];d.style.left=(5+k*90/n)+"%";d.style.animationDelay=(-k*16/n*1.7%16)+"s";d.style.fontSize=(20+k%3*8)+"px";sec.insertBefore(d,sec.firstChild)}})})();</script>
+<script>/* Sau khi khách bấm Em đã chuyển khoản */(function(){
+function show(btn,box,code){if(!btn||!box)return;btn.addEventListener('click',function(e){e.preventDefault();
+box.innerHTML='<h4>✅ Đã nhận!</h4><p>Cô Thảo sẽ gửi file PDF qua Zalo cho bạn <b>trong 24 giờ</b>.</p><p>Bạn nhắn Zalo cô Thảo <b>họ tên khai sinh</b>, <b>ngày sinh</b> và mã gói <code>'+code()+'</code> (lời nhắn đã chép sẵn, chỉ cần dán), gửi kèm ảnh chuyển khoản nhé.</p><a class="zalo-big" href="https://zalo.me/0935949141" target="_blank" rel="noopener"><i>Zalo</i>Nhắn Zalo · 0935 949 141</a>';
+box.hidden=false;var h=btn.nextElementSibling;if(h&&h.classList.contains('pay-hint'))h.hidden=true;setTimeout(function(){box.scrollIntoView({behavior:'smooth',block:'center'})},50)})}
+show(document.getElementById('pyDone'),document.getElementById('pyThx'),function(){var v=document.getElementById('pyPk').value.split('|');return v[1]});
+function reset(b,h){var x=document.getElementById(b),y=document.getElementById(h);if(x)x.hidden=true;if(y)y.hidden=false}
+document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('[data-lk]'))reset('lkThx','lkHint');if(e.target.closest&&e.target.closest('[data-pk]'))reset('pyThx','pyHint')},true);
+var pk=document.getElementById('pyPk');if(pk)pk.addEventListener('change',function(){reset('pyThx','pyHint')});
+show(document.getElementById('lkDone'),document.getElementById('lkThx'),function(){var t=(document.getElementById('lkCt').textContent||'').split(' ');return t[0]||''});
+})();</script>
 <!--paymodal--><style>.pm-ov{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:10px;background:#000c;backdrop-filter:blur(4px)}.pm-ov.on{display:flex}.pm-box{position:relative;width:min(680px,100%);max-height:94vh;overflow:auto;-webkit-overflow-scrolling:touch;border-radius:20px;background:#0d0f1c;box-shadow:0 20px 80px #000;padding-top:16px}.pm-box>*:not(.pm-x){margin:0!important;opacity:1!important;transform:none!important;visibility:visible!important}.pm-box .reveal{opacity:1!important;transform:none!important}.pm-x{position:sticky;top:8px;float:right;margin:8px 8px -48px 0;z-index:5;width:40px;height:40px;border-radius:50%;border:1px solid #e3b675;background:#0d0f1ce6;color:#f3d48b;font-size:26px;line-height:1;cursor:pointer}</style><script>(function(){var card=document.querySelector("#thanh-toan .paycard");if(!card)return;var ph=document.createComment("pay"),ov=document.createElement("div");ov.className="pm-ov";ov.setAttribute("role","dialog");ov.setAttribute("aria-label","Chuyển khoản");ov.innerHTML='<div class="pm-box"><button class="pm-x" type="button" aria-label="Đóng">×</button></div>';document.body.appendChild(ov);var box=ov.firstChild;function open(v){var s=document.getElementById("pyPk");if(v&&s){s.value=v;s.dispatchEvent(new Event("change"))}if(!ph.parentNode){card.parentNode.insertBefore(ph,card);box.appendChild(card)}ov.classList.add("on");document.documentElement.style.overflow="hidden";box.scrollTop=0;setTimeout(function(){var f=document.getElementById("pyNm");if(f&&!f.value)f.focus({preventScroll:true})},300)}function close(){if(!ph.parentNode)return;ph.parentNode.insertBefore(card,ph);ph.parentNode.removeChild(ph);ov.classList.remove("on");document.documentElement.style.overflow=""}ov.querySelector(".pm-x").onclick=close;ov.addEventListener("click",function(e){if(e.target===ov)close()});document.addEventListener("keydown",function(e){if(e.key==="Escape")close()});document.querySelectorAll("[data-pk]").forEach(function(b){b.addEventListener("click",function(e){e.preventDefault();open(b.getAttribute("data-pk"))})})})();</script><!--/paymodal--></body>
 </html>
