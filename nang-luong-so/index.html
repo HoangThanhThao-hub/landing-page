@@ -567,6 +567,13 @@ body{padding-bottom:54px}
 .yn summary span{font-weight:700;font-size:15px}
 .yn p{margin:10px 0 0;font-size:14px;color:#d3d8ee;line-height:1.55}.yn .ls{color:var(--muted);font-size:13px}
 @media(max-width:860px){.yn-grid{grid-template-columns:1fr 1fr}}@media(max-width:560px){.yn-grid{grid-template-columns:1fr}}
+.qr-mob{display:none;margin:10px 0 0;text-align:center}
+.qr-save{display:inline-block;padding:10px 16px;border-radius:999px;background:#1a1205;color:#f5dda0!important;border:1px solid #e3c27a;font-weight:700;font-size:14px;text-decoration:none}
+.qr-mob p{font-size:12.5px;line-height:1.5;color:#3d3a52;margin:8px 4px 0}.qr-mob .qr-ask a{color:#0068ff;font-weight:700}
+@media(max-width:860px),(pointer:coarse){.qr-mob{display:block}}
+.qr-gate{position:relative}.qr-gate>img,.qr-gate>small,.qr-gate>.qr-mob{display:none!important}.qr-gate.open>img{display:block!important}.qr-gate.open>small{display:block!important}
+@media(max-width:860px),(pointer:coarse){.qr-gate.open>.qr-mob{display:block!important}}
+.qr-lock{padding:34px 14px;text-align:center;font-size:14.5px;line-height:1.6;color:#2b2840;border:2px dashed #c99a4a;border-radius:12px;background:#fff8e6}.qr-gate.open>.qr-lock{display:none}
 </style>
 </head>
 <body>
@@ -973,7 +980,7 @@ body{padding-bottom:54px}
         <label class="full">Số Zalo của bạn<input id="pyPh" placeholder="VD: 0912345678" inputmode="tel" autocomplete="tel"></label>
       </div>
       <div class="pay-grid">
-        <div class="qr big-qr"><img id="pyQr" alt="Mã QR chuyển khoản TPBank cô Thảo" loading="lazy" src="qr-tpbank.jpg"><small id="pyQrNote">Quét bằng app ngân hàng, đã điền sẵn số tiền và nội dung</small></div>
+        <div class="qr big-qr"><img id="pyQr" alt="Mã QR chuyển khoản TPBank cô Thảo" loading="lazy" src="qr-tpbank.jpg"><small id="pyQrNote">Quét bằng app ngân hàng, đã điền sẵn số tiền và nội dung</small><div class="qr-mob"><a class="qr-save" data-qr="pyQr" href="#" target="_blank" rel="noopener">📥 Lưu mã QR vào điện thoại</a><p>Đang xem trên điện thoại? Bấm lưu ảnh QR, mở app ngân hàng → <b>Quét QR</b> → chọn <b>ảnh vừa lưu</b>. Hoặc bấm <b>Chép</b> số tài khoản, số tiền, nội dung bên dưới để chuyển tay.</p><p class="qr-ask">Còn phân vân? <a href="https://zalo.me/0935949141" target="_blank" rel="noopener">Nhắn Zalo hỏi cô Thảo trước</a></p></div></div>
         <div class="pay-info">
           <div class="kv"><span>Ngân hàng</span><strong>TPBank</strong></div>
           <div class="kv"><span>Chủ tài khoản</span><strong>HOANG THI THANH THAO</strong></div>
@@ -1505,5 +1512,13 @@ if(!this.dataset.sent){this.dataset.sent='1';if(window.__gf)window.__gf({loai:'M
 try{localStorage.setItem('nls-paid','1')}catch(e){}
 $('lkHint').innerHTML='<b style="color:var(--gold2)">Đã chép sẵn lời nhắn.</b> Mở Zalo cô Thảo, dán lời nhắn và gửi kèm ảnh chuyển khoản. Cô Thảo gửi bản giải mã gói '+cur.name+' cho bạn qua Zalo trong 24 giờ.'})})();</script>
 <script>/* HUD góc + tia quét */(function(){document.querySelectorAll('.paycard,.pack.hot,.lk-box').forEach(function(e){if(getComputedStyle(e).position==='static')e.style.position='relative';var h=document.createElement('i');h.className='hud';h.setAttribute('aria-hidden','true');e.appendChild(h)});document.querySelectorAll('.portrait,.phone').forEach(function(e){if(getComputedStyle(e).position==='static')e.style.position='relative';e.style.overflow='hidden';var s=document.createElement('i');s.className='scan';s.setAttribute('aria-hidden','true');e.appendChild(s)})})();</script>
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.qr-save');if(!a)return;var im=document.getElementById(a.dataset.qr);if(!im)return;e.preventDefault();var src=im.currentSrc||im.src;
+fetch(src).then(function(r){if(!r.ok)throw 0;return r.blob()}).then(function(b){var u=URL.createObjectURL(b),d=document.createElement('a');d.href=u;d.download='QR-chuyen-khoan-co-Thao.png';document.body.appendChild(d);d.click();d.remove();setTimeout(function(){URL.revokeObjectURL(u)},4000);a.textContent='✓ Đã lưu ảnh QR, mở app ngân hàng để quét'}).catch(function(){window.open(src,'_blank');a.textContent='Nhấn giữ ảnh QR → Lưu ảnh'})});</script>
+<script>/* Xin tên + số Zalo trước khi hiện mã QR, lưu lại để cô nhắn khách bỏ dở */(function(){
+var nm=document.getElementById('pyNm'),ph=document.getElementById('pyPh'),pk=document.getElementById('pyPk'),qr=document.getElementById('pyQr');if(!nm||!ph||!qr)return;
+var box=qr.parentNode;box.classList.add('qr-gate');var m=document.createElement('div');m.className='qr-lock';m.innerHTML='🔒 Nhập <b>họ tên</b> và <b>số Zalo</b> ở trên<br>để hiện mã QR chuyển khoản';box.insertBefore(m,qr);
+var sent={},t;function ok(){return nm.value.trim().length>=2&&ph.value.replace(/\D/g,'').length>=9}
+function chk(){var o=ok();box.classList.toggle('open',o);if(!o)return;clearTimeout(t);t=setTimeout(function(){var z=ph.value.replace(/\D/g,'');if(sent[z]||!window.__gf)return;sent[z]=1;var opt=pk.selectedOptions[0];window.__gf({loai:'Để lại số (chưa CK)',goi:opt?opt.textContent.trim():'',ten:nm.value.trim(),zalo:z,tien:(opt&&opt.value.split('|')[0])||'',nd:'Khách mở mã QR'})},2500)}
+['input','change','blur'].forEach(function(ev){nm.addEventListener(ev,chk);ph.addEventListener(ev,chk)});chk();})();</script>
 </body>
 </html>
