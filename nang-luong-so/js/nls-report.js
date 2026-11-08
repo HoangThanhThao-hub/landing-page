@@ -44,7 +44,7 @@
   function calc(name,dd,mm,yy,CY){
     var L=clean(name),all=0,vow=0,con=0;
     L.split('').forEach(function(c){var v=val(c);all+=v;if('AEIOUY'.indexOf(c)>-1)vow+=v;else con+=v});
-    var lp=rd(rd(dd,true)+rd(mm,true)+rd(sd(yy),true),true);
+    var lp=rd(sd(''+dd+mm+yy),true);
     var py=rd(rd(dd)+rd(mm)+rd(CY)),py2=rd(rd(dd)+rd(mm)+rd(CY+1));
     var digits=(''+dd+mm+yy).split('').filter(function(c){return c!=='0'}),cnt={};
     digits.forEach(function(c){cnt[c]=(cnt[c]||0)+1});
