@@ -316,6 +316,7 @@ footer a{color:var(--gold2)}
 
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
 .reveal.in{opacity:1;transform:none}
+#thanh-toan .paycard{scroll-margin-top:72px}
 
 @media(max-width:980px){
   .navlinks{display:none}
@@ -967,13 +968,13 @@ body{padding-bottom:54px}
       <span class="pay-tag">✓ Tài khoản chính chủ cô Thảo</span>
       <div class="pay-form">
         <label class="full">Gói bạn chọn<select id="pyPk">
-          <option value="899000|CHUYENSAU">Giải Mã Chuyên Sâu · 899.000đ</option>
           <option value="299000|BANDO">Bản Đồ Năng Lượng · 299.000đ</option>
-          <option value="2999000|TRONBO">Trọn Bộ Năng Lượng Số · 2.999.000đ</option>
           <option value="599000|CONYEU">Thấu Hiểu Con Yêu · 599.000đ</option>
           <option value="799000|MECON">Năng Lượng 2 Mẹ Con · 799.000đ</option>
           <option value="799000|TINHYEU">Năng Lượng Tình Yêu · 799.000đ</option>
+          <option value="899000|CHUYENSAU" selected>Giải Mã Chuyên Sâu · 899.000đ</option>
           <option value="999000|DATTEN">Đặt Tên & Chọn Số · 999.000đ</option>
+          <option value="2999000|TRONBO">Trọn Bộ Năng Lượng Số · 2.999.000đ</option>
         </select></label>
         <label>Họ tên khai sinh<input id="pyNm" placeholder="VD: Nguyễn Thị Lan" autocomplete="name"></label>
         <label>Ngày sinh<input id="pyDob" placeholder="VD: 28/03/1988" inputmode="numeric"></label>
@@ -1343,7 +1344,7 @@ body{padding-bottom:54px}
   }
   var qT;['pyPk','pyNm','pyPh','pyDob'].forEach(function(i){$(i).addEventListener('input',function(){clearTimeout(qT);qT=setTimeout(pyUpd,350)});$(i).addEventListener('change',pyUpd)});
   pyUpd();setInterval(function(){if(OFF)pyUpd()},60000);
-  document.querySelectorAll('[data-pk]').forEach(function(b){b.addEventListener('click',function(){$('pyPk').value=b.getAttribute('data-pk');pyUpd()})});
+  document.querySelectorAll('[data-pk]').forEach(function(b){b.addEventListener('click',function(e){$('pyPk').value=b.getAttribute('data-pk');pyUpd();var pc=document.querySelector('#thanh-toan .paycard');if(pc){e.preventDefault();pc.classList.add('in');pc.scrollIntoView({behavior:'smooth',block:'start'});setTimeout(function(){var f=$('pyNm');if(f&&!f.value)f.focus({preventScroll:true})},700)}})});
   $('pyAmCp').addEventListener('click',function(){copy($('pyAm').dataset.v);this.textContent='Đã chép'});
   $('pyCtCp').addEventListener('click',function(){copy($('pyCt').textContent);this.textContent='Đã chép'});
   document.querySelectorAll('#thanh-toan [data-copy]').forEach(function(b){b.addEventListener('click',function(){copy(b.getAttribute('data-copy'));b.textContent='Đã chép'})});
