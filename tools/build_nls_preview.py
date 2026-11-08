@@ -4,21 +4,25 @@ Giữ nguyên nét huyền bí, chỉ sắp lại bố cục: mở đầu gọn,
 1 bảng gói có lọc, 1 điểm liên hệ, lời văn mềm hơn, đổi ngày âm → dương.
 Chạy: python3 tools/build_nls_preview.py
 """
-import re, os
+import re, os, sys
+LIVE = '--live' in sys.argv  # dùng 1 lần để thay trang thật (2026-11-08)
 
 SRC = 'nang-luong-so/index.html'
-OUT = 'xem-truoc/nang-luong-so/index.html'
+OUT = 'nang-luong-so/index.html' if LIVE else 'xem-truoc/nang-luong-so/index.html'
 s = open(SRC, encoding='utf-8').read()
+if 'id="loi-di"' in s:
+    sys.exit('Trang thật đã là bố cục mới (đã chạy --live), không cần dựng lại.')
 
 def must(old, new, count=1):
     global s
     assert old in s, old[:80]
     s = s.replace(old, new, count)
 
-# 1. đường dẫn tài nguyên -> tuyệt đối
-s = re.sub(r'((?:src|href|poster)=")(?=(?:img|video|js|qr-tpbank|og-image|ban-app|mo-khoa)\b)', r'\1/nang-luong-so/', s)
-s = s.replace("'qr-tpbank.jpg'", "'/nang-luong-so/qr-tpbank.jpg'").replace('"img/la-ban.svg"', '"/nang-luong-so/img/la-ban.svg"')
-s = s.replace('<head>', '<head>\n<meta name="robots" content="noindex,nofollow">', 1)
+# 1. đường dẫn tài nguyên -> tuyệt đối (chỉ bản xem trước)
+if not LIVE:
+  s = re.sub(r'((?:src|href|poster)=")(?=(?:img|video|js|qr-tpbank|og-image|ban-app|mo-khoa)\b)', r'\1/nang-luong-so/', s)
+  s = s.replace("'qr-tpbank.jpg'", "'/nang-luong-so/qr-tpbank.jpg'").replace('"img/la-ban.svg"', '"/nang-luong-so/img/la-ban.svg"')
+  s = s.replace('<head>', '<head>\n<meta name="robots" content="noindex,nofollow">', 1)
 
 # 2. mở đầu
 must('<span class="kicker">Thần số học Pythagoras · Bát Cực Linh Số</span>', '<span class="kicker">Master Hoàng Thanh Thảo · Pythagoras · Bát Cực Linh Số</span>')
