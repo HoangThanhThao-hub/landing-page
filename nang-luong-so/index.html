@@ -1302,8 +1302,8 @@ body{padding-bottom:54px}
   $('pyAmCp').addEventListener('click',function(){copy($('pyAm').dataset.v);this.textContent='Đã chép'});
   $('pyCtCp').addEventListener('click',function(){copy($('pyCt').textContent);this.textContent='Đã chép'});
   document.querySelectorAll('#thanh-toan [data-copy]').forEach(function(b){b.addEventListener('click',function(){copy(b.getAttribute('data-copy'));b.textContent='Đã chép'})});
-  $('pyDone').addEventListener('click',function(){
-    var o=$('pyPk').selectedOptions[0].textContent.split('·')[0].trim();
+  $('pyDone').addEventListener('click',function(e){
+if(!$('pyNm').value.trim()||$('pyPh').value.replace(/\D/g,'').length<9){e.preventDefault();var f=!$('pyNm').value.trim()?$('pyNm'):$('pyPh');f.focus();f.scrollIntoView({block:'center'});$('pyHint').innerHTML='<b style="color:#ffb4a8">Bạn nhập họ tên và số Zalo trước</b> để cô Thảo biết ai đã chuyển khoản nhé.';return}    var o=$('pyPk').selectedOptions[0].textContent.split('·')[0].trim();
     copy('Cô Thảo ơi, con đã chuyển khoản '+vnd(+$('pyAm').dataset.v)+' gói '+o+(OFF?' (ưu đãi giảm '+OFF+'%)':'')+'.\n- Họ tên khai sinh: '+($('pyNm').value||'...')+'\n- Ngày sinh: '+($('pyDob').value||'...')+'\n- Zalo: '+($('pyPh').value||'...')+'\n- Nội dung CK: '+$('pyCt').textContent+'\nCon gửi ảnh chuyển khoản ạ.');
     store('nls-paid','1');
     if(!this.dataset.sent){this.dataset.sent='1';gf({loai:'Chuyển khoản',goi:o,ten:$('pyNm').value,ns:$('pyDob').value,zalo:$('pyPh').value,tien:$('pyAm').dataset.v,nd:$('pyCt').textContent})}
