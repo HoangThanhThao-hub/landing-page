@@ -558,6 +558,15 @@ body{padding-bottom:54px}
 .hd-g p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.5}
 @media(max-width:860px){.pains{grid-template-columns:1fr 1fr}.hd-g{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.pains,.hd-g{grid-template-columns:1fr}.pack .for{min-height:0}}
+.lp-steps{font-size:13.5px;color:#f5dda0;background:#e3c27a14;border:1px dashed #e3c27a55;border-radius:10px;padding:6px 10px;margin:4px 0 10px;word-break:break-word}
+.yn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:start}
+.yn{border:1px solid #e3c27a40;border-radius:14px;background:#0c1232cc;padding:10px 14px}
+.yn summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:12px}
+.yn summary::-webkit-details-marker{display:none}
+.yn summary b{flex:0 0 42px;height:42px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--gold);color:var(--gold);font-size:18px}
+.yn summary span{font-weight:700;font-size:15px}
+.yn p{margin:10px 0 0;font-size:14px;color:#d3d8ee;line-height:1.55}.yn .ls{color:var(--muted);font-size:13px}
+@media(max-width:860px){.yn-grid{grid-template-columns:1fr 1fr}}@media(max-width:560px){.yn-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -629,12 +638,13 @@ body{padding-bottom:54px}
           <input id="fullname" name="fullname" placeholder="VD: Nguyễn Thị Minh Anh" required>
         </div>
         <div class="field">
-          <label>Ngày sinh (dương lịch)</label>
+          <label>Ngày sinh <b style="color:var(--gold)">DƯƠNG lịch</b> (ngày trên giấy khai sinh, căn cước)</label>
           <div class="dob">
             <select id="d" aria-label="Ngày"><option value="">Ngày</option></select>
             <select id="m" aria-label="Tháng"><option value="">Tháng</option></select>
             <select id="y" aria-label="Năm"><option value="">Năm</option></select>
           </div>
+          <small style="display:block;margin-top:6px;font-size:12.5px;opacity:.85">Chỉ nhớ ngày âm? Ngày trên căn cước chính là ngày dương, bạn lấy ngày đó nhập vào nhé.</small>
         </div>
         <button class="btn btn-gold" type="submit" style="padding:16px 30px">Giải mã ✦</button>
       </form>
@@ -649,6 +659,7 @@ body{padding-bottom:54px}
           <div>
             <small>Số Chủ Đạo · con đường cuộc đời</small>
             <h4 id="lpTitle"></h4>
+            <p class="lp-steps" id="lpSteps"></p>
             <p id="lpDesc"></p>
             <p class="lesson" id="lpLesson"></p>
           </div>
@@ -785,6 +796,19 @@ body{padding-bottom:54px}
       <div><span>Từ ngày sinh</span><b>Số Ngày Sinh</b><p>Năng khiếu bẩm sinh, món quà đặc biệt của riêng bạn.</p></div>
       <div><span>Theo từng năm</span><b>Năm Cá Nhân</b><p>Chu kỳ 9 năm, cho biết năm nay là năm gieo hạt hay gặt hái.</p></div>
     </div>
+  </div>
+</section>
+
+<!-- Ý NGHĨA 12 SỐ CHỦ ĐẠO -->
+<section class="section" id="y-nghia-so-chu-dao" style="padding-top:20px">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">Hỏi nhiều nhất</span>
+      <h2>Số Chủ Đạo của bạn là <span class="gold">số mấy?</span></h2>
+      <p>Cộng hết các chữ số trong ngày tháng năm sinh <b>dương lịch</b>, ra 2 chữ số thì cộng tiếp tới khi còn 1 chữ số. Ra 11, 22, 33 thì dừng lại, đó là 3 số bậc thầy. Bấm vào số của bạn để xem ý nghĩa.</p>
+    </div>
+    <div class="yn-grid" id="ynGrid"></div>
+    <p class="pain-bridge reveal">Mỗi người còn có Sứ Mệnh, Linh Hồn, Nhân Cách, Năm Cá Nhân khác nhau. <a href="#tu-xem">Nhập tên và ngày sinh để xem của riêng bạn</a>.</p>
   </div>
 </section>
 
@@ -1094,6 +1118,7 @@ body{padding-bottom:54px}
     22:['Số Master · Nhà Kiến Tạo','Tầm nhìn lớn đi cùng năng lực thực thi, có thể xây những điều bền vững.','Bài học: không để áp lực và nỗi sợ làm chùn bước.'],
     33:['Số Master · Người Thầy Chữa Lành','Yêu thương vô điều kiện, có sứ mệnh nâng đỡ và chữa lành cho người khác.','Bài học: không hy sinh bản thân quá mức.']
   };
+  (function(){var g=document.getElementById('ynGrid');if(!g)return;[1,2,3,4,5,6,7,8,9,11,22,33].forEach(function(n){var d=document.createElement('details');d.className='yn';d.innerHTML='<summary><b></b><span></span></summary><p></p><p class="ls"></p>';d.querySelector('b').textContent=n;d.querySelector('span').textContent=M[n][0];d.querySelector('p').textContent=M[n][1];d.querySelector('.ls').textContent=M[n][2];g.appendChild(d)})})();
   var PY={1:'Năm khởi đầu: gieo hạt, bắt đầu điều mới, chủ động hành động.',2:'Năm kết nối: kiên nhẫn, vun đắp quan hệ, hợp tác.',3:'Năm sáng tạo: thể hiện bản thân, mở rộng giao tiếp.',4:'Năm xây nền: chăm chỉ, sắp xếp tài chính và sức khỏe.',5:'Năm thay đổi: nhiều chuyển động, cơ hội và trải nghiệm mới.',6:'Năm gia đình: trách nhiệm, chăm lo tổ ấm và các mối quan hệ.',7:'Năm chiêm nghiệm: học hỏi, nhìn lại, chăm sóc nội tâm.',8:'Năm gặt hái: sự nghiệp, tài chính, khẳng định vị thế.',9:'Năm hoàn tất: khép lại chu kỳ, buông bỏ điều không còn phù hợp.'};
   var MISS={1:'thể hiện bản thân',2:'trực giác, sự nhạy cảm',3:'trí nhớ, tư duy',4:'tính thực tế, ngăn nắp',5:'cảm xúc, tình yêu thương',6:'sáng tạo, trách nhiệm gia đình',7:'học từ trải nghiệm',8:'sự tinh tế, độc lập',9:'lý tưởng, hoài bão'};
 
@@ -1128,7 +1153,10 @@ body{padding-bottom:54px}
     var dt=new Date(yy,mm-1,dd);
     if(dt.getMonth()!==mm-1){err.textContent='Ngày sinh này không tồn tại, bạn kiểm tra lại nhé.';err.style.display='block';return}
 
-    var lp=reduce(reduce(dd,true)+reduce(mm,true)+reduce(sumDigits(yy),true),true);
+    // Cách cộng giống video cô Thảo: cộng hết các chữ số ngày tháng năm sinh, ra 11, 22, 33 thì dừng
+    var dgs=(''+dd+mm+yy).split('').map(Number),tot=dgs.reduce(function(a,b){return a+b},0),lp=tot,stp=dgs.join('+')+' = '+tot;
+    while(lp>9&&lp!==11&&lp!==22&&lp!==33){var nx=sumDigits(lp);stp+=' → '+String(lp).split('').join('+')+' = '+nx;lp=nx}
+    if(lp===11||lp===22||lp===33)stp+=' (số bậc thầy, giữ nguyên)';
     var all=0,vow=0,con=0;
     letters.split('').forEach(function(c){var v=val(c);all+=v;if(V.indexOf(c)>-1)vow+=v;else con+=v});
     var ex=reduce(all,true),su=reduce(vow,true),pe=reduce(con,true),bd=reduce(dd,true);
@@ -1138,6 +1166,7 @@ body{padding-bottom:54px}
     document.getElementById('helloName').textContent=name;
     document.getElementById('helloDob').textContent='Sinh ngày '+dd+'/'+mm+'/'+yy;
     document.getElementById('lpNum').textContent=lp;
+    var se=document.getElementById('lpSteps');if(se)se.textContent='Cách cộng: '+stp;
     document.getElementById('lpTitle').textContent=M[lp][0];
     document.getElementById('lpDesc').textContent=M[lp][1];
     document.getElementById('lpLesson').textContent=M[lp][2];
@@ -1203,6 +1232,15 @@ body{padding-bottom:54px}
     if(cust&&v===unlockFor(cust)){store('nls-ok-'+cust,'1');store('nls-paid','1');var r=document.getElementById('results');r.classList.remove('is-locked');msg.textContent='';r.querySelector('.unlocked-ok').scrollIntoView({behavior:'smooth',block:'center'})}
     else{msg.innerHTML='<span class="bad">Mã chưa đúng, bạn kiểm tra lại hoặc nhắn Zalo cô Thảo nhé.</span> Mã khách: <strong>'+cust+'</strong>'}
   });
+
+  // ===== TỰ MỞ KHÓA KHI TIỀN ĐÃ VÀO (SePay → Google Apps Script) =====
+  var GAS='';// điền link Apps Script sau khi cô nối SePay
+  var autoT=null,autoN=0;
+  function autoCheck(){if(!GAS||!cust)return;var r=document.getElementById('results');if(!r||!r.classList.contains('is-locked'))return;
+    if(++autoN>240){clearInterval(autoT);return}
+    fetch(GAS+'?ma='+encodeURIComponent(cust)).then(function(x){return x.json()}).then(function(j){if(j&&j.paid){clearInterval(autoT);store('nls-ok-'+cust,'1');store('nls-paid','1');r.classList.remove('is-locked');var m=document.getElementById('unlockMsg');if(m)m.innerHTML='<b style="color:var(--gold2)">✓ Đã nhận chuyển khoản, kết quả đã mở.</b>';r.querySelector('.unlocked-ok').scrollIntoView({behavior:'smooth',block:'center'})}}).catch(function(){})}
+  window.nlsAutoStart=function(){if(!GAS||autoT)return;autoN=0;autoT=setInterval(autoCheck,8000);autoCheck()};
+  ['zaloPay','cpNote'].forEach(function(i){var b=document.getElementById(i);if(b)b.addEventListener('click',function(){window.nlsAutoStart()})});
 
   // ===== CHAT tự trả lời =====
   var ZALO='https://zalo.me/0935949141';
