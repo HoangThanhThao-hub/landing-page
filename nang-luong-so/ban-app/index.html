@@ -378,7 +378,7 @@ h2 .gold,.holo{animation:holoTxt 5s ease-in-out infinite}
 
 <section class="sec" id="thanh-toan">
   <div class="wrap">
-    <div class="head"><span class="kicker">Thanh toán</span><h2>Chuyển khoản <span class="gold">nhận app</span></h2><p>Chọn gói, điền tên và Zalo, quét mã QR. Chuyển xong bấm nút báo cô Thảo.</p></div>
+    <div class="head"><span class="kicker">Thanh toán</span><h2>Chuyển khoản <span class="gold">nhận app</span></h2><p>Chọn gói, quét mã QR là chuyển khoản được ngay. Chuyển xong bấm nút báo cô Thảo.</p></div>
     <div class="paycard">
       <span class="pay-tag">✓ Tài khoản chính chủ cô Thảo</span>
       <div class="pay-form">
@@ -391,8 +391,6 @@ h2 .gold,.holo{animation:holoTxt 5s ease-in-out infinite}
           <option value="4868000|PT-DOITAC">App Phong Thủy · Đối Tác · 4.868.000đ</option>
           <option value="6868000|UUTIEN2APP">Gói Ưu Tiên Đối Tác 2 App · 6.868.000đ</option>
         </select></label>
-        <label>Họ tên của bạn<input id="pyNm" placeholder="VD: Nguyễn Thị Lan" autocomplete="name"></label>
-        <label>Số Zalo của bạn<input id="pyPh" placeholder="VD: 0912345678" inputmode="tel" autocomplete="tel"></label>
       </div>
       <div class="pay-grid">
         <div class="qr"><img id="pyQr" alt="Mã QR chuyển khoản TPBank cô Thảo" src="../qr-tpbank.jpg"><small id="pyQrNote">Quét bằng app ngân hàng, đã điền sẵn số tiền và nội dung</small><div class="qr-mob"><a class="qr-save" data-qr="pyQr" href="#" target="_blank" rel="noopener">📥 Lưu mã QR vào điện thoại</a><p>Đang xem trên điện thoại? Bấm lưu ảnh QR, mở app ngân hàng → <b>Quét QR</b> → chọn <b>ảnh vừa lưu</b>. Hoặc bấm <b>Chép</b> số tài khoản, số tiền, nội dung bên dưới để chuyển tay.</p><p class="qr-ask">Còn phân vân? <a href="https://zalo.me/0935949141" target="_blank" rel="noopener">Nhắn Zalo hỏi cô Thảo trước</a></p></div></div>
@@ -404,8 +402,9 @@ h2 .gold,.holo{animation:holoTxt 5s ease-in-out infinite}
           <div class="kv"><span>Nội dung</span><strong id="pyCt">KINHDOANH HO TEN SDT</strong><button class="cp" type="button" id="pyCtCp">Chép</button></div>
         </div>
       </div>
+      <div class="pay-form pay-opt" style="margin-top:18px"><label>Họ tên <small style="opacity:.7;font-weight:400">(không bắt buộc)</small><input id="pyNm" placeholder="VD: Nguyễn Thị Lan" autocomplete="name"></label><label>Số Zalo <small style="opacity:.7;font-weight:400">(không bắt buộc)</small><input id="pyPh" placeholder="VD: 0912345678" inputmode="tel" autocomplete="tel"></label></div>
       <a class="btn btn-gold pay-done" id="pyDone" href="https://zalo.me/0935949141" target="_blank" rel="noopener">✓ Tôi đã chuyển khoản · báo cô Thảo qua Zalo</a>
-      <p class="pay-hint" id="pyHint">Bấm nút trên, trang chép sẵn lời nhắn có tên, Zalo và gói bạn mua. Mở Zalo, dán lời nhắn và gửi kèm ảnh chuyển khoản. Cô Thảo đối chiếu rồi liên hệ giao app cho bạn.</p>
+      <p class="pay-hint" id="pyHint">Bấm nút trên, trang chép sẵn lời nhắn có gói bạn mua. Mở Zalo, dán lời nhắn và gửi kèm ảnh chuyển khoản. Cô Thảo đối chiếu rồi liên hệ giao app cho bạn.</p>
     </div>
   </div>
 </section>
@@ -437,7 +436,7 @@ document.querySelectorAll('[data-pk]').forEach(function(b){b.addEventListener('c
 $('pyAmCp').addEventListener('click',function(){copy($('pyAm').dataset.v);this.textContent='Đã chép'});
 $('pyCtCp').addEventListener('click',function(){copy($('pyCt').textContent);this.textContent='Đã chép'});
 document.querySelectorAll('#thanh-toan [data-copy]').forEach(function(b){b.addEventListener('click',function(){copy(b.getAttribute('data-copy'));b.textContent='Đã chép'})});
-$('pyDone').addEventListener('click',function(e){if(!$('pyNm').value.trim()||$('pyPh').value.replace(/\D/g,'').length<9){e.preventDefault();var f=!$('pyNm').value.trim()?$('pyNm'):$('pyPh');f.focus();f.scrollIntoView({block:'center'});$('pyHint').innerHTML='<b style="color:#ffb4a8">Bạn nhập họ tên và số Zalo trước</b> để cô Thảo biết ai đã chuyển khoản nhé.';return}var o=$('pyPk').selectedOptions[0].textContent.replace(/ · [\d.]+đ$/,'').trim();
+$('pyDone').addEventListener('click',function(e){var o=$('pyPk').selectedOptions[0].textContent.replace(/ · [\d.]+đ$/,'').trim();
 copy('Cô Thảo ơi, em đã chuyển khoản '+vnd(+$('pyAm').dataset.v)+' mua '+o+'.\n- Họ tên: '+($('pyNm').value||'...')+'\n- Zalo: '+($('pyPh').value||'...')+'\n- Nội dung CK: '+$('pyCt').textContent+'\nEm gửi ảnh chuyển khoản ạ.');
 if(!this.dataset.sent){this.dataset.sent='1';gf({loai:'Mua app',goi:o,ten:$('pyNm').value,zalo:$('pyPh').value,tien:$('pyAm').dataset.v,nd:$('pyCt').textContent})}
 $('pyHint').innerHTML='<b style="color:var(--gold2)">Đã chép sẵn lời nhắn.</b> Mở Zalo cô Thảo, dán lời nhắn và gửi kèm ảnh chuyển khoản nhé.'});
@@ -447,7 +446,7 @@ upd()})();</script>
 fetch(src).then(function(r){if(!r.ok)throw 0;return r.blob()}).then(function(b){var u=URL.createObjectURL(b),d=document.createElement('a');d.href=u;d.download='QR-chuyen-khoan-co-Thao.png';document.body.appendChild(d);d.click();d.remove();setTimeout(function(){URL.revokeObjectURL(u)},4000);a.textContent='✓ Đã lưu ảnh QR, mở app ngân hàng để quét'}).catch(function(){window.open(src,'_blank');a.textContent='Nhấn giữ ảnh QR → Lưu ảnh'})});</script>
 <script>/* Xin tên + số Zalo trước khi hiện mã QR, lưu lại để cô nhắn khách bỏ dở */(function(){
 var nm=document.getElementById('pyNm'),ph=document.getElementById('pyPh'),pk=document.getElementById('pyPk'),qr=document.getElementById('pyQr');if(!nm||!ph||!qr)return;
-var box=qr.parentNode;box.classList.add('qr-gate');var m=document.createElement('div');m.className='qr-lock';m.innerHTML='🔒 Nhập <b>họ tên</b> và <b>số Zalo</b> ở trên<br>để hiện mã QR chuyển khoản';box.insertBefore(m,qr);
+var box=qr.parentNode;
 var sent={},t;function ok(){return nm.value.trim().length>=2&&ph.value.replace(/\D/g,'').length>=9}
 function chk(){var o=ok();box.classList.toggle('open',o);if(!o)return;clearTimeout(t);t=setTimeout(function(){var z=ph.value.replace(/\D/g,'');if(sent[z]||!window.__gf)return;sent[z]=1;var opt=pk.selectedOptions[0];window.__gf({loai:'Để lại số (chưa CK)',goi:opt?opt.textContent.trim():'',ten:nm.value.trim(),zalo:z,tien:(opt&&opt.value.split('|')[0])||'',nd:'Khách mở mã QR'})},2500)}
 ['input','change','blur'].forEach(function(ev){nm.addEventListener(ev,chk);ph.addEventListener(ev,chk)});chk();})();</script>
