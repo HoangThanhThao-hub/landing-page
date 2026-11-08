@@ -1093,7 +1093,7 @@ html:root body:not(#x) #xq h3{color:#fff3d6!important;-webkit-text-fill-color:#f
 <div class="pay-2"><label>Họ và tên<input id="pyNm" autocomplete="name" placeholder="Ví dụ: Nguyễn Thị Lan"/></label><label>Số Zalo<input id="pyPh" inputmode="tel" autocomplete="tel" placeholder="Ví dụ: 0912345678"/></label></div>
 </div>
 <div class="pay-box">
-<div class="pay-qr"><img alt="Mã QR chuyển khoản TPBank – HOANG THI THANH THAO – 8768 1714 131" src="../qr-tpbank.jpg?v=12" loading="lazy"/><small>Quét bằng mọi app ngân hàng</small></div>
+<div class="pay-qr"><img id="pyQr" alt="Mã QR chuyển khoản TPBank – HOANG THI THANH THAO – 8768 1714 131" src="../qr-tpbank.jpg?v=12" loading="lazy"/><small id="pyQrNote">Quét bằng app ngân hàng, đã điền sẵn số tiền và nội dung</small></div>
 <div class="pay-info">
 <div class="pi"><span>Ngân hàng</span><b class="bk">TPBank <i>(Tiên Phong)</i></b></div>
 <div class="pi"><span>Chủ tài khoản</span><b class="gd">HOANG THI THANH THAO</b></div>
@@ -1102,19 +1102,19 @@ html:root body:not(#x) #xq h3{color:#fff3d6!important;-webkit-text-fill-color:#f
 <div class="pi row"><div><span>Nội dung chuyển khoản</span><b class="mono" id="pyCt">MASTER HO TEN SDT</b></div><button type="button" class="cp" id="pyCtCp" data-cp="">Sao chép</button></div>
 </div></div>
 <div class="pay-act"><a class="button secondary" href="../qr-tpbank.jpg?v=12" download="QR-TPBank-Co-Thao.jpg">⬇ Tải ảnh QR</a><a class="button primary" id="pyDone" href="https://zalo.me/0935949141" target="_blank" rel="noopener">✓ Tôi đã chuyển khoản – báo Thảo qua Zalo</a></div>
-<p class="pay-note">Bấm nút trên, trang sẽ chép sẵn lời nhắn. Bạn mở Zalo, dán lời nhắn và gửi kèm ảnh chuyển khoản. Thảo đối chiếu với ngân hàng rồi bàn giao công cụ.</p>
+<p class="pay-note" id="pyHint">Bấm nút trên, trang sẽ chép sẵn lời nhắn. Bạn mở Zalo, dán lời nhắn và gửi kèm ảnh chuyển khoản. Thảo đối chiếu với ngân hàng rồi bàn giao công cụ.</p>
 </div>
 <script>
 (function(){var $=function(i){return document.getElementById(i)};
 function un(s){return (s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/đ/g,'d').replace(/Đ/g,'D').replace(/[^A-Za-z0-9 ]/g,'').replace(/\s+/g,' ').trim().toUpperCase()}
 function vn(n){return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+'đ'}
 function upd(){var v=$('pyPk').value.split('|'),nm=un($('pyNm').value),ph=($('pyPh').value||'').replace(/\D/g,'');
-var ct=v[1]+' '+(nm||'HO TEN')+' '+(ph||'SDT');$('pyCt').textContent=ct;$('pyCtCp').dataset.cp=ct;$('pyAm').textContent=vn(+v[0]);$('pyAmCp').dataset.cp=v[0];}
+var ct=v[1]+' '+(nm||'HO TEN')+' '+(ph||'SDT');$('pyCt').textContent=ct;$('pyCtCp').dataset.cp=ct;$('pyAm').textContent=vn(+v[0]);$('pyAmCp').dataset.cp=v[0];var q=$('pyQr');if(q){q.onerror=function(){this.onerror=null;this.src='../qr-tpbank.jpg?v=12';$('pyQrNote').textContent='Quét mã, nhập đúng số tiền và chép nội dung bên cạnh'};q.src='https://img.vietqr.io/image/TPB-87681714131-compact2.png?amount='+v[0]+'&addInfo='+encodeURIComponent(ct.slice(0,50))+'&accountName='+encodeURIComponent('HOANG THI THANH THAO')}}
 ['pyPk','pyNm','pyPh'].forEach(function(i){$(i).addEventListener('input',upd);$(i).addEventListener('change',upd)});upd();
 function cp(t,b){var done=function(){if(b){var o=b.textContent;b.textContent='Đã chép ✓';b.classList.add('ok');setTimeout(function(){b.textContent=o;b.classList.remove('ok')},1600)}};
 if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}else{var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}a.remove();done()}}
 document.querySelectorAll('#pay-card .cp').forEach(function(b){b.addEventListener('click',function(){cp(b.dataset.cp,b)})});
-$('pyDone').addEventListener('click',function(){var o=$('pyPk').selectedOptions[0].textContent;cp('Chị Thảo ơi, em đã chuyển khoản '+o+'. Nội dung: '+$('pyCt').textContent+'. Con gửi ảnh chuyển khoản ạ.')});
+$('pyDone').addEventListener('click',function(e){var nmv=$('pyNm').value.trim(),phv=$('pyPh').value.replace(/\D/g,'');if(!nmv||phv.length<9){e.preventDefault();var f=!nmv?$('pyNm'):$('pyPh');f.focus();f.scrollIntoView({block:'center'});$('pyHint').innerHTML='<b style="color:#ffb4a8">Bạn nhập họ tên và số Zalo trước</b> để Thảo biết ai đã chuyển khoản nhé.';return}var o=$('pyPk').selectedOptions[0].textContent;cp('Chị Thảo ơi, em đã chuyển khoản '+o+'.\n- Họ tên: '+nmv+'\n- Zalo: '+$('pyPh').value+'\n- Nội dung CK: '+$('pyCt').textContent+'\nEm gửi ảnh chuyển khoản ạ.');if(!this.dataset.sent){this.dataset.sent='1';try{var GE={loai:'entry.596007808',goi:'entry.1684003920',ten:'entry.546302110',zalo:'entry.2058676908',tien:'entry.1353076927',nd:'entry.644535927'},d={loai:'Mua công cụ video',goi:o,ten:nmv,zalo:$('pyPh').value,tien:$('pyAmCp').dataset.cp,nd:$('pyCt').textContent},fd=new URLSearchParams();Object.keys(d).forEach(function(k){fd.append(GE[k],String(d[k]).slice(0,500))});fetch('https://docs.google.com/forms/d/e/1FAIpQLScoEBjYk6eHmzAXQfLeNSwpMVRsGL_wf08Vj_eyDGFlQUbw2w/formResponse',{method:'POST',mode:'no-cors',body:fd}).catch(function(){})}catch(x){}}$('pyHint').innerHTML='<b>Đã chép sẵn lời nhắn.</b> Mở Zalo Thảo, dán lời nhắn và gửi kèm ảnh chuyển khoản nhé.'});
 })();
 </script>
 <!--/v15--></div></div></section>
