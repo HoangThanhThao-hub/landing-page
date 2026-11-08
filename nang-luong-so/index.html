@@ -1204,6 +1204,15 @@ body{padding-bottom:54px}
     else{msg.innerHTML='<span class="bad">Mã chưa đúng, bạn kiểm tra lại hoặc nhắn Zalo cô Thảo nhé.</span> Mã khách: <strong>'+cust+'</strong>'}
   });
 
+  // ===== TỰ MỞ KHÓA KHI TIỀN ĐÃ VÀO (SePay → Google Apps Script) =====
+  var GAS='';// điền link Apps Script sau khi cô nối SePay
+  var autoT=null,autoN=0;
+  function autoCheck(){if(!GAS||!cust)return;var r=document.getElementById('results');if(!r||!r.classList.contains('is-locked'))return;
+    if(++autoN>240){clearInterval(autoT);return}
+    fetch(GAS+'?ma='+encodeURIComponent(cust)).then(function(x){return x.json()}).then(function(j){if(j&&j.paid){clearInterval(autoT);store('nls-ok-'+cust,'1');store('nls-paid','1');r.classList.remove('is-locked');var m=document.getElementById('unlockMsg');if(m)m.innerHTML='<b style="color:var(--gold2)">✓ Đã nhận chuyển khoản, kết quả đã mở.</b>';r.querySelector('.unlocked-ok').scrollIntoView({behavior:'smooth',block:'center'})}}).catch(function(){})}
+  window.nlsAutoStart=function(){if(!GAS||autoT)return;autoN=0;autoT=setInterval(autoCheck,8000);autoCheck()};
+  ['zaloPay','cpNote'].forEach(function(i){var b=document.getElementById(i);if(b)b.addEventListener('click',function(){window.nlsAutoStart()})});
+
   // ===== CHAT tự trả lời =====
   var ZALO='https://zalo.me/0935949141';
   function nz(t){return t.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d').replace(/Đ/g,'d').toLowerCase()}
