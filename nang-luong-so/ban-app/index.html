@@ -383,13 +383,13 @@ h2 .gold,.holo{animation:holoTxt 5s ease-in-out infinite}
       <span class="pay-tag">✓ Tài khoản chính chủ cô Thảo</span>
       <div class="pay-form">
         <label class="full">Gói bạn chọn<select id="pyPk">
-          <option value="6868000|UUTIEN2APP">Gói Ưu Tiên Đối Tác 2 App · 6.868.000đ</option>
-          <option value="2668000|KINHDOANH">App Master Thanh Thảo · Kinh Doanh · 2.668.000đ</option>
           <option value="1268000|TUDUNG">App Master Thanh Thảo · Tự Dùng · 1.268.000đ</option>
-          <option value="4868000|DOITAC">App Master Thanh Thảo · Đối Tác · 4.868.000đ</option>
           <option value="1268000|PT-TUDUNG">App Phong Thủy · Tự Dùng · 1.268.000đ</option>
+          <option value="2668000|KINHDOANH">App Master Thanh Thảo · Kinh Doanh · 2.668.000đ</option>
           <option value="2668000|PT-KINHDOANH">App Phong Thủy · Kinh Doanh · 2.668.000đ</option>
+          <option value="4868000|DOITAC">App Master Thanh Thảo · Đối Tác · 4.868.000đ</option>
           <option value="4868000|PT-DOITAC">App Phong Thủy · Đối Tác · 4.868.000đ</option>
+          <option value="6868000|UUTIEN2APP">Gói Ưu Tiên Đối Tác 2 App · 6.868.000đ</option>
         </select></label>
         <label>Họ tên của bạn<input id="pyNm" placeholder="VD: Nguyễn Thị Lan" autocomplete="name"></label>
         <label>Số Zalo của bạn<input id="pyPh" placeholder="VD: 0912345678" inputmode="tel" autocomplete="tel"></label>
@@ -451,5 +451,5 @@ var box=qr.parentNode;box.classList.add('qr-gate');var m=document.createElement(
 var sent={},t;function ok(){return nm.value.trim().length>=2&&ph.value.replace(/\D/g,'').length>=9}
 function chk(){var o=ok();box.classList.toggle('open',o);if(!o)return;clearTimeout(t);t=setTimeout(function(){var z=ph.value.replace(/\D/g,'');if(sent[z]||!window.__gf)return;sent[z]=1;var opt=pk.selectedOptions[0];window.__gf({loai:'Để lại số (chưa CK)',goi:opt?opt.textContent.trim():'',ten:nm.value.trim(),zalo:z,tien:(opt&&opt.value.split('|')[0])||'',nd:'Khách mở mã QR'})},2500)}
 ['input','change','blur'].forEach(function(ev){nm.addEventListener(ev,chk);ph.addEventListener(ev,chk)});chk();})();</script>
-</body>
+<!--paymodal--><style>.pm-ov{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:10px;background:#000c;backdrop-filter:blur(4px)}.pm-ov.on{display:flex}.pm-box{position:relative;width:min(680px,100%);max-height:94vh;overflow:auto;-webkit-overflow-scrolling:touch;border-radius:20px;background:#0d0f1c;box-shadow:0 20px 80px #000;padding-top:16px}.pm-box>*:not(.pm-x){margin:0!important;opacity:1!important;transform:none!important;visibility:visible!important}.pm-box .reveal{opacity:1!important;transform:none!important}.pm-x{position:sticky;top:8px;float:right;margin:8px 8px -48px 0;z-index:5;width:40px;height:40px;border-radius:50%;border:1px solid #e3b675;background:#0d0f1ce6;color:#f3d48b;font-size:26px;line-height:1;cursor:pointer}</style><script>(function(){var card=document.querySelector("#thanh-toan .paycard");if(!card)return;var ph=document.createComment("pay"),ov=document.createElement("div");ov.className="pm-ov";ov.setAttribute("role","dialog");ov.setAttribute("aria-label","Chuyển khoản");ov.innerHTML='<div class="pm-box"><button class="pm-x" type="button" aria-label="Đóng">×</button></div>';document.body.appendChild(ov);var box=ov.firstChild;function open(v){var s=document.getElementById("pyPk");if(v&&s){s.value=v;s.dispatchEvent(new Event("change"))}if(!ph.parentNode){card.parentNode.insertBefore(ph,card);box.appendChild(card)}ov.classList.add("on");document.documentElement.style.overflow="hidden";box.scrollTop=0}function close(){if(!ph.parentNode)return;ph.parentNode.insertBefore(card,ph);ph.parentNode.removeChild(ph);ov.classList.remove("on");document.documentElement.style.overflow=""}ov.querySelector(".pm-x").onclick=close;ov.addEventListener("click",function(e){if(e.target===ov)close()});document.addEventListener("keydown",function(e){if(e.key==="Escape")close()});document.querySelectorAll("[data-pk]").forEach(function(b){b.addEventListener("click",function(e){e.preventDefault();open(b.getAttribute("data-pk"))})})})();</script><!--/paymodal--></body>
 </html>
