@@ -88,6 +88,7 @@
   '.nr .nr-pairs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}.nr .nr-pairs div{border-radius:12px;padding:10px;text-align:center;background:#fff;border:1px solid #e6d3a6}.nr .nr-pairs b{display:block;font-size:22px;color:#3b2a6b}.nr .nr-pairs span{font-size:12.5px}.nr .nr-pairs .g{background:#eef7f0;border-color:#9fcfb0}.nr .nr-pairs .b{background:#fbeeea;border-color:#e3a99a}.nr .nr-pairs .n{color:#8a8296}'+
   '.nr .nr-tb{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}.nr .nr-tb td,.nr .nr-tb th{border-bottom:1px solid #e6d3a6;padding:7px 8px;text-align:left}.nr .nr-tb tr.g td:first-child{color:#2f7a52;font-weight:700}.nr .nr-tb tr.b td:first-child{color:#a4442e;font-weight:700}'+
   '.nr .nr-y9 .nr-row{padding:4px 0}.nr .nr-y9 .nr-row .nr-n{flex:0 0 42px;height:42px;font-size:20px}.nr .nr-y9 .nr-row p{font-size:13.5px}'+
+  '.nr .nr-nt th,.nr .nr-nt td{text-align:center;padding:6px 2px;font-size:14px}.nr .nr-nt td{font-weight:700;color:#3b2a6b}.nr .nr-nt .v{background:#fbf0d2}.nr .nr-nt .sp{width:14px;border:0}.nr .nr-nt .z{color:#c4b48e;font-weight:400}.nr .nr-nmp .nr-row{padding:10px 0}.nr .nr-nmp .nr-sub{margin-bottom:16px}'+
   '.nr .nr-end{margin-top:26px;text-align:center;color:#6b6385;font-size:13.5px}.nr .nr-end b{color:#3b2a6b}';
 
   function buildLite(o){
@@ -247,6 +248,35 @@
     seg('bd');
     h+=idxPage('mt',mt,'Càng trưởng thành, bạn càng hướng tới năng lượng <b>'+low(nm0(mt))+'</b> và thấy mình sống trọn vẹn khi được '+J[mt]+'.');
     seg('mt');
+    // Phân tích họ và tên
+    var words=o.name.trim().split(/\s+/).map(clean).filter(Boolean),nc={},nk;
+    L.split('').forEach(function(ch){nk=val(ch);nc[nk]=(nc[nk]||0)+1});
+    var mx=0;for(nk=1;nk<=9;nk++)if((nc[nk]||0)>mx)mx=nc[nk];
+    var dom=[];for(nk=1;nk<=9;nk++)if(mx&&nc[nk]===mx)dom.push(nk);
+    var nmiss=[];for(nk=1;nk<=9;nk++)if(!nc[nk])nmiss.push(nk);
+    var bal=rd(words.reduce(function(s,w){return s+val(w[0])},0),true),sub=9-nmiss.length;
+    var att=rd(sd(''+o.dd+o.mm),true),gn=words[words.length-1]||'',rat=rd(gn.split('').reduce(function(s,ch){return s+val(ch)},0)+(+o.dd),true);
+    var lk1=Math.abs(rd(r.lp)-rd(r.ex)),lk2=Math.abs(rd(r.su)-rd(r.pe));
+    var LK={0:'Hai năng lượng đồng điệu, bạn dễ sống đúng với chính mình.',1:'Cần chủ động và tự tin hơn để kết nối hai phần này.',2:'Cần kiên nhẫn, lắng nghe để hai phần này hòa hợp.',3:'Cần thể hiện bản thân rõ ràng, nói ra điều mình nghĩ.',4:'Cần kỷ luật và kế hoạch để hai phần đi cùng nhau.',5:'Cần thử điều mới trong một giới hạn rõ ràng.',6:'Cần cân bằng giữa trách nhiệm với người khác và chăm sóc chính mình.',7:'Cần dành thời gian chiêm nghiệm, hiểu sâu bản thân.',8:'Cần cân bằng giữa vật chất và tinh thần.'};
+    var VW='AEIOUY';
+    h+='<div class="nr-pg nr-nmp"><h2>Phân tích họ và tên</h2><div class="nr-sub">Tên gọi mang năng lượng của bạn</div><p class="nr-lead">Mỗi chữ cái trong họ tên khai sinh ứng với một con số. Họ tên cho biết cách bạn thể hiện năng lượng ra bên ngoài.</p>';
+    h+='<table class="nr-tb nr-nt"><tr>';words.forEach(function(w,wi){w.split('').forEach(function(ch){h+='<th'+(VW.indexOf(ch)>-1?' class="v"':'')+'>'+ch+'</th>'});if(wi<words.length-1)h+='<th class="sp"></th>'});h+='</tr><tr>';
+    words.forEach(function(w,wi){w.split('').forEach(function(ch){h+='<td'+(VW.indexOf(ch)>-1?' class="v"':'')+'>'+val(ch)+'</td>'});if(wi<words.length-1)h+='<td class="sp"></td>'});
+    h+='</tr></table><p class="nr-small" style="margin:4px 0 0">Ô màu vàng là nguyên âm (Linh Hồn), ô còn lại là phụ âm (Nhân Cách).</p>';
+    h+='<h4 style="margin-top:10px">Số lần mỗi con số xuất hiện trong tên</h4><table class="nr-tb nr-nt"><tr>';for(nk=1;nk<=9;nk++)h+='<th>'+nk+'</th>';h+='</tr><tr>';for(nk=1;nk<=9;nk++)h+='<td'+(nc[nk]?'':' class="z"')+'>'+(nc[nk]||0)+'</td>';h+='</tr></table>';
+    h+='<div class="nr-row"><div class="nr-n">'+dom.join(',')+'</div><div><small>Số Nổi Trội · xuất hiện nhiều nhất trong tên</small><b>'+dom.map(nm0).join(' · ')+'</b><p>Năng lượng bạn hay quay về: '+dom.map(function(q){return low(M[q][1])}).join(' ')+' Hãy dùng thế mạnh này như một công cụ, đừng để nó thành phản xạ duy nhất.</p></div></div>';
+    h+='<div class="nr-row"><div class="nr-n">'+bal+'</div><div><small>Số Cân Bằng · chữ cái đầu của họ tên</small><b>'+nm0(bal)+'</b><p>Khi gặp chuyện khó hoặc căng thẳng, bạn lấy lại cân bằng tốt nhất bằng cách '+low(X[bal][3])+'</p></div></div>';
+    h+='<div class="nr-row"><div class="nr-n">'+sub+'</div><div><small>Sức Mạnh Tiềm Thức · số nhóm năng lượng có trong tên</small><b>Tên bạn có '+sub+'/9 nhóm năng lượng</b><p>'+(sub>=7?'Bạn có nhiều nguồn lực bên trong, xoay xở tốt khi gặp tình huống bất ngờ.':(sub>=5?'Bạn xử lý khá tốt khi có sự chuẩn bị; tình huống bất ngờ cần thêm thời gian bình tĩnh.':'Bạn cần chuẩn bị kỹ trước việc lớn; hãy tập giữ bình tĩnh khi có biến động.'))+'</p></div></div>';
+    h+='<div class="nr-box">'+(nmiss.length?'<b>Số chưa có trong tên: '+nmiss.join(', ')+'.</b> Đây không phải thiếu sót, mà là kỹ năng nên rèn có chủ đích:<br>'+nmiss.map(function(q){return '<b>'+q+'</b>: '+MISS[q]}).join('; ')+'.':'<b>Tên bạn có đủ 9 con số</b>, năng lượng thể hiện ra bên ngoài khá tròn đầy.')+'</div></div>';
+    seg('name');
+    h+='<div class="nr-pg"><h2>Các chỉ số kết nối</h2><div class="nr-sub">Từ họ tên và ngày sinh</div><p class="nr-lead">Các chỉ số dưới đây cho thấy cách các phần trong bạn phối hợp với nhau, giúp chuyển bản giải mã từ hiểu mình sang hành động.</p>';
+    [[att,'Số Thái Độ · ngày + tháng sinh','Ấn tượng đầu tiên và thái độ bạn thường mang khi bắt đầu việc mới: '+low(M[att][1])],
+     [rat,'Số Tư Duy Lý Trí · tên gọi + ngày sinh','Cách bạn suy nghĩ trước khi quyết định: nghiêng về năng lượng '+low(nm0(rat))+'. '+M[rat][2]],
+     [lk1,'Liên kết Đường Đời – Sứ Mệnh · '+rd(r.lp)+' và '+rd(r.ex),'Cách phối hợp con đường cuộc đời với tài năng của bạn. '+LK[lk1]],
+     [lk2,'Liên kết Linh Hồn – Nhân Cách · '+rd(r.su)+' và '+rd(r.pe),'Khoảng cách giữa mong muốn bên trong và hình ảnh bên ngoài. '+LK[lk2]]].forEach(function(q){
+      h+='<div class="nr-row"><div class="nr-n">'+q[0]+'</div><div><small>'+q[1]+'</small>'+(q[1].indexOf('Liên kết')===0?'':'<b>'+nm0(q[0])+'</b>')+'<p>'+q[2]+'</p></div></div>'});
+    h+='<div class="nr-box"><b>Gợi ý của cô:</b> số liên kết càng nhỏ, hai phần trong bạn càng dễ hòa hợp. Số liên kết lớn là lời nhắc dành thời gian lắng nghe chính mình nhiều hơn.</div></div>';
+    seg('link');
     // 9. Biểu đồ
     var order=[3,6,9,2,5,8,1,4,7];
     h+='<div class="nr-pg"><h2>Biểu đồ ngày sinh</h2><div class="nr-sub">Năng lượng sẵn có và bài học</div><p class="nr-lead">Các chữ số trong ngày sinh được xếp vào lưới 3×3. Ô có số là năng lượng bạn có sẵn, ô trống là điều bạn cần rèn thêm.</p><div class="nr-grid">';
@@ -281,6 +311,21 @@
     seg('m1');
     h+='<div class="nr-pg"><h2>12 tháng cá nhân năm '+(CY+1)+'</h2><div class="nr-sub">Năm số '+r.py2+' · nhịp năng lượng từng tháng</div>'+months(r.py2,CY+1)+'</div>';
     seg('m2');
+    // Nghề nghiệp + kế hoạch 30 ngày
+    var cs=[[r.lp,'Số Chủ Đạo']];if(rd(r.ex)!==rd(r.lp))cs.push([r.ex,'Số Sứ Mệnh']);if(dom[0]&&cs.every(function(q){return rd(q[0])!==dom[0]}))cs.push([dom[0],'Số Nổi Trội']);
+    h+='<div class="nr-pg"><h2>Định hướng nghề nghiệp</h2><div class="nr-sub">Kết hợp ngày sinh và họ tên</div><p class="nr-lead">Không chọn nghề chỉ dựa trên một con số. Hãy đối chiếu với năng lực, giá trị, trải nghiệm và nhu cầu thực tế của bạn.</p>';
+    cs.forEach(function(q){h+='<div class="nr-row"><div class="nr-n">'+q[0]+'</div><div><small>'+q[1]+' · '+nm0(q[0])+'</small><p>'+X[q[0]][0]+' '+X[q[0]][2]+'</p></div></div>'});
+    h+='<div class="nr-box"><b>Bộ lọc khi chọn việc:</b><br>1. Việc này có cho tôi dùng thế mạnh mỗi tuần không?<br>2. Tôi có sẵn sàng rèn kỹ năng còn thiếu trong 2–3 năm?<br>3. Thị trường có trả tiền cho giá trị tôi tạo ra?<br>4. Nhịp sống của công việc có hợp sức khỏe và gia đình?</div>';
+    var rn=(nmiss.length?nmiss:r.miss).slice(0,2);
+    h+='</div>';seg('car');
+    h+='<div class="nr-pg"><h2>Kế hoạch 30 ngày</h2><div class="nr-sub">Biến bản giải mã thành hành động</div><p class="nr-lead">Mỗi tuần một bước nhỏ. Sau 30 ngày bạn sẽ thấy rõ năng lượng nào giúp mình tốt lên và điều gì cần điều chỉnh.</p>'+
+      '<div class="nr-row"><div class="nr-n">1</div><div><small>Tuần 1 · Quan sát</small><p>Ghi lại 3 lúc bạn thấy mình tốt nhất và 3 lúc dễ mất cân bằng.</p></div></div>'+
+      '<div class="nr-row"><div class="nr-n">2</div><div><small>Tuần 2 · Thử nghiệm</small><p>Làm theo gợi ý của Số Chủ Đạo '+r.lp+' ở quy mô nhỏ, 3 lần trong tuần: '+low(X[r.lp][3])+'</p></div></div>'+
+      '<div class="nr-row"><div class="nr-n">3</div><div><small>Tuần 3 · Bồi đắp</small><p>'+(rn.length?'Chọn một năng lượng cần rèn (số '+rn.join(' hoặc ')+': '+rn.map(function(q){return MISS[q]}).join('; ')+') và tạo thói quen 10 phút mỗi ngày.':'Giữ một thói quen 10 phút mỗi ngày giúp bạn cân bằng cảm xúc.')+'</p></div></div>'+
+      '<div class="nr-row"><div class="nr-n">4</div><div><small>Tuần 4 · Tổng kết</small><p>Giữ điều hiệu quả, bỏ điều không hợp, đặt một mục tiêu 90 ngày có con số đo được.</p></div></div>'+
+      '<div class="nr-box" style="margin-top:22px"><b>Theo năm cá nhân '+CY+' (năm số '+r.py+'):</b> '+PY[r.py]+' Nên: '+low(PYD[r.py][0].join('; '))+'.</div>'+
+      '<div class="nr-box"><b>Mẹo nhỏ:</b> ghi kết quả mỗi tuần vào điện thoại. Cuối tháng đọc lại, bạn sẽ thấy mình đã thay đổi nhiều hơn mình nghĩ.</div></div>';
+    seg('plan30');
     // 15. Bát Cực (nếu có số)
     P.bc=String(o.phone||'').split(/[,;\n]+/).map(bcPage).join('');
     // 16. Tổng kết
@@ -310,12 +355,12 @@
       '<div class="nr-box"><b>💼 Công việc:</b> '+X[n][0]+'</div><div class="nr-box"><b>💰 Tiền bạc:</b> '+X[n][2]+'</div><div class="nr-box"><b>💞 Tình cảm, gia đình:</b> '+X[n][1]+'</div>'+
       '<div class="nr-two"><div><h4>Nên phát huy</h4>'+ul(S[n][0].slice(0,3))+'</div><div><h4>Nên cẩn thận</h4>'+ul(S[n][1].slice(0,3))+'</div></div>'+
       '<div class="nr-box"><b>Lời khuyên cho giai đoạn này:</b> '+X[n][3]+'</div></div>'}).join('');
-    var CORE=['cover','tq','cd','dh','ex','su','pe','bd','mt','grid','arrows','pins','years','m1','m2'];
+    var CORE=['cover','tq','name','cd','dh','ex','su','pe','bd','mt','link','grid','arrows','pins','years','m1','m2'];
     var PLAN={'Năm Cá Nhân 2027':['cover','tq','cd','dh','grid','years','m1','m2','end'],'Xem 1 Số Điện Thoại / Biển Số':['cover','tq','bc','cd','end'],
-      'Bản Đồ Năng Lượng':['cover','tq','cd','dh','ex','su','pe','grid','arrows','years','m1','end'],'Làm Chủ Hay Làm Thuê':['cover','tq','cd','dh','work','ex','bd','pins','years','m1','end'],
-      'Giải Mã Chuyên Sâu':CORE.concat(['m3','bc','end']),'Combo Đổi Đời':CORE.concat(['bc','end']),'Trọn Bộ Năng Lượng Số':CORE.concat(['work','m3','y9','bc','end']),
+      'Bản Đồ Năng Lượng':['cover','tq','name','cd','dh','ex','su','pe','link','grid','arrows','years','m1','car','plan30','end'],'Làm Chủ Hay Làm Thuê':['cover','tq','name','cd','dh','work','ex','bd','link','pins','years','m1','end'],
+      'Giải Mã Chuyên Sâu':CORE.concat(['m3','car','plan30','bc','end']),'Combo Đổi Đời':CORE.concat(['car','plan30','bc','end']),'Trọn Bộ Năng Lượng Số':CORE.concat(['work','m3','y9','bc','end']),
       'Luận Giải Trọn Đời':CORE.concat(['work','m3','y9','stages','bc','end'])};
-    var plan=PLAN[o.pkg]||CORE.concat(['bc','end']);
+    var plan=PLAN[o.pkg]||CORE.concat(['car','plan30','bc','end']);
     h=plan.map(function(k){return P[k]||''}).join('');
     var el=document.createElement('div');el.className='nr';el.innerHTML=h;return el;
   }
