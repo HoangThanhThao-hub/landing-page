@@ -87,6 +87,7 @@
   '.nr .nr-ok{background:#2f7a52!important}.nr .nr-no{background:#b9ac8c!important}.nr .nr-yr{margin-bottom:14px}.nr .nr-yr .nr-big{margin-bottom:8px;padding:14px 22px}.nr .nr-yr .nr-big .nr-n{flex:0 0 80px;height:80px;font-size:38px}'+
   '.nr .nr-pairs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}.nr .nr-pairs div{border-radius:12px;padding:10px;text-align:center;background:#fff;border:1px solid #e6d3a6}.nr .nr-pairs b{display:block;font-size:22px;color:#3b2a6b}.nr .nr-pairs span{font-size:12.5px}.nr .nr-pairs .g{background:#eef7f0;border-color:#9fcfb0}.nr .nr-pairs .b{background:#fbeeea;border-color:#e3a99a}.nr .nr-pairs .n{color:#8a8296}'+
   '.nr .nr-tb{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}.nr .nr-tb td,.nr .nr-tb th{border-bottom:1px solid #e6d3a6;padding:7px 8px;text-align:left}.nr .nr-tb tr.g td:first-child{color:#2f7a52;font-weight:700}.nr .nr-tb tr.b td:first-child{color:#a4442e;font-weight:700}'+
+  '.nr .nr-y9 .nr-row{padding:4px 0}.nr .nr-y9 .nr-row .nr-n{flex:0 0 42px;height:42px;font-size:20px}.nr .nr-y9 .nr-row p{font-size:13.5px}'+
   '.nr .nr-end{margin-top:26px;text-align:center;color:#6b6385;font-size:13.5px}.nr .nr-end b{color:#3b2a6b}';
 
   function buildLite(o){
@@ -133,7 +134,7 @@
     var el=document.createElement('div');el.className='nr';el.innerHTML=h;return el;
   }
 
-  // ===== Bản đầy đủ (gói trả phí): ~16–17 trang =====
+  // ===== Bản đầy đủ (gói trả phí): số trang theo gói, xem PLAN =====
   var S={
     1:[['Tự lập, tự đứng trên đôi chân của mình','Quyết đoán, dám nghĩ dám làm','Có tố chất dẫn dắt, truyền động lực cho người khác','Thích cái mới, sẵn sàng đi trước'],['Dễ nóng vội, muốn mọi việc theo ý mình','Cái tôi lớn, khó nhận mình sai','Ngại nhờ giúp đỡ nên hay ôm việc một mình','Dễ thấy cô đơn khi đứng ở vị trí cao']],
     2:[['Tinh tế, đọc được cảm xúc của người khác','Giỏi lắng nghe, hòa giải, kết nối mọi người','Kiên nhẫn, chu đáo trong từng chi tiết','Trực giác tốt, cảm nhận nhanh'],['Dễ tổn thương và để bụng lâu','Hay thiếu tự tin, so sánh mình với người khác','Ngại va chạm nên dễ chịu thiệt','Cần được công nhận mới thấy yên lòng']],
@@ -211,9 +212,11 @@
     var CY=o.year||new Date().getFullYear(),r=calc(o.name,o.dd,o.mm,o.yy,CY),dob=o.dd+'/'+o.mm+'/'+o.yy;
     var mt=rd(rd(r.lp)+rd(r.ex),true),a=rd(o.mm),b=rd(o.dd),c=rd(sd(o.yy)),t1=Math.abs(a-b),t2=Math.abs(b-c),t3=Math.abs(t1-t2),t4=Math.abs(a-c);
     var L=clean(o.name),lt=L.split('').map(function(ch){return ch+val(ch)}).join(' ');
+    var P={},mk=0;function seg(k){P[k]=h.slice(mk);mk=h.length}
     var h='<div class="nr-pg nr-cv"><img src="'+BASE+'img/co-thao-suon-xam-do.jpg" alt=""><div class="nr-sh"></div><div class="nr-tx"><small>Thần số học · Pythagoras</small><h1>Bản Giải Mã<br>Năng Lượng Số</h1>'+
       '<div class="nr-who"><b>'+esc(o.name)+'</b>Sinh ngày '+dob+'</div><div class="nr-pk">'+esc(o.pkg||'Bản giải mã')+'</div></div>'+
       '<div class="nr-ft"><b>Cô Thảo</b>Giải mã năng lượng số · Zalo 0935 949 141</div></div>';
+    seg('cover');
     // 2. Tổng quan
     var all=[['Số Chủ Đạo',r.lp],['Số Sứ Mệnh',r.ex],['Số Linh Hồn',r.su],['Số Nhân Cách',r.pe],['Số Ngày Sinh',r.bd],['Số Trưởng Thành',mt],['Năm Cá Nhân '+CY,r.py],['Năm Cá Nhân '+(CY+1),r.py2]];
     h+='<div class="nr-pg"><h2>Các con số của bạn</h2><div class="nr-sub">Tổng quan bản giải mã</div><div class="nr-sum">';
@@ -221,21 +224,29 @@
     h+='</div><h2 style="margin-top:30px;font-size:24px">Cách tính</h2><div class="nr-box"><b>Số Chủ Đạo</b> (cộng tất cả chữ số ngày sinh dương lịch, gặp 11, 22, 33 thì giữ nguyên):<br>'+steps(o.dd,o.mm,o.yy)+'</div>'+
       '<div class="nr-box"><b>Họ tên đổi ra số</b> (A=1 … I=9, J=1 …):<br>'+lt+'<br>Cả tên → Sứ Mệnh '+r.ex+' · Nguyên âm → Linh Hồn '+r.su+' · Phụ âm → Nhân Cách '+r.pe+'</div>'+
       '<p class="nr-small">Các con số được tính theo công thức cố định của thần số học Pythagoras, ai tính lại cũng ra cùng kết quả. Phần ý nghĩa là góc nhìn để bạn chiêm nghiệm và đối chiếu với trải nghiệm của chính mình.</p></div>';
+    seg('tq');
     // 3–4. Chủ Đạo
     h+='<div class="nr-pg"><h2>Số Chủ Đạo của bạn</h2><div class="nr-sub">Con số quan trọng nhất</div><p class="nr-lead">Số Chủ Đạo tính từ ngày sinh, cho biết con đường chính, tính cách cốt lõi và bài học lớn của cả cuộc đời bạn.</p>'+
       '<div class="nr-big"><div class="nr-n">'+r.lp+'</div><div><h3>'+M[r.lp][0]+'</h3><p>'+M[r.lp][1]+'</p><p><i>'+M[r.lp][2]+'</i></p></div></div>'+
       '<div class="nr-two"><div><h4>Điểm mạnh</h4>'+ul(S[r.lp][0])+'</div><div><h4>Cần lưu ý</h4>'+ul(S[r.lp][1])+'</div></div>'+
       '<div class="nr-box">Bạn thấy mình sống đúng nhất khi được '+J[r.lp]+'.</div></div>';
+    seg('cd');
     var x=X[r.lp];
     h+='<div class="nr-pg"><h2>Định hướng theo Số Chủ Đạo '+r.lp+'</h2><div class="nr-sub">Sự nghiệp · Tài chính · Tình cảm</div>'+
       '<div class="nr-box nr-lg"><b>💼 Công việc hợp với bạn</b><br>'+x[0]+'</div><div class="nr-box nr-lg"><b>💰 Tài chính</b><br>'+x[2]+'</div>'+
       '<div class="nr-box nr-lg"><b>💞 Tình cảm</b><br>'+x[1]+'</div><div class="nr-box nr-lg"><b>🌿 Lời khuyên của cô</b><br>'+x[3]+'</div></div>';
+    seg('dh');
     // 5–8. Các chỉ số tên + ngày sinh
     h+=idxPage('ex',r.ex,'Bạn phát huy tốt nhất khi dùng tài năng của <b>'+low(nm0(r.ex))+'</b>: '+low(M[r.ex][1])+' Công việc gợi ý: '+low(X[r.ex][0]));
+    seg('ex');
     h+=idxPage('su',r.su,'Sâu bên trong, bạn khao khát được <b>'+J[r.su]+'</b>. Khi cuộc sống cho bạn điều này, bạn thấy bình an và đầy năng lượng.');
+    seg('su');
     h+=idxPage('pe',r.pe,'Khi mới gặp, mọi người thường thấy ở bạn hình ảnh <b>'+low(nm0(r.pe))+'</b>: '+low(S[r.pe][0][0])+', '+low(S[r.pe][0][1])+'.');
+    seg('pe');
     h+=idxPage('bd',r.bd,'Ngày sinh tặng bạn món quà của <b>'+low(nm0(r.bd))+'</b>, giúp bạn đi trên con đường của Số Chủ Đạo '+r.lp+' nhẹ nhàng hơn.');
+    seg('bd');
     h+=idxPage('mt',mt,'Càng trưởng thành, bạn càng hướng tới năng lượng <b>'+low(nm0(mt))+'</b> và thấy mình sống trọn vẹn khi được '+J[mt]+'.');
+    seg('mt');
     // 9. Biểu đồ
     var order=[3,6,9,2,5,8,1,4,7];
     h+='<div class="nr-pg"><h2>Biểu đồ ngày sinh</h2><div class="nr-sub">Năng lượng sẵn có và bài học</div><p class="nr-lead">Các chữ số trong ngày sinh được xếp vào lưới 3×3. Ô có số là năng lượng bạn có sẵn, ô trống là điều bạn cần rèn thêm.</p><div class="nr-grid">';
@@ -245,27 +256,33 @@
     var many=[];for(var n=1;n<=9;n++)if((r.cnt[n]||0)>=3)many.push(MANY[n]);
     h+='<div class="nr-box">'+(r.miss.length?'<b>Số trống: '+r.miss.join(', ')+'.</b><br>'+r.miss.map(function(q){return 'Thiếu số '+q+': nên bồi đắp '+MISS[q]+'.'}).join('<br>'):'<b>Biểu đồ đủ 9 con số</b>, một năng lượng khá cân bằng.')+'</div>'+
       (many.length?'<div class="nr-box"><b>Số lặp nhiều:</b><br>'+many.join('<br>')+'</div>':'')+'</div>';
+    seg('grid');
     // 10. Mũi tên
     var has=function(n){return (r.cnt[n]||0)>0};
     h+='<div class="nr-pg"><h2>Các mũi tên năng lượng</h2><div class="nr-sub">Đường thẳng trên biểu đồ ngày sinh</div><p class="nr-lead">Khi đủ 3 số trên một hàng, cột hoặc đường chéo là <b>mũi tên mạnh</b>. Khi trống cả 3 ô là <b>mũi tên trống</b>, điểm cần rèn luyện.</p>';
     var nArr=0;AR.forEach(function(q){var c3=q[0].filter(has).length;if(c3===3){nArr++;h+='<div class="nr-row"><div class="nr-n nr-ok">✦</div><div><small>Mũi tên mạnh · '+q[0].join('-')+'</small><b>'+q[1]+'</b><p>'+q[2]+'</p></div></div>'}else if(c3===0){nArr++;h+='<div class="nr-row"><div class="nr-n nr-no">○</div><div><small>Mũi tên trống · '+q[0].join('-')+'</small><b>'+q[1]+' (trống)</b><p>'+q[3]+'</p></div></div>'}});
     if(!nArr)h+='<div class="nr-box">Biểu đồ của bạn không có mũi tên mạnh hay trống nào, năng lượng phân bố khá đều. Bạn linh hoạt, không quá thiên về một hướng.</div>';
     h+='<div class="nr-box"><b>Gợi ý:</b> mũi tên mạnh là lợi thế để bạn dựa vào; mũi tên trống không phải điểm yếu cố định, bạn hoàn toàn rèn được qua thói quen hằng ngày.</div></div>';
+    seg('arrows');
     // 11. Đỉnh cao + thử thách
     h+='<div class="nr-pg"><h2>4 đỉnh cao cuộc đời</h2><div class="nr-sub">Những giai đoạn năng lượng lớn</div>';
     r.pins.forEach(function(p,i){h+='<div class="nr-row"><div class="nr-n">'+p[0]+'</div><div><small>Đỉnh '+(i+1)+' · tuổi '+p[1]+'</small><b>'+M[p[0]][0]+'</b><p>Giai đoạn đề cao '+PIN[p[0]]+'.</p></div></div>'});
     h+='<h2 style="margin-top:26px">4 thử thách</h2><div class="nr-sub">Bài học đi kèm từng giai đoạn</div>';
     h+='<div class="nr-sum">';[t1,t2,t3,t4].forEach(function(t,i){h+='<div><i>'+t+'</i><small>Thử thách '+(i+1)+'</small><b style="font-weight:400;font-size:14px">'+TT[t]+'</b></div>'});
     h+='</div></div>';
+    seg('pins');
     // 12. Năm cá nhân chi tiết
     h+='<div class="nr-pg"><h2>Năm cá nhân của bạn</h2><div class="nr-sub">Năm '+CY+' và năm '+(CY+1)+'</div><p class="nr-lead">Năm cá nhân = ngày + tháng sinh + năm đang xét (rút gọn). Mỗi năm mang một chủ đề, 9 năm là một chu kỳ.</p>';
     [[CY,r.py],[CY+1,r.py2]].forEach(function(y){var d=PYD[y[1]];h+='<div class="nr-yr"><div class="nr-big"><div class="nr-n">'+y[1]+'</div><div><h3>Năm '+y[0]+' · năm số '+y[1]+'</h3><p>'+PY[y[1]]+'</p></div></div><div class="nr-two"><div><h4>Nên làm</h4>'+ul(d[0])+'</div><div><h4>Nên tránh</h4>'+ul(d[1])+'</div></div></div>'});
     h+='</div>';
+    seg('years');
     // 13–14. 12 tháng
     h+='<div class="nr-pg"><h2>12 tháng cá nhân năm '+CY+'</h2><div class="nr-sub">Năm số '+r.py+' · nhịp năng lượng từng tháng</div>'+months(r.py,CY)+'</div>';
+    seg('m1');
     h+='<div class="nr-pg"><h2>12 tháng cá nhân năm '+(CY+1)+'</h2><div class="nr-sub">Năm số '+r.py2+' · nhịp năng lượng từng tháng</div>'+months(r.py2,CY+1)+'</div>';
+    seg('m2');
     // 15. Bát Cực (nếu có số)
-    if(o.phone)h+=bcPage(o.phone);
+    P.bc=String(o.phone||'').split(/[,;\n]+/).map(bcPage).join('');
     // 16. Tổng kết
     h+='<div class="nr-pg"><h2>3 điều nên làm ngay</h2><div class="nr-sub">Tổng kết từ các con số của bạn</div>'+
       '<div class="nr-row"><div class="nr-n">1</div><div><small>Theo Số Chủ Đạo '+r.lp+'</small><p>'+X[r.lp][3]+'</p></div></div>'+
@@ -274,6 +291,32 @@
     if(o.note&&o.note.trim())h+='<div class="nr-note" style="margin-top:26px"><b>Lời nhắn riêng của cô Thảo</b>'+esc(o.note.trim())+'</div>';
     h+='<div class="nr-box" style="margin-top:22px"><b>Cần hỏi thêm?</b> Bạn nhắn Zalo cô Thảo 0935 949 141, cô giải đáp những chỗ chưa rõ trong bản giải mã này.</div>'+
       '<div class="nr-end">Bản giải mã dành riêng cho <b>'+esc(o.name)+'</b> · '+dob+'<br>Thần số học là công cụ để hiểu mình, không thay thế quyết định của bạn.<br><b>Cô Thảo · Giải mã năng lượng số</b></div></div>';
+    seg('end');
+    // Trang thêm cho gói lớn
+    var c3=CY+2,py3=rd(rd(o.dd)+rd(o.mm)+rd(c3));
+    P.m3='<div class="nr-pg"><h2>12 tháng cá nhân năm '+c3+'</h2><div class="nr-sub">Năm số '+py3+' · '+PY[py3].split(':')[0]+'</div><p class="nr-lead">'+PY[py3]+' Nên: '+low(PYD[py3][0].join('; '))+'.</p>'+months(py3,c3)+'</div>';
+    P.y9='<div class="nr-pg nr-y9"><h2>Bản đồ 9 năm tới</h2><div class="nr-sub">Một chu kỳ năm cá nhân trọn vẹn</div>';
+    for(var yy=CY;yy<CY+9;yy++){var pn=rd(rd(o.dd)+rd(o.mm)+rd(yy));P.y9+='<div class="nr-row"><div class="nr-n">'+pn+'</div><div><small>Năm '+yy+' · tuổi '+(yy-o.yy)+'</small><b>'+PY[pn].split(':')[0]+'</b><p>Nên: '+low(PYD[pn][0][0])+'. Tránh: '+low(PYD[pn][1][0])+'.</p></div></div>'}
+    P.y9+='</div>';
+    var LC={1:['Làm chủ','Bạn sinh ra để tự quyết. Hợp tự kinh doanh, khởi nghiệp hoặc vị trí quản lý có quyền quyết định.'],2:['Làm chung, làm thuê ở vị trí kết nối','Bạn phát huy tốt nhất khi có cộng sự tin cậy. Nếu kinh doanh, nên có người cùng góp vốn, góp sức.'],3:['Làm tự do, làm chủ quy mô nhỏ','Bạn cần được sáng tạo và thể hiện. Hợp bán hàng, làm nội dung, dịch vụ cá nhân; nên có người giữ sổ sách giúp.'],4:['Làm thuê ổn định, hoặc làm chủ mảng vận hành','Bạn giỏi xây hệ thống và giữ tiền. Nếu làm chủ, chọn mô hình chắc chắn, đi chậm mà vững.'],5:['Làm tự do, kinh doanh linh hoạt','Bạn ngại gò bó. Hợp kinh doanh online, môi giới, du lịch, sự kiện; nhớ quản lý dòng tiền chặt.'],6:['Làm chủ dịch vụ chăm sóc','Hợp mở spa, lớp học, nhà hàng, dịch vụ gia đình. Đặt giá đúng giá trị, đừng làm vì thương mà lỗ.'],7:['Chuyên gia độc lập','Bạn mạnh về chuyên môn sâu. Hợp làm tư vấn, nghiên cứu, kỹ thuật; kinh doanh nên dựa trên kiến thức của mình.'],8:['Làm chủ','Bạn có khiếu kinh doanh và quản lý tiền. Hợp làm chủ, đầu tư, lãnh đạo; nhớ cân bằng gia đình.'],9:['Làm chung hoặc làm việc mang giá trị cộng đồng','Hợp giáo dục, dịch vụ xã hội, nghệ thuật. Kinh doanh nên gắn với sứ mệnh giúp người.'],11:['Làm tự do, truyền cảm hứng','Hợp đào tạo, diễn giả, chữa lành, sáng tạo. Cần người thực thi đi cùng để biến ý tưởng thành tiền.'],22:['Làm chủ quy mô lớn','Bạn có thể xây doanh nghiệp, hệ thống lớn. Lập kế hoạch dài hạn, xây đội ngũ tốt.'],33:['Làm chủ dịch vụ chữa lành, giáo dục','Hợp các mô hình giúp người. Đặt giá đúng, đừng cho đi hết.']};
+    var lc=LC[r.lp];
+    P.work='<div class="nr-pg"><h2>Làm chủ hay làm thuê?</h2><div class="nr-sub">Định hướng công việc và kinh doanh</div><div class="nr-big"><div class="nr-n">'+r.lp+'</div><div><h3>'+lc[0]+'</h3><p>'+lc[1]+'</p></div></div>'+
+      '<div class="nr-box nr-lg"><b>💼 Nghề hợp theo Số Chủ Đạo '+r.lp+'</b><br>'+X[r.lp][0]+'</div><div class="nr-box nr-lg"><b>🌟 Tài năng theo Số Sứ Mệnh '+r.ex+'</b><br>'+X[r.ex][0]+'</div>'+
+      '<div class="nr-box nr-lg"><b>📅 Thời điểm</b><br>Năm '+CY+' là năm số '+r.py+' ('+low(PY[r.py].split(':')[0])+'), năm '+(CY+1)+' là năm số '+r.py2+' ('+low(PY[r.py2].split(':')[0])+'). '+([1,5,8].indexOf(r.py2)>-1?'Năm '+(CY+1)+' thuận để bắt đầu hoặc mở rộng.':[1,5,8].indexOf(r.py)>-1?'Năm '+CY+' thuận để bắt đầu hoặc mở rộng.':'Nên chuẩn bị kỹ, chờ năm cá nhân số 1, 5 hoặc 8 để bước lớn.')+'</div>'+
+      '<div class="nr-box nr-lg"><b>💰 Tiền bạc</b><br>'+X[r.lp][2]+'</div></div>';
+    var ages=r.pins.map(function(p){return p[1]}),tt=[t1,t2,t3,t4];
+    P.stages=r.pins.map(function(p,i){var n=p[0];return '<div class="nr-pg"><h2>Giai đoạn '+(i+1)+' của cuộc đời</h2><div class="nr-sub">Tuổi '+p[1]+' · đỉnh cao số '+n+'</div>'+
+      '<div class="nr-big"><div class="nr-n">'+n+'</div><div><h3>'+M[n][0]+'</h3><p>Giai đoạn đề cao '+PIN[n]+'. '+M[n][1]+'</p><p><i>Thử thách số '+tt[i]+': '+low(TT[tt[i]])+'</i></p></div></div>'+
+      '<div class="nr-box"><b>💼 Công việc:</b> '+X[n][0]+'</div><div class="nr-box"><b>💰 Tiền bạc:</b> '+X[n][2]+'</div><div class="nr-box"><b>💞 Tình cảm, gia đình:</b> '+X[n][1]+'</div>'+
+      '<div class="nr-two"><div><h4>Nên phát huy</h4>'+ul(S[n][0].slice(0,3))+'</div><div><h4>Nên cẩn thận</h4>'+ul(S[n][1].slice(0,3))+'</div></div>'+
+      '<div class="nr-box"><b>Lời khuyên cho giai đoạn này:</b> '+X[n][3]+'</div></div>'}).join('');
+    var CORE=['cover','tq','cd','dh','ex','su','pe','bd','mt','grid','arrows','pins','years','m1','m2'];
+    var PLAN={'Năm Cá Nhân 2027':['cover','tq','cd','dh','grid','years','m1','m2','end'],'Xem 1 Số Điện Thoại / Biển Số':['cover','tq','bc','cd','end'],
+      'Bản Đồ Năng Lượng':['cover','tq','cd','dh','ex','su','pe','grid','arrows','years','m1','end'],'Làm Chủ Hay Làm Thuê':['cover','tq','cd','dh','work','ex','bd','pins','years','m1','end'],
+      'Giải Mã Chuyên Sâu':CORE.concat(['m3','bc','end']),'Combo Đổi Đời':CORE.concat(['bc','end']),'Trọn Bộ Năng Lượng Số':CORE.concat(['work','m3','y9','bc','end']),
+      'Luận Giải Trọn Đời':CORE.concat(['work','m3','y9','stages','bc','end'])};
+    var plan=PLAN[o.pkg]||CORE.concat(['bc','end']);
+    h=plan.map(function(k){return P[k]||''}).join('');
     var el=document.createElement('div');el.className='nr';el.innerHTML=h;return el;
   }
 
