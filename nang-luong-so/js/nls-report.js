@@ -79,9 +79,17 @@
   '.nr .nr-m12{display:grid;grid-template-columns:1fr 1fr;gap:10px}.nr .nr-m12 div{background:#fff;border:1px solid #ecdcb5;border-radius:12px;padding:16px 18px;font-size:14.5px;min-height:96px}.nr .nr-m12 b{display:block;color:#3b2a6b;font-size:14.5px}'+
   '.nr .nr-box{background:#fff;border-left:4px solid #d6aa55;border-radius:12px;padding:16px 20px;margin:12px 0;font-size:15px}.nr .nr-box b{color:#3b2a6b}'+
   '.nr .nr-note{background:#0b1030;color:#f3ecd8;border-radius:18px;padding:26px 30px;font-size:15.5px;white-space:pre-wrap}.nr .nr-note b{color:#f6e2ae;font-family:"Playfair Display",Georgia,serif;font-size:20px;display:block;margin-bottom:8px}'+
+'.nr .nr-lead{font-size:15.5px;margin:0 0 18px}.nr .nr-small{font-size:13px;color:#6b6385}'+
+  '.nr .nr-two{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:6px 0 8px}.nr h4{margin:0 0 6px;font-size:16px;color:#3b2a6b;font-family:"Playfair Display",Georgia,serif}'+
+  '.nr .nr-ul{margin:0;padding:0 0 0 18px}.nr .nr-ul li{margin:0 0 7px;font-size:14.5px;color:#3d3556}'+
+  '.nr .nr-lg{font-size:16px;padding:20px 24px;margin:0 0 16px}'+
+  '.nr .nr-sum{display:grid;grid-template-columns:1fr 1fr;gap:10px}.nr .nr-sum div{background:#fff;border:1px solid #e6d3a6;border-radius:14px;padding:12px 16px 12px 78px;position:relative;min-height:70px}.nr .nr-sum i{position:absolute;left:14px;top:12px;width:48px;height:48px;border-radius:12px;background:#3b2a6b;color:#f6e2ae;font:700 22px "Playfair Display",Georgia,serif;display:flex;align-items:center;justify-content:center;font-style:normal}.nr .nr-sum small{display:block;color:#9a7a3a;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}.nr .nr-sum b{font-size:15px;color:#2a2340}'+
+  '.nr .nr-ok{background:#2f7a52!important}.nr .nr-no{background:#b9ac8c!important}.nr .nr-yr{margin-bottom:14px}.nr .nr-yr .nr-big{margin-bottom:8px;padding:14px 22px}.nr .nr-yr .nr-big .nr-n{flex:0 0 80px;height:80px;font-size:38px}'+
+  '.nr .nr-pairs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}.nr .nr-pairs div{border-radius:12px;padding:10px;text-align:center;background:#fff;border:1px solid #e6d3a6}.nr .nr-pairs b{display:block;font-size:22px;color:#3b2a6b}.nr .nr-pairs span{font-size:12.5px}.nr .nr-pairs .g{background:#eef7f0;border-color:#9fcfb0}.nr .nr-pairs .b{background:#fbeeea;border-color:#e3a99a}.nr .nr-pairs .n{color:#8a8296}'+
+  '.nr .nr-tb{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}.nr .nr-tb td,.nr .nr-tb th{border-bottom:1px solid #e6d3a6;padding:7px 8px;text-align:left}.nr .nr-tb tr.g td:first-child{color:#2f7a52;font-weight:700}.nr .nr-tb tr.b td:first-child{color:#a4442e;font-weight:700}'+
   '.nr .nr-end{margin-top:26px;text-align:center;color:#6b6385;font-size:13.5px}.nr .nr-end b{color:#3b2a6b}';
 
-  function build(o){
+  function buildLite(o){
     var CY=o.year||new Date().getFullYear(),r=calc(o.name,o.dd,o.mm,o.yy,CY),dob=o.dd+'/'+o.mm+'/'+o.yy,full=!!o.full;
     var h='<div class="nr-pg nr-cv"><img src="'+BASE+'img/co-thao-suon-xam-do.jpg" alt=""><div class="nr-sh"></div><div class="nr-tx"><small>Thần số học · Pythagoras</small><h1>Bản Giải Mã<br>Năng Lượng Số</h1>'+
       '<div class="nr-who"><b>'+esc(o.name)+'</b>Sinh ngày '+dob+'</div><div class="nr-pk">'+esc(o.pkg||'Bản tự xem trọn bộ')+'</div></div>'+
@@ -124,6 +132,152 @@
       '<div class="nr-end">Bản giải mã dành riêng cho <b>'+esc(o.name)+'</b> · '+dob+'<br>Thần số học là công cụ để hiểu mình, không thay thế quyết định của bạn.<br><b>Cô Thảo · Giải mã năng lượng số</b></div></div>';
     var el=document.createElement('div');el.className='nr';el.innerHTML=h;return el;
   }
+
+  // ===== Bản đầy đủ (gói trả phí): ~16–17 trang =====
+  var S={
+    1:[['Tự lập, tự đứng trên đôi chân của mình','Quyết đoán, dám nghĩ dám làm','Có tố chất dẫn dắt, truyền động lực cho người khác','Thích cái mới, sẵn sàng đi trước'],['Dễ nóng vội, muốn mọi việc theo ý mình','Cái tôi lớn, khó nhận mình sai','Ngại nhờ giúp đỡ nên hay ôm việc một mình','Dễ thấy cô đơn khi đứng ở vị trí cao']],
+    2:[['Tinh tế, đọc được cảm xúc của người khác','Giỏi lắng nghe, hòa giải, kết nối mọi người','Kiên nhẫn, chu đáo trong từng chi tiết','Trực giác tốt, cảm nhận nhanh'],['Dễ tổn thương và để bụng lâu','Hay thiếu tự tin, so sánh mình với người khác','Ngại va chạm nên dễ chịu thiệt','Cần được công nhận mới thấy yên lòng']],
+    3:[['Giao tiếp duyên dáng, nói chuyện cuốn hút','Sáng tạo, nhiều ý tưởng mới','Lạc quan, lan tỏa niềm vui','Tư duy nhanh, học nhanh'],['Dễ phân tán, làm nhiều việc mà bỏ dở','Đôi khi nói nhanh hơn nghĩ','Tiêu tiền theo cảm hứng','Hay giấu nỗi buồn sau nụ cười']],
+    4:[['Chăm chỉ, bền bỉ, chịu khó','Ngăn nắp, làm việc có kế hoạch','Đáng tin cậy, giữ lời hứa','Thực tế, giỏi biến ý tưởng thành việc cụ thể'],['Dễ cứng nhắc, ngại thay đổi','Khắt khe với bản thân và người khác','Hay làm quá sức, quên nghỉ ngơi','Khó nói ra cảm xúc của mình']],
+    5:[['Linh hoạt, thích nghi rất nhanh','Ham học hỏi, thích trải nghiệm','Duyên dáng, dễ kết nối với mọi người','Nhiều ý tưởng và nguồn kiếm tiền'],['Dễ chán, thiếu kiên trì','Chi tiêu theo cảm xúc','Ngại cam kết lâu dài','Dễ bị cuốn theo thú vui trước mắt']],
+    6:[['Giàu yêu thương, sống có trách nhiệm','Có gu thẩm mỹ, khéo tay, sáng tạo','Biết chăm sóc, nâng đỡ và chữa lành','Là chỗ dựa tin cậy của gia đình'],['Hay ôm đồm, lo cho tất cả mọi người','Vì thương mà dễ kiểm soát người thân','Hy sinh nhiều rồi tủi thân','Cầu toàn, khó hài lòng']],
+    7:[['Tư duy sâu, phân tích giỏi','Trực giác mạnh, có duyên với tâm linh','Ham học, dễ trở thành chuyên gia','Độc lập, tự tìm ra câu trả lời'],['Khép kín, khó chia sẻ lòng mình','Hay hoài nghi, khó tin người','Thường học bài học qua trải nghiệm đau','Dễ cảm thấy cô đơn']],
+    8:[['Bản lĩnh, có tham vọng lớn','Giỏi quản lý tiền bạc và con người','Nhìn xa, có đầu óc chiến lược','Kiên cường, ngã là đứng dậy'],['Dễ đặt nặng vật chất','Cứng rắn, thích kiểm soát','Tự tạo áp lực phải thành công','Ít thời gian cho gia đình và bản thân']],
+    9:[['Bao dung, nhân ái','Sống có lý tưởng, tầm nhìn rộng','Truyền cảm hứng cho người khác','Có trách nhiệm với cộng đồng'],['Hay ôm việc của người khác','Khó buông bỏ chuyện cũ','Dễ lý tưởng hóa con người và mọi việc','Dễ thất vọng khi người khác không như mình']],
+    11:[['Trực giác rất mạnh, nhạy bén','Có khả năng truyền cảm hứng lớn','Nhạy cảm với năng lượng và tâm linh','Có tầm nhìn khác người'],['Cảm xúc lên xuống thất thường','Dễ lo âu, căng thẳng','Nhiều ý tưởng nhưng chậm hành động','Quá nhạy cảm với lời người khác']],
+    22:[['Vừa có tầm nhìn lớn vừa biết làm','Giỏi tổ chức, xây dựng hệ thống','Kiên định với mục tiêu dài hạn','Có thể để lại công trình, di sản bền vững'],['Gánh áp lực rất lớn','Sợ thất bại nên chần chừ','Ôm đồm quá nhiều việc','Có lúc cứng nhắc']],
+    33:[['Yêu thương vô điều kiện','Có sứ mệnh nâng đỡ, chữa lành','Sáng tạo và giàu cảm xúc','Trách nhiệm, tận tâm'],['Dễ hy sinh quá mức','Gánh cả nỗi đau của người khác','Cầu toàn với chính mình','Hay quên chăm sóc bản thân']]
+  };
+  var J={1:'tự quyết định và được dẫn đầu',2:'được yêu thương và sống hòa hợp',3:'được sáng tạo, thể hiện và vui vẻ',4:'có sự ổn định, mọi thứ rõ ràng',5:'được tự do khám phá điều mới',6:'chăm lo cho gia đình, người thân',7:'được tìm hiểu sâu và có không gian riêng',8:'đạt thành tựu và được công nhận',9:'giúp đỡ người khác, sống có ý nghĩa',11:'truyền cảm hứng và sống theo trực giác',22:'xây dựng được điều lớn lao, bền vững',33:'nâng đỡ, chữa lành cho người khác'};
+  var IDX={
+    ex:['Số Sứ Mệnh','Tính từ toàn bộ chữ cái trong họ tên khai sinh. Con số này cho biết tài năng bạn mang theo và con đường giúp bạn thể hiện mình rõ nhất với cuộc đời.'],
+    su:['Số Linh Hồn','Tính từ các nguyên âm trong họ tên. Đây là tiếng nói bên trong: điều trái tim bạn thật sự khao khát, thứ khiến bạn thấy đủ đầy.'],
+    pe:['Số Nhân Cách','Tính từ các phụ âm trong họ tên. Đây là hình ảnh bên ngoài, ấn tượng đầu tiên người khác nhận về bạn khi mới gặp.'],
+    bd:['Số Ngày Sinh','Rút gọn từ ngày sinh. Đây là món quà, tài năng tự nhiên hỗ trợ cho Số Chủ Đạo trên đường đời.'],
+    mt:['Số Trưởng Thành','Bằng Số Chủ Đạo cộng Số Sứ Mệnh. Đây là năng lượng bạn hướng tới, thường rõ dần sau tuổi 35–40.']
+  };
+  var PYD={
+    1:[['Bắt đầu dự án, công việc hoặc thói quen mới','Đặt mục tiêu rõ ràng cho chu kỳ 9 năm tới','Chủ động gặp gỡ, đề xuất, xin cơ hội'],['Do dự, chờ người khác quyết thay','Níu kéo chuyện cũ đã qua']],
+    2:[['Hợp tác, vun đắp các mối quan hệ','Kiên nhẫn chăm sóc những gì đã gieo','Lắng nghe cảm xúc của mình và người thân'],['Nóng vội ép kết quả','Tranh cãi, va chạm không cần thiết']],
+    3:[['Học kỹ năng mới, xây dựng hình ảnh cá nhân','Mở rộng quan hệ, giao lưu','Sáng tạo, thể hiện bản thân'],['Tiêu tiền theo cảm hứng','Làm nhiều việc cùng lúc rồi bỏ dở']],
+    4:[['Sắp xếp tài chính, tiết kiệm đều','Chăm sóc sức khỏe, tập luyện','Làm việc có kế hoạch, xây nền vững'],['Đầu tư mạo hiểm','Làm quá sức, bỏ bê nghỉ ngơi']],
+    5:[['Đón nhận thay đổi, đi lại, thử điều mới','Nắm bắt cơ hội nhanh','Mở rộng công việc, kinh doanh'],['Quyết định bốc đồng','Phung phí sức lực và tiền bạc']],
+    6:[['Vun đắp gia đình, nhà cửa','Chăm sóc sức khỏe người thân','Phục vụ khách hàng, đồng nghiệp tận tâm'],['Ôm hết trách nhiệm về mình','Hy sinh quá mức rồi mệt mỏi']],
+    7:[['Học sâu, nghiên cứu, nâng chuyên môn','Nghỉ ngơi, thiền, đọc sách','Nhìn lại và điều chỉnh mục tiêu'],['Mở rộng quá nhanh','Tự cô lập mình']],
+    8:[['Đẩy mạnh sự nghiệp, kinh doanh','Thương lượng, đòi đúng giá trị của mình','Đầu tư có tính toán'],['Tham lam, liều lĩnh','Quên sức khỏe và gia đình']],
+    9:[['Dọn dẹp, khép lại những gì đã cũ','Cho đi, tha thứ, biết ơn','Chuẩn bị cho chu kỳ mới'],['Bắt đầu việc quá lớn','Níu kéo điều đã hết duyên']]
+  };
+  var AR=[[[1,2,3],'Mũi tên Kế Hoạch','Giỏi lên kế hoạch, sắp xếp và tổ chức công việc.','Nên tập ghi chép, lên kế hoạch trước khi bắt tay vào làm.'],
+    [[4,5,6],'Mũi tên Ý Chí','Ý chí mạnh, quyết tâm theo đuổi đến cùng.','Dễ nản khi mọi việc không như ý; nên đặt mục tiêu nhỏ để giữ động lực.'],
+    [[7,8,9],'Mũi tên Hành Động','Năng động, nói là làm, giỏi hành động.','Dễ chần chừ; cần lịch rõ ràng hoặc người đồng hành thúc đẩy.'],
+    [[1,4,7],'Mũi tên Thực Tế','Thực tế, khéo tay, giỏi biến ý tưởng thành việc cụ thể.','Nên rèn sự thực tế: làm từng bước nhỏ, cụ thể, có kết quả.'],
+    [[2,5,8],'Mũi tên Cân Bằng Cảm Xúc','Cảm xúc ổn định, tinh tế, biết giữ cân bằng.','Dễ nhạy cảm, tổn thương; nên chăm sóc cảm xúc và nói ra điều mình nghĩ.'],
+    [[3,6,9],'Mũi tên Trí Tuệ','Trí nhớ tốt, tư duy sắc bén, ham học.','Nên rèn trí nhớ: ghi chép, đọc sách và ôn lại đều đặn.'],
+    [[1,5,9],'Mũi tên Quyết Tâm','Kiên định, đã muốn là làm cho bằng được.','Dễ trì hoãn; hãy chia việc thành phần nhỏ và đặt hạn chót.'],
+    [[3,5,7],'Mũi tên Nhạy Bén','Trực giác tốt, thấu cảm, sống tử tế.','Dễ hoài nghi; tập tin tưởng và mở lòng nhiều hơn.']];
+  var TT={0:'Bạn có nhiều lựa chọn trong tay; bài học là dám chọn một hướng và đi đến cùng.',1:'Khẳng định bản thân, bớt phụ thuộc vào ý kiến người khác.',2:'Bớt nhạy cảm, không để lời nói của người khác làm mình tổn thương.',3:'Dám thể hiện bản thân, nói ra cảm xúc thật.',4:'Rèn kỷ luật, kiên trì với những việc nhỏ hằng ngày.',5:'Dùng sự tự do có trách nhiệm, tránh quyết định bốc đồng.',6:'Không áp đặt, chấp nhận người khác không hoàn hảo.',7:'Tin tưởng người khác và chính mình, bớt hoài nghi.',8:'Cân bằng tiền bạc với giá trị sống, đừng để vật chất chi phối.'};
+  var BG=[['Thiên Y','13 31 68 86 49 94 27 72',1,'tài lộc, điền sản, tình cảm'],['Sinh Khí','14 41 67 76 93 39 82 28',1,'quý nhân, nhân duyên'],['Diên Niên','19 91 78 87 34 43 26 62',1,'sự nghiệp, gia đạo'],['Phục Vị','11 22 33 44 66 77 88 99',1,'củng cố, giữ vững'],
+    ['Họa Hại','17 71 89 98 46 64 23 32',0,'thị phi, lời nói'],['Lục Sát','16 61 47 74 38 83 29 92',0,'rắc rối tình cảm, quan hệ'],['Ngũ Quỷ','18 81 79 97 36 63 24 42',0,'bất ổn, thay đổi thất thường'],['Tuyệt Mệnh','12 21 69 96 48 84 37 73',0,'hao tài, rủi ro lớn']];
+  var BL={},BGOOD={},BM={};BG.forEach(function(g){g[1].split(' ').forEach(function(p){BL[p]=g[0]});if(g[2])BGOOD[g[0]]=1;BM[g[0]]=g[3]});
+  function ul(a){return '<ul class="nr-ul">'+a.map(function(t){return '<li>'+t+'</li>'}).join('')+'</ul>'}
+  function low(t){return t.charAt(0).toLowerCase()+t.slice(1)}
+  function nm0(n){return M[n][0].replace('Số Master · ','')}
+  function idxPage(key,n,extra){
+    return '<div class="nr-pg"><h2>'+IDX[key][0]+' của bạn</h2><div class="nr-sub">'+(key==='mt'?'Năng lượng hướng tới':'Một góc nhìn khác về bạn')+'</div>'+
+      '<p class="nr-lead">'+IDX[key][1]+'</p>'+
+      '<div class="nr-big"><div class="nr-n">'+n+'</div><div><h3>'+M[n][0]+'</h3><p>'+M[n][1]+'</p><p><i>'+M[n][2]+'</i></p></div></div>'+
+      '<div class="nr-box">'+extra+'</div>'+
+      '<div class="nr-two"><div><h4>Điểm mạnh</h4>'+ul(S[n][0])+'</div><div><h4>Cần lưu ý</h4>'+ul(S[n][1])+'</div></div>'+
+      '<div class="nr-box"><b>Gợi ý của cô:</b> '+X[n][3]+'</div></div>';
+  }
+  function steps(dd,mm,yy){var d=(''+dd+mm+yy).split('').map(Number),t=d.reduce(function(a,b){return a+b},0),s=d.join('+')+' = '+t,n=t;
+    while(n>9&&n!==11&&n!==22&&n!==33){var x=sd(n);s+=' → '+String(n).split('').join('+')+' = '+x;n=x}return s}
+  function months(py,CY){var h='<div class="nr-m12">';for(var k=1;k<=12;k++){var pm=rd(py+k);h+='<div><b>Tháng '+k+'/'+CY+' · số '+pm+'</b>'+PY[pm].split(':')[1].trim()+'</div>'}return h+'</div>'}
+  function bcPage(raw){
+    var v=String(raw).replace(/[^0-9]/g,'');if(v.length<2)return '';
+    var rows=[],cnt={};BG.forEach(function(g){cnt[g[0]]=0});
+    for(var i=0;i<v.length-1;i++){var p=v.substr(i,2),g=BL[p]||null;rows.push([p,g]);if(g)cnt[g]++}
+    var br=[];for(i=1;i<v.length-1;i++){var z=v[i];if(z!=='0'&&z!=='5')continue;var a=v[i-1],b=v[i+1];if('05'.indexOf(a)>-1||'05'.indexOf(b)>-1)continue;var g2=BL[a+b];if(!g2)continue;var good=!!BGOOD[g2];
+      br.push(a+z+b+': đọc thành <b>'+a+b+' '+g2+'</b>, số '+z+' '+(z==='0'?(good?'làm hư cặp tốt':'hóa giải cặp xấu'):(good?'làm cặp tốt mạnh thêm':'làm cặp xấu mạnh thêm')))}
+    var bad=rows.filter(function(r){return r[1]&&!BGOOD[r[1]]}).length,miss=BG.filter(function(g){return g[2]&&!cnt[g[0]]}).map(function(g){return g[0]});
+    var h='<div class="nr-pg"><h2>Năng lượng dãy số '+v+'</h2><div class="nr-sub">Bát Cực Linh Số · đọc từng cặp</div><div class="nr-pairs">';
+    rows.forEach(function(r){h+='<div class="'+(r[1]?(BGOOD[r[1]]?'g':'b'):'n')+'"><b>'+r[0]+'</b><span>'+(r[1]||'Có số 0/5')+'</span></div>'});
+    h+='</div>'+(br.length?'<div class="nr-box"><b>Số 0 và số 5 đứng giữa:</b><br>'+br.join('<br>')+'</div>':'');
+    h+='<div class="nr-box"><b>Tóm lại:</b> '+(bad?bad+' cặp thuộc nhóm cần lưu ý. ':'Không có cặp thuộc nhóm cần lưu ý. ')+(miss.length?'Còn thiếu nhóm '+miss.join(', ')+'.':'Có đủ 4 nhóm tốt.')+'</div>';
+    h+='<table class="nr-tb"><tr><th>Nhóm</th><th>Số cặp</th><th>Ý nghĩa</th></tr>';BG.forEach(function(g){h+='<tr class="'+(g[2]?'g':'b')+'"><td>'+g[0]+'</td><td>'+cnt[g[0]]+'</td><td>'+g[3]+'</td></tr>'});
+    return h+'</table></div>';
+  }
+  function buildFull(o){
+    var CY=o.year||new Date().getFullYear(),r=calc(o.name,o.dd,o.mm,o.yy,CY),dob=o.dd+'/'+o.mm+'/'+o.yy;
+    var mt=rd(rd(r.lp)+rd(r.ex),true),a=rd(o.mm),b=rd(o.dd),c=rd(sd(o.yy)),t1=Math.abs(a-b),t2=Math.abs(b-c),t3=Math.abs(t1-t2),t4=Math.abs(a-c);
+    var L=clean(o.name),lt=L.split('').map(function(ch){return ch+val(ch)}).join(' ');
+    var h='<div class="nr-pg nr-cv"><img src="'+BASE+'img/co-thao-suon-xam-do.jpg" alt=""><div class="nr-sh"></div><div class="nr-tx"><small>Thần số học · Pythagoras</small><h1>Bản Giải Mã<br>Năng Lượng Số</h1>'+
+      '<div class="nr-who"><b>'+esc(o.name)+'</b>Sinh ngày '+dob+'</div><div class="nr-pk">'+esc(o.pkg||'Bản giải mã')+'</div></div>'+
+      '<div class="nr-ft"><b>Cô Thảo</b>Giải mã năng lượng số · Zalo 0935 949 141</div></div>';
+    // 2. Tổng quan
+    var all=[['Số Chủ Đạo',r.lp],['Số Sứ Mệnh',r.ex],['Số Linh Hồn',r.su],['Số Nhân Cách',r.pe],['Số Ngày Sinh',r.bd],['Số Trưởng Thành',mt],['Năm Cá Nhân '+CY,r.py],['Năm Cá Nhân '+(CY+1),r.py2]];
+    h+='<div class="nr-pg"><h2>Các con số của bạn</h2><div class="nr-sub">Tổng quan bản giải mã</div><div class="nr-sum">';
+    all.forEach(function(x){h+='<div><i>'+x[1]+'</i><small>'+x[0]+'</small><b>'+(x[0].indexOf('Năm')===0?PY[x[1]].split(':')[0]:nm0(x[1]))+'</b></div>'});
+    h+='</div><h2 style="margin-top:30px;font-size:24px">Cách tính</h2><div class="nr-box"><b>Số Chủ Đạo</b> (cộng tất cả chữ số ngày sinh dương lịch, gặp 11, 22, 33 thì giữ nguyên):<br>'+steps(o.dd,o.mm,o.yy)+'</div>'+
+      '<div class="nr-box"><b>Họ tên đổi ra số</b> (A=1 … I=9, J=1 …):<br>'+lt+'<br>Cả tên → Sứ Mệnh '+r.ex+' · Nguyên âm → Linh Hồn '+r.su+' · Phụ âm → Nhân Cách '+r.pe+'</div>'+
+      '<p class="nr-small">Các con số được tính theo công thức cố định của thần số học Pythagoras, ai tính lại cũng ra cùng kết quả. Phần ý nghĩa là góc nhìn để bạn chiêm nghiệm và đối chiếu với trải nghiệm của chính mình.</p></div>';
+    // 3–4. Chủ Đạo
+    h+='<div class="nr-pg"><h2>Số Chủ Đạo của bạn</h2><div class="nr-sub">Con số quan trọng nhất</div><p class="nr-lead">Số Chủ Đạo tính từ ngày sinh, cho biết con đường chính, tính cách cốt lõi và bài học lớn của cả cuộc đời bạn.</p>'+
+      '<div class="nr-big"><div class="nr-n">'+r.lp+'</div><div><h3>'+M[r.lp][0]+'</h3><p>'+M[r.lp][1]+'</p><p><i>'+M[r.lp][2]+'</i></p></div></div>'+
+      '<div class="nr-two"><div><h4>Điểm mạnh</h4>'+ul(S[r.lp][0])+'</div><div><h4>Cần lưu ý</h4>'+ul(S[r.lp][1])+'</div></div>'+
+      '<div class="nr-box">Bạn thấy mình sống đúng nhất khi được '+J[r.lp]+'.</div></div>';
+    var x=X[r.lp];
+    h+='<div class="nr-pg"><h2>Định hướng theo Số Chủ Đạo '+r.lp+'</h2><div class="nr-sub">Sự nghiệp · Tài chính · Tình cảm</div>'+
+      '<div class="nr-box nr-lg"><b>💼 Công việc hợp với bạn</b><br>'+x[0]+'</div><div class="nr-box nr-lg"><b>💰 Tài chính</b><br>'+x[2]+'</div>'+
+      '<div class="nr-box nr-lg"><b>💞 Tình cảm</b><br>'+x[1]+'</div><div class="nr-box nr-lg"><b>🌿 Lời khuyên của cô</b><br>'+x[3]+'</div></div>';
+    // 5–8. Các chỉ số tên + ngày sinh
+    h+=idxPage('ex',r.ex,'Bạn phát huy tốt nhất khi dùng tài năng của <b>'+low(nm0(r.ex))+'</b>: '+low(M[r.ex][1])+' Công việc gợi ý: '+low(X[r.ex][0]));
+    h+=idxPage('su',r.su,'Sâu bên trong, bạn khao khát được <b>'+J[r.su]+'</b>. Khi cuộc sống cho bạn điều này, bạn thấy bình an và đầy năng lượng.');
+    h+=idxPage('pe',r.pe,'Khi mới gặp, mọi người thường thấy ở bạn hình ảnh <b>'+low(nm0(r.pe))+'</b>: '+low(S[r.pe][0][0])+', '+low(S[r.pe][0][1])+'.');
+    h+=idxPage('bd',r.bd,'Ngày sinh tặng bạn món quà của <b>'+low(nm0(r.bd))+'</b>, giúp bạn đi trên con đường của Số Chủ Đạo '+r.lp+' nhẹ nhàng hơn.');
+    h+=idxPage('mt',mt,'Càng trưởng thành, bạn càng hướng tới năng lượng <b>'+low(nm0(mt))+'</b> và thấy mình sống trọn vẹn khi được '+J[mt]+'.');
+    // 9. Biểu đồ
+    var order=[3,6,9,2,5,8,1,4,7];
+    h+='<div class="nr-pg"><h2>Biểu đồ ngày sinh</h2><div class="nr-sub">Năng lượng sẵn có và bài học</div><p class="nr-lead">Các chữ số trong ngày sinh được xếp vào lưới 3×3. Ô có số là năng lượng bạn có sẵn, ô trống là điều bạn cần rèn thêm.</p><div class="nr-grid">';
+    order.forEach(function(n){var k=r.cnt[n]||0;h+=k?'<div>'+String(n).repeat(k)+'</div>':'<div class="nr-e">'+n+'</div>'});
+    h+='</div>';
+    var MANY={1:'Nhiều số 1: bạn có nhiều cách thể hiện bản thân, đôi khi nói nhiều hơn làm.',2:'Nhiều số 2: rất nhạy cảm và trực giác mạnh.',3:'Nhiều số 3: trí tưởng tượng phong phú, đầu óc luôn bận rộn.',4:'Nhiều số 4: rất thực tế, cần cẩn thận kẻo cứng nhắc.',5:'Nhiều số 5: cảm xúc mãnh liệt, cần giữ cân bằng.',6:'Nhiều số 6: lo lắng nhiều cho gia đình.',7:'Nhiều số 7: học qua nhiều trải nghiệm, kể cả mất mát.',8:'Nhiều số 8: tinh tế, độc lập, đôi khi bướng bỉnh.',9:'Nhiều số 9: lý tưởng cao, dễ đặt kỳ vọng lớn.'};
+    var many=[];for(var n=1;n<=9;n++)if((r.cnt[n]||0)>=3)many.push(MANY[n]);
+    h+='<div class="nr-box">'+(r.miss.length?'<b>Số trống: '+r.miss.join(', ')+'.</b><br>'+r.miss.map(function(q){return 'Thiếu số '+q+': nên bồi đắp '+MISS[q]+'.'}).join('<br>'):'<b>Biểu đồ đủ 9 con số</b>, một năng lượng khá cân bằng.')+'</div>'+
+      (many.length?'<div class="nr-box"><b>Số lặp nhiều:</b><br>'+many.join('<br>')+'</div>':'')+'</div>';
+    // 10. Mũi tên
+    var has=function(n){return (r.cnt[n]||0)>0};
+    h+='<div class="nr-pg"><h2>Các mũi tên năng lượng</h2><div class="nr-sub">Đường thẳng trên biểu đồ ngày sinh</div><p class="nr-lead">Khi đủ 3 số trên một hàng, cột hoặc đường chéo là <b>mũi tên mạnh</b>. Khi trống cả 3 ô là <b>mũi tên trống</b>, điểm cần rèn luyện.</p>';
+    var nArr=0;AR.forEach(function(q){var c3=q[0].filter(has).length;if(c3===3){nArr++;h+='<div class="nr-row"><div class="nr-n nr-ok">✦</div><div><small>Mũi tên mạnh · '+q[0].join('-')+'</small><b>'+q[1]+'</b><p>'+q[2]+'</p></div></div>'}else if(c3===0){nArr++;h+='<div class="nr-row"><div class="nr-n nr-no">○</div><div><small>Mũi tên trống · '+q[0].join('-')+'</small><b>'+q[1]+' (trống)</b><p>'+q[3]+'</p></div></div>'}});
+    if(!nArr)h+='<div class="nr-box">Biểu đồ của bạn không có mũi tên mạnh hay trống nào, năng lượng phân bố khá đều. Bạn linh hoạt, không quá thiên về một hướng.</div>';
+    h+='<div class="nr-box"><b>Gợi ý:</b> mũi tên mạnh là lợi thế để bạn dựa vào; mũi tên trống không phải điểm yếu cố định, bạn hoàn toàn rèn được qua thói quen hằng ngày.</div></div>';
+    // 11. Đỉnh cao + thử thách
+    h+='<div class="nr-pg"><h2>4 đỉnh cao cuộc đời</h2><div class="nr-sub">Những giai đoạn năng lượng lớn</div>';
+    r.pins.forEach(function(p,i){h+='<div class="nr-row"><div class="nr-n">'+p[0]+'</div><div><small>Đỉnh '+(i+1)+' · tuổi '+p[1]+'</small><b>'+M[p[0]][0]+'</b><p>Giai đoạn đề cao '+PIN[p[0]]+'.</p></div></div>'});
+    h+='<h2 style="margin-top:26px">4 thử thách</h2><div class="nr-sub">Bài học đi kèm từng giai đoạn</div>';
+    h+='<div class="nr-sum">';[t1,t2,t3,t4].forEach(function(t,i){h+='<div><i>'+t+'</i><small>Thử thách '+(i+1)+'</small><b style="font-weight:400;font-size:14px">'+TT[t]+'</b></div>'});
+    h+='</div></div>';
+    // 12. Năm cá nhân chi tiết
+    h+='<div class="nr-pg"><h2>Năm cá nhân của bạn</h2><div class="nr-sub">Năm '+CY+' và năm '+(CY+1)+'</div><p class="nr-lead">Năm cá nhân = ngày + tháng sinh + năm đang xét (rút gọn). Mỗi năm mang một chủ đề, 9 năm là một chu kỳ.</p>';
+    [[CY,r.py],[CY+1,r.py2]].forEach(function(y){var d=PYD[y[1]];h+='<div class="nr-yr"><div class="nr-big"><div class="nr-n">'+y[1]+'</div><div><h3>Năm '+y[0]+' · năm số '+y[1]+'</h3><p>'+PY[y[1]]+'</p></div></div><div class="nr-two"><div><h4>Nên làm</h4>'+ul(d[0])+'</div><div><h4>Nên tránh</h4>'+ul(d[1])+'</div></div></div>'});
+    h+='</div>';
+    // 13–14. 12 tháng
+    h+='<div class="nr-pg"><h2>12 tháng cá nhân năm '+CY+'</h2><div class="nr-sub">Năm số '+r.py+' · nhịp năng lượng từng tháng</div>'+months(r.py,CY)+'</div>';
+    h+='<div class="nr-pg"><h2>12 tháng cá nhân năm '+(CY+1)+'</h2><div class="nr-sub">Năm số '+r.py2+' · nhịp năng lượng từng tháng</div>'+months(r.py2,CY+1)+'</div>';
+    // 15. Bát Cực (nếu có số)
+    if(o.phone)h+=bcPage(o.phone);
+    // 16. Tổng kết
+    h+='<div class="nr-pg"><h2>3 điều nên làm ngay</h2><div class="nr-sub">Tổng kết từ các con số của bạn</div>'+
+      '<div class="nr-row"><div class="nr-n">1</div><div><small>Theo Số Chủ Đạo '+r.lp+'</small><p>'+X[r.lp][3]+'</p></div></div>'+
+      '<div class="nr-row"><div class="nr-n">2</div><div><small>Theo Số Linh Hồn '+r.su+'</small><p>Dành thời gian cho điều khiến bạn thấy đủ đầy: được '+J[r.su]+'.</p></div></div>'+
+      '<div class="nr-row"><div class="nr-n">3</div><div><small>Theo Năm Cá Nhân '+r.py+'</small><p>'+PYD[r.py][0][0]+'. '+PYD[r.py][0][1]+'.</p></div></div>';
+    if(o.note&&o.note.trim())h+='<div class="nr-note" style="margin-top:26px"><b>Lời nhắn riêng của cô Thảo</b>'+esc(o.note.trim())+'</div>';
+    h+='<div class="nr-box" style="margin-top:22px"><b>Cần hỏi thêm?</b> Bạn nhắn Zalo cô Thảo 0935 949 141, cô giải đáp những chỗ chưa rõ trong bản giải mã này.</div>'+
+      '<div class="nr-end">Bản giải mã dành riêng cho <b>'+esc(o.name)+'</b> · '+dob+'<br>Thần số học là công cụ để hiểu mình, không thay thế quyết định của bạn.<br><b>Cô Thảo · Giải mã năng lượng số</b></div></div>';
+    var el=document.createElement('div');el.className='nr';el.innerHTML=h;return el;
+  }
+
+  function build(o){return o.full?buildFull(o):buildLite(o)}
 
   function lib(){return new Promise(function(ok,no){if(window.html2pdf)return ok();var s=document.createElement('script');s.src=BASE+'js/html2pdf.bundle.min.js';s.onload=ok;s.onerror=no;document.head.appendChild(s)})}
 
