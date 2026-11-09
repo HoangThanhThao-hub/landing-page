@@ -3,7 +3,8 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Áo Dài Thanh Thảo</title>
-<meta name="description" content="Áo dài Thanh Thảo: mẫu đẹp, giá rõ ràng, đặt nhanh qua chuyển khoản hoặc Zalo 0935 949 141.">
+<meta name="description" content="Thảo chọn sẵn 12 mẫu áo dài đẹp, giá từ 289k, bấm là mua ngay trên Shopee.">
+<meta property="og:title" content="Áo Dài Thanh Thảo – 12 mẫu Thảo chọn sẵn"><meta property="og:description" content="Mẫu đẹp đón Tết 2027, giá từ 289k, mua ngay trên Shopee.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Be+Vietnam+Pro:wght@400;500;700&display=swap&subset=vietnamese" rel="stylesheet">
 <style>
@@ -32,7 +33,7 @@ section{padding:64px 0;border-top:1px solid #1d1912}
 .head{text-align:center;margin-bottom:34px}.head h2{font-size:clamp(28px,4.5vw,40px)}.head p{color:var(--mut);margin:10px 0 0}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
 .pd{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
-.ph{aspect-ratio:3/4;background:#1b160f;display:flex;align-items:center;justify-content:center;color:#6d6150;font-size:14px;text-align:center;padding:16px;border-bottom:1px solid var(--line)}
+.ph{position:relative;display:block;aspect-ratio:1/1;background:#1b160f;border-bottom:1px solid var(--line);overflow:hidden}.no{position:absolute;left:10px;top:10px;font:600 13px "Playfair Display";color:var(--gold2);background:#000b;border:1px solid var(--gold);border-radius:999px;padding:2px 9px}
 .ph img{width:100%;height:100%;object-fit:cover}
 .pd .in{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1}
 .pd h3{font-size:21px}.pd .ds{color:var(--mut);font-size:14px;margin:0}
@@ -49,103 +50,133 @@ footer{padding:30px 0 110px;text-align:center;color:var(--mut);font-size:14px;bo
 .zbar{position:fixed;left:50%;bottom:12px;transform:translateX(-50%);z-index:50;display:flex;gap:8px;width:min(520px,calc(100% - 24px))}
 .zbar a,.zbar button{flex:1;padding:13px 10px;border-radius:999px;font:700 15px "Be Vietnam Pro";text-align:center;text-decoration:none;cursor:pointer}
 .zbar .z{background:#0068ff;color:#fff;border:0}.zbar .b{background:#000;color:var(--gold2);border:1px solid var(--gold)}
-/* pay modal */
-.ov{position:fixed;inset:0;z-index:99;display:none;align-items:center;justify-content:center;padding:10px;background:#000c;backdrop-filter:blur(4px)}
-.ov.on{display:flex}
-.box{position:relative;width:min(460px,100%);max-height:94vh;overflow:auto;background:#100d09;border:1px solid var(--line);border-radius:20px;padding:22px 18px}
+.hero{text-align:left}.hg{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+.hero p{margin-left:0}.hero .row{justify-content:flex-start}.trust{justify-content:flex-start}.orn{margin-left:0}.orn:after{left:12px;transform:none}
+.pic{position:relative;max-width:400px;justify-self:center}.pic img{width:100%;display:block;border-radius:200px 200px 22px 22px;border:1px solid var(--gold);box-shadow:0 0 0 8px #0b0a08,0 0 0 9px #3a2f1c}
+.pic small{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);white-space:nowrap;background:#000c;border:1px solid var(--gold);color:var(--gold2);border-radius:999px;padding:5px 14px;font-size:13px}
+.note{max-width:720px;margin:26px auto 0;text-align:center;color:var(--mut);font-size:13px}
+.tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.tp{border:1px solid var(--line);border-radius:16px;padding:18px;background:var(--card)}.tp b{color:var(--gold2);display:block;margin-bottom:4px}.tp p{margin:0;color:var(--mut);font-size:14px}
+@media (max-width:760px){.hg{grid-template-columns:1fr;gap:26px}.hero{text-align:center}.hero p{margin-left:auto}.hero .row,.trust{justify-content:center}.orn{margin-left:auto}.orn:after{left:50%;transform:translateX(-50%)}.pic{max-width:220px;order:-1}.hero{padding-top:36px}}
+.btn.add{background:none;border:1px solid #5a4a2c;color:var(--mut);font-weight:500;font-size:14px;padding:10px 16px;margin-top:0}
+.btn.add:hover{color:var(--gold2);border-color:var(--gold)}
+.cartfab{position:fixed;right:14px;bottom:78px;z-index:60;display:none;align-items:center;gap:8px;padding:12px 16px;border-radius:999px;background:#000;border:1px solid var(--gold);color:var(--gold2);font:700 15px "Be Vietnam Pro";cursor:pointer;box-shadow:0 8px 30px #000}
+.cartfab.on{display:flex}.cartfab i{font-style:normal;background:var(--gold);color:#1a1206;border-radius:999px;min-width:22px;padding:0 6px;text-align:center}
+.toast{position:fixed;left:50%;bottom:140px;transform:translateX(-50%);z-index:70;background:#1b160f;border:1px solid var(--gold);color:var(--gold2);padding:10px 18px;border-radius:999px;font-size:14px;opacity:0;pointer-events:none;transition:.3s}.toast.on{opacity:1}
+.ov{position:fixed;inset:0;z-index:99;display:none;align-items:center;justify-content:center;padding:10px;background:#000c;backdrop-filter:blur(4px)}.ov.on{display:flex}
+.box{position:relative;width:min(480px,100%);max-height:94vh;overflow:auto;background:#100d09;border:1px solid var(--line);border-radius:20px;padding:22px 18px}
 .x{position:absolute;right:10px;top:10px;width:38px;height:38px;border-radius:50%;border:1px solid var(--gold);background:#000;color:var(--gold2);font-size:22px;cursor:pointer}
-.box h3{font-size:22px;padding-right:40px}.box .sm{color:var(--mut);font-size:13px}
-.qr{display:block;width:240px;max-width:80%;margin:14px auto;border-radius:12px;background:#fff;padding:6px}
-.rw{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:14px}
-.rw span{color:var(--mut)}.rw b{display:block;color:var(--tx);font-size:15px;word-break:break-word}
+.box h3{font-size:22px;padding-right:40px;margin-bottom:10px}.sm{color:var(--mut);font-size:13px}
+.li{display:grid;grid-template-columns:1fr auto;gap:6px 10px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.li b{font-weight:600}.li .lp{color:var(--gold2);text-align:right}.li .ctl{grid-column:1/-1;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.li select{padding:6px 8px;border-radius:8px;border:1px solid var(--line);background:#0b0a08;color:var(--tx)}
+.q{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--tx);cursor:pointer}.rm{margin-left:auto;background:none;border:0;color:#9b7d6a;cursor:pointer;font-size:13px;text-decoration:underline}
+.tot{display:flex;justify-content:space-between;padding:12px 0;font-size:17px}.tot b{color:var(--gold2)}
+.qr{display:block;width:240px;max-width:80%;margin:10px auto;border-radius:12px;background:#fff;padding:6px}
+.rw{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px}.rw span{color:var(--mut)}.rw b{display:block;word-break:break-word}
 .cp{flex:none;border:1px solid var(--gold);background:none;color:var(--gold2);border-radius:999px;padding:6px 12px;cursor:pointer;font:600 13px "Be Vietnam Pro"}
-.box input,.box select{width:100%;margin-top:8px;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:#0b0a08;color:var(--tx);font:15px "Be Vietnam Pro"}
-.box .btn{width:100%;margin-top:12px}
+.box input,.box textarea{width:100%;margin-top:8px;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:#0b0a08;color:var(--tx);font:15px "Be Vietnam Pro"}
+.box .btn{width:100%;margin-top:12px}.empty{color:var(--mut);text-align:center;padding:20px 0}
 </style></head><body>
 
-<header class="hero"><div class="wrap">
-<span class="kick">Thanh Thảo · Áo Dài</span>
+<header class="hero"><div class="wrap hg">
+<div>
+<span class="kick">Hoàng Thanh Thảo chọn sẵn</span>
 <h1><span class="gold">Áo Dài Thanh Thảo</span></h1>
 <div class="orn"></div>
-<p>Áo dài đẹp, chất liệu sang, mặc lên là nổi bật trong ngày Tết, đi tiệc, chụp ảnh. Chọn mẫu, bấm đặt là hiện ngay mã chuyển khoản.</p>
-<div class="row"><a class="btn main" href="#mau">XEM MẪU ÁO DÀI</a><a class="btn" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Hỏi size qua Zalo</a></div>
-<div class="trust"><span><b>✓</b> Giá rõ ràng</span><span><b>✓</b> Tư vấn size miễn phí</span><span><b>✓</b> Đặt nhanh qua Zalo</span></div>
+<p>Thảo lọc sẵn những mẫu áo dài đẹp, bán chạy, đánh giá tốt trên Shopee để bạn khỏi mất công tìm. Mặc đón Tết, đi tiệc, đi lễ, chụp ảnh đều sang. Bấm mẫu nào là mở thẳng Shopee, mua như bình thường.</p>
+<div class="row"><a class="btn main" href="#mau">XEM 12 MẪU ÁO DÀI</a><a class="btn" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Hỏi Thảo qua Zalo</a></div>
+<div class="trust"><span><b>✓</b> Giá từ 289k</span><span><b>✓</b> Mua trên Shopee, được đổi trả theo Shopee</span><span><b>✓</b> Mẫu Tết 2027</span></div>
+</div>
+<div class="pic"><img src="co-thao-ao-dai.webp" alt="Hoàng Thanh Thảo mặc áo dài" width="720" height="1080"><small>Hoàng Thanh Thảo</small></div>
 </div></header>
 
 <main>
 <section id="mau"><div class="wrap">
-<div class="head"><span class="kick">Bộ sưu tập</span><h2 class="gold">Chọn mẫu áo dài</h2><p>Xếp theo giá từ thấp đến cao</p></div>
-<div class="grid" id="grid"></div>
+<div class="head"><span class="kick">Bộ sưu tập</span><h2 class="gold">12 mẫu áo dài Thảo chọn</h2><p>Xếp theo giá từ thấp đến cao</p></div>
+<div class="grid">
+<article class="pd"><a class="ph" href="https://s.shopee.vn/2qVzwZLWQt" target="_blank" rel="nofollow sponsored noopener"><img loading="lazy" referrerpolicy="no-referrer" src="https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mtarabzun7k8b5" alt="Áo Dài Cách Tân Trúc Anh"><span class="no">01</span></a><div class="in"><h3>Áo Dài Cách Tân Trúc Anh</h3><p class="ds">Dáng suông, đính cúc tàu, trẻ trung. Hợp đi chơi, đi lễ.</p><div class="pr">289.000đ</div><a class="btn main" href="https://s.shopee.vn/2qVzwZLWQt" target="_blank" rel="nofollow sponsored noopener">XEM &amp; MUA TRÊN SHOPEE</a><button class="btn add" type="button" data-add="0">+ Thêm vào giỏ (chuyển khoản)</button></div></article>
+<article class="pd"><a class="ph" href="https://s.shopee.vn/8pnD5cfaPw" target="_blank" rel="nofollow sponsored noopener"><img loading="lazy" referrerpolicy="no-referrer" src="https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mtkukqb4rtvo2a" alt="Áo Dài Ngọc Diệp"><span class="no">02</span></a><div class="in"><h3>Áo Dài Ngọc Diệp</h3><p class="ds">Cổ đổ điệu đà, dáng eo hai tà truyền thống.</p><div class="pr">318.500đ</div><a class="btn main" href="https://s.shopee.vn/8pnD5cfaPw" target="_blank" rel="nofollow sponsored noopener">XEM &amp; MUA TRÊN SHOPEE</a><button class="btn add" type="button" data-add="1">+ Thêm vào giỏ (chuyển khoản)</button></div></article>
+<article class="pd"><a class="ph" href="https://s.shopee.vn/6fiiVdnpoT" target="_blank" rel="nofollow sponsored noopener"><img loading="lazy" referrerpolicy="no-referrer" src="https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mtapbypcevpm23" alt="Áo Dài Tết Tường Xuân"><span class="no">03</span></a><div class="in"><h3>Áo Dài Tết Tường Xuân</h3><p class="ds">Cách tân hai tà, rực rỡ đón Tết.</p><div class="pr">329.000đ</div><a class="btn main" href="https://s.shopee.vn/6fiiVdnpoT" target="_blank" rel="nofollow sponsored noopener">XEM &amp; MUA TRÊN SHOPEE</a><button class="btn add" type="button" data-add="2">+ Thêm vào giỏ (chuyển khoản)</button></div></article>
+<article class="pd"><a class="ph" href="https://s.shopee.vn/4B1NX3s8Ut" target="_blank" rel="nofollow sponsored noopener"><img loading="lazy" referrerpolicy="no-referrer" src="https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mtmk7wmj7bb461" alt="Áo Dài 4 Tà Vải Tencel"><span class="no">04</span></a><div class="in"><h3>Áo Dài 4 Tà Vải Tencel</h3><p class="ds">Dáng suông, mát, mặc đi dạy hay dự tiệc đều đẹp.</p><div class="pr">341.050đ</div><a class="btn main" href="https://s.shopee.vn/4B1NX3s8Ut" target="_blank" rel="nofollow sponsored noopener">XEM &amp; MUA TRÊN SHOPEE</a><button class="btn add" type="button" data-add="3">+ Thêm vào giỏ (chuyển khoản)</button></div></article>
+<article class="pd"><a class="ph" href="https://s.shopee.vn/40hxKkslpq" target="_blank" rel="nofollow sponsored noopener"><img loading="lazy" referrerpolicy="no-referrer" src="https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mup83o82u22ob0" alt="Áo Dài Vân Sương"><span class="no">05</span></a><div class="in"><h3>Áo Dài Vân Sương</h3><p class="ds">Cách tân dáng suông, nhẹ nhàng thanh lịch.</p><div class="pr">349.000đ</div><a class="btn main" href="https://s.shopee.vn/40hxKkslpq" target="_blank" rel="nofollow sponsored noopener">XEM &amp; MUA TRÊN SHOPEE</a><button class="btn add" type="button" data-add="4">+ Thêm vào giỏ (chuyển khoản)</button></div></article>
+<article class="pd"><a class="ph" href="https://s.shopee.vn/30pQ8sKt5s" target="_blank" rel="nofollow sponsored noopener"><img loading="lazy" referrerpolicy="no-referrer" src="https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-muwyz0nod8g51b" alt="Áo Dài Thêu Ren Kem Xanh"><span class="no">06</span></a><div class="in"><h3>Áo Dài Thêu Ren Kem Xanh</h3><p class="ds">Ren thêu màu kem phối xanh lá, cổ cao tay dài.</p><div class="pr">383.000đ</div><a class="btn main" href="https://s.shopee.vn/30pQ8sKt5s" target="_blank" rel="nofollow sponsored noopener">XEM &amp; MUA TRÊN SHOPEE</a><button class="btn add" type="button" data-add="5">+ Thêm vào giỏ (chuyển khoản)</button></div></article>
+<article class="pd"><a class="ph" href="https://s.shopee.vn/3B8qLBKFkv" target="_blank" rel="nofollow sponsored noopener"><img loading="lazy" referrerpolicy="no-referrer" src="https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mux8eg9z2goxcf" alt="Áo Dài Tím Hoa Văn"><span class="no">07</span></a><div class="in"><h3>Áo Dài Tím Hoa Văn</h3><p class="ds">Cổ cao, tay lỡ, dáng thanh lịch.</p><div class="pr">383.000đ</div><a class="btn main" href="https://s.shopee.vn/3B8qLBKFkv" target="_blank" rel="nofollow sponsored noopener">XEM &amp; MUA TRÊN SHOPEE</a><button class="btn add" type="button" data-add="6">+ Thêm vào giỏ (chuyển khoản)</button></div></article>
+<article class="pd"><a class="ph" href="https://s.shopee.vn/2gCZkGM9lq" target="_blank" rel="nofollow sponsored noopener"><img loading="lazy" referrerpolicy="no-referrer" src="https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-muurh8x2qhaae9" alt="Áo Dài Hồng Truyền Thống"><span class="no">08</span></a><div class="in"><h3>Áo Dài Hồng Truyền Thống</h3><p class="ds">Cổ tròn, dáng dài, nữ tính dịu dàng.</p><div class="pr">383.000đ</div><a class="btn main" href="https://s.shopee.vn/2gCZkGM9lq" target="_blank" rel="nofollow sponsored noopener">XEM &amp; MUA TRÊN SHOPEE</a><button class="btn add" type="button" data-add="7">+ Thêm vào giỏ (chuyển khoản)</button></div></article>
+<article class="pd"><a class="ph" href="https://s.shopee.vn/3g56w6ILk4" target="_blank" rel="nofollow sponsored noopener"><img loading="lazy" referrerpolicy="no-referrer" src="https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mulz4f2xmigzc2" alt="Áo Dài Gấm Vân Hạc"><span class="no">09</span></a><div class="in"><h3>Áo Dài Gấm Vân Hạc</h3><p class="ds">Gấm hoa văn hạc, dáng suông, cổ trụ. Mẫu Tết 2027.</p><div class="pr">396.000đ</div><a class="btn main" href="https://s.shopee.vn/3g56w6ILk4" target="_blank" rel="nofollow sponsored noopener">XEM &amp; MUA TRÊN SHOPEE</a><button class="btn add" type="button" data-add="8">+ Thêm vào giỏ (chuyển khoản)</button></div></article>
+<article class="pd"><a class="ph" href="https://s.shopee.vn/6q28hwnCTU" target="_blank" rel="nofollow sponsored noopener"><img loading="lazy" referrerpolicy="no-referrer" src="https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mulzcah9up6s36" alt="Áo Dài Tơ Loang Thêu Hoa"><span class="no">10</span></a><div class="in"><h3>Áo Dài Tơ Loang Thêu Hoa</h3><p class="ds">Tơ loang 4 tà, thêu hoa, cổ vuông. Mẫu Tết 2027.</p><div class="pr">413.250đ</div><a class="btn main" href="https://s.shopee.vn/6q28hwnCTU" target="_blank" rel="nofollow sponsored noopener">XEM &amp; MUA TRÊN SHOPEE</a><button class="btn add" type="button" data-add="9">+ Thêm vào giỏ (chuyển khoản)</button></div></article>
+<article class="pd"><a class="ph" href="https://s.shopee.vn/7Aez6Ylvna" target="_blank" rel="nofollow sponsored noopener"><img loading="lazy" referrerpolicy="no-referrer" src="https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-ms7893ai6u4h9b" alt="Áo Dài Linh Chi 5 Tà"><span class="no">11</span></a><div class="in"><h3>Áo Dài Linh Chi 5 Tà</h3><p class="ds">Tay cánh tiên, đính cúc cách điệu, rất sang.</p><div class="pr">575.000đ</div><a class="btn main" href="https://s.shopee.vn/7Aez6Ylvna" target="_blank" rel="nofollow sponsored noopener">XEM &amp; MUA TRÊN SHOPEE</a><button class="btn add" type="button" data-add="10">+ Thêm vào giỏ (chuyển khoản)</button></div></article>
+<article class="pd"><a class="ph" href="https://s.shopee.vn/70LYuFmZ8Z" target="_blank" rel="nofollow sponsored noopener"><img loading="lazy" referrerpolicy="no-referrer" src="https://down-vn.img.susercontent.com/file/vn-11134207-81ztc-mt5idjzhlp8k15" alt="Áo Dài Mẹ Sui Lụa Ruby"><span class="no">12</span></a><div class="in"><h3>Áo Dài Mẹ Sui Lụa Ruby</h3><p class="ds">Lụa Ruby thêu Vạn Tuế, quý phái cho ngày cưới con.</p><div class="pr">650.000đ</div><a class="btn main" href="https://s.shopee.vn/70LYuFmZ8Z" target="_blank" rel="nofollow sponsored noopener">XEM &amp; MUA TRÊN SHOPEE</a><button class="btn add" type="button" data-add="11">+ Thêm vào giỏ (chuyển khoản)</button></div></article>
+</div>
+<p class="note">Giá ghi trên trang là giá tham khảo lúc Thảo chọn, giá thật xem trên Shopee (thường có thêm mã giảm). Thảo nhận một khoản hoa hồng nhỏ từ Shopee khi bạn mua qua link này, giá bạn trả không đổi.</p>
 </div></section>
 
 <section><div class="wrap">
-<div class="head"><span class="kick">Đặt hàng</span><h2 class="gold">3 bước là xong</h2></div>
-<div class="steps">
-<div class="st"><b>Chọn mẫu</b><p>Bấm “Đặt mẫu này” ở mẫu cô/chị thích.</p></div>
-<div class="st"><b>Chuyển khoản</b><p>Quét mã QR hiện ngay, số tiền và nội dung có sẵn.</p></div>
-<div class="st"><b>Nhắn Zalo size</b><p>Gửi ảnh chuyển khoản và số đo qua Zalo 0935 949 141.</p></div>
+<div class="head"><span class="kick">Mẹo nhỏ</span><h2 class="gold">Chọn áo dài cho vừa</h2></div>
+<div class="tips">
+<div class="tp"><b>Xem bảng size</b><p>Mỗi shop có bảng size riêng ở phần mô tả. So theo vòng ngực và vòng eo, đừng chỉ theo cân nặng.</p></div>
+<div class="tp"><b>Đọc đánh giá có ảnh</b><p>Kéo xuống phần đánh giá, xem ảnh khách mặc thật để biết màu và chất vải ngoài đời.</p></div>
+<div class="tp"><b>Đặt sớm dịp Tết</b><p>Gần Tết shop hay hết size đẹp và giao chậm. Đặt sớm để kịp chụp ảnh, đi chúc Tết.</p></div>
 </div></div></section>
 
 <section><div class="wrap" style="max-width:760px">
 <div class="head"><span class="kick">Hỏi nhanh</span><h2 class="gold">Câu hỏi thường gặp</h2></div>
-<details><summary>Không biết chọn size thế nào?</summary><p>Nhắn Zalo 0935 949 141 chiều cao, cân nặng và số đo 3 vòng, Thảo tư vấn size vừa nhất.</p></details>
-<details><summary>Chuyển khoản xong làm gì tiếp?</summary><p>Gửi ảnh chuyển khoản qua Zalo kèm địa chỉ nhận hàng để Thảo xác nhận đơn.</p></details>
-<details><summary>Có xem mẫu thật trước không?</summary><p>Có, nhắn Zalo để Thảo gửi thêm ảnh và video thật của từng mẫu.</p></details>
+<details><summary>Mua ở đâu, có an toàn không?</summary><p>Bạn mua trực tiếp trên Shopee, thanh toán và đổi trả theo chính sách của Shopee và shop bán.</p></details>
+<details><summary>Không dùng Shopee thì mua sao?</summary><p>Bấm “Thêm vào giỏ”, chọn size, chuyển khoản theo mã QR rồi bấm “Em đã chuyển khoản”. Thảo nhận đơn và gửi áo tới địa chỉ của bạn.</p></details>
+<details><summary>Không biết chọn size thế nào?</summary><p>Xem bảng size trong mô tả sản phẩm, hoặc nhắn Zalo 0935 949 141 để Thảo gợi ý giúp.</p></details>
+<details><summary>Sao giá trên Shopee khác trên trang?</summary><p>Shop thay đổi giá và mã giảm thường xuyên. Giá đúng nhất là giá bạn thấy trên Shopee.</p></details>
 </div></section>
 </main>
 
 <footer><div class="wrap">Áo Dài Thanh Thảo · Zalo 0935 949 141<br><a href="/tool-video/">Thanh Thảo AI</a> · <a href="/nang-luong-so/">Giải mã năng lượng số</a></div></footer>
 
-<div class="zbar"><a class="z" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Zalo 0935 949 141</a><button class="b" type="button" data-open="">Đặt áo dài</button></div>
-
-<div class="ov" id="ov" role="dialog" aria-label="Chuyển khoản"><div class="box">
-<button class="x" type="button" aria-label="Đóng">×</button>
-<h3 class="gold" id="pTitle">Chuyển khoản đặt áo dài</h3>
-<select id="pSel" aria-label="Chọn mẫu"></select>
-<img class="qr" id="pQr" alt="Mã QR chuyển khoản TPBank">
-<div class="rw"><div><span>Ngân hàng</span><b>TPBank</b></div></div>
-<div class="rw"><div><span>Số tài khoản</span><b>8768 1714 131</b></div><button class="cp" data-cp="87681714131">Chép</button></div>
-<div class="rw"><div><span>Chủ tài khoản</span><b>HOANG THI THANH THAO</b></div></div>
-<div class="rw"><div><span>Số tiền</span><b id="pAm">—</b></div><button class="cp" id="pAmCp" data-cp="">Chép</button></div>
-<div class="rw"><div><span>Nội dung</span><b id="pCt">AODAI</b></div><button class="cp" id="pCtCp" data-cp="AODAI">Chép</button></div>
-<p class="sm" style="margin-top:14px">Điền để được xác nhận nhanh (không bắt buộc):</p>
-<input id="pNm" placeholder="Họ tên" autocomplete="name"><input id="pPh" placeholder="Số Zalo" inputmode="tel" autocomplete="tel">
-<a class="btn main" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Đã chuyển, gửi ảnh qua Zalo</a>
-</div></div>
-
+<div class="zbar"><a class="z" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Zalo 0935 949 141</a><a class="b" href="#mau">Xem mẫu áo dài</a></div>
+<button class="cartfab" id="fab" type="button">🛍 Giỏ hàng <i id="fabN">0</i></button>
+<div class="toast" id="toast">Đã thêm vào giỏ</div>
+<div class="ov" id="ov" role="dialog" aria-label="Giỏ hàng"><div class="box">
+<button class="x" type="button" id="cx" aria-label="Đóng">×</button>
+<h3 class="gold">Giỏ hàng của bạn</h3>
+<div id="lines"></div>
+<div id="pay">
+<div class="tot"><span>Tổng tiền</span><b id="tot">0đ</b></div>
+<p class="sm">Quét mã để chuyển khoản, số tiền và nội dung đã có sẵn. Phí giao hàng (nếu có) Thảo báo qua Zalo.</p>
+<img class="qr" id="qr" alt="Mã QR chuyển khoản TPBank">
+<div class="rw"><div><span>Ngân hàng</span><b>TPBank · HOANG THI THANH THAO</b></div></div>
+<div class="rw"><div><span>Số tài khoản</span><b>8768 1714 131</b></div><button class="cp" type="button" data-cp="87681714131">Chép</button></div>
+<div class="rw"><div><span>Số tiền</span><b id="am">0đ</b></div><button class="cp" type="button" id="amCp" data-cp="">Chép</button></div>
+<div class="rw"><div><span>Nội dung</span><b id="ct">AODAI</b></div><button class="cp" type="button" id="ctCp" data-cp="">Chép</button></div>
+<p class="sm" style="margin-top:14px">Thông tin giao hàng (điền để Thảo gửi áo nhanh):</p>
+<input id="nm" placeholder="Họ tên" autocomplete="name"><input id="ph" placeholder="Số điện thoại / Zalo" inputmode="tel" autocomplete="tel"><textarea id="ad" rows="2" placeholder="Địa chỉ nhận hàng" autocomplete="street-address"></textarea>
+<button class="btn main" type="button" id="done">EM ĐÃ CHUYỂN KHOẢN</button>
+<p class="sm" id="doneMsg" style="display:none;text-align:center;margin-top:10px">Đã gửi đơn cho Thảo. Tin nhắn đã được chép sẵn, bạn dán vào Zalo kèm ảnh chuyển khoản nhé.</p>
+</div></div></div>
 <script>
-/* DANH SÁCH MẪU: thêm ảnh (img) và giá (gia) khi cô gửi. Tự xếp giá thấp → cao. */
-var MAU=[
- {ma:"AD1",ten:"Mẫu 1",mo:"Chờ ảnh và mô tả từ cô Thảo",gia:0,img:""},
- {ma:"AD2",ten:"Mẫu 2",mo:"Chờ ảnh và mô tả từ cô Thảo",gia:0,img:""},
- {ma:"AD3",ten:"Mẫu 3",mo:"Chờ ảnh và mô tả từ cô Thảo",gia:0,img:""}
-];
+var P=[["Áo Dài Cách Tân Trúc Anh", 289000], ["Áo Dài Ngọc Diệp", 318500], ["Áo Dài Tết Tường Xuân", 329000], ["Áo Dài 4 Tà Vải Tencel", 341050], ["Áo Dài Vân Sương", 349000], ["Áo Dài Thêu Ren Kem Xanh", 383000], ["Áo Dài Tím Hoa Văn", 383000], ["Áo Dài Hồng Truyền Thống", 383000], ["Áo Dài Gấm Vân Hạc", 396000], ["Áo Dài Tơ Loang Thêu Hoa", 413250], ["Áo Dài Linh Chi 5 Tà", 575000], ["Áo Dài Mẹ Sui Lụa Ruby", 650000]];
 (function(){
-var $=function(i){return document.getElementById(i)},vn=function(n){return n?n.toLocaleString("vi-VN")+"đ":"Báo giá qua Zalo"};
-MAU.sort(function(a,b){return a.gia-b.gia});
-var g=$("grid"),s=$("pSel");
-MAU.forEach(function(m){
- var d=document.createElement("article");d.className="pd";
- d.innerHTML='<div class="ph">'+(m.img?'<img loading="lazy" src="'+m.img+'" alt="'+m.ten+'">':'Ảnh mẫu đang cập nhật')+'</div><div class="in"><h3>'+m.ten+'</h3><p class="ds">'+m.mo+'</p><div class="pr">'+vn(m.gia)+'</div><button class="btn main" type="button" data-open="'+m.ma+'">ĐẶT MẪU NÀY</button></div>';
- g.appendChild(d);
- var o=document.createElement("option");o.value=m.ma;o.textContent=m.ten+" – "+vn(m.gia);s.appendChild(o);
-});
-function upd(){
- var m=MAU.filter(function(x){return x.ma===s.value})[0]||MAU[0];
- var nm=$("pNm").value.trim(),ph=$("pPh").value.replace(/\D/g,"");
- var ct=("AODAI "+m.ma+" "+(nm||"")+" "+(ph||"")).trim().replace(/\s+/g," ");
- $("pCt").textContent=ct;$("pCtCp").dataset.cp=ct;$("pAm").textContent=m.gia?m.gia.toLocaleString("vi-VN")+"đ":"Nhắn Zalo để báo giá";$("pAmCp").dataset.cp=m.gia||"";
- var q=$("pQr");q.onerror=function(){this.onerror=null;this.src="../../qr-tpbank.jpg"};
- q.src="https://img.vietqr.io/image/TPB-87681714131-compact2.png?"+(m.gia?"amount="+m.gia+"&":"")+"addInfo="+encodeURIComponent(ct.slice(0,50))+"&accountName="+encodeURIComponent("HOANG THI THANH THAO");
-}
-var ov=$("ov");
-function open(ma){if(ma)s.value=ma;upd();ov.classList.add("on");document.documentElement.style.overflow="hidden"}
-function close(){ov.classList.remove("on");document.documentElement.style.overflow=""}
-document.addEventListener("click",function(e){var b=e.target.closest("[data-open]");if(b){e.preventDefault();open(b.getAttribute("data-open"))}
- var c=e.target.closest(".cp");if(c&&c.dataset.cp){navigator.clipboard&&navigator.clipboard.writeText(c.dataset.cp);var t=c.textContent;c.textContent="Đã chép";setTimeout(function(){c.textContent=t},1200)}});
-ov.querySelector(".x").onclick=close;ov.addEventListener("click",function(e){if(e.target===ov)close()});
-document.addEventListener("keydown",function(e){if(e.key==="Escape")close()});
-s.onchange=upd;$("pNm").oninput=upd;$("pPh").oninput=upd;
+var $=function(i){return document.getElementById(i)},C=[],SZ=["S","M","L","XL","XXL"];
+try{C=JSON.parse(localStorage.getItem("adcart")||"[]")}catch(e){}
+function vnd(n){return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,".")+"đ"}
+function save(){try{localStorage.setItem("adcart",JSON.stringify(C))}catch(e){}}
+function total(){return C.reduce(function(s,c){return s+P[c.i][1]*c.q},0)}
+function code(){var ph=($("ph").value||"").replace(/\D/g,"");return ("AODAI "+C.map(function(c){return (c.i+1)+c.s+(c.q>1?"x"+c.q:"")}).join(" ")+" "+ph).trim().slice(0,50)}
+function draw(){var n=C.reduce(function(s,c){return s+c.q},0);$("fabN").textContent=n;$("fab").classList.toggle("on",n>0);
+var L=$("lines");L.innerHTML="";if(!C.length){L.innerHTML='<p class="empty">Giỏ hàng đang trống.</p>';$("pay").style.display="none";return}$("pay").style.display="";
+C.forEach(function(c,k){var d=document.createElement("div");d.className="li";d.innerHTML='<b>'+P[c.i][0]+'</b><span class="lp">'+vnd(P[c.i][1]*c.q)+'</span><div class="ctl">Size <select>'+SZ.map(function(z){return '<option'+(z===c.s?' selected':'')+'>'+z+'</option>'}).join("")+'</select><button class="q" type="button" data-d="-1">−</button><span>'+c.q+'</span><button class="q" type="button" data-d="1">+</button><button class="rm" type="button">Bỏ</button></div>';
+d.querySelector("select").onchange=function(){c.s=this.value;save();draw()};d.querySelectorAll(".q").forEach(function(b){b.onclick=function(){c.q=Math.max(1,c.q+ +b.dataset.d);save();draw()}});d.querySelector(".rm").onclick=function(){C.splice(k,1);save();draw()};L.appendChild(d)});
+var t=total(),ct=code();$("tot").textContent=vnd(t);$("am").textContent=vnd(t);$("amCp").dataset.cp=t;$("ct").textContent=ct;$("ctCp").dataset.cp=ct;
+var q=$("qr");q.onerror=function(){this.onerror=null;this.src="../../qr-tpbank.jpg"};q.src="https://img.vietqr.io/image/TPB-87681714131-compact2.png?amount="+t+"&addInfo="+encodeURIComponent(ct)+"&accountName="+encodeURIComponent("HOANG THI THANH THAO")}
+function open(){draw();$("ov").classList.add("on");document.documentElement.style.overflow="hidden"}
+function close(){$("ov").classList.remove("on");document.documentElement.style.overflow=""}
+document.querySelectorAll("[data-add]").forEach(function(b){b.onclick=function(){var i=+b.dataset.add,f=C.filter(function(c){return c.i===i&&c.s==="M"})[0];if(f)f.q++;else C.push({i:i,s:"M",q:1});save();draw();open()}});
+$("fab").onclick=open;$("cx").onclick=close;$("ov").addEventListener("click",function(e){if(e.target===$("ov"))close()});document.addEventListener("keydown",function(e){if(e.key==="Escape")close()});
+var tm;$("ph").addEventListener("input",function(){clearTimeout(tm);tm=setTimeout(draw,400)});
+document.addEventListener("click",function(e){var c=e.target.closest(".cp");if(c&&c.dataset.cp){try{navigator.clipboard.writeText(c.dataset.cp)}catch(x){}c.textContent="Đã chép";setTimeout(function(){c.textContent="Chép"},1200)}});
+var GF="https://docs.google.com/forms/d/e/1FAIpQLScoEBjYk6eHmzAXQfLeNSwpMVRsGL_wf08Vj_eyDGFlQUbw2w/formResponse",GE={loai:"entry.596007808",goi:"entry.1684003920",ten:"entry.546302110",zalo:"entry.2058676908",tien:"entry.1353076927",nd:"entry.644535927"};
+$("done").onclick=function(){var list=C.map(function(c){return P[c.i][0]+" size "+c.s+" x"+c.q}).join("; ");
+var o={loai:"Đơn áo dài",goi:list+" | Địa chỉ: "+($("ad").value||"chưa ghi"),ten:$("nm").value,zalo:$("ph").value,tien:total(),nd:code()};
+try{var f=new URLSearchParams();Object.keys(o).forEach(function(k){f.append(GE[k],String(o[k]||"").slice(0,500))});fetch(GF,{method:"POST",mode:"no-cors",body:f}).catch(function(){})}catch(x){}
+var msg="Thảo ơi, mình đã chuyển khoản "+vnd(total())+" đặt áo dài:\n- "+C.map(function(c){return P[c.i][0]+", size "+c.s+", SL "+c.q}).join("\n- ")+"\n- Họ tên: "+($("nm").value||"...")+"\n- SĐT: "+($("ph").value||"...")+"\n- Địa chỉ: "+($("ad").value||"...")+"\nMình gửi ảnh chuyển khoản nhé.";
+try{navigator.clipboard.writeText(msg)}catch(x){}$("doneMsg").style.display="block";C=[];save();setTimeout(function(){window.open("https://zalo.me/0935949141","_blank")},600)};
+draw();
 })();
 </script>
 </body></html>
