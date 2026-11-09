@@ -58,6 +58,8 @@ small{display:block;margin-top:16px;color:#7f88ad;font-size:12.5px}
     <option value="Trọn Bộ Năng Lượng Số">Trọn Bộ Năng Lượng Số · 2.999k</option>
     <option value="Luận Giải Trọn Đời">Luận Giải Trọn Đời · 3.999k</option>
   </select>
+  <label>Số điện thoại / biển số / số tài khoản cần xem (không bắt buộc, gói Xem 1 Số và Combo Đổi Đời nên nhập)</label>
+  <input id="ph" inputmode="numeric" placeholder="VD: 0935949141" autocomplete="off">
   <label>Lời nhắn riêng của cô (không bắt buộc, gói lớn nên viết vài dòng)</label>
   <textarea id="nt" rows="4" placeholder="VD: Lan ơi, năm nay em ở năm số 8, rất hợp để mở rộng việc kinh doanh..."></textarea>
   <button id="mk" type="button">Tạo file PDF</button>
@@ -78,7 +80,7 @@ document.getElementById('mk').addEventListener('click',function(){
   if(!dd||!mm||yy<1900||dt.getMonth()!==mm-1){ms.textContent='Ngày sinh chưa đúng, cô kiểm tra lại nha.';return}
   var pk=g('pk');
   btn.disabled=true;btn.textContent='Đang tạo file…';ms.textContent='';
-  NLS.pdf({name:nm,dd:dd,mm:mm,yy:yy,pkg:pk,full:pk!=='Bản tự xem trọn bộ',note:document.getElementById('nt').value})
+  NLS.pdf({name:nm,dd:dd,mm:mm,yy:yy,pkg:pk,full:pk!=='Bản tự xem trọn bộ',note:document.getElementById('nt').value,phone:document.getElementById('ph').value})
     .then(function(fn){ms.textContent='Xong rồi cô! File "'+fn+'" nằm trong mục Tải xuống. Cô gửi file này qua Zalo cho khách.'},function(){ms.textContent='Chưa tạo được file, cô bấm lại giúp con nha.'})
     .then(function(){btn.disabled=false;btn.textContent='Tạo file PDF'});
 });
