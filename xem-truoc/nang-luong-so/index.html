@@ -598,13 +598,13 @@ body{padding-bottom:54px}
 .zalo-big{display:flex;align-items:center;justify-content:center;gap:10px;padding:16px;border-radius:999px;background:#0068ff;color:#fff!important;font-weight:800;font-size:17px;text-decoration:none;box-shadow:0 10px 26px #0068ff66}.zalo-big i{font-style:normal;background:#fff;color:#0068ff;border-radius:50%;width:34px;height:34px;display:grid;place-items:center;font-size:12px;font-weight:900}
 
 /* === xem trước bố cục mới === */
-.ld-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.ld-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .ld{position:relative;display:block;padding:26px 22px;border-radius:22px;border:1px solid var(--line);background:linear-gradient(165deg,#1b1650,#0b1129);color:var(--text);text-decoration:none;transition:.25s;overflow:hidden}
 .ld:hover{transform:translateY(-3px);border-color:var(--gold)}
 .ld i{font-style:normal;font-size:34px}.ld b{display:block;margin:10px 0 6px;font:700 22px 'Playfair Display',serif;color:var(--gold2)}.ld p{margin:0 0 14px;color:#cfd5ee;font-size:14.5px}.ld span{color:var(--gold);font-weight:700;font-size:14px}
 .ld-hot{border-color:var(--gold);box-shadow:0 0 0 5px #e3c27a14,0 20px 50px #0007}
 .ld:before{content:'';position:absolute;inset:-40% -40% auto auto;width:180px;height:180px;border-radius:50%;background:radial-gradient(#e3c27a33,transparent 70%)}
-@media(max-width:860px){.ld-grid{grid-template-columns:1fr}}
+@media(max-width:1000px){.ld-grid{grid-template-columns:1fr 1fr}}@media(max-width:600px){.ld-grid{grid-template-columns:1fr}}
 .pk-filter{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 0 26px}
 .pk-filter button{padding:10px 16px;border-radius:999px;border:1px solid #e3c27a66;background:#0b1129;color:var(--gold2);font:600 14px 'Be Vietnam Pro',sans-serif;cursor:pointer}
 .pk-filter button.on{background:linear-gradient(120deg,#c99a4a,#f5dda0 45%,#d4a957);color:#1a1205;border-color:transparent}
@@ -694,13 +694,13 @@ body{padding-bottom:54px}
     </div>
   </div>
 </header>
-<div class="tk" aria-hidden="true"><div class="tk-in"><span>Xem Số Chủ Đạo miễn phí</span><i>✦</i><span>Hiểu điểm mạnh của chính mình</span><i>✦</i><span>Bản giải mã viết riêng trong 24 giờ</span><i>✦</i><span>Biết năm nay nên tập trung vào việc gì</span><i>✦</i><span>Hiểu số, hiểu mình</span><i>✦</i><span>Chọn đúng thời điểm hành động</span><i>✦</i><span>Xem Số Chủ Đạo miễn phí</span><i>✦</i><span>Hiểu điểm mạnh của chính mình</span><i>✦</i><span>Bản giải mã viết riêng trong 24 giờ</span><i>✦</i><span>Biết năm nay nên tập trung vào việc gì</span><i>✦</i><span>Hiểu số, hiểu mình</span><i>✦</i><span>Chọn đúng thời điểm hành động</span><i>✦</i></div></div>
 <section class="section" id="loi-di">
   <div class="wrap">
     <div class="section-head reveal"><span class="kicker">Bắt đầu từ đâu?</span><h2>Tôi muốn <span class="gold">…</span></h2></div>
     <div class="ld-grid reveal">
       <a class="ld" href="#tu-xem"><i>🔮</i><b>Hiểu bản thân</b><p>Nhập họ tên và ngày sinh, xem ngay Số Chủ Đạo miễn phí.</p><span>Khám phá miễn phí →</span></a>
       <a class="ld" href="#cac-loai-so"><i>📱</i><b>Khám phá dãy số</b><p>Số điện thoại, biển số, số nhà, số tài khoản đang dùng hợp hay chưa.</p><span>Xem dãy số →</span></a>
+      <a class="ld" href="#goi-xem" data-go="nha"><i>💞</i><b>Tình cảm – gia đình</b><p>Hiểu nửa kia, hiểu con, xem hợp nhau ở điểm nào để bớt va chạm.</p><span>Xem gói gia đình →</span></a>
       <a class="ld ld-hot" href="#goi-xem"><i>📜</i><b>Nhận bản giải mã riêng</b><p>Cô Thảo viết riêng cho bạn, gửi file PDF qua Zalo trong 24 giờ.</p><span>Chọn gói →</span></a>
     </div>
   </div>
@@ -757,7 +757,7 @@ body{padding-bottom:54px}
             <ul><li>5 chỉ số còn lại</li><li>Biểu đồ ngày sinh</li><li>Năm cá nhân năm nay & năm tới</li><li>12 tháng cá nhân năm <span class="cy"></span></li></ul>
           </div>
           <div class="pay">
-            <div class="qr"><img id="qrImg" alt="Mã QR chuyển khoản TPBank" loading="lazy"><small>Quét bằng app ngân hàng, đã điền sẵn số tiền và nội dung</small></div>
+            <div class="qr"><img id="qrImg" alt="Mã QR chuyển khoản TPBank" loading="lazy"><small>Quét bằng app ngân hàng, đã điền sẵn số tiền và nội dung</small><div class="qr-mob"><a class="qr-save" data-qr="qrImg" href="#">📥 Lưu mã QR vào điện thoại</a></div></div>
             <div class="paysteps">
               <div class="ps"><b>Bước 1 · Chuyển khoản 99.000đ</b>
                 <div class="kv"><span>Ngân hàng</span><strong>TPBank</strong></div>
@@ -832,7 +832,7 @@ body{padding-bottom:54px}
       <div class="pdf-txt">
         <span class="kicker">Bạn sẽ nhận được gì</span>
         <h3>Bản giải mã <span class="gold">viết riêng cho bạn</span></h3>
-        <p>File PDF trình bày đẹp, dễ đọc trên điện thoại: Số Chủ Đạo, Sứ Mệnh, Linh Hồn, Nhân Cách, Ngày Sinh và lời khuyên cụ thể. Gói khởi đầu khoảng 10–12 trang, gói chuyên sâu 25–30 trang, trọn bộ 40–50 trang. Gửi qua Zalo trong 24 giờ.</p>
+        <p>File PDF trình bày đẹp, dễ đọc trên điện thoại: Số Chủ Đạo, Sứ Mệnh, Linh Hồn, Nhân Cách, Ngày Sinh và lời khuyên cụ thể. Gói khởi đầu khoảng 10–12 trang, gói chuyên sâu 17–19 trang, trọn bộ 20–22 trang, trọn đời 24–26 trang. Gửi qua Zalo trong 24 giờ.</p>
         <p class="pdf-note">Ảnh trên là bản mẫu, tên và ngày sinh chỉ để minh họa.</p>
         <a class="btn btn-gold" href="#tu-xem">✦ Tự xem miễn phí trước</a>
       </div>
@@ -939,7 +939,7 @@ body{padding-bottom:54px}
         <span class="lv">Khởi đầu</span>
         <h3>Bản Đồ Năng Lượng</h3>
         <p class="for">Cho người mới muốn hiểu mình nhanh, rõ, dễ đọc.</p>
-        <div class="price">299.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 <b>1 file PDF</b> · khoảng <b>10–12 trang</b></span><span>🔎 <b>6</b> mục phân tích</span></div><p class="pk-ben">✨ Hiểu mình trong 15 phút đọc, biết ngay điểm mạnh để phát huy.</p><details class="pk-more"><summary>Xem 6 mục cô Thảo phân tích</summary><ol><li>Bìa riêng có tên và ngày sinh của bạn</li><li>Bảng tổng hợp 8 chỉ số chính</li><li>Giải nghĩa từng chỉ số: điểm mạnh, điểm cần lưu ý</li><li>Biểu đồ ngày sinh và các mũi tên mạnh / trống</li><li>Năm cá nhân hiện tại: nên làm, nên tránh</li><li>Lời nhắn riêng của cô Thảo</li></ol></details>
+        <div class="price">299.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 <b>1 file PDF</b> · khoảng <b>15–16 trang</b></span><span>🔎 <b>6</b> mục phân tích</span></div><p class="pk-ben">✨ Hiểu mình trong 15 phút đọc, biết ngay điểm mạnh để phát huy.</p><details class="pk-more"><summary>Xem 6 mục cô Thảo phân tích</summary><ol><li>Bìa riêng có tên và ngày sinh của bạn</li><li>Bảng tổng hợp 8 chỉ số chính</li><li>Giải nghĩa từng chỉ số: điểm mạnh, điểm cần lưu ý</li><li>Biểu đồ ngày sinh và các mũi tên mạnh / trống</li><li>Năm cá nhân hiện tại: nên làm, nên tránh</li><li>Lời nhắn riêng của cô Thảo</li></ol></details>
         <ul>
           <li>File PDF giải mã 8 chỉ số chính</li>
           <li>Biểu đồ ngày sinh và các mũi tên</li>
@@ -952,7 +952,7 @@ body{padding-bottom:54px}
         <span class="lv">Sự nghiệp</span>
         <h3>Làm Chủ Hay Làm Thuê</h3>
         <p class="for">Cho người đang phân vân nghỉ việc, mở kinh doanh hay chọn nghề.</p>
-        <div class="price">399.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 <b>1 file PDF</b> · khoảng <b>10–12 trang</b></span><span>🔎 <b>6</b> mục phân tích</span></div><p class="pk-ben">✨ Bớt loay hoay, chọn đúng con đường hợp năng lượng của mình trước khi bỏ vốn.</p><details class="pk-more"><summary>Xem 6 mục cô Thảo phân tích</summary><ol><li>Bìa riêng có tên bạn</li><li>Bạn hợp làm chủ, làm thuê hay làm chung</li><li>Điểm mạnh và điểm yếu khi làm việc</li><li>3 nhóm nghề hợp năng lượng nhất</li><li>Thời điểm tốt để chuyển hướng</li><li>Lời khuyên cô Thảo dành riêng cho bạn</li></ol></details>
+        <div class="price">399.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 <b>1 file PDF</b> · khoảng <b>13–14 trang</b></span><span>🔎 <b>6</b> mục phân tích</span></div><p class="pk-ben">✨ Bớt loay hoay, chọn đúng con đường hợp năng lượng của mình trước khi bỏ vốn.</p><details class="pk-more"><summary>Xem 6 mục cô Thảo phân tích</summary><ol><li>Bìa riêng có tên bạn</li><li>Bạn hợp làm chủ, làm thuê hay làm chung</li><li>Điểm mạnh và điểm yếu khi làm việc</li><li>3 nhóm nghề hợp năng lượng nhất</li><li>Thời điểm tốt để chuyển hướng</li><li>Lời khuyên cô Thảo dành riêng cho bạn</li></ol></details>
         <ul>
           <li>Bạn hợp làm chủ, làm thuê hay làm chung</li>
           <li>3 nhóm nghề hợp năng lượng nhất</li>
@@ -965,7 +965,7 @@ body{padding-bottom:54px}
         <span class="lv">Gia đình</span>
         <h3>Thấu Hiểu Con Yêu</h3>
         <p class="for">Cho ba mẹ muốn hiểu tính cách, năng khiếu của con để nuôi dạy phù hợp.</p>
-        <div class="price">599.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 <b>1 file PDF</b> · khoảng <b>15–18 trang</b></span><span>🔎 <b>8</b> mục phân tích</span></div><p class="pk-ben">✨ Bớt la mắng sai cách, biết nuôi đúng năng khiếu của con từ sớm.</p><details class="pk-more"><summary>Xem 8 mục cô Thảo phân tích</summary><ol><li>Bìa riêng có tên bé</li><li>Các chỉ số chính của bé</li><li>Tính cách và cảm xúc của bé</li><li>Năng khiếu nổi bật, môn học / hoạt động hợp</li><li>Cách học hợp với bé, cách khen và nhắc nhở hiệu quả</li><li>Biểu đồ ngày sinh: điểm mạnh và điểm cần giúp bé rèn</li><li>Gợi ý hướng phát triển lâu dài</li><li>Lời nhắn cho ba mẹ</li></ol></details>
+        <div class="price">599.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 <b>1 file PDF</b> · khoảng <b>20–21 trang</b></span><span>🔎 <b>8</b> mục phân tích</span></div><p class="pk-ben">✨ Bớt la mắng sai cách, biết nuôi đúng năng khiếu của con từ sớm.</p><details class="pk-more"><summary>Xem 8 mục cô Thảo phân tích</summary><ol><li>Bìa riêng có tên bé</li><li>Các chỉ số chính của bé</li><li>Tính cách và cảm xúc của bé</li><li>Năng khiếu nổi bật, môn học / hoạt động hợp</li><li>Cách học hợp với bé, cách khen và nhắc nhở hiệu quả</li><li>Biểu đồ ngày sinh: điểm mạnh và điểm cần giúp bé rèn</li><li>Gợi ý hướng phát triển lâu dài</li><li>Lời nhắn cho ba mẹ</li></ol></details>
         <ul>
           <li>Giải mã chỉ số của 1 bé</li>
           <li>Năng khiếu, cách học, cách khen phù hợp</li>
@@ -978,7 +978,7 @@ body{padding-bottom:54px}
         <span class="lv">Mẹ và con</span>
         <h3>Năng Lượng 2 Mẹ Con</h3>
         <p class="for">Cho mẹ muốn hiểu mình, hiểu con và biết cách gần con hơn.</p>
-        <div class="price">799.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 <b>1 file PDF</b> · khoảng <b>18–22 trang</b></span><span>🔎 <b>8</b> mục phân tích</span></div><p class="pk-ben">✨ Hiểu vì sao 2 mẹ con hay “lệch sóng” và cách nói để con chịu nghe.</p><details class="pk-more"><summary>Xem 8 mục cô Thảo phân tích</summary><ol><li>Bìa có tên mẹ và tên con</li><li>Chỉ số chính của mẹ</li><li>Chỉ số chính của con</li><li>So 2 mẹ con: điểm hợp, điểm dễ va chạm</li><li>Cách mẹ nói để con nghe, cách khen và nhắc hợp với con</li><li>Gợi ý nuôi dạy, hoạt động 2 mẹ con nên làm cùng</li><li>Năm cá nhân của mẹ và con: năm nay cần lưu ý gì</li><li>Lời nhắn của cô Thảo</li></ol></details>
+        <div class="price">799.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 <b>1 file PDF</b> · khoảng <b>40–42 trang (2 file, mỗi người 1 file)</b></span><span>🔎 <b>8</b> mục phân tích</span></div><p class="pk-ben">✨ Hiểu vì sao 2 mẹ con hay “lệch sóng” và cách nói để con chịu nghe.</p><details class="pk-more"><summary>Xem 8 mục cô Thảo phân tích</summary><ol><li>Bìa có tên mẹ và tên con</li><li>Chỉ số chính của mẹ</li><li>Chỉ số chính của con</li><li>So 2 mẹ con: điểm hợp, điểm dễ va chạm</li><li>Cách mẹ nói để con nghe, cách khen và nhắc hợp với con</li><li>Gợi ý nuôi dạy, hoạt động 2 mẹ con nên làm cùng</li><li>Năm cá nhân của mẹ và con: năm nay cần lưu ý gì</li><li>Lời nhắn của cô Thảo</li></ol></details>
         <ul>
           <li>Giải mã chỉ số của cả mẹ và con</li>
           <li>Điểm hợp, điểm dễ va chạm giữa 2 mẹ con</li>
@@ -991,7 +991,7 @@ body{padding-bottom:54px}
         <span class="lv">Lứa đôi</span>
         <h3>Năng Lượng Tình Yêu</h3>
         <p class="for">Cho cặp đôi, vợ chồng muốn hiểu nhau và hòa hợp hơn.</p>
-        <div class="price">799.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 <b>1 file PDF</b> · khoảng <b>18–22 trang</b></span><span>🔎 <b>7</b> mục phân tích</span></div><p class="pk-ben">✨ Hiểu nửa kia để bớt cãi vã, biết cách yêu đúng “ngôn ngữ” của người ấy.</p><details class="pk-more"><summary>Xem 7 mục cô Thảo phân tích</summary><ol><li>Bìa có tên 2 người</li><li>Chỉ số chính của từng người</li><li>So sánh: điểm hợp, điểm dễ va chạm</li><li>Cách giao tiếp, cách thể hiện yêu thương hợp với người kia</li><li>Cùng phát triển: mục tiêu chung, tài chính, gia đình</li><li>Năm cá nhân của 2 người: năm nay nên lưu ý gì</li><li>Lời nhắn của cô Thảo</li></ol></details>
+        <div class="price">799.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 <b>1 file PDF</b> · khoảng <b>40–42 trang (2 file, mỗi người 1 file)</b></span><span>🔎 <b>7</b> mục phân tích</span></div><p class="pk-ben">✨ Hiểu nửa kia để bớt cãi vã, biết cách yêu đúng “ngôn ngữ” của người ấy.</p><details class="pk-more"><summary>Xem 7 mục cô Thảo phân tích</summary><ol><li>Bìa có tên 2 người</li><li>Chỉ số chính của từng người</li><li>So sánh: điểm hợp, điểm dễ va chạm</li><li>Cách giao tiếp, cách thể hiện yêu thương hợp với người kia</li><li>Cùng phát triển: mục tiêu chung, tài chính, gia đình</li><li>Năm cá nhân của 2 người: năm nay nên lưu ý gì</li><li>Lời nhắn của cô Thảo</li></ol></details>
         <ul>
           <li>Giải mã chỉ số của cả 2 người</li>
           <li>Điểm hợp, điểm dễ va chạm</li>
@@ -1005,7 +1005,7 @@ body{padding-bottom:54px}
         <span class="lv">Chuyên sâu</span>
         <h3>Giải Mã Chuyên Sâu</h3>
         <p class="for">Cho người đang đứng trước lựa chọn lớn, cần hiểu sâu và có lộ trình.</p>
-        <div class="price">899.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 <b>1 file PDF</b> · khoảng <b>25–30 trang</b></span><span>🔎 <b>10</b> mục phân tích</span></div><p class="pk-ben">✨ Có lộ trình rõ ràng cho quyết định lớn, biết thời điểm nào nên tiến, nên giữ.</p><details class="pk-more"><summary>Xem 10 mục cô Thảo phân tích</summary><ol><li>Bìa + lời mở đầu viết cho riêng bạn</li><li>8 chỉ số chính giải nghĩa chi tiết, đối chiếu chéo với nhau</li><li>Biểu đồ ngày sinh + mũi tên</li><li>4 Đỉnh Cao: tuổi nào, chủ đề gì</li><li>4 Thử Thách: bài học cần vượt qua</li><li>Định hướng nghề nghiệp</li><li>Định hướng tài chính</li><li>Định hướng tình cảm, gia đình</li><li>Năm cá nhân + 12 tháng cá nhân tới</li><li>Lộ trình gợi ý + lời nhắn của cô Thảo</li></ol></details>
+        <div class="price">899.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 <b>1 file PDF</b> · khoảng <b>21–22 trang</b></span><span>🔎 <b>10</b> mục phân tích</span></div><p class="pk-ben">✨ Có lộ trình rõ ràng cho quyết định lớn, biết thời điểm nào nên tiến, nên giữ.</p><details class="pk-more"><summary>Xem 10 mục cô Thảo phân tích</summary><ol><li>Bìa + lời mở đầu viết cho riêng bạn</li><li>8 chỉ số chính giải nghĩa chi tiết, đối chiếu chéo với nhau</li><li>Biểu đồ ngày sinh + mũi tên</li><li>4 Đỉnh Cao: tuổi nào, chủ đề gì</li><li>4 Thử Thách: bài học cần vượt qua</li><li>Định hướng nghề nghiệp</li><li>Định hướng tài chính</li><li>Định hướng tình cảm, gia đình</li><li>Năm cá nhân + 12 tháng cá nhân tới</li><li>Lộ trình gợi ý + lời nhắn của cô Thảo</li></ol></details>
         <ul>
           <li>Bản giải mã chuyên sâu cô Thảo viết riêng cho bạn</li>
           <li>Toàn bộ chỉ số + 4 đỉnh cao, 4 thử thách</li>
@@ -1019,7 +1019,7 @@ body{padding-bottom:54px}
         <span class="lv">Kinh doanh</span>
         <h3>Đặt Tên & Chọn Số</h3>
         <p class="for">Cho người đặt tên con, tên thương hiệu, chọn số điện thoại, ngày khai trương.</p>
-        <div class="price">999.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 <b>1 file PDF</b> · khoảng <b>12–15 trang</b></span><span>🔎 <b>4</b> mục phân tích</span></div><p class="pk-ben">✨ Chọn một lần, dùng cả đời: tên con, tên thương hiệu, số điện thoại hợp năng lượng.</p><details class="pk-more"><summary>Xem 4 mục cô Thảo phân tích</summary><ol><li>Phân tích năng lượng tên / số đang dùng: hợp hay chưa hợp với Số Chủ Đạo</li><li>Đề xuất 3–5 phương án tên / số hợp năng lượng, giải thích từng phương án</li><li>Gợi ý ngày đẹp để bắt đầu</li><li>Hỗ trợ qua Zalo đến khi bạn chốt</li></ol></details>
+        <div class="price">999.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 <b>1 file PDF</b> · khoảng <b>20–21 trang</b></span><span>🔎 <b>4</b> mục phân tích</span></div><p class="pk-ben">✨ Chọn một lần, dùng cả đời: tên con, tên thương hiệu, số điện thoại hợp năng lượng.</p><details class="pk-more"><summary>Xem 4 mục cô Thảo phân tích</summary><ol><li>Phân tích năng lượng tên / số đang dùng: hợp hay chưa hợp với Số Chủ Đạo</li><li>Đề xuất 3–5 phương án tên / số hợp năng lượng, giải thích từng phương án</li><li>Gợi ý ngày đẹp để bắt đầu</li><li>Hỗ trợ qua Zalo đến khi bạn chốt</li></ol></details>
         <ul>
           <li>Phân tích năng lượng tên / số hiện tại</li>
           <li>Đề xuất 3 đến 5 phương án hợp năng lượng</li>
@@ -1032,7 +1032,7 @@ body{padding-bottom:54px}
         <span class="lv">Số đẹp · Đổi vận</span>
         <h3>Combo Đổi Đời</h3>
         <p class="for">Cô Thảo chọn cho bạn số điện thoại và số tài khoản ngân hàng hợp năng lượng, để hóa giải số căn cước xấu. Chuyển khoản xong bạn gửi số căn cước, số điện thoại, số tài khoản đang dùng qua Zalo.</p>
-        <div class="price">1.499.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 <b>1 file PDF</b> · khoảng <b>12–15 trang</b></span><span>🔎 <b>6</b> mục phân tích</span></div><p class="pk-ben">✨ Số căn cước không đổi được, nhưng số điện thoại và số tài khoản bạn dùng mỗi ngày thì chọn lại được cho hợp năng lượng.</p><details class="pk-more"><summary>Xem 6 mục cô Thảo phân tích</summary><ol><li>Phân tích số căn cước hiện tại: cặp tốt, cặp xấu</li><li>Phân tích số điện thoại và số tài khoản đang dùng</li><li>Cách các dãy số tác động lẫn nhau</li><li>Chọn 3 số điện thoại đẹp hợp ngày sinh, khắc chế cặp xấu của căn cước</li><li>Gợi ý dãy số tài khoản ngân hàng đẹp để bạn chọn mở</li><li>Hướng dẫn dùng số mới và thời điểm nên đổi</li></ol></details>
+        <div class="price">1.499.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 <b>1 file PDF</b> · khoảng <b>20–21 trang</b></span><span>🔎 <b>6</b> mục phân tích</span></div><p class="pk-ben">✨ Số căn cước không đổi được, nhưng số điện thoại và số tài khoản bạn dùng mỗi ngày thì chọn lại được cho hợp năng lượng.</p><details class="pk-more"><summary>Xem 6 mục cô Thảo phân tích</summary><ol><li>Phân tích số căn cước hiện tại: cặp tốt, cặp xấu</li><li>Phân tích số điện thoại và số tài khoản đang dùng</li><li>Cách các dãy số tác động lẫn nhau</li><li>Chọn 3 số điện thoại đẹp hợp ngày sinh, khắc chế cặp xấu của căn cước</li><li>Gợi ý dãy số tài khoản ngân hàng đẹp để bạn chọn mở</li><li>Hướng dẫn dùng số mới và thời điểm nên đổi</li></ol></details>
         <ul>
           <li>Phân tích căn cước, số điện thoại, số tài khoản đang dùng</li>
           <li>Chọn 3 số điện thoại đẹp hợp năng lượng của bạn</li>
@@ -1045,7 +1045,7 @@ body{padding-bottom:54px}
         <span class="lv">VIP · Trọn bộ</span>
         <h3>Trọn Bộ Năng Lượng Số</h3>
         <p class="for">Cho chủ doanh nghiệp, người muốn có tấm bản đồ đầy đủ cho 12 tháng tới và việc kinh doanh.</p>
-        <div class="price">2.999.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 <b>1 file PDF</b> · khoảng <b>40–50 trang</b></span><span>🔎 <b>5</b> phần lớn, gồm trọn gói chuyên sâu</span></div><p class="pk-ben">✨ Một tấm bản đồ cho cả năm làm ăn, mở ra là biết tháng này nên làm gì.</p><details class="pk-more"><summary>Xem 5 mục cô Thảo phân tích</summary><ol><li>Toàn bộ nội dung gói Giải Mã Chuyên Sâu</li><li>Dự báo từng tháng trong 12 tháng tới: tháng nào đẩy mạnh, tháng nào giữ sức</li><li>Gợi ý ngày tốt khai trương, ký kết trong năm</li><li>Góp ý tên thương hiệu, số điện thoại (Bát Cực Linh Số)</li><li>Lộ trình cả năm + lời nhắn của cô Thảo</li></ol></details>
+        <div class="price">2.999.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 <b>1 file PDF</b> · khoảng <b>21–22 trang</b></span><span>🔎 <b>5</b> phần lớn, gồm trọn gói chuyên sâu</span></div><p class="pk-ben">✨ Một tấm bản đồ cho cả năm làm ăn, mở ra là biết tháng này nên làm gì.</p><details class="pk-more"><summary>Xem 5 mục cô Thảo phân tích</summary><ol><li>Toàn bộ nội dung gói Giải Mã Chuyên Sâu</li><li>Dự báo từng tháng trong 12 tháng tới: tháng nào đẩy mạnh, tháng nào giữ sức</li><li>Gợi ý ngày tốt khai trương, ký kết trong năm</li><li>Góp ý tên thương hiệu, số điện thoại (Bát Cực Linh Số)</li><li>Lộ trình cả năm + lời nhắn của cô Thảo</li></ol></details>
         <ul>
           <li>1 file PDF chuyên sâu trọn bộ, gửi qua Zalo trong 24 giờ</li>
           <li>Toàn bộ nội dung gói Giải Mã Chuyên Sâu</li>
@@ -1059,7 +1059,7 @@ body{padding-bottom:54px}
         <span class="lv">VIP · Cả cuộc đời</span>
         <h3>Luận Giải Trọn Đời</h3>
         <p class="for">Gói đầy đủ nhất. Bức tranh cả cuộc đời từ họ tên và ngày sinh: từng giai đoạn, tình duyên, sự nghiệp, tiền bạc, sức khỏe và những năm cần lưu ý.</p>
-        <div class="price">3.999.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 <b>1 file PDF</b> · khoảng <b>50–60 trang</b></span><span>🔎 <b>9</b> mục phân tích</span></div><p class="pk-ben">✨ Nhìn trước cả chặng đường dài để biết lúc nào nên tiến, lúc nào nên giữ, không bị bất ngờ.</p><details class="pk-more"><summary>Xem 9 mục cô Thảo phân tích</summary><ol><li>Bìa riêng có tên bạn</li><li>Toàn bộ nội dung gói Giải Mã Chuyên Sâu</li><li>Toàn bộ chỉ số chính từ họ tên và ngày sinh</li><li>Từng giai đoạn cuộc đời: 4 đỉnh cao và 4 thử thách</li><li>Tình duyên, gia đạo qua từng giai đoạn</li><li>Sự nghiệp và tiền bạc qua từng giai đoạn</li><li>Sức khỏe và những điều cần giữ gìn</li><li>Những năm cần lưu ý, năm nên bứt phá</li><li>Lời khuyên cô Thảo dành riêng cho bạn</li></ol></details>
+        <div class="price">3.999.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 <b>1 file PDF</b> · khoảng <b>25–26 trang</b></span><span>🔎 <b>9</b> mục phân tích</span></div><p class="pk-ben">✨ Nhìn trước cả chặng đường dài để biết lúc nào nên tiến, lúc nào nên giữ, không bị bất ngờ.</p><details class="pk-more"><summary>Xem 9 mục cô Thảo phân tích</summary><ol><li>Bìa riêng có tên bạn</li><li>Toàn bộ nội dung gói Giải Mã Chuyên Sâu</li><li>Toàn bộ chỉ số chính từ họ tên và ngày sinh</li><li>Từng giai đoạn cuộc đời: 4 đỉnh cao và 4 thử thách</li><li>Tình duyên, gia đạo qua từng giai đoạn</li><li>Sự nghiệp và tiền bạc qua từng giai đoạn</li><li>Sức khỏe và những điều cần giữ gìn</li><li>Những năm cần lưu ý, năm nên bứt phá</li><li>Lời khuyên cô Thảo dành riêng cho bạn</li></ol></details>
         <ul>
           <li>Gói cao nhất: gồm toàn bộ gói Giải Mã Chuyên Sâu</li>
           <li>Luận giải từng giai đoạn của cả cuộc đời</li>
@@ -1187,7 +1187,6 @@ body{padding-bottom:54px}
 
 
 <!-- PACKAGES -->
-<div class="tk alt" aria-hidden="true"><div class="tk-in"><span>Định hướng nghề nghiệp hợp với bạn</span><i>✦</i><span>Hiểu nửa kia để bớt va chạm</span><i>✦</i><span>Hiểu con để nuôi dạy đúng cách</span><i>✦</i><span>Chọn tên, số, ngày khai trương hợp năng lượng</span><i>✦</i><span>Năm cá nhân của bạn là số mấy?</span><i>✦</i><span>Nhắn Zalo cô Thảo 0935 949 141</span><i>✦</i><span>Định hướng nghề nghiệp hợp với bạn</span><i>✦</i><span>Hiểu nửa kia để bớt va chạm</span><i>✦</i><span>Hiểu con để nuôi dạy đúng cách</span><i>✦</i><span>Chọn tên, số, ngày khai trương hợp năng lượng</span><i>✦</i><span>Năm cá nhân của bạn là số mấy?</span><i>✦</i><span>Nhắn Zalo cô Thảo 0935 949 141</span><i>✦</i></div></div>
 
 
 
@@ -1366,7 +1365,7 @@ body{padding-bottom:54px}
     document.getElementById('payNote').textContent=note;
     document.getElementById('custCode').textContent=cust;
     document.getElementById('qrImg').src='https://img.vietqr.io/image/TPB-87681714131-compact2.png?amount=99000&addInfo='+encodeURIComponent(note)+'&accountName='+encodeURIComponent('HOANG THI THANH THAO');
-    document.getElementById('qrImg').onerror=function(){this.onerror=null;this.src='/nang-luong-so/qr-tpbank.jpg';this.nextElementSibling.textContent='Quét mã, nhập số tiền 99.000đ và chép nội dung bên cạnh'};
+    document.getElementById('qrImg').onerror=function(){this.onerror=null;this.src='qr-tpbank.jpg';this.nextElementSibling.textContent='Quét mã, nhập số tiền 99.000đ và chép nội dung bên cạnh'};
     payText='Chào cô Thảo, con/em đã chuyển khoản 99.000đ để mở khóa bản tự xem thần số học.\n- Mã khách: '+cust+'\n- Họ tên: '+name+'\n- Ngày sinh: '+dd+'/'+mm+'/'+yy+'\nCon/em gửi kèm ảnh chuyển khoản, nhờ cô gửi mã mở khóa ạ.';
     var r=document.getElementById('results');
     if(load('nls-ok-'+cust)==='1')r.classList.remove('is-locked');else r.classList.add('is-locked');
@@ -1494,7 +1493,7 @@ body{padding-bottom:54px}
     var ct=v[1]+(off?' UD'+off:'')+' '+(nm||'HO TEN')+' '+(ph||'SDT');
     $('pyCt').textContent=ct;$('pyAm').innerHTML=off?('<s style="color:var(--muted);font-size:14px">'+vnd(base)+'</s> '+vnd(am)+(udLeft()?'<br><small style="color:var(--gold2);font-size:12.5px">Ưu đãi -10% còn '+udLeft()+'</small>':'')):vnd(am);
     $('pyAm').dataset.v=am;
-    var q=$('pyQr');q.onerror=function(){this.onerror=null;this.src='/nang-luong-so/qr-tpbank.jpg';$('pyQrNote').textContent='Quét mã, nhập đúng số tiền và chép nội dung bên cạnh'};
+    var q=$('pyQr');q.onerror=function(){this.onerror=null;this.src='qr-tpbank.jpg';$('pyQrNote').textContent='Quét mã, nhập đúng số tiền và chép nội dung bên cạnh'};
     q.src='https://img.vietqr.io/image/TPB-87681714131-compact2.png?amount='+am+'&addInfo='+encodeURIComponent(ct.slice(0,50))+'&accountName='+encodeURIComponent('HOANG THI THANH THAO');
   }
   var qT;['pyPk','pyNm','pyPh','pyDob'].forEach(function(i){$(i).addEventListener('input',function(){clearTimeout(qT);qT=setTimeout(pyUpd,350)});$(i).addEventListener('change',pyUpd)});
@@ -1656,7 +1655,7 @@ document.querySelectorAll('[data-lk]').forEach(function(b){b.addEventListener('c
 var nm=$('helloName').textContent||'',cc=($('custCode')&&$('custCode').textContent)||'';var ct=(v[1]+' '+(cc||'')+' '+un(nm)).replace(/\s+/g,' ').trim().slice(0,50);cur.ct=ct;
 $('lkT').textContent=v[2];$('lkAm').textContent=vnd(cur.am);$('lkCt').textContent=ct;$('lkDone').textContent='✓ Tôi đã chuyển khoản · báo cô Thảo qua Zalo';$('lkDone').dataset.sent='';
 $('lkHint').textContent='Bấm nút trên, trang chép sẵn lời nhắn có tên, ngày sinh và gói bạn chọn. Mở Zalo, dán và gửi kèm ảnh chuyển khoản.';
-var q=$('lkQr');q.onerror=function(){this.onerror=null;this.src='/nang-luong-so/qr-tpbank.jpg';$('lkQrN').textContent='Quét mã, nhập đúng số tiền và chép nội dung bên dưới'};
+var q=$('lkQr');q.onerror=function(){this.onerror=null;this.src='qr-tpbank.jpg';$('lkQrN').textContent='Quét mã, nhập đúng số tiền và chép nội dung bên dưới'};
 q.src='https://img.vietqr.io/image/TPB-87681714131-compact2.png?amount='+cur.am+'&addInfo='+encodeURIComponent(ct)+'&accountName='+encodeURIComponent('HOANG THI THANH THAO');
 M.hidden=false;document.body.style.overflow='hidden'})});
 function close(){M.hidden=true;document.body.style.overflow=''}
@@ -1669,8 +1668,12 @@ if(!this.dataset.sent){this.dataset.sent='1';if(window.__gf)window.__gf({loai:'M
 try{localStorage.setItem('nls-paid','1')}catch(e){}
 $('lkHint').innerHTML='<b style="color:var(--gold2)">Đã chép sẵn lời nhắn.</b> Mở Zalo cô Thảo, dán lời nhắn và gửi kèm ảnh chuyển khoản. Cô Thảo gửi bản giải mã gói '+cur.name+' cho bạn qua Zalo trong 24 giờ.'})})();</script>
 <script>/* HUD góc + tia quét */(function(){document.querySelectorAll('.paycard,.pack.hot,.lk-box').forEach(function(e){if(getComputedStyle(e).position==='static')e.style.position='relative';var h=document.createElement('i');h.className='hud';h.setAttribute('aria-hidden','true');e.appendChild(h)});document.querySelectorAll('.portrait,.phone').forEach(function(e){if(getComputedStyle(e).position==='static')e.style.position='relative';e.style.overflow='hidden';var s=document.createElement('i');s.className='scan';s.setAttribute('aria-hidden','true');e.appendChild(s)})})();</script>
-<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.qr-save');if(!a)return;var im=document.getElementById(a.dataset.qr);if(!im)return;e.preventDefault();var src=im.currentSrc||im.src;
-fetch(src).then(function(r){if(!r.ok)throw 0;return r.blob()}).then(function(b){var u=URL.createObjectURL(b),d=document.createElement('a');d.href=u;d.download='QR-chuyen-khoan-co-Thao.png';document.body.appendChild(d);d.click();d.remove();setTimeout(function(){URL.revokeObjectURL(u)},4000);a.textContent='✓ Đã lưu ảnh QR, mở app ngân hàng để quét'}).catch(function(){window.open(src,'_blank');a.textContent='Nhấn giữ ảnh QR → Lưu ảnh'})});</script>
+<script>/* Lưu mã QR: ảnh VietQR không cho tải trực tiếp, nên mở ảnh to ngay trên trang để khách nhấn giữ → Lưu ảnh */
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.qr-save');if(!a)return;var im=document.getElementById(a.dataset.qr);if(!im)return;e.preventDefault();var src=im.currentSrc||im.src;
+var o=document.getElementById('qrSaveBox');if(!o){o=document.createElement('div');o.id='qrSaveBox';o.setAttribute('role','dialog');o.style.cssText='position:fixed;inset:0;z-index:2147483000;background:#050816f2;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;text-align:center;color:#f3eedf;font-family:inherit';
+o.innerHTML='<p style="margin:0 0 12px;font-size:17px;font-weight:800;color:#f5dda0">Nhấn giữ vào mã QR → chọn “Lưu ảnh” / “Thêm vào Ảnh”</p><img alt="Mã QR chuyển khoản" style="width:min(86vw,380px);height:auto;background:#fff;border-radius:16px;padding:8px;-webkit-touch-callout:default;user-select:auto"><p style="margin:12px 0 16px;font-size:14px;color:#cfd5ee;max-width:380px">Sau đó mở app ngân hàng → Quét QR → chọn ảnh vừa lưu. Số tiền và nội dung đã điền sẵn.</p><button type="button" style="padding:13px 28px;border-radius:999px;border:0;font-weight:800;font-size:16px;color:#1a1205;background:linear-gradient(120deg,#c99a4a,#f5dda0 45%,#d4a957)">Xong, quay lại chuyển khoản</button>';
+o.querySelector('button').addEventListener('click',function(){o.style.display='none'});o.addEventListener('click',function(ev){if(ev.target===o)o.style.display='none'});document.body.appendChild(o)}
+o.querySelector('img').src=src;o.style.display='flex'});</script>
 <script>/* Khách điền tên + Zalo (không bắt buộc) thì lưu lại để cô nhắn khách bỏ dở */(function(){
 var nm=document.getElementById('pyNm'),ph=document.getElementById('pyPh'),pk=document.getElementById('pyPk'),qr=document.getElementById('pyQr');if(!nm||!ph||!qr)return;
 
@@ -1714,5 +1717,6 @@ if(!(d>=1&&d<=30&&m>=1&&m<=12&&y>=1900&&y<=2100)){o.textContent='Bạn nhập đ
 if(!r){o.textContent='Năm '+y+' không có tháng '+m+' nhuận, bạn bỏ chọn "Tháng nhuận" nhé.';return}
 ['d','m','y'].forEach(function(id,i){var s=document.getElementById(id);if(s){s.value=String(r[i]);s.dispatchEvent(new Event('change'))}});
 o.innerHTML='Ngày dương lịch là <b>'+r[0]+'/'+r[1]+'/'+r[2]+'</b>. Con đã điền sẵn vào ô ngày sinh ở trên, bạn kiểm tra lại rồi bấm Giải mã.'})})();</script>
-<!--paymodal--><style>.pm-ov{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:10px;background:#000c;backdrop-filter:blur(4px)}.pm-ov.on{display:flex}.pm-box{position:relative;width:min(680px,100%);max-height:94vh;overflow:auto;-webkit-overflow-scrolling:touch;border-radius:20px;background:#0d0f1c;box-shadow:0 20px 80px #000;padding-top:16px}.pm-box>*:not(.pm-x){margin:0!important;opacity:1!important;transform:none!important;visibility:visible!important}.pm-box .reveal{opacity:1!important;transform:none!important}.pm-x{position:sticky;top:8px;float:right;margin:8px 8px -48px 0;z-index:5;width:40px;height:40px;border-radius:50%;border:1px solid #e3b675;background:#0d0f1ce6;color:#f3d48b;font-size:26px;line-height:1;cursor:pointer}</style><script>(function(){var card=document.querySelector("#thanh-toan .paycard");if(!card)return;var ph=document.createComment("pay"),ov=document.createElement("div");ov.className="pm-ov";ov.setAttribute("role","dialog");ov.setAttribute("aria-label","Chuyển khoản");ov.innerHTML='<div class="pm-box"><button class="pm-x" type="button" aria-label="Đóng">×</button></div>';document.body.appendChild(ov);var box=ov.firstChild;function open(v){var s=document.getElementById("pyPk");if(v&&s){s.value=v;s.dispatchEvent(new Event("change"))}if(!ph.parentNode){card.parentNode.insertBefore(ph,card);box.appendChild(card)}ov.classList.add("on");document.documentElement.style.overflow="hidden";box.scrollTop=0;setTimeout(function(){var f=document.getElementById("pyNm");if(f&&!f.value)f.focus({preventScroll:true})},300)}function close(){if(!ph.parentNode)return;ph.parentNode.insertBefore(card,ph);ph.parentNode.removeChild(ph);ov.classList.remove("on");document.documentElement.style.overflow=""}ov.querySelector(".pm-x").onclick=close;ov.addEventListener("click",function(e){if(e.target===ov)close()});document.addEventListener("keydown",function(e){if(e.key==="Escape")close()});document.querySelectorAll("[data-pk]").forEach(function(b){b.addEventListener("click",function(e){e.preventDefault();open(b.getAttribute("data-pk"))})})})();</script><!--/paymodal--></body>
+<!--paymodal--><style>.pm-ov{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:10px;background:#000c;backdrop-filter:blur(4px)}.pm-ov.on{display:flex}.pm-box{position:relative;width:min(680px,100%);max-height:94vh;overflow:auto;-webkit-overflow-scrolling:touch;border-radius:20px;background:#0d0f1c;box-shadow:0 20px 80px #000;padding-top:16px}.pm-box>*:not(.pm-x){margin:0!important;opacity:1!important;transform:none!important;visibility:visible!important}.pm-box .reveal{opacity:1!important;transform:none!important}.pm-x{position:sticky;top:8px;float:right;margin:8px 8px -48px 0;z-index:5;width:40px;height:40px;border-radius:50%;border:1px solid #e3b675;background:#0d0f1ce6;color:#f3d48b;font-size:26px;line-height:1;cursor:pointer}</style><script>(function(){var card=document.querySelector("#thanh-toan .paycard");if(!card)return;var ph=document.createComment("pay"),ov=document.createElement("div");ov.className="pm-ov";ov.setAttribute("role","dialog");ov.setAttribute("aria-label","Chuyển khoản");ov.innerHTML='<div class="pm-box"><button class="pm-x" type="button" aria-label="Đóng">×</button></div>';document.body.appendChild(ov);var box=ov.firstChild;function open(v){var s=document.getElementById("pyPk");if(v&&s){s.value=v;s.dispatchEvent(new Event("change"))}if(!ph.parentNode){card.parentNode.insertBefore(ph,card);box.appendChild(card)}ov.classList.add("on");document.documentElement.style.overflow="hidden";box.scrollTop=0;setTimeout(function(){var f=document.getElementById("pyNm");if(f&&!f.value)f.focus({preventScroll:true})},300)}function close(){if(!ph.parentNode)return;ph.parentNode.insertBefore(card,ph);ph.parentNode.removeChild(ph);ov.classList.remove("on");document.documentElement.style.overflow=""}ov.querySelector(".pm-x").onclick=close;ov.addEventListener("click",function(e){if(e.target===ov)close()});document.addEventListener("keydown",function(e){if(e.key==="Escape")close()});document.querySelectorAll("[data-pk]").forEach(function(b){b.addEventListener("click",function(e){e.preventDefault();open(b.getAttribute("data-pk"))})})})();</script><!--/paymodal--><script>document.querySelectorAll(".ld[data-go]").forEach(function(a){a.addEventListener("click",function(){var b=document.querySelector('.pk-filter button[data-f="'+a.dataset.go+'"]');if(b)b.click()})})</script>
+</body>
 </html>
