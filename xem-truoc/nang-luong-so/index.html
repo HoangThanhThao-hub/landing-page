@@ -641,6 +641,24 @@ body{padding-bottom:54px}
 @media (prefers-reduced-motion:reduce){.hero:after,.hero h1 .gold,.ld:after{animation:none}}
 /* 1 điểm liên hệ: chỉ giữ nút Zalo */
 .chat-btn,#chat,.exit{display:none!important}
+
+/* === bản pha: học cái hay từ giao diện ChatGPT === */
+.hero h1.h1-mix{font-size:clamp(44px,6.2vw,84px);line-height:1.05}
+.h1-mix .l1{display:block;color:#fbf6ea;font-weight:500}
+.h1-mix .l2{display:block;font-style:italic;font-weight:500}
+.h1-mix small{display:block;margin-top:18px;font:600 13px 'Be Vietnam Pro',sans-serif;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.portrait{outline:1px solid #e3c27a55;outline-offset:14px}
+.cream{background:#f7f1e3;color:#1c2140;--text:#1c2140;--muted:#5b5f78;--line:#e2d6b8}
+.cream .has-vbg,.cream .vbg{display:none}
+.cream h2,.cream h3,.cream b{color:#1c2140}
+.cream .gold,.cream h2 .gold{background:linear-gradient(100deg,#8a6420,#b8893d 50%,#8a6420);-webkit-background-clip:text;background-clip:text;color:transparent;animation:none;font-style:italic}
+.cream .kicker{color:#9a7428}.cream .section-head .kicker:after{background:#9a7428}
+.cream .cs-it,.cream .cs-ex{background:#fffaf0!important;border:1px solid #e2d6b8!important;box-shadow:none!important;color:#1c2140}
+.cream .cs-it p,.cream .cs-ex p,.cream .faq p{color:#4a4f68!important}
+.cream .faq summary{color:#1c2140}.cream .faq details{border-color:#e2d6b8}.cream .faq summary:after{color:#9a7428}
+.pack{border-radius:10px;background:#0d1431;border:1px solid #e3c27a40;box-shadow:none}
+.pack.hot{border-color:var(--gold)}
+.pack li{border-bottom-color:#e3c27a1a}
 </style>
 </head>
 <body>
@@ -667,7 +685,7 @@ body{padding-bottom:54px}
   <div class="wrap">
     <div>
       <span class="kicker">Master Hoàng Thanh Thảo · Pythagoras · Bát Cực Linh Số</span>
-      <h1><span class="gold">Giải Mã<br>Năng Lượng Số</span><em>Thêm một góc nhìn về chính mình</em><span class="shine-sweep" aria-hidden="true"></span></h1>
+      <h1 class="h1-mix"><span class="l1">Hiểu con số.</span><span class="gold l2">Thấu chính mình.</span><small>Giải mã năng lượng số</small><span class="shine-sweep" aria-hidden="true"></span></h1>
       <p class="hero-lead">Khám phá họ tên, ngày sinh và những dãy số quen thuộc qua Pythagoras và Bát Cực Linh Số, như một góc nhìn để tự chiêm nghiệm và đối chiếu với trải nghiệm của chính bạn.</p>
       <div class="hero-ctas">
         <a class="btn btn-gold btn-free" href="#tu-xem">✦ Tự xem miễn phí<span class="free-tag">0đ</span></a>
@@ -839,7 +857,7 @@ body{padding-bottom:54px}
     </div>
   </div>
 </section>
-<section class="section" id="co-so">
+<section class="section cream" id="co-so">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="kicker">Cơ sở &amp; phương pháp</span>
@@ -1095,7 +1113,7 @@ body{padding-bottom:54px}
   </div>
 </section>
 <!-- FAQ -->
-<section class="section" id="hoi-dap">
+<section class="section cream" id="hoi-dap">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="kicker">Hỏi đáp</span>
