@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet"/>
 <style>
-:root{--bg:#050b1f;--bg2:#0a1636;--ink:#eaf2ff;--muted:#a9b8d6;--cyan:#38e1ff;--blue:#4f7cff;--violet:#9a6bff;--gold:#f5c96a;--gold2:#ffe6a8;--line:rgba(140,190,255,.18)}
+:root{--bg:#050a24;--bg2:#0a1640;--pink:#ff5fd2;--holo:linear-gradient(120deg,#2f8bff,#7b5cff 45%,#ff5fd2);--ink:#eaf2ff;--muted:#a9b8d6;--cyan:#38e1ff;--blue:#4f7cff;--violet:#9a6bff;--gold:#f5c96a;--gold2:#ffe6a8;--line:rgba(140,190,255,.18)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Be Vietnam Pro',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden}
@@ -21,9 +21,10 @@ img{max-width:100%;display:block}
 .wrap{max-width:1140px;margin:0 auto;padding:0 16px}
 /* nền hologram */
 .sky{position:fixed;inset:0;z-index:-1;background:
- radial-gradient(900px 600px at 80% -10%,rgba(79,124,255,.35),transparent 60%),
- radial-gradient(700px 500px at -10% 30%,rgba(154,107,255,.25),transparent 60%),
- radial-gradient(800px 600px at 50% 120%,rgba(56,225,255,.18),transparent 60%),var(--bg)}
+ radial-gradient(900px 600px at 85% -10%,rgba(47,139,255,.42),transparent 60%),
+ radial-gradient(700px 520px at -10% 25%,rgba(123,92,255,.32),transparent 60%),
+ radial-gradient(600px 480px at 100% 60%,rgba(255,95,210,.16),transparent 60%),
+ radial-gradient(800px 600px at 40% 120%,rgba(0,170,255,.22),transparent 60%),linear-gradient(180deg,#050a24,#071338 60%,#050a24)}
 .sky:after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.55) 1px,transparent 1.4px);background-size:90px 90px;opacity:.25;animation:tw 8s ease-in-out infinite alternate}
 @keyframes tw{to{opacity:.08;transform:translateY(-20px)}}
 /* menu chung */
@@ -31,24 +32,25 @@ img{max-width:100%;display:block}
 .nav .wrap{display:flex;align-items:center;gap:14px;height:64px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px}
 .brand img{width:40px;height:40px;object-fit:contain}
-.brand small{display:block;font-size:11px;font-weight:500;color:var(--gold);letter-spacing:2px}
+.brand small{display:block;font-size:11px;font-weight:500;color:var(--cyan);letter-spacing:2px}
 .menu{margin-left:auto;display:flex;gap:4px}
 .menu a{padding:8px 12px;border-radius:99px;font-size:14px;color:var(--muted);transition:.2s}
 .menu a:hover{color:#fff;background:rgba(255,255,255,.07)}
-.nav .zl{margin-left:6px;padding:9px 16px;border-radius:99px;font-weight:700;font-size:14px;background:linear-gradient(135deg,var(--cyan),var(--blue));color:#04122e}
-@media(max-width:860px){.menu{display:none}.nav .zl{margin-left:auto}}
+.nav .zl{margin-left:6px;padding:9px 16px;border-radius:99px;font-weight:700;font-size:14px;background:var(--holo);color:#fff}
+@media(max-width:860px){.menu{display:none}.nav .zl{margin-left:auto;white-space:nowrap}}
+@media(max-width:480px){.brand{font-size:14px;white-space:nowrap}.brand small{font-size:9px;letter-spacing:1px}.brand img{width:34px;height:34px}.nav .zl{padding:8px 12px;font-size:13px}}
 /* hero */
 .hero{padding:56px 0 30px}
 .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
 .kicker{display:inline-block;padding:6px 14px;border:1px solid var(--line);border-radius:99px;font-size:13px;color:var(--cyan);background:rgba(56,225,255,.06)}
 h1{font-family:'Playfair Display',serif;font-size:clamp(38px,6vw,66px);line-height:1.12;margin:16px 0 14px;padding-top:6px}
-h1 .g{background:linear-gradient(100deg,var(--gold2),var(--gold) 40%,#fff4d6 55%,var(--gold) 70%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 6s linear infinite}
+h1 .g{background:linear-gradient(100deg,#5fd8ff,#7b9bff 25%,#b98cff 45%,#ff7ad9 60%,#7b9bff 80%,#5fd8ff);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 6s linear infinite}
 @keyframes sheen{to{background-position:200% center}}
 .lead{font-size:18px;color:var(--muted);max-width:540px}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:14px;font-weight:700;font-size:16px;transition:transform .2s}
 .btn:hover{transform:translateY(-2px)}
-.btn.gold{background:linear-gradient(135deg,#ffe6a8,#f5c96a 50%,#d99a2b);color:#2a1800;box-shadow:0 8px 30px rgba(245,201,106,.35);position:relative;overflow:hidden}
+.btn.gold{background:var(--holo);color:#fff;box-shadow:0 10px 34px rgba(123,92,255,.45),inset 0 1px 0 rgba(255,255,255,.35);position:relative;overflow:hidden}
 .btn.gold:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent);transform:skewX(-20deg);animation:shine 3.5s infinite}
 @keyframes shine{60%,100%{left:130%}}
 .btn.ghost{border:1px solid var(--line);background:rgba(255,255,255,.04)}
@@ -56,9 +58,9 @@ h1 .g{background:linear-gradient(100deg,var(--gold2),var(--gold) 40%,#fff4d6 55%
 .trust b{color:#fff;font-size:20px;display:block}
 .photo{position:relative;justify-self:center;width:min(380px,100%);aspect-ratio:2/3}
 .ring{position:absolute;left:50%;top:46%;width:115%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;
- background:conic-gradient(from 0deg,transparent,rgba(56,225,255,.55),transparent 30%,rgba(154,107,255,.5),transparent 60%,rgba(245,201,106,.55),transparent);
+ background:conic-gradient(from 0deg,transparent,rgba(56,225,255,.6),transparent 30%,rgba(123,92,255,.55),transparent 60%,rgba(255,95,210,.55),transparent);
  -webkit-mask:radial-gradient(circle,transparent 62%,#000 63%,#000 64.5%,transparent 66%);mask:radial-gradient(circle,transparent 62%,#000 63%,#000 64.5%,transparent 66%);animation:spin 18s linear infinite}
-.glow{position:absolute;left:50%;top:48%;width:80%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(79,124,255,.45),transparent 70%)}
+.glow{position:absolute;left:50%;top:46%;width:82%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:conic-gradient(from 30deg,#2f8bff,#7b5cff,#ff5fd2,#00d4ff,#2f8bff);filter:blur(46px);opacity:.55;animation:spin 14s linear infinite}
 @keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
 .photo img{position:relative;width:100%;height:100%;object-fit:contain;object-position:bottom;-webkit-mask:linear-gradient(#000 80%,transparent);mask:linear-gradient(#000 80%,transparent)}
 @media(max-width:860px){.hero{padding-top:30px}.hero .wrap{grid-template-columns:1fr;text-align:center}.lead{margin:0 auto}.cta,.trust{justify-content:center}.photo{width:min(300px,80%);order:-1}}
@@ -69,7 +71,7 @@ section{padding:50px 0}
 .sh p{color:var(--muted);margin-top:8px}
 /* các cánh cửa */
 .doors{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.door{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));display:flex;flex-direction:column;transition:transform .25s,border-color .25s,box-shadow .25s}
+.door{position:relative;border-radius:20px;box-shadow:0 18px 40px -22px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.08);overflow:hidden;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));display:flex;flex-direction:column;transition:transform .25s,border-color .25s,box-shadow .25s}
 .door:hover{transform:translateY(-5px);border-color:var(--c);box-shadow:0 14px 40px -12px var(--c)}
 .door .th{aspect-ratio:1.91/1;overflow:hidden;background:#0b1430}
 .door .th img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
@@ -91,10 +93,10 @@ section{padding:50px 0}
 .about p{color:var(--muted);margin-top:12px}
 .about ul{list-style:none;margin-top:14px}
 .about li{padding:6px 0 6px 28px;position:relative}
-.about li:before{content:"✦";position:absolute;left:4px;color:var(--gold)}
+.about li:before{content:"✦";position:absolute;left:4px;color:var(--pink)}
 @media(max-width:760px){.about{grid-template-columns:1fr;padding:18px}.about img{max-width:320px;margin:0 auto}}
 /* nhóm zalo */
-.free{text-align:center;border-radius:24px;padding:40px 20px;background:linear-gradient(135deg,rgba(56,225,255,.14),rgba(154,107,255,.16));border:1px solid rgba(56,225,255,.35)}
+.free{text-align:center;border-radius:24px;padding:40px 20px;background:linear-gradient(135deg,rgba(47,139,255,.18),rgba(123,92,255,.18) 55%,rgba(255,95,210,.14));border:1px solid rgba(150,170,255,.35);box-shadow:0 20px 60px -20px rgba(123,92,255,.5)}
 .free h2{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,40px);padding-top:4px}
 .free p{color:var(--muted);max-width:560px;margin:10px auto 22px}
 footer{border-top:1px solid var(--line);padding:30px 0 90px;color:var(--muted);font-size:14px}
@@ -104,7 +106,7 @@ footer a:hover{color:#fff}
 .bar{display:none}
 @media(max-width:760px){.bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;gap:8px;padding:10px 12px;background:rgba(5,11,31,.92);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
 .bar a{flex:1;text-align:center;padding:12px;border-radius:12px;font-weight:700;font-size:15px}
-.bar .a1{background:linear-gradient(135deg,var(--cyan),var(--blue));color:#04122e}.bar .a2{border:1px solid var(--line)}}
+.bar .a1{background:var(--holo);color:#fff}.bar .a2{border:1px solid var(--line)}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style></head>
 <body>
@@ -141,9 +143,9 @@ footer a:hover{color:#fff}
 </div></section>
 
 <section id="cua"><div class="wrap">
- <div class="sh"><h2>Chọn <span style="color:var(--gold)">cánh cửa</span> của bạn</h2><p>Mỗi trang một màu riêng, cùng một người đồng hành: cô Thảo.</p></div>
+ <div class="sh"><h2>Chọn <span style="background:var(--holo);-webkit-background-clip:text;background-clip:text;color:transparent">cánh cửa</span> của bạn</h2><p>Mỗi trang một màu riêng, cùng một người đồng hành: cô Thảo.</p></div>
  <div class="doors">
-  <a class="door" href="/tool-video/" style="--c:#38e1ff">
+  <a class="door" href="/tool-video/" style="--c:#3aa8ff">
    <div class="th"><img src="/tool-video/og-image.jpg" alt="Công cụ làm video AI" loading="lazy"/></div>
    <div class="bd"><span class="tag">Video AI</span><h3>9 công cụ làm video AI</h3><p>Làm video bán hàng, podcast, phim hoạt hình bằng AI, có hướng dẫn tận tay và quyền bán lại.</p><span class="go">Xem công cụ →</span></div>
   </a>
@@ -155,16 +157,16 @@ footer a:hover{color:#fff}
    <div class="th"><img src="/thiet-ke-web/og-image.jpg" alt="Thiết kế web và app" loading="lazy"/></div>
    <div class="bd"><span class="tag">Web & App</span><h3>Thiết kế web, landing page, app</h3><p>Làm trang bán hàng và app quản lý cho cửa hàng, spa, doanh nghiệp nhỏ. Từ 1.500.000đ.</p><span class="go">Xem mẫu & giá →</span></div>
   </a>
-  <a class="door" href="https://zalo.me/g/shqwgymycgrjylefl5vf" target="_blank" rel="noopener" style="--c:#4ff0b4">
+  <a class="door" href="https://zalo.me/g/shqwgymycgrjylefl5vf" target="_blank" rel="noopener" style="--c:#a9dcff">
    <div class="art">🎓</div>
    <div class="bd"><span class="tag">Đào tạo miễn phí</span><h3>Nhóm học AI miễn phí</h3><p>Vào nhóm Zalo để học làm video AI cùng cô và cộng đồng, nhận tài liệu và lịch học mới.</p><span class="go">Vào nhóm Zalo →</span></div>
   </a>
-  <div class="door" id="khoa-hoc" style="--c:#ff7ad9">
+  <div class="door" id="khoa-hoc" style="--c:#d6e2ff">
    <span class="soon">Sắp ra mắt</span>
    <div class="art">🚀</div>
    <div class="bd"><span class="tag">Khóa học AI</span><h3>Khóa học AI bài bản</h3><p>Khóa học từ A–Z đang được cô chuẩn bị. Vào nhóm Zalo để nhận tin đầu tiên khi mở đăng ký.</p><a class="go" href="https://zalo.me/g/shqwgymycgrjylefl5vf" target="_blank" rel="noopener">Nhận thông báo →</a></div>
   </div>
-  <a class="door" href="/nang-luong-so/ban-app/" style="--c:#ffb347">
+  <a class="door" href="/nang-luong-so/ban-app/" style="--c:#ff6fd8">
    <div class="art">📱</div>
    <div class="bd"><span class="tag">Kinh doanh cùng cô</span><h3>App Master & App Phong Thủy</h3><p>Sở hữu app riêng để kinh doanh dịch vụ năng lượng số, phong thủy cùng cô Thảo.</p><span class="go">Tìm hiểu →</span></div>
   </a>
