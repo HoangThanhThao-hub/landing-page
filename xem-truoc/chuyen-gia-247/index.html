@@ -45,7 +45,7 @@ h2{font-size:clamp(26px,4.6vw,40px)}h3{font-size:19px}
 /* hero */
 .hero{padding:44px 0 56px}
 .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-.hero h1{font-size:clamp(32px,6vw,58px)}
+.hero h1{font-size:clamp(32px,5vw,52px)}
 .hero p.lead{font-size:18px;color:#d3dcf7;margin:0 0 20px}
 .ticks{list-style:none;padding:0;margin:0 0 24px;display:grid;gap:8px}
 .ticks li{padding-left:30px;position:relative}.ticks li:before{content:"✓";position:absolute;left:0;top:1px;width:22px;height:22px;border-radius:50%;background:#2fd27a22;color:var(--ok);font-weight:900;font-size:13px;display:grid;place-items:center}
@@ -67,7 +67,7 @@ h2{font-size:clamp(26px,4.6vw,40px)}h3{font-size:19px}
 /* steps */
 .steps{counter-reset:s}
 .step{position:relative;padding-top:52px}
-.step:before{counter-increment:s;content:counter(s);position:absolute;top:18px;left:22px;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-weight:900;background:linear-gradient(135deg,var(--blue),var(--vio));color:#fff}
+.step h3:before{counter-increment:s;content:counter(s);position:absolute;top:18px;left:22px;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-weight:900;background:linear-gradient(135deg,var(--blue),var(--vio));color:#fff}
 .step h3{margin-top:10px}
 /* videos */
 .nganh-bar{display:flex;align-items:center;gap:12px;margin:0 0 20px;flex-wrap:wrap}
@@ -125,8 +125,51 @@ footer .eco{display:flex;flex-wrap:wrap;gap:8px 16px;margin-bottom:12px}footer a
 @media(max-width:900px){.hero .wrap,.guide,.about{grid-template-columns:1fr}.g4,.vgrid{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:1fr}.badge.b1{left:-4%}.badge.b2{right:-4%}.about img{max-width:320px;margin:0 auto}}
 @media(max-width:600px){.sec{padding:48px 0}.hero{padding:26px 0 44px}.top .btn{display:none}.sticky{display:flex}.g4{grid-template-columns:1fr}.f2{grid-template-columns:1fr}.cta-row .btn{flex:1 1 100%}.vgrid{gap:10px}.vc .m{padding:8px 10px}.badge{font-size:12px;padding:6px 10px}}
 @media(prefers-reduced-motion:reduce){.btn.main:after{animation:none}}
+
+/* ===== lớp đẹp: hologram xanh đại dương ===== */
+.aur{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.aur i{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;animation:fl 18s ease-in-out infinite alternate}
+.aur i:nth-child(1){width:520px;height:520px;left:-140px;top:-120px;background:#1e6bff}
+.aur i:nth-child(2){width:460px;height:460px;right:-160px;top:18%;background:#7c3aed;animation-delay:-6s}
+.aur i:nth-child(3){width:380px;height:380px;left:30%;bottom:-160px;background:#00c2ff;opacity:.35;animation-delay:-11s}
+.aur b{position:absolute;inset:0;background-image:radial-gradient(#9fd8ff 1px,transparent 1.2px);background-size:46px 46px;opacity:.10;mask-image:radial-gradient(ellipse at 50% 30%,#000 30%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 30%,transparent 75%)}
+@keyframes fl{to{transform:translate(60px,50px) scale(1.15)}}
+.hero{position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;left:-10%;right:-10%;bottom:-2px;height:240px;z-index:-1;background:linear-gradient(transparent,#070b1f),repeating-linear-gradient(90deg,#38e1ff22 0 1px,transparent 1px 70px),repeating-linear-gradient(0deg,#38e1ff22 0 1px,transparent 1px 40px);transform:perspective(500px) rotateX(62deg);transform-origin:bottom;mask-image:linear-gradient(transparent,#000 60%);-webkit-mask-image:linear-gradient(transparent,#000 60%)}
+h2{background:linear-gradient(180deg,#fff 30%,#b9ccff);-webkit-background-clip:text;background-clip:text;color:transparent}
+h2 .grad{-webkit-text-fill-color:transparent}
+.kick{padding:6px 12px;border-radius:99px;background:#38e1ff12;border:1px solid #38e1ff40;box-shadow:0 0 18px #38e1ff22 inset}
+.card,.vc,details,.pmc{position:relative;background:linear-gradient(160deg,#16225299,#0b1230cc);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid #ffffff14;box-shadow:0 20px 50px #0007,inset 0 1px 0 #ffffff1a}
+.card:before,.vc:before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(140deg,#38e1ff88,transparent 35%,transparent 65%,#8b5cf688);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.card,.vc{transition:transform .35s,box-shadow .35s}
+@media(hover:hover){.card:hover,.vc:hover{transform:translateY(-6px);box-shadow:0 30px 60px #0009,0 0 40px #2f8bff33}}
+.card .ic{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(140deg,#2f8bff33,#8b5cf633);border:1px solid #ffffff1f;box-shadow:0 0 24px #2f8bff33}
+.step h3:before{box-shadow:0 0 22px #2f8bff88}
+/* phone 3D */
+.stage{position:relative;perspective:1200px;padding:20px 0}
+.stage .phone{transform:rotateY(-12deg) rotateX(4deg);transform-style:preserve-3d;animation:bob 6s ease-in-out infinite}
+@keyframes bob{50%{transform:rotateY(-8deg) rotateX(2deg) translateY(-10px)}}
+.halo{position:absolute;left:50%;top:50%;width:120%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,#2f8bff44,transparent 60%);z-index:-1}
+.ring{position:absolute;left:50%;top:50%;width:115%;aspect-ratio:1;border-radius:50%;border:1px solid #38e1ff55;transform:translate(-50%,-50%) rotateX(72deg);z-index:-1;box-shadow:0 0 30px #38e1ff33}
+.ring.r2{width:140%;border-color:#8b5cf640;animation:spin 30s linear infinite}
+@keyframes spin{to{transform:translate(-50%,-50%) rotateX(72deg) rotateZ(360deg)}}
+.ring.r2:after{content:"";position:absolute;top:-5px;left:50%;width:10px;height:10px;border-radius:50%;background:#38e1ff;box-shadow:0 0 14px #38e1ff}
+.badge{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);background:#0c1638cc;border-color:#38e1ff55;animation:bob2 5s ease-in-out infinite}
+.badge.b2{animation-delay:-2.5s}@keyframes bob2{50%{transform:translateY(-8px)}}
+/* price */
+.pbox{position:relative;overflow:hidden;border:0;background:#0d1638;isolation:isolate}
+.pbox:before{content:"";position:absolute;inset:-100%;z-index:-2;background:conic-gradient(from 0deg,#38e1ff,#2f8bff,#8b5cf6,#ff7a59,#38e1ff);animation:rot 8s linear infinite}
+.pbox:after{content:"";position:absolute;inset:2px;border-radius:24px;z-index:-1;background:radial-gradient(80% 50% at 50% 0%,#1d3a8a,#0d1638 70%)}
+@keyframes rot{to{transform:rotate(360deg)}}
+.big.grad{filter:drop-shadow(0 0 22px #2f8bff66)}
+.soon div{background:#ffffff06;backdrop-filter:blur(6px)}
+.about img{box-shadow:0 30px 70px #0009,0 0 0 1px #38e1ff44,0 0 50px #2f8bff33}
+.top{background:#070b1fb3}
+@media(max-width:600px){.stage .phone{transform:none;animation:none;max-width:290px}.ring.r2{width:120%}.aur i{filter:blur(50px)}}
+@media(prefers-reduced-motion:reduce){.aur i,.stage .phone,.ring.r2,.badge,.pbox:before{animation:none}}
 </style></head>
 <body>
+<div class="aur" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
 <header class="top"><div class="wrap"><a class="brand" href="/tool-video/"><img src="/logo-sm.png" alt="Logo Thanh Thảo AI"/><span><b>THANH THẢO AI</b><small>APP CHUYÊN GIA 247</small></span></a><button class="btn main" data-buy type="button">Mua app ngay</button></div></header>
 <main>
 <section class="hero"><div class="wrap">
@@ -138,7 +181,8 @@ footer .eco{display:flex;flex-wrap:wrap;gap:8px 16px;margin-bottom:12px}footer a
 <div class="price-tag"><b>2.668.000đ</b><span>mua 1 lần · Thảo hướng dẫn đến khi bạn tự làm được</span></div>
 <div class="cta-row"><button class="btn main" data-buy type="button">MUA APP CHUYÊN GIA 247 ↗</button><a class="btn ghost" href="#video-mau">▶ Xem video mẫu</a></div>
 </div>
-<div style="position:relative">
+<div class="stage">
+<div class="halo"></div><div class="ring"></div><div class="ring r2"></div>
 <div class="phone"><video id="heroV" src="/chuyen-gia-247/v1-khach-goi-nguoi-khac.mp4" poster="/chuyen-gia-247/v1-khach-goi-nguoi-khac.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Video mẫu làm bằng app Chuyên Gia 247"></video><button class="snd" id="snd" type="button">🔊 Bật tiếng</button></div>
 <div class="badge b1"><i>●</i> Làm từ 1 ảnh thật</div>
 <div class="badge b2">60 giây · <i>9:16</i></div>
@@ -191,14 +235,14 @@ footer .eco{display:flex;flex-wrap:wrap;gap:8px 16px;margin-bottom:12px}footer a
 <span class="kick">Sở hữu app</span><h2>App Chuyên Gia 247</h2>
 <div class="big grad">2.668.000đ</div><div style="color:var(--mut)">Thanh toán 1 lần</div>
 <ul><li>App Chuyên Gia 247 cài sẵn quy trình 3 bước</li><li>Kịch bản mẫu theo ngành của bạn</li><li>Video hướng dẫn thao tác từng bước</li><li>Thảo hỗ trợ qua Zalo đến khi bạn tự làm được video</li><li>Cập nhật thêm kịch bản các ngành mới</li></ul>
-<button class="btn main" data-buy type="button" style="width:100%">MUA NGAY · CHUYỂN KHOẢN QR ↗</button>
+<button class="btn main" data-buy type="button" style="width:100%">MUA NGAY · QUÉT QR ↗</button>
 <p class="note">Giá app chưa gồm chi phí nền tảng AI (tài khoản Google có credit để tạo video). Thảo hướng dẫn cách chuẩn bị trước khi bạn làm.</p>
 <p class="upsell">Muốn có luôn cả 9 công cụ làm video AI? <a href="/tool-video/#goi-master">Xem gói MASTER AI 360 – 9.999.000đ</a></p>
 </div>
 </div></section>
 
 <section class="sec"><div class="wrap about">
-<img src="/co-thao-van-phong.jpg" alt="Hoàng Thanh Thảo" loading="lazy"/>
+<img src="/co-thao-van-phong.jpg" alt="Hoàng Thanh Thảo"/>
 <div><span class="kick">Người làm ra app</span><h2>Hoàng Thanh Thảo</h2><p>Thảo tự làm video bán hàng bằng AI mỗi ngày. Tất cả video mẫu trên trang này đều làm bằng chính app Chuyên Gia 247, từ ảnh thật của Thảo, không quay một giây nào.</p><p>Bạn mua app là có Thảo kèm: hỏi gì nhắn Zalo, làm chưa được thì Thảo chỉ tiếp.</p><a class="btn zalo" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Nhắn Zalo Thảo · 0935 949 141</a></div>
 </div></section>
 
