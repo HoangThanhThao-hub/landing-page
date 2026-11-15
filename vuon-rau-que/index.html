@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}</style>
+</head>
+<body>
 <title>Vườn Rau Quê</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,6 +60,16 @@ pre{margin:0;white-space:pre-wrap;word-break:break-word;background:var(--code);b
 .scene{border-top:1px solid var(--line);padding-top:12px;display:flex;flex-direction:column;gap:8px}
 .scene:first-of-type{border-top:0;padding-top:0}
 .scene b{color:var(--leaf)}
+.hero{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px 16px;display:flex;flex-direction:column;gap:12px;text-align:center}
+.hero-label{margin:0;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mud);font-weight:700}
+.hero-scene{margin:0;font-family:var(--f-display);font-size:19px;line-height:1.35;text-wrap:balance}
+.big{display:block;background:var(--leaf);color:var(--bg);text-decoration:none;border-radius:16px;padding:20px 16px;font:700 21px var(--f-body);box-shadow:0 6px 0 color-mix(in srgb,var(--leaf) 60%,#000)}
+.big:active{transform:translateY(3px);box-shadow:0 3px 0 color-mix(in srgb,var(--leaf) 60%,#000)}
+.big:focus-visible{outline:3px solid var(--tomato);outline-offset:3px}
+.steps{margin:0;font-size:14px;color:var(--muted)}
+details.more{margin-top:14px;border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:0 14px}
+details.more>summary{cursor:pointer;padding:14px 0;font-weight:600;color:var(--leaf)}
+details.more .view{padding:0 0 16px}
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:999px;font-weight:600;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none}
 .toast.on{opacity:1}
 ol.guide{padding-left:20px;margin:0;display:flex;flex-direction:column;gap:10px}
@@ -63,68 +81,57 @@ ol.guide{padding-left:20px;margin:0;display:flex;flex-direction:column;gap:10px}
 <div class="wrap">
 <header>
   <h1>Vườn Rau Quê</h1>
-  <p class="sub">Bấm chọn cảnh, app viết sẵn câu lệnh để tạo ảnh và video vườn quê thật như ngoài đời. Chép, dán vào app Gemini trên điện thoại là xong.</p>
+  <p class="sub">Tạo video vườn quê thật như ngoài đời, chỉ bằng 1 nút.</p>
 </header>
 
-<nav class="tabs" role="tablist">
-  <button class="tab" role="tab" id="t-one" aria-selected="true" data-view="one">1 cảnh</button>
-  <button class="tab" role="tab" id="t-reel" aria-selected="false" data-view="reel">Cả reel</button>
-  <button class="tab" role="tab" id="t-help" aria-selected="false" data-view="help">Cách dùng</button>
-</nav>
-
-<!-- ============ 1 CẢNH ============ -->
-<section class="view" id="v-one">
-  <div class="group"><h2>Khung cảnh</h2><div class="chips" id="g-place"></div></div>
-  <div class="group"><h2>Cây trồng chính</h2><div class="chips" id="g-crop"></div></div>
-  <div class="group"><h2>Người trong cảnh</h2><div class="chips" id="g-who"></div></div>
-  <div class="group" id="wrap-act"><h2>Đang làm gì</h2><div class="chips" id="g-act"></div></div>
-  <div class="group"><h2>Thời điểm</h2><div class="chips" id="g-time"></div></div>
-  <div class="group"><h2>Góc quay</h2><div class="chips" id="g-cam"></div></div>
-  <div class="group">
-    <h2>Thêm ý riêng (không bắt buộc)</h2>
-    <input type="text" id="extra" placeholder="Ví dụ: có con mèo vàng nằm trên hiên nhà">
-    <p class="hint">Viết tiếng Việt cũng được, app tự gắn vào câu lệnh.</p>
-  </div>
-  <div class="row">
-    <button class="btn red" id="rand">🎲 Chọn ngẫu nhiên</button>
-  </div>
-
-  <div class="out" id="out-one"></div>
+<section class="hero" aria-live="polite">
+  <p class="hero-label">Cảnh hôm nay</p>
+  <p class="hero-scene" id="hero-scene"></p>
+  <a class="big" id="go" href="https://gemini.google.com/app" target="_blank" rel="noopener" data-copy="p-vid">Lấy video ngay</a>
+  <button class="btn ghost" id="rand" type="button">🎲 Đổi cảnh khác</button>
+  <p class="steps">Bấm <b>Lấy video ngay</b> → Gemini tự mở → <b>bấm giữ ô chat → Dán → Gửi</b>. Chờ 1–2 phút là có video.</p>
 </section>
 
-<!-- ============ CẢ REEL ============ -->
-<section class="view" id="v-reel" hidden>
-  <div class="group"><h2>Chủ đề reel</h2><div class="chips" id="g-story"></div></div>
-  <div class="group"><h2>Người xuyên suốt reel</h2><div class="chips" id="g-rwho"></div></div>
-  <div class="group"><h2>Số cảnh (mỗi cảnh 8 giây)</h2><div class="chips" id="g-len"></div></div>
-  <div class="out" id="out-reel"></div>
-</section>
+<details class="more">
+  <summary>Tùy chỉnh cảnh (không bắt buộc)</summary>
+  <section class="view" id="v-one">
+    <div class="group"><h2>Khung cảnh</h2><div class="chips" id="g-place"></div></div>
+    <div class="group"><h2>Cây trồng chính</h2><div class="chips" id="g-crop"></div></div>
+    <div class="group"><h2>Người trong cảnh</h2><div class="chips" id="g-who"></div></div>
+    <div class="group" id="wrap-act"><h2>Đang làm gì</h2><div class="chips" id="g-act"></div></div>
+    <div class="group"><h2>Thời điểm</h2><div class="chips" id="g-time"></div></div>
+    <div class="group"><h2>Góc quay</h2><div class="chips" id="g-cam"></div></div>
+    <div class="group">
+      <h2>Thêm ý riêng</h2>
+      <input type="text" id="extra" placeholder="Ví dụ: có con mèo vàng nằm trên hiên nhà">
+    </div>
+    <p class="hint">Chọn xong, kéo lên bấm nút xanh <b>Lấy video ngay</b>.</p>
+    <div class="out" id="out-one"></div>
+  </section>
+</details>
 
-<!-- ============ CÁCH DÙNG ============ -->
-<section class="view" id="v-help" hidden>
-  <div class="out">
-    <h3>Làm video trên điện thoại</h3>
+<details class="more">
+  <summary>Làm cả reel nhiều cảnh</summary>
+  <section class="view" id="v-reel">
+    <div class="group"><h2>Chủ đề reel</h2><div class="chips" id="g-story"></div></div>
+    <div class="group"><h2>Người xuyên suốt reel</h2><div class="chips" id="g-rwho"></div></div>
+    <div class="group"><h2>Số cảnh (mỗi cảnh 8 giây)</h2><div class="chips" id="g-len"></div></div>
+    <div class="out" id="out-reel"></div>
+  </section>
+</details>
+
+<details class="more">
+  <summary>Mẹo cho video thật hơn</summary>
+  <section class="view">
     <ol class="guide">
-      <li><b>Chọn cảnh</b> ở tab "1 cảnh" (hoặc tab "Cả reel" để có nhiều cảnh nối nhau).</li>
-      <li><b>Tạo ảnh trước:</b> bấm "Chép" ở ô <i>Câu lệnh ảnh</i>. Mở app <b>Gemini</b>, bấm dấu <b>+</b> hoặc <b>Công cụ</b> → <b>Tạo hình ảnh</b>, dán vào, gửi. Chưa ưng thì gõ "tạo lại" 2–3 lần, chọn ảnh thật nhất rồi lưu về máy.</li>
-      <li><b>Cho ảnh chuyển động:</b> mở cuộc trò chuyện mới trong Gemini, bấm <b>Công cụ</b> → <b>Video</b>, bấm <b>+</b> đính kèm ảnh vừa lưu, dán <i>Câu lệnh video</i>, gửi. Chờ 1–2 phút là có clip 8 giây, có sẵn tiếng chim, tiếng gà.</li>
-      <li><b>Nếu video ra khung ngang:</b> luôn tạo ảnh dọc trước rồi mới làm video từ ảnh đó, video sẽ theo khung dọc của ảnh.</li>
-      <li><b>Ghép reel:</b> tải các clip về, mở <b>CapCut</b>, xếp theo thứ tự, thêm nhạc nhẹ hoặc giữ tiếng chim, tiếng gà sẵn trong video.</li>
+      <li>Video chưa ưng thì gõ "tạo lại" trong Gemini, hoặc bấm <b>Đổi cảnh khác</b>.</li>
+      <li>Muốn nhân vật giống nhau qua nhiều cảnh: tạo ảnh trước bằng câu lệnh ảnh (trong phần Tùy chỉnh), rồi đính kèm ảnh khi tạo video.</li>
+      <li>Ghép nhiều clip thành reel bằng <b>CapCut</b>, giữ tiếng chim, tiếng gà sẵn trong video.</li>
     </ol>
-  </div>
-  <div class="out">
-    <h3>Mẹo để nhìn như quay thật</h3>
-    <ol class="guide">
-      <li>Mỗi clip chỉ 1 hành động chậm. Càng nhiều động tác, AI càng dễ làm méo tay chân.</li>
-      <li>Không cho thấy mặt người quá rõ. Đội nón lá, quay từ xa hoặc từ phía sau là thật nhất.</li>
-      <li>Làm cả reel thì giữ nguyên cùng một người, cùng căn nhà. App đã khóa sẵn mô tả để các cảnh giống nhau.</li>
-      <li>Nếu màu bị rực quá, thêm vào cuối câu lệnh: <i>muted natural colors, overcast soft light</i>.</li>
-      <li>Ảnh ra có chữ hoặc logo lạ thì tạo lại, đừng dùng.</li>
-    </ol>
-  </div>
-  <p class="note">Câu lệnh viết bằng tiếng Anh vì AI tạo video hiểu tiếng Anh chuẩn nhất. Phần chữ xám bên trên mỗi câu lệnh là nghĩa tiếng Việt để mình biết cảnh sẽ ra sao.</p>
-</section>
+  </section>
+</details>
 </div>
+
 <div class="toast" id="toast">Đã chép</div>
 
 <script>
@@ -256,8 +263,9 @@ function renderOne(){
   const r=build(S);
   document.getElementById("out-one").innerHTML =
     `<p class="vi">🌿 ${esc(r.vi)}</p>`+
-    card("Câu lệnh ảnh","","Bước 1",r.img,"p-img")+
-    card("Câu lệnh video","v","Bước 2",r.vid,"p-vid");
+    card("Câu lệnh video","v","Video",r.vid,"p-vid")+
+    card("Câu lệnh ảnh (nếu muốn tạo ảnh trước)","","Ảnh",r.img,"p-img2");
+  document.getElementById("hero-scene").textContent = r.vi;
 }
 
 function renderReel(){
@@ -310,3 +318,6 @@ initOne();
 chips("g-story",STORY,"story",renderReel); chips("g-rwho",WHO,"rwho",renderReel); chips("g-len",LEN,"len",renderReel);
 renderReel();
 </script>
+
+</body>
+</html>
