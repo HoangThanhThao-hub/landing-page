@@ -711,13 +711,18 @@ body{padding-bottom:54px}
     <div class="section-head reveal">
       <span class="kicker">Xem ngay</span>
       <h2>Tự xem <span class="gold">con số của bạn</span></h2>
-      <p>Nhập họ tên đầy đủ theo giấy khai sinh và ngày sinh dương lịch. Số Chủ Đạo hiện ngay miễn phí. Muốn xem đủ 6 chỉ số, biểu đồ ngày sinh và 12 tháng cá nhân, bạn mở khóa với 99.000đ.</p>
+      <p>Nhập họ tên đầy đủ theo giấy khai sinh, số điện thoại và ngày sinh dương lịch. Số Chủ Đạo hiện ngay miễn phí. Muốn xem đủ 6 chỉ số, biểu đồ ngày sinh và 12 tháng cá nhân, bạn mở khóa với 99.000đ.</p>
     </div>
     <div class="calc reveal">
       <form class="calc-form" id="calcForm" autocomplete="off">
         <div class="field">
           <label for="fullname">Họ và tên khai sinh</label>
           <input id="fullname" name="fullname" placeholder="VD: Nguyễn Thị Minh Anh" required>
+        </div>
+        <div class="field">
+          <label for="sdt">Số điện thoại / Zalo</label>
+          <input id="sdt" name="sdt" type="tel" inputmode="tel" placeholder="VD: 0912 345 678" required>
+          <small style="display:block;margin-top:6px;font-size:12.5px;opacity:.85">Cô Thảo gửi thêm lời nhắn riêng về con số của bạn qua Zalo.</small>
         </div>
         <div class="field">
           <label>Ngày sinh <b style="color:var(--gold)">DƯƠNG lịch</b> </label>
@@ -1314,6 +1319,9 @@ body{padding-bottom:54px}
     if(!dd||!mm||!yy){err.textContent='Bạn chọn đủ ngày, tháng, năm sinh nhé.';err.style.display='block';return}
     var dt=new Date(yy,mm-1,dd);
     if(dt.getMonth()!==mm-1){err.textContent='Ngày sinh này không tồn tại, bạn kiểm tra lại nhé.';err.style.display='block';return}
+    var sdt=(document.getElementById('sdt').value||'').replace(/[^0-9+]/g,'');
+    if(!/^(\+?84|0)\d{9,10}$/.test(sdt)){err.textContent='Bạn nhập số điện thoại / Zalo đúng giúp cô nhé (VD: 0912345678).';err.style.display='block';return}
+    try{if(load('nls_lead')!==sdt+'|'+dd+'/'+mm+'/'+yy){gf({loai:'Tự xem - khách để lại SĐT',ten:name,ns:dd+'/'+mm+'/'+yy,zalo:sdt});store('nls_lead',sdt+'|'+dd+'/'+mm+'/'+yy)}}catch(_){}
 
     // Cách cộng giống video cô Thảo: cộng hết các chữ số ngày tháng năm sinh, ra 11, 22, 33 thì dừng
     var dgs=(''+dd+mm+yy).split('').map(Number),tot=dgs.reduce(function(a,b){return a+b},0),lp=tot,stp=dgs.join('+')+' = '+tot;
