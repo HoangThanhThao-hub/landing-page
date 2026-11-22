@@ -27,3 +27,7 @@
 .brand-name{font-size:16px!important;letter-spacing:.02em!important;text-transform:none!important}
 .footer .brand-mark{height:46px!important}
 @media(max-width:600px){.brand-mark{height:34px!important}.brand-name{font-size:14px!important}}
+/* logo HTT bạc-xanh cô chọn (ChatGPT mẫu 1) */
+.brand-mark{height:44px!important;filter:drop-shadow(0 0 6px rgba(47,140,255,.35))!important}
+.footer .brand-mark{height:52px!important}
+@media(max-width:600px){.brand-mark{height:38px!important}}
