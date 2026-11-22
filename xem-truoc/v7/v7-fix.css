@@ -21,3 +21,9 @@
 .brand-name{font-weight:800!important;letter-spacing:.05em;text-transform:uppercase;color:#f2f7ff!important;text-shadow:none!important;white-space:nowrap}
 .brand-name em{font-style:normal;margin-left:5px;padding:1px 8px;border-radius:999px;background:linear-gradient(90deg,#2f8cff,#7ee8ff);color:#04112e!important;font-size:.82em;letter-spacing:.04em;-webkit-text-fill-color:#04112e}
 @media(max-width:600px){.brand-mark{width:38px;height:38px}.brand-name{font-size:13px!important;letter-spacing:.03em}}
+/* logo HTT (cô 11-22: logo là chữ viết tắt, nhìn ra Hoàng Thanh Thảo) */
+.brand{gap:12px}
+.brand-mark{display:block!important;width:auto!important;height:40px!important;filter:drop-shadow(0 0 8px rgba(63,160,255,.35))}
+.brand-name{font-size:16px!important;letter-spacing:.02em!important;text-transform:none!important}
+.footer .brand-mark{height:46px!important}
+@media(max-width:600px){.brand-mark{height:34px!important}.brand-name{font-size:14px!important}}
