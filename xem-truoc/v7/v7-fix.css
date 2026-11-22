@@ -15,3 +15,9 @@
 .qrm .done{display:block;width:100%;margin:12px 0 6px;padding:14px;border:0;border-radius:999px;font-weight:800;font-size:1.02rem;color:#1b1300;background:linear-gradient(90deg,#f6d38a,#ffe9b8,#f0c56b);cursor:pointer}
 .qrm .zl{display:block;margin-top:8px;padding:12px;border-radius:999px;background:#0a68ff;color:#fff;font-weight:700;text-decoration:none}
 .qrm .hint{font-size:.88rem;opacity:.85;margin:6px 0 0}
+/* logo mới (cô chê logo HTT cũ) */
+.brand{display:inline-flex;align-items:center;gap:11px}
+.brand-mark{width:44px;height:44px;flex:none;filter:drop-shadow(0 0 8px rgba(63,208,255,.35))}
+.brand-name{font-weight:800!important;letter-spacing:.05em;text-transform:uppercase;color:#f2f7ff!important;text-shadow:none!important;white-space:nowrap}
+.brand-name em{font-style:normal;margin-left:5px;padding:1px 8px;border-radius:999px;background:linear-gradient(90deg,#2f8cff,#7ee8ff);color:#04112e!important;font-size:.82em;letter-spacing:.04em;-webkit-text-fill-color:#04112e}
+@media(max-width:600px){.brand-mark{width:38px;height:38px}.brand-name{font-size:13px!important;letter-spacing:.03em}}
