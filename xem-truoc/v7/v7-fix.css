@@ -1,0 +1,17 @@
+.btn-cart,.cart-launch,.cart-drawer,.cart-backdrop{display:none!important}
+.offer-price.soon{font-size:1.5rem;letter-spacing:.02em}
+.checkout-product:has(input[value="course"]){display:none!important}
+.qrm{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(3,8,30,.78);backdrop-filter:blur(6px)}
+.qrm.on{display:flex}
+.qrm-box{position:relative;width:min(420px,100%);max-height:94vh;overflow:auto;border-radius:22px;padding:22px 18px 18px;background:linear-gradient(160deg,#0b1d55,#071139);border:1px solid rgba(120,190,255,.35);box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 40px rgba(60,140,255,.25);color:#eaf2ff;text-align:center;font-family:inherit}
+.qrm-x{position:absolute;top:8px;right:10px;width:36px;height:36px;border:0;border-radius:50%;background:rgba(255,255,255,.1);color:#fff;font-size:22px;cursor:pointer}
+.qrm h3{margin:0 0 4px;font-size:1.15rem}
+.qrm .amt{font-size:1.7rem;font-weight:800;color:#ffd98a;margin:4px 0 10px}
+.qrm img{width:100%;max-width:300px;border-radius:14px;background:#fff;display:block;margin:0 auto 10px}
+.qrm .row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 10px;margin:6px 0;border-radius:12px;background:rgba(255,255,255,.07);font-size:.95rem;text-align:left}
+.qrm .row b{color:#fff}
+.qrm .row button{flex:none;border:1px solid rgba(255,217,138,.6);background:transparent;color:#ffd98a;border-radius:999px;padding:5px 12px;font-size:.85rem;cursor:pointer}
+.qrm input{width:100%;box-sizing:border-box;margin:6px 0;padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff;font-size:1rem}
+.qrm .done{display:block;width:100%;margin:12px 0 6px;padding:14px;border:0;border-radius:999px;font-weight:800;font-size:1.02rem;color:#1b1300;background:linear-gradient(90deg,#f6d38a,#ffe9b8,#f0c56b);cursor:pointer}
+.qrm .zl{display:block;margin-top:8px;padding:12px;border-radius:999px;background:#0a68ff;color:#fff;font-weight:700;text-decoration:none}
+.qrm .hint{font-size:.88rem;opacity:.85;margin:6px 0 0}
