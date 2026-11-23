@@ -57,3 +57,8 @@ a.demo-card.v7-vid:hover,a.demo-card.v7-vid:focus-visible{transform:translateY(-
 .v7vm-x{position:absolute;top:-6px;right:0;width:40px;height:40px;border:0;border-radius:50%;background:rgba(255,255,255,.15);color:#fff;font-size:24px;cursor:pointer}
 /* ảnh đầu trang: ảnh toàn thân bị cắt mất đầu (cô 23/11) → neo ảnh từ trên xuống, chân mờ dần ở dưới */
 html body .hero-art .hero-portrait{top:16px!important;bottom:auto!important}
+/* Lĩnh vực: thẻ bấm được dẫn tới trang thật */
+a.role-card{display:block;text-decoration:none;color:inherit;cursor:pointer;transition:transform .2s,box-shadow .2s}
+a.role-card:hover,a.role-card:focus-visible{transform:translateY(-4px);box-shadow:0 14px 34px rgba(33,183,255,.3)}
+.role-go{position:absolute;left:10px;right:10px;bottom:10px;z-index:3;display:block;text-align:center;font-size:12px;font-weight:800;color:#04112e;background:linear-gradient(90deg,#7ee8ff,#2f8cff);border-radius:999px;padding:6px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+a.role-card .role-label{bottom:48px!important}
