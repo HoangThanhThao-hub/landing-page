@@ -25,3 +25,14 @@
  document.addEventListener('click',function(e){var a=e.target.closest('a[href*="san-pham=app"],[data-buy]');if(a){e.preventDefault();e.stopPropagation();open('app')}},true);
  if(/san-pham=app/.test(location.search))setTimeout(function(){open('app')},300);
 })();
+(function(){
+ var m=document.createElement('div');m.className='v7vm';m.setAttribute('role','dialog');m.setAttribute('aria-modal','true');m.setAttribute('aria-label','Xem video');
+ m.innerHTML='<div class="v7vm-box"><p class="v7vm-t"></p><button class="v7vm-x" type="button" aria-label="Đóng video">×</button><video controls playsinline preload="metadata"></video></div>';
+ document.body.append(m);
+ var v=m.querySelector('video'),t=m.querySelector('.v7vm-t');
+ function close(){m.classList.remove('on');try{v.pause()}catch(e){}v.removeAttribute('src');v.load();document.body.style.overflow=''}
+ document.addEventListener('click',function(e){var a=e.target.closest('a[data-video]');if(!a)return;e.preventDefault();
+  t.textContent=a.dataset.title||'';v.src=a.dataset.video;m.classList.add('on');document.body.style.overflow='hidden';var p=v.play();if(p&&p.catch)p.catch(function(){})});
+ m.addEventListener('click',function(e){if(e.target===m||e.target.closest('.v7vm-x'))close()});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('on'))close()});
+})();
