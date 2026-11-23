@@ -640,6 +640,28 @@ body{padding-bottom:54px}
 @media (prefers-reduced-motion:reduce){.hero:after,.hero h1 .gold,.ld:after{animation:none}}
 /* 1 điểm liên hệ: chỉ giữ nút Zalo */
 .chat-btn,#chat,.exit{display:none!important}
+.bmn-list{max-width:820px;margin:0 auto;display:grid;gap:18px}
+.bmn-card{padding:26px 24px;border-radius:22px;background:linear-gradient(170deg,#151e47,#0b1129);border:1px solid var(--line)}
+.bmn-big{border-color:#e3c27a88;box-shadow:0 14px 40px #00000055}
+.bmn-date{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.bmn-card h3{font-size:clamp(20px,2.6vw,26px);margin:8px 0 10px;line-height:1.3}
+.bmn-body p{color:var(--muted);margin:0 0 10px}
+.bmn-body .bmn-up{color:var(--gold2);font-style:italic;border-left:2px solid var(--gold);padding-left:12px;margin-top:14px}
+.bmn-cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.bmn-price{color:var(--muted)}.bmn-price b{color:var(--gold2);font-size:18px}
+.bmn-btns{display:flex;flex-wrap:wrap;gap:10px}.bmn-btns .btn{padding:11px 20px;font-size:14px}
+.bmn-ph{text-align:center;color:var(--gold);margin:18px 0 0;font-size:15px;letter-spacing:.12em;text-transform:uppercase}
+.bmn-past{display:grid;gap:12px}.bmn-past .bmn-card{padding:18px 20px}.bmn-past h3{font-size:18px}
+.bmn-more{background:none;border:0;color:var(--gold);font:inherit;font-weight:600;cursor:pointer;padding:0;margin-bottom:4px}
+.bmn-note{text-align:center;color:var(--muted);font-size:13px;margin-top:16px}
+.train{max-width:980px;margin:34px auto 0;padding:26px 24px;border-radius:22px;border:1px solid #e3c27a66;background:linear-gradient(160deg,#1a1840,#0b1129)}
+.train h3{margin:0 0 6px;font-size:22px}.train>p{color:var(--muted);margin:0 0 16px}
+.train-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.train-g div{padding:16px;border-radius:16px;background:#ffffff08;border:1px solid var(--line)}
+.train-g b{display:block;color:var(--gold2);margin-bottom:4px}.train-g p{margin:0 0 10px;color:var(--muted);font-size:14px}
+.train-g a{color:var(--gold);font-weight:600;font-size:14px}
+.pk-fee{font-size:12.5px;color:var(--muted);margin:8px 0 0;opacity:.9}
+@media(max-width:760px){.train-g{grid-template-columns:1fr}.bmn-cta{flex-direction:column;align-items:flex-start}}
 </style>
 </head>
 <body>
@@ -653,6 +675,7 @@ body{padding-bottom:54px}
       <a href="#tu-xem">Tự xem miễn phí</a>
       <a href="#chi-so">Các chỉ số</a>
       <a href="#cac-loai-so">Các loại số</a>
+      <a href="#bai-hom-nay">Bài hôm nay</a>
       <a href="#goi-xem">Gói giải mã</a>
       <a href="#co-thao">Về cô Thảo</a>
       <a href="#hoi-dap">Hỏi đáp</a>
@@ -888,6 +911,17 @@ body{padding-bottom:54px}
   </div>
 
 </details></div></section>
+<section class="section" id="bai-hom-nay">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">Mỗi ngày một bài</span>
+      <h2>Góc <span class="gold">năng lượng số</span> hôm nay</h2>
+      <p>Mỗi ngày cô Thảo mở ra một điều thú vị về con số. Muốn biết con số của chính bạn nói gì, bấm "Xem cho mình".</p>
+    </div>
+    <div class="bmn-list" id="bmn-list"><p class="bmn-note">Đang tải bài hôm nay…</p></div>
+    <p class="bmn-note">Nội dung mang tính tham khảo và chiêm nghiệm theo Pythagoras và Bát Cực Linh Số.</p>
+  </div>
+</section>
 <section class="section" id="goi-xem">
   <div class="wrap">
     <div class="section-head reveal">
@@ -928,8 +962,8 @@ body{padding-bottom:54px}
       </article>
       <article data-cat="so" class="pack reveal">
         <span class="lv">Số đẹp</span>
-        <h3>Xem 1 Số Điện Thoại / Biển Số</h3>
-        <p class="for">Số mình đang dùng hợp hay khắc, có nên đổi không. Chuyển khoản xong bạn gửi số cần xem qua Zalo cô Thảo.</p>
+        <h3>Xem 1 Số: Điện Thoại, Căn Cước, Biển Số</h3>
+        <p class="for">Số điện thoại, số căn cước, biển số xe hay số tài khoản bạn đang dùng hợp hay khắc, có nên đổi không. Chuyển khoản xong bạn gửi dãy số cần xem qua Zalo cô Thảo, không cần gửi ảnh giấy tờ.</p>
         <div class="price">199.000đ</div><span class="price-note"></span><div class="pk-meta"><span>📄 <b>1 file PDF</b> · khoảng <b>4–6 trang</b></span><span>🔎 <b>5</b> mục phân tích</span></div><p class="pk-ben">✨ Biết rõ số đang dùng giúp hay cản bạn, đổi đúng số trước khi tốn tiền mua số.</p><details class="pk-more"><summary>Xem 5 mục cô Thảo phân tích</summary><ol><li>Giải mã từng cặp số theo Bát Cực Linh Số</li><li>Chỉ rõ cặp tốt, cặp xấu và cách hóa giải</li><li>Số có hợp với ngày sinh của bạn không</li><li>Kết luận: nên giữ hay nên đổi</li><li>Gợi ý 3 số thay thế nếu cần đổi</li></ol></details>
         <ul>
           <li>Giải mã từng cặp số theo Bát Cực Linh Số</li>
@@ -1030,6 +1064,7 @@ body{padding-bottom:54px}
           <li>Gợi ý ngày đẹp để bắt đầu</li>
           <li>Hỗ trợ qua Zalo đến khi chốt</li>
         </ul>
+        <p class="pk-fee">Chưa gồm tiền mua SIM, phí chọn số đẹp hay phí mở tài khoản ở ngân hàng.</p>
         <a class="btn btn-ghost" href="#thanh-toan" data-pk="999000|DATTEN">Đăng ký gói này</a>
       </article>
       <article data-cat="so" class="pack reveal">
@@ -1043,6 +1078,7 @@ body{padding-bottom:54px}
           <li>Gợi ý số tài khoản ngân hàng đẹp để mở</li>
           <li>Hỗ trợ qua Zalo đến khi bạn chọn xong số</li>
         </ul>
+        <p class="pk-fee">Chưa gồm tiền mua SIM, phí chọn số đẹp hay phí mở tài khoản ở ngân hàng. Bạn chỉ cần gửi dãy số, không cần gửi ảnh căn cước.</p>
         <a class="btn btn-ghost" href="#thanh-toan" data-pk="1499000|DOIDOI">Đăng ký gói này</a>
       </article>
       <article data-cat="ban nghe" class="pack reveal">
@@ -1075,6 +1111,15 @@ body{padding-bottom:54px}
       </article>
     </div>
     <p class="app-link">Bạn muốn có app giải số mang tên mình? <a href="/nang-luong-so/ban-app/">Xem App Master Thanh Thảo →</a></p>
+    <div class="train reveal" id="dao-tao">
+      <h3>Muốn làm nghề <span class="gold">năng lượng số</span> cùng cô Thảo?</h3>
+      <p>Dành cho người muốn tự giải số cho khách, làm kênh nội dung phong thủy, hoặc học bài bản.</p>
+      <div class="train-g">
+        <div><b>App giải số mang tên bạn</b><p>App Master Thanh Thảo tự tính số, xuất file PDF mang tên và Zalo của bạn để gửi khách.</p><a href="/nang-luong-so/ban-app/">Xem gói app →</a></div>
+        <div><b>Xây kênh phong thủy bằng AI</b><p>App Phong Thủy soạn kịch bản, làm video kiến thức con số để đăng kênh và bán hàng. Gói Đối Tác có cô kèm 30 ngày.</p><a href="/nang-luong-so/ban-app/">Xem App Phong Thủy →</a></div>
+        <div><b>Đào tạo riêng</b><p>Học cách đọc các chỉ số, tư vấn và chốt khách. Nội dung, hình thức và học phí cô trao đổi riêng theo nhu cầu của bạn.</p><a href="https://zalo.me/0935949141" target="_blank" rel="noopener">Nhắn Zalo cô Thảo →</a></div>
+      </div>
+    </div>
   </div>
 </section>
 <!-- ABOUT -->
@@ -1115,6 +1160,8 @@ body{padding-bottom:54px}
       <details><summary>Chuyển khoản xong bao lâu tôi nhận được, nhận những gì?</summary><p>Trong vòng 24 giờ, cô Thảo gửi qua Zalo 1 file PDF viết riêng cho bạn (số trang và các mục phân tích ghi rõ ở từng gói). Bạn chỉ cần chuyển khoản đúng nội dung đã điền sẵn và nhắn Zalo cô Thảo họ tên, ngày sinh. Đọc xong có chỗ chưa rõ, bạn nhắn hỏi thêm.</p></details>
       <details><summary>Các gói có gọi video hay gọi điện không?</summary><p>Không cần. Cô Thảo gửi bản giải mã viết riêng (file PDF) qua Zalo trong vòng 24 giờ để bạn đọc lại bất cứ lúc nào. Có thắc mắc bạn nhắn tin hỏi thêm.</p></details>
       <details><summary>Nên chọn gói nào?</summary><p>Muốn hiểu mình nhanh: Bản Đồ Năng Lượng. Đang cần định hướng sự nghiệp, tài chính, tình cảm: Giải Mã Chuyên Sâu. Muốn đầy đủ nhất kèm dự báo 12 tháng: Trọn Bộ Năng Lượng Số. Xem cho con: Thấu Hiểu Con Yêu. Xem cho 2 người: Năng Lượng Tình Yêu. Đặt tên, chọn số: Đặt Tên & Chọn Số.</p></details>
+      <details><summary>Xem số căn cước có cần gửi ảnh căn cước không?</summary><p>Không cần. Bạn chỉ gửi dãy số cần xem qua Zalo. Đừng gửi ảnh căn cước hay giấy tờ cho bất kỳ ai để giữ an toàn thông tin.</p></details>
+      <details><summary>Gói chọn số đã gồm tiền mua SIM chưa?</summary><p>Chưa. Gói Đặt Tên &amp; Chọn Số và Combo Đổi Đời là tiền cô Thảo phân tích và chọn số. Tiền mua SIM, phí chọn số đẹp hay phí mở tài khoản ở ngân hàng bạn trả riêng cho nhà mạng, ngân hàng.</p></details>
       <details><summary>Có xem cho con nhỏ hoặc cho cả gia đình được không?</summary><p>Được. Gói Thấu Hiểu Con Yêu xem riêng cho bé, gói Năng Lượng 2 Mẹ Con xem cho cả mẹ và con, và gói Năng Lượng Tình Yêu dành cho cặp đôi, vợ chồng.</p></details>
     </div>
   </div>
@@ -1133,7 +1180,7 @@ body{padding-bottom:54px}
       <div class="pay-form">
         <label class="full">Gói bạn chọn<select id="pyPk">
           <option value="199000|NAM2027" selected>Năm Cá Nhân 2027 · 199.000đ</option>
-          <option value="199000|SODEP">Xem 1 Số Điện Thoại / Biển Số · 199.000đ</option>
+          <option value="199000|SODEP">Xem 1 Số: Điện Thoại, Căn Cước, Biển Số · 199.000đ</option>
           <option value="299000|BANDO">Bản Đồ Năng Lượng · 299.000đ</option>
           <option value="399000|LAMCHU">Làm Chủ Hay Làm Thuê · 399.000đ</option>
           <option value="599000|CONYEU">Thấu Hiểu Con Yêu · 599.000đ</option>
@@ -1725,7 +1772,7 @@ if(!(d>=1&&d<=30&&m>=1&&m<=12&&y>=1900&&y<=2100)){o.textContent='Bạn nhập đ
 if(!r){o.textContent='Năm '+y+' không có tháng '+m+' nhuận, bạn bỏ chọn "Tháng nhuận" nhé.';return}
 ['d','m','y'].forEach(function(id,i){var s=document.getElementById(id);if(s){s.value=String(r[i]);s.dispatchEvent(new Event('change'))}});
 o.innerHTML='Ngày dương lịch là <b>'+r[0]+'/'+r[1]+'/'+r[2]+'</b>. Con đã điền sẵn vào ô ngày sinh ở trên, bạn kiểm tra lại rồi bấm Giải mã.'})})();</script>
-<!--paymodal--><style>.pm-ov{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:10px;background:#000c;backdrop-filter:blur(4px)}.pm-ov.on{display:flex}.pm-box{position:relative;width:min(680px,100%);max-height:94vh;overflow:auto;-webkit-overflow-scrolling:touch;border-radius:20px;background:#0d0f1c;box-shadow:0 20px 80px #000;padding-top:16px}.pm-box>*:not(.pm-x){margin:0!important;opacity:1!important;transform:none!important;visibility:visible!important}.pm-box .reveal{opacity:1!important;transform:none!important}.pm-x{position:sticky;top:8px;float:right;margin:8px 8px -48px 0;z-index:5;width:40px;height:40px;border-radius:50%;border:1px solid #e3b675;background:#0d0f1ce6;color:#f3d48b;font-size:26px;line-height:1;cursor:pointer}</style><script>(function(){var card=document.querySelector("#thanh-toan .paycard");if(!card)return;var ph=document.createComment("pay"),ov=document.createElement("div");ov.className="pm-ov";ov.setAttribute("role","dialog");ov.setAttribute("aria-label","Chuyển khoản");ov.innerHTML='<div class="pm-box"><button class="pm-x" type="button" aria-label="Đóng">×</button></div>';document.body.appendChild(ov);var box=ov.firstChild;function open(v){var s=document.getElementById("pyPk");if(v&&s){s.value=v;s.dispatchEvent(new Event("change"))}if(!ph.parentNode){card.parentNode.insertBefore(ph,card);box.appendChild(card)}ov.classList.add("on");document.documentElement.style.overflow="hidden";box.scrollTop=0;setTimeout(function(){var f=document.getElementById("pyNm");if(f&&!f.value)f.focus({preventScroll:true})},300)}function close(){if(!ph.parentNode)return;ph.parentNode.insertBefore(card,ph);ph.parentNode.removeChild(ph);ov.classList.remove("on");document.documentElement.style.overflow=""}ov.querySelector(".pm-x").onclick=close;ov.addEventListener("click",function(e){if(e.target===ov)close()});document.addEventListener("keydown",function(e){if(e.key==="Escape")close()});document.querySelectorAll("[data-pk]").forEach(function(b){b.addEventListener("click",function(e){e.preventDefault();open(b.getAttribute("data-pk"))})})})();</script><!--/paymodal--><script src="/he-sinh-thai.js?v=1" defer></script>
+<!--paymodal--><style>.pm-ov{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:10px;background:#000c;backdrop-filter:blur(4px)}.pm-ov.on{display:flex}.pm-box{position:relative;width:min(680px,100%);max-height:94vh;overflow:auto;-webkit-overflow-scrolling:touch;border-radius:20px;background:#0d0f1c;box-shadow:0 20px 80px #000;padding-top:16px}.pm-box>*:not(.pm-x){margin:0!important;opacity:1!important;transform:none!important;visibility:visible!important}.pm-box .reveal{opacity:1!important;transform:none!important}.pm-x{position:sticky;top:8px;float:right;margin:8px 8px -48px 0;z-index:5;width:40px;height:40px;border-radius:50%;border:1px solid #e3b675;background:#0d0f1ce6;color:#f3d48b;font-size:26px;line-height:1;cursor:pointer}</style><script>(function(){var card=document.querySelector("#thanh-toan .paycard");if(!card)return;var ph=document.createComment("pay"),ov=document.createElement("div");ov.className="pm-ov";ov.setAttribute("role","dialog");ov.setAttribute("aria-label","Chuyển khoản");ov.innerHTML='<div class="pm-box"><button class="pm-x" type="button" aria-label="Đóng">×</button></div>';document.body.appendChild(ov);var box=ov.firstChild;function open(v){var s=document.getElementById("pyPk");if(v&&s){s.value=v;s.dispatchEvent(new Event("change"))}if(!ph.parentNode){card.parentNode.insertBefore(ph,card);box.appendChild(card)}ov.classList.add("on");document.documentElement.style.overflow="hidden";box.scrollTop=0;setTimeout(function(){var f=document.getElementById("pyNm");if(f&&!f.value)f.focus({preventScroll:true})},300)}function close(){if(!ph.parentNode)return;ph.parentNode.insertBefore(card,ph);ph.parentNode.removeChild(ph);ov.classList.remove("on");document.documentElement.style.overflow=""}ov.querySelector(".pm-x").onclick=close;ov.addEventListener("click",function(e){if(e.target===ov)close()});document.addEventListener("keydown",function(e){if(e.key==="Escape")close()});document.querySelectorAll("[data-pk]").forEach(function(b){b.addEventListener("click",function(e){e.preventDefault();open(b.getAttribute("data-pk"))})})})();</script><!--/paymodal--><script src="js/bai-moi-ngay.js?v=1" defer></script><script src="/he-sinh-thai.js?v=1" defer></script>
 <script>/* ?goi=NAM2027 chọn sẵn gói trong khung thanh toán (link gửi khách quảng cáo) */
 (function(){try{var g=(new URLSearchParams(location.search).get("goi")||"").toUpperCase();if(!g)return;var s=document.getElementById("pyPk");if(!s)return;var o=[].slice.call(s.options).filter(function(x){return x.value.split("|")[1]===g})[0];if(!o)return;function go(){s.value=o.value;s.dispatchEvent(new Event("change"))}if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",go)}else{go()}window.addEventListener("load",go)}catch(e){}})();
 </script>
