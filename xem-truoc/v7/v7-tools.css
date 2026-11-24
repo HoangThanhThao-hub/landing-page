@@ -280,3 +280,5 @@
 .am-b.gold{color:#1b1300;border:0;background:linear-gradient(90deg,#f6d38a,#ffe9b8,#f0c56b)}
 .am-note{text-align:center;color:#a7bedb;font-size:14px;margin-top:16px}
 @media(max-width:900px){.am-grid{grid-template-columns:1fr}.am-thumb{aspect-ratio:1/1}}
+
+.vt-cg{margin:14px auto 0;max-width:820px;text-align:center;font-size:15px;line-height:1.6;opacity:.9}.vt-cg a{color:inherit;text-decoration:underline}
