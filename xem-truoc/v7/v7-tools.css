@@ -258,3 +258,25 @@
  .vt-compare-price b{font-size:28px}
 }
 @media(prefers-reduced-motion:reduce){.vt-ting-h .dot{animation:none}.vt-thumb img,.vt-clip{transition:none}}
+/* giá trị gói MASTER (cô 24/11: công cụ 15tr + đào tạo 1:1 30 ngày trị giá 30tr) */
+.vt-value{margin:14px 0 6px;border:1px solid rgba(255,217,138,.35);border-radius:14px;overflow:hidden;background:rgba(255,255,255,.04)}
+.vt-value div{display:flex;justify-content:space-between;gap:10px;padding:9px 14px;font-size:14px;border-bottom:1px dashed rgba(255,255,255,.12)}
+.vt-value div:last-child{border-bottom:0}.vt-value span{color:#c9d8f0}.vt-value b{color:#fff;white-space:nowrap}
+.vt-value .tot{background:rgba(255,217,138,.1)}.vt-value .tot span{color:#ffd98a;font-weight:800}.vt-value .tot b{color:#ffd98a}
+/* 3 app mới (24/11) */
+.am-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.am-card{background:linear-gradient(145deg,rgba(22,67,130,.65),rgba(7,17,55,.95));border:1px solid rgba(102,205,246,.28);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.am-thumb{position:relative;display:grid;place-items:center;aspect-ratio:4/5;overflow:hidden;background:#071139}
+.am-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%}
+.am-play{position:relative;z-index:1;width:66px;height:66px;border-radius:50%;display:grid;place-items:center;padding-left:5px;box-sizing:border-box;font-size:26px;color:#fff;background:rgba(10,30,90,.55);border:2px solid rgba(255,255,255,.85);box-shadow:0 0 28px rgba(33,183,255,.6)}
+.am-new{position:absolute;z-index:1;top:12px;left:12px;font-weight:900;font-size:12px;letter-spacing:.08em;color:#1b1300;background:linear-gradient(90deg,#f6d38a,#ffe9b8);border-radius:999px;padding:5px 10px}
+.am-body{padding:18px;display:flex;flex-direction:column;flex:1}
+.am-body small{color:#7ee8ff;font-weight:800;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.am-body h3{color:#fff;margin:6px 0 8px;font-size:20px}
+.am-body p{color:#c4d6ef;font-size:14px;line-height:1.6;margin:0 0 8px}
+.am-body .am-m{color:#9fb7d8;font-size:13px;font-style:italic}
+.am-btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:8px}
+.am-b{flex:1 1 auto;text-align:center;text-decoration:none;font-weight:800;font-size:13px;padding:10px 12px;border-radius:999px;color:#bdf3ff;border:1px solid rgba(126,232,255,.5)}
+.am-b.gold{color:#1b1300;border:0;background:linear-gradient(90deg,#f6d38a,#ffe9b8,#f0c56b)}
+.am-note{text-align:center;color:#a7bedb;font-size:14px;margin-top:16px}
+@media(max-width:900px){.am-grid{grid-template-columns:1fr}.am-thumb{aspect-ratio:1/1}}
