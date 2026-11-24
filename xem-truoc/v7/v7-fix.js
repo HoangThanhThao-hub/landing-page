@@ -22,7 +22,7 @@
   cp('Cô Thảo ơi, em đã chuyển khoản '+money(cur.price)+' mua '+cur.name+'.\n- Họ tên: '+(nm||'...')+'\n- Zalo: '+(ph||'...')+'\n- Nội dung CK: '+memo()+'\nEm gửi ảnh chuyển khoản ạ.');
   if(!this.dataset.sent){this.dataset.sent='1';try{var GE={loai:'entry.596007808',goi:'entry.1684003920',ten:'entry.546302110',zalo:'entry.2058676908',tien:'entry.1353076927',nd:'entry.644535927'},d={loai:'Website V7',goi:cur.name,ten:nm,zalo:ph,tien:cur.price,nd:memo()},fd=new URLSearchParams();Object.keys(d).forEach(function(k){fd.append(GE[k],String(d[k]).slice(0,500))});fetch('https://docs.google.com/forms/d/e/1FAIpQLScoEBjYk6eHmzAXQfLeNSwpMVRsGL_wf08Vj_eyDGFlQUbw2w/formResponse',{method:'POST',mode:'no-cors',body:fd}).catch(function(){})}catch(x){}}
   $('qHint').innerHTML='<b>Đã chép sẵn lời nhắn.</b> Bấm nút dưới, dán lời nhắn và gửi kèm ảnh chuyển khoản nhé.';$('qZl').hidden=false});
- document.addEventListener('click',function(e){var a=e.target.closest('a[href*="san-pham=app"],[data-buy]');if(a){e.preventDefault();e.stopPropagation();open('app')}},true);
+ document.addEventListener('click',function(e){var a=e.target.closest('a[href*="san-pham=app"],[data-buy]');if(a){e.preventDefault();e.stopPropagation();var k=a.dataset.buy||'app';if(a.dataset.name&&a.dataset.price)P[k]={name:a.dataset.name,price:+a.dataset.price};open(P[k]?k:'app')}},true);
  if(/san-pham=app/.test(location.search))setTimeout(function(){open('app')},300);
 })();
 (function(){
