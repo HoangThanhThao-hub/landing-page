@@ -86,6 +86,24 @@ details p{color:var(--mut);margin:10px 0 0}
 .cta .btn{border-color:var(--gold2);color:var(--gold2)}.cta .btn.main{background:var(--gold2);color:var(--dark);border-color:var(--gold2)}
 .cta .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 footer{padding:30px 0 110px;text-align:center;color:var(--mut);font-size:14px}
+/* albums */
+.albs{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.alb{cursor:pointer;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;text-align:left;padding:0;font:inherit;color:inherit;display:flex;flex-direction:column}
+.alb .cv{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--bg2)}
+.alb .cv img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s}
+.alb:hover .cv img{transform:scale(1.04)}
+.alb .cv .n{position:absolute;right:10px;bottom:10px;background:#000a;color:#fff;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px}
+.alb .th{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;padding:3px}.alb .th img{aspect-ratio:1;object-fit:cover;object-position:top;width:100%;border-radius:6px}
+.alb .in{padding:12px 16px 16px}.alb h3{font-size:24px}.alb p{margin:2px 0 0;color:var(--mut);font-size:14px}
+.ph0{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;height:100%;color:#fff;font:600 22px "Cormorant Garamond";line-height:1.3}
+.ph0 small{display:block;font:500 12px "Be Vietnam Pro";opacity:.85;margin-top:6px}
+.al{align-items:flex-start;overflow:auto;padding:0}
+.al .box2{width:min(960px,100%);margin:0 auto;background:var(--bg);min-height:100%;padding:56px 16px 110px;position:relative}
+.al .box2 h3{font-size:clamp(30px,5vw,44px);text-align:center}.al .box2 .sm{text-align:center;margin:6px 0 20px}
+.al .x{position:fixed;background:var(--dark);color:#fff}
+.al .ag{columns:3 220px;column-gap:10px}.al .ag img{width:100%;margin:0 0 10px;border-radius:12px;cursor:zoom-in;break-inside:avoid}
+.al .cta2{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+@media (max-width:520px){.albs{grid-template-columns:1fr 1fr;gap:10px}.alb h3{font-size:18px}.alb p{font-size:12px}.alb .in{padding:8px 10px 12px}.alb .th{display:none}.al .ag{columns:2;column-gap:6px}.al .ag img{margin-bottom:6px}}
 /* phuc hoi */
 .ba{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
 .cmp{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/5;background:var(--bg2);user-select:none;touch-action:pan-y;cursor:ew-resize}
@@ -126,60 +144,49 @@ footer{padding:30px 0 110px;text-align:center;color:var(--mut);font-size:14px}
 
 <header class="hero"><div class="wrap hg">
   <div>
-    <span class="kick">Bộ ảnh nghệ thuật · Thanh Thảo</span>
+    <span class="kick">Bộ ảnh Noel &amp; Tết 2027 · Thanh Thảo</span>
     <h1>Đẹp như tạp chí,<br><em>vẫn đúng là mình</em></h1>
-    <p class="lead">Chị chỉ cần gửi vài tấm ảnh chân dung qua Zalo. Thảo làm cho chị cả bộ ảnh cổ trang, thiền tâm, nữ doanh nhân hay áo dài, giữ đúng gương mặt của chị. Không cần đi chụp, không cần trang điểm, không tốn tiền thuê váy áo.</p>
+    <p class="lead">Chị chỉ cần gửi vài tấm ảnh chân dung qua Zalo. Thảo làm cho chị cả bộ ảnh Noel, Tết, cổ trang hay nữ doanh nhân, giữ đúng gương mặt của chị. Không cần đi chụp, không cần trang điểm, không tốn tiền thuê váy áo.</p>
     <div class="row">
-      <a class="btn main" href="#bo-anh">Xem bộ ảnh mẫu</a>
+      <a class="btn main" href="#bo-anh">Xem các bộ ảnh</a>
       <button class="btn" data-order="Gói Phổ Biến">Đặt làm bộ ảnh</button>
     </div>
-    <a class="more" href="#phuc-hoi">Có nhận phục hồi ảnh cũ, ảnh rách, ảnh ố vàng →</a>
+    <a class="more" href="#noel-tet">Bộ ảnh gia đình, cặp đôi Noel &amp; Tết →</a><br><a class="more" style="margin-top:6px" href="#phuc-hoi">Có nhận phục hồi ảnh cũ, ảnh rách, ảnh ố vàng →</a>
     <div class="ticks"><span>Giữ đúng gương mặt</span><span>Nhận ảnh trong 24–48 giờ</span><span>Sửa lại miễn phí nếu chưa giống</span></div>
   </div>
   <div class="mosaic" aria-hidden="true">
     <img class="a" src="img/co-trang-04.webp" alt="" fetchpriority="high">
-    <img class="b" src="img/beauty-02.webp" alt="" fetchpriority="high">
-    <img class="c" src="img/thien-03.webp" alt="">
-    <img class="d" src="img/doanh-nhan-03.webp" alt="">
+    <img class="b" src="img/ruby-03.webp" alt="" fetchpriority="high">
+    <img class="c" src="img/champagne-03.webp" alt="">
+    <img class="d" src="img/ruby-08.webp" alt="">
     <img class="e" src="img/co-trang-05.webp" alt="">
   </div>
 </div></header>
 
 <div class="strip"><div class="wrap">
-  <span><b>5</b> phong cách</span><span>Phục hồi <b>ảnh cũ</b></span><span><b>40+</b> ảnh mẫu thật</span><span>Gửi ảnh qua <b>Zalo</b></span><span>Thanh toán <b>TPBank</b></span>
+  <span>Bộ ảnh <b>Noel &amp; Tết</b></span><span><b>6</b> bộ ảnh mẫu</span><span>Phục hồi <b>ảnh cũ</b></span><span>Gửi ảnh qua <b>Zalo</b></span><span>Thanh toán <b>TPBank</b></span>
 </div></div>
 
 <section id="bo-anh"><div class="wrap">
-  <div class="head"><span class="kick">Bộ sưu tập</span><h2>Bộ ảnh mẫu Thảo đã làm</h2><p>Tất cả ảnh dưới đây Thảo làm từ chính gương mặt của mình. Bộ ảnh của chị sẽ làm theo đúng cách đó, với gương mặt của chị.</p></div>
-  <div class="tabs" id="tabs">
-    <button class="on" data-f="all">Tất cả</button>
-    <button data-f="co-trang">Cổ trang</button>
-    <button data-f="thien">Thiền tâm</button>
-    <button data-f="doanh-nhan">Nữ doanh nhân</button>
-    <button data-f="beauty">Chân dung</button>
-    <button data-f="ao-dai">Áo dài</button>
-  </div>
-  <div class="gal" id="gal"></div>
-  <p class="gnote">Bấm vào ảnh để xem to. Ảnh trên trang đã nén cho nhẹ, ảnh gửi chị là bản nét cao.</p>
+  <div class="head"><span class="kick">Bộ sưu tập</span><h2>Bộ ảnh mẫu Thảo đã làm</h2><p>Mỗi bộ là một phong cách. Bấm vào bộ nào để xem trọn bộ. Bộ ảnh của chị sẽ làm theo đúng cách đó, với gương mặt của chị.</p></div>
+  <div class="albs" id="albs"></div>
+  <p class="gnote">Ảnh trên trang đã nén cho nhẹ, ảnh gửi chị là bản nét cao.</p>
 </div></section>
 
-<section class="bg2"><div class="wrap">
-  <div class="head"><span class="kick">Chọn phong cách</span><h2>Chị muốn mình trong bộ ảnh nào?</h2></div>
-  <div class="cs">
-    <div class="cc"><img src="img/co-trang-03.webp" alt="Bộ ảnh cổ trang" loading="lazy"><div class="in"><h3>Cổ trang tiên nữ</h3><p>Hán phục, áo choàng tuyết, rừng trúc, đình cổ. Hợp làm ảnh đại diện, ảnh kỷ niệm.</p></div></div>
-    <div class="cc"><img src="img/thien-01.webp" alt="Bộ ảnh thiền tâm" loading="lazy"><div class="in"><h3>Thiền tâm an nhiên</h3><p>Pháp phục nhẹ nhàng, hồ sen, chùa núi. Hợp đi lễ, đăng ngày rằm, mùng một.</p></div></div>
-    <div class="cc"><img src="img/doanh-nhan-07.webp" alt="Bộ ảnh nữ doanh nhân" loading="lazy"><div class="in"><h3>Nữ doanh nhân</h3><p>Vest lụa, văn phòng kính, sân khấu. Hợp làm ảnh bán hàng, hồ sơ, trang cá nhân.</p></div></div>
-    <div class="cc"><img src="img/beauty-03.webp" alt="Bộ ảnh chân dung" loading="lazy"><div class="in"><h3>Chân dung sang trọng</h3><p>Cận mặt, ánh sáng mềm, váy lụa. Hợp ảnh bìa Facebook, Zalo.</p></div></div>
-  </div>
+<section class="bg2" id="noel-tet"><div class="wrap">
+  <div class="head"><span class="kick">Mùa Noel &amp; Tết 2027</span><h2>Bộ ảnh Noel, Tết cho cả nhà và người thương</h2><p>Cả nhà khỏi phải hẹn nhau đi studio, khỏi xếp hàng chụp Tết. Mỗi người gửi vài tấm ảnh, Thảo ghép thành bộ ảnh chung thật ấm áp.</p></div>
+  <div class="cs" id="mua"></div>
+  <div class="price" id="price0" style="margin-top:34px"></div>
+  <p class="pnote">Nhận làm tới hết tháng Giêng. Gần Noel và Tết đông khách, chị đặt sớm để nhận ảnh kịp đăng.</p>
 </div></section>
 
 <section id="phuc-hoi"><div class="wrap">
   <div class="head"><span class="kick">Phục hồi ảnh cũ</span><h2>Ảnh xưa của ông bà, cha mẹ, làm lại như mới</h2><p>Ảnh cũ mờ, rách, ố vàng, gãy nếp, đen trắng. Chị chụp lại bằng điện thoại gửi Thảo, Thảo làm nét, vá chỗ rách và tô màu tự nhiên. Kéo thanh giữa ảnh để xem trước và sau.</p></div>
   <div class="fix"><span>Làm nét ảnh mờ</span><span>Vá ảnh rách, gãy nếp</span><span>Xóa vết ố, vết bẩn</span><span>Tô màu ảnh đen trắng</span><span>Làm ảnh thờ</span><span>In và lồng khung (báo giá riêng)</span></div>
   <div class="ba">
-    <div><div class="cmp"><img src="img/phuc-hoi-01-truoc.webp" alt="Ảnh cũ ố vàng, trầy xước" loading="lazy"><img class="af" src="img/beauty-02.webp" alt="Ảnh sau khi phục hồi" loading="lazy"><span class="ln"></span><span class="tg t1">Trước</span><span class="tg t2">Sau</span></div><p>Ảnh ố vàng, trầy xước, mờ mặt</p></div>
-    <div><div class="cmp"><img src="img/phuc-hoi-02-truoc.webp" alt="Ảnh đen trắng cũ" loading="lazy"><img class="af" src="img/thien-01.webp" alt="Ảnh sau khi tô màu" loading="lazy"><span class="ln"></span><span class="tg t1">Trước</span><span class="tg t2">Sau</span></div><p>Ảnh đen trắng, gãy nếp, rách góc</p></div>
-    <div><div class="cmp"><img src="img/phuc-hoi-03-truoc.webp" alt="Ảnh cũ bạc màu" loading="lazy"><img class="af" src="img/beauty-05.webp" alt="Ảnh sau khi phục hồi" loading="lazy"><span class="ln"></span><span class="tg t1">Trước</span><span class="tg t2">Sau</span></div><p>Ảnh bạc màu, vết bẩn, mất nét</p></div>
+    <div><div class="cmp"><img src="img/phuc-hoi-01-truoc.webp" alt="Ảnh cũ ố vàng, trầy xước" loading="lazy"><img class="af" src="img/ruby-03.webp" alt="Ảnh sau khi phục hồi" loading="lazy"><span class="ln"></span><span class="tg t1">Trước</span><span class="tg t2">Sau</span></div><p>Ảnh ố vàng, trầy xước, mờ mặt</p></div>
+    <div><div class="cmp"><img src="img/phuc-hoi-02-truoc.webp" alt="Ảnh đen trắng cũ" loading="lazy"><img class="af" src="img/chu-tich-05.webp" alt="Ảnh sau khi tô màu" loading="lazy"><span class="ln"></span><span class="tg t1">Trước</span><span class="tg t2">Sau</span></div><p>Ảnh đen trắng, gãy nếp, rách góc</p></div>
+    <div><div class="cmp"><img src="img/phuc-hoi-03-truoc.webp" alt="Ảnh cũ bạc màu" loading="lazy"><img class="af" src="img/ngoc-08.webp" alt="Ảnh sau khi phục hồi" loading="lazy"><span class="ln"></span><span class="tg t1">Trước</span><span class="tg t2">Sau</span></div><p>Ảnh bạc màu, vết bẩn, mất nét</p></div>
   </div>
   <p class="gnote">Ảnh minh họa. Thảo dùng ảnh của chính mình, làm cũ đi để chị dễ hình dung, không dùng ảnh của khách.</p>
   <div class="price" id="price2" style="margin-top:34px"></div>
@@ -234,6 +241,13 @@ footer{padding:30px 0 110px;text-align:center;color:var(--mut);font-size:14px}
 
 <div class="zbar"><a class="z" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Nhắn Zalo</a><button class="b" data-order="Gói Phổ Biến">Đặt làm bộ ảnh</button></div>
 
+<div class="ov al" id="al" role="dialog" aria-modal="true" aria-label="Xem trọn bộ ảnh"><div class="box2">
+  <button class="x" data-close aria-label="Đóng">×</button>
+  <h3 id="alt"></h3><p class="sm" id="ald"></p>
+  <div class="ag" id="alg"></div>
+  <div class="cta2"><button class="btn main" id="alo">Đặt làm bộ như này</button><a class="btn" href="https://zalo.me/0935949141" target="_blank" rel="noopener">Hỏi Thảo qua Zalo</a></div>
+</div></div>
+
 <div class="ov lb" id="lb" role="dialog" aria-modal="true" aria-label="Xem ảnh">
   <button class="x" data-close aria-label="Đóng">×</button>
   <button class="nav pv" id="pv" aria-label="Ảnh trước">‹</button>
@@ -247,7 +261,7 @@ footer{padding:30px 0 110px;text-align:center;color:var(--mut);font-size:14px}
     <h3>Đặt làm bộ ảnh</h3>
     <p class="sm">Điền nhanh để Thảo nhận đơn. Ảnh chân dung chị gửi qua Zalo sau khi chuyển khoản.</p>
     <label>Gói<select id="pk"></select></label>
-    <label>Phong cách muốn làm<select id="st"><option>Cổ trang tiên nữ</option><option>Thiền tâm an nhiên</option><option>Nữ doanh nhân</option><option>Chân dung sang trọng</option><option>Áo dài</option><option>Phục hồi ảnh cũ</option><option>Chưa biết, nhờ Thảo gợi ý</option></select></label>
+    <label>Phong cách muốn làm<select id="st"><option>Gia đình Noel</option><option>Cặp đôi Noel</option><option>Gia đình Tết</option><option>Cặp đôi Tết</option><option>Cổ trang tiên nữ</option><option>Trắng điểm ruby</option><option>Champagne thư viện</option><option>Ngọc lục bảo</option><option>Đêm xanh coban</option><option>Nữ chủ tịch váy trắng</option><option>Áo dài</option><option>Phục hồi ảnh cũ</option><option>Chưa biết, nhờ Thảo gợi ý</option></select></label>
     <label>Tên của chị<input id="nm" autocomplete="name" placeholder="Ví dụ: Lan"></label>
     <label>Số Zalo<input id="ph" inputmode="tel" autocomplete="tel" placeholder="09xx xxx xxx"></label>
     <button class="btn main" id="go">Tiếp tục, xem mã chuyển khoản</button>
@@ -269,6 +283,9 @@ footer{padding:30px 0 110px;text-align:center;color:var(--mut);font-size:14px}
 <script>
 /* GIÁ ĐANG ĐỂ TẠM, CHỜ CÔ THẢO CHỐT */
 var P=[
+ {s:1,n:"Cặp Đôi Noel / Tết",sub:"Hai người, một bộ ảnh ngọt ngào",p:299000,f:["15 ảnh nét cao","Chọn Noel hoặc Tết","Mỗi người gửi 3–5 tấm ảnh","Nhận trong 24–48 giờ","Sửa lại đến khi ưng"]},
+ {s:1,n:"Gia Đình Noel / Tết",sub:"Cả nhà tới 5 người",p:499000,hot:1,f:["20 ảnh nét cao","Chọn Noel hoặc Tết","Tới 5 người, thêm người +50k","Tặng 1 ảnh bìa Facebook","Sửa lại đến khi ưng"]},
+ {s:1,n:"Combo Noel + Tết",sub:"Một lần đặt, đủ ảnh hai mùa",p:799000,f:["40 ảnh nét cao","Cả bộ Noel và bộ Tết","Gia đình hoặc cặp đôi","Ưu tiên làm trước","Sửa lại đến khi ưng"]},
  {n:"Gói Dùng Thử",sub:"Để chị xem có giống không",p:199000,f:["10 ảnh nét cao","1 phong cách","Nhận trong 24–48 giờ","Sửa lại 1 lần nếu chưa giống"]},
  {n:"Gói Phổ Biến",sub:"Đủ ảnh đăng cả tháng",p:399000,hot:1,f:["30 ảnh nét cao","3 phong cách tùy chọn","Nhận trong 24–48 giờ","Sửa lại đến khi ưng","Tặng 1 ảnh bìa Facebook"]},
  {n:"Gói Sang Trọng",sub:"Bộ ảnh như đi studio lớn",p:799000,f:["60 ảnh nét cao","5 phong cách tùy chọn","2 video ngắn ảnh chuyển động","Ưu tiên làm trước","Sửa lại đến khi ưng"]},
@@ -276,29 +293,48 @@ var P=[
  {ph:1,n:"Phục Hồi 5 Ảnh",sub:"Album nhỏ của gia đình",p:399000,hot:1,f:["5 ảnh phục hồi + tô màu","Ảnh rách nhiều cũng nhận","Nhận trong 24–48 giờ","Sửa lại đến khi ưng"]},
  {ph:1,n:"Ảnh Thờ Trang Trọng",sub:"Làm ảnh thờ từ ảnh cũ",p:299000,f:["Phục hồi, làm nét gương mặt","Thay nền, chỉnh áo trang nghiêm","Cỡ chuẩn để in ảnh thờ","Ưu tiên làm gấp khi cần"]}
 ];
-var G={"co-trang":["Cổ trang",6],"thien":["Thiền tâm",10],"doanh-nhan":["Nữ doanh nhân",12],"beauty":["Chân dung",8],"ao-dai":["Áo dài",1]};
 var $=function(i){return document.getElementById(i)},fm=function(n){return n.toLocaleString("vi-VN")+"đ"};
-var L=[];Object.keys(G).forEach(function(k){for(var i=1;i<=G[k][1];i++)L.push({k:k,s:"img/"+k+"-"+(i<10?"0":"")+i+".webp",t:G[k][0]})});
-/* trộn thứ tự "Tất cả" cho đẹp mắt */
-var ALL=[];(function(){var by={};L.forEach(function(x){(by[x.k]=by[x.k]||[]).push(x)});var ks=Object.keys(by),m=1;while(m){m=0;ks.forEach(function(k){if(by[k].length){ALL.push(by[k].shift());m=1}})}})();
-var cur=ALL,idx=0;
-function draw(f){cur=f=="all"?ALL:L.filter(function(x){return x.k==f});$("gal").innerHTML=cur.map(function(x,i){return '<figure data-i="'+i+'"><img src="'+x.s+'" alt="Bộ ảnh '+x.t+'" loading="lazy" decoding="async"><figcaption>'+x.t+'</figcaption></figure>'}).join("")}
-draw("all");
-$("tabs").onclick=function(e){var b=e.target.closest("button");if(!b)return;[].forEach.call(this.children,function(c){c.classList.toggle("on",c==b)});draw(b.dataset.f)};
+var A=[
+ {k:"co-trang",n:"Cổ trang tiên nữ",d:"Hán phục, áo choàng tuyết, rừng trúc, đình cổ",c:6},
+ {k:"ruby",n:"Trắng điểm ruby",d:"Lụa trắng, điểm đỏ ruby, sang trọng như tạp chí",c:9},
+ {k:"champagne",n:"Champagne thư viện",d:"Sắc ngà, nắng vàng, thư viện cổ điển",c:9},
+ {k:"ngoc",n:"Ngọc lục bảo",d:"Ngà và xanh ngọc, vườn kính, hành lang đá",c:10},
+ {k:"coban",n:"Đêm xanh coban",d:"Studio xanh, ánh đèn đêm, hiện đại",c:6,cv:2},
+ {k:"chu-tich",n:"Nữ chủ tịch váy trắng",d:"Váy trắng, văn phòng sáng, quyền lực",c:7}
+];
+A.forEach(function(a){a.f=[];for(var i=1;i<=a.c;i++)a.f.push("img/"+a.k+"-"+(i<10?"0":"")+i+".webp");if(a.cv)a.f.unshift(a.f.splice(a.cv-1,1)[0])});
+/* bộ ảnh mùa lễ: ảnh mẫu thêm vào khi có (để trống thì hiện ô màu) */
+var M=[
+ {n:"Gia đình Noel",d:"Cây thông, áo len đỏ, cả nhà quây quần",bg:"linear-gradient(160deg,#7a1f1f,#2f4a2c)",f:[]},
+ {n:"Cặp đôi Noel",d:"Tuyết rơi, đèn lấp lánh, khăn len đôi",bg:"linear-gradient(160deg,#1f3b5a,#8a2b2b)",f:[]},
+ {n:"Gia đình Tết",d:"Áo dài cả nhà, mai đào, bánh chưng",bg:"linear-gradient(160deg,#b8322a,#d9a441)",f:[]},
+ {n:"Cặp đôi Tết",d:"Áo dài đôi, phố đèn lồng, hoa đào",bg:"linear-gradient(160deg,#c2456a,#e0a36b)",f:[]}
+];
+function albCard(a,i,t){var cv=a.f.length?'<img src="'+a.f[0]+'" alt="Bộ ảnh '+a.n+'" loading="lazy"><span class="n">'+a.f.length+' ảnh</span>':'<div class="ph0" style="background:'+a.bg+'">'+a.n+'<small>Ảnh mẫu đang cập nhật</small></div>';
+return '<button class="alb" data-t="'+t+'" data-i="'+i+'"><div class="cv">'+cv+'</div>'+(a.f.length>3?'<div class="th">'+a.f.slice(1,4).map(function(x){return '<img src="'+x+'" alt="" loading="lazy">'}).join("")+'</div>':'')+'<div class="in"><h3>'+a.n+'</h3><p>'+a.d+'</p></div></button>'}
+$("albs").innerHTML=A.map(function(a,i){return albCard(a,i,"A")}).join("");
+$("mua").innerHTML=M.map(function(a,i){return albCard(a,i,"M")}).join("");
+var cur=[],idx=0,curA=null;
+document.addEventListener("click",function(e){var b=e.target.closest(".alb");if(!b)return;var a=(b.dataset.t=="A"?A:M)[+b.dataset.i];curA=a;
+if(!a.f.length){$("pk").value=/Gia đình/.test(a.n)?"Gia Đình Noel / Tết":"Cặp Đôi Noel / Tết";$("st").value=a.n;openOrder();return}
+cur=a.f.map(function(x){return {s:x,t:a.n}});$("alt").textContent=a.n;$("ald").textContent=a.d+" · "+a.f.length+" ảnh";
+$("alg").innerHTML=a.f.map(function(x,i){return '<img src="'+x+'" data-i="'+i+'" alt="Bộ ảnh '+a.n+'" loading="lazy">'}).join("");$("al").classList.add("on");$("al").scrollTop=0;requestAnimationFrame(function(){$("al").scrollTop=0})});
+$("alg").onclick=function(e){var im=e.target.closest("img");if(!im)return;show(+im.dataset.i);$("lb").classList.add("on")};
+$("alo").onclick=function(){$("al").classList.remove("on");$("pk").value="Gói Phổ Biến";if(curA)$("st").value=curA.n;openOrder()};
 function show(i){idx=(i+cur.length)%cur.length;$("lbi").src=cur[idx].s;$("lbi").alt="Bộ ảnh "+cur[idx].t}
-$("gal").onclick=function(e){var f=e.target.closest("figure");if(!f)return;show(+f.dataset.i);$("lb").classList.add("on")};
 $("pv").onclick=function(){show(idx-1)};$("nx").onclick=function(){show(idx+1)};
 document.addEventListener("keydown",function(e){if(!$("lb").classList.contains("on"))return;if(e.key=="ArrowLeft")show(idx-1);if(e.key=="ArrowRight")show(idx+1);if(e.key=="Escape")$("lb").classList.remove("on")});
 var tx=0;$("lb").addEventListener("touchstart",function(e){tx=e.touches[0].clientX},{passive:true});$("lb").addEventListener("touchend",function(e){var d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50)show(idx+(d<0?1:-1))});
 document.addEventListener("click",function(e){if(e.target.matches("[data-close]")||e.target.classList.contains("ov"))e.target.closest(".ov").classList.remove("on")});
 function card(p){return '<div class="pk'+(p.hot?' hot':'')+'">'+(p.hot?'<span class="badge">Được chọn nhiều nhất</span>':'')+'<h3>'+p.n+'</h3><div class="sub">'+p.sub+'</div><div class="pr">'+fm(p.p)+'</div><ul>'+p.f.map(function(x){return '<li>'+x+'</li>'}).join("")+'</ul><button class="btn'+(p.hot?' main':'')+'" data-order="'+p.n+'">Đặt làm gói này</button></div>'}
-$("price").innerHTML=P.filter(function(p){return !p.ph}).map(card).join("");$("price2").innerHTML=P.filter(function(p){return p.ph}).map(card).join("");
+$("price0").innerHTML=P.filter(function(p){return p.s}).map(card).join("");$("price").innerHTML=P.filter(function(p){return !p.ph&&!p.s}).map(card).join("");$("price2").innerHTML=P.filter(function(p){return p.ph}).map(card).join("");
 [].forEach.call(document.querySelectorAll(".cmp"),function(c){var a=c.querySelector(".af"),l=c.querySelector(".ln"),dn=0;function mv(x){var r=c.getBoundingClientRect(),v=Math.max(0,Math.min(100,(x-r.left)/r.width*100));a.style.clipPath="inset(0 0 0 "+v+"%)";l.style.left=v+"%"}
 c.addEventListener("pointerdown",function(e){dn=1;mv(e.clientX)});window.addEventListener("pointerup",function(){dn=0});c.addEventListener("pointermove",function(e){if(dn||e.pointerType=="mouse")mv(e.clientX)});c.addEventListener("pointerleave",function(e){if(e.pointerType=="mouse")mv(c.getBoundingClientRect().left+c.getBoundingClientRect().width/2)})});
 $("pk").innerHTML=P.map(function(p){return '<option value="'+p.n+'">'+p.n+' · '+fm(p.p)+'</option>'}).join("");
 function code(){return "BOANH "+($("ph").value||"").replace(/\D/g,"").slice(-6)}
 function pk(){return P.filter(function(p){return p.n==$("pk").value})[0]}
-document.addEventListener("click",function(e){var b=e.target.closest("[data-order]");if(!b)return;$("pk").value=b.dataset.order;if(/Phục Hồi|Ảnh Thờ/.test(b.dataset.order))$("st").value="Phục hồi ảnh cũ";$("s1").style.display="";$("s2").style.display="none";$("ok").style.display="none";$("od").classList.add("on")});
+function openOrder(){$("s1").style.display="";$("s2").style.display="none";$("ok").style.display="none";$("od").classList.add("on")}
+document.addEventListener("click",function(e){var b=e.target.closest("[data-order]");if(!b)return;$("pk").value=b.dataset.order;if(/Noel/.test(b.dataset.order))$("st").value=/Gia/.test(b.dataset.order)?"Gia đình Noel":"Cặp đôi Noel";if(/Phục Hồi|Ảnh Thờ/.test(b.dataset.order))$("st").value="Phục hồi ảnh cũ";$("s1").style.display="";$("s2").style.display="none";$("ok").style.display="none";$("od").classList.add("on")});
 $("go").onclick=function(){if(!$("nm").value.trim()||($("ph").value.replace(/\D/g,"").length<9)){$("er").style.display="block";return}$("er").style.display="none";var t=pk().p,c=code();$("amt").textContent=fm(t);$("nd").textContent=c;$("cpa").dataset.cp=t;$("cpn").dataset.cp=c;
 var q=$("qr");q.onerror=function(){this.onerror=null;this.src="../../qr-tpbank.jpg"};q.src="https://img.vietqr.io/image/TPB-87681714131-compact2.png?amount="+t+"&addInfo="+encodeURIComponent(c)+"&accountName="+encodeURIComponent("HOANG THI THANH THAO");$("s1").style.display="none";$("s2").style.display=""};
 document.addEventListener("click",function(e){var c=e.target.closest(".cp");if(c&&c.dataset.cp){try{navigator.clipboard.writeText(c.dataset.cp)}catch(x){}c.textContent="Đã chép";setTimeout(function(){c.textContent="Chép"},1200)}});
