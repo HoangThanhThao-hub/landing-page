@@ -62,3 +62,5 @@ a.role-card{display:block;text-decoration:none;color:inherit;cursor:pointer;tran
 a.role-card:hover,a.role-card:focus-visible{transform:translateY(-4px);box-shadow:0 14px 34px rgba(33,183,255,.3)}
 .role-go{position:absolute;left:10px;right:10px;bottom:10px;z-index:3;display:block;text-align:center;font-size:12px;font-weight:800;color:#04112e;background:linear-gradient(90deg,#7ee8ff,#2f8cff);border-radius:999px;padding:6px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 a.role-card .role-label{bottom:48px!important}
+
+@media (min-width:1101px){html body .roles-grid{grid-template-columns:repeat(4,minmax(0,1fr));max-width:1000px;margin-left:auto;margin-right:auto}}
