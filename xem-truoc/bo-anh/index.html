@@ -184,6 +184,7 @@ footer{padding:30px 0 110px;text-align:center;color:var(--mut);font-size:14px}
   <div class="head"><span class="kick">Mùa Noel &amp; Tết 2027</span><h2>Bộ ảnh Noel, Tết cho cả nhà và người thương</h2><p>Cả nhà khỏi phải hẹn nhau đi studio, khỏi xếp hàng chụp Tết. Mỗi người gửi vài tấm ảnh, Thảo ghép thành bộ ảnh chung thật ấm áp.</p></div>
   <div class="cs" id="mua"></div>
   <div class="price" id="price0" style="margin-top:34px"></div>
+  <p class="gnote">Ảnh mẫu gia đình, cặp đôi là người mẫu AI để chị hình dung. Bộ ảnh của nhà mình sẽ là gương mặt của chính nhà mình.</p>
   <p class="pnote">Nhận làm tới hết tháng Giêng. Gần Noel và Tết đông khách, chị đặt sớm để nhận ảnh kịp đăng.</p>
 </div></section>
 
@@ -337,12 +338,12 @@ A.forEach(function(a){a.f=[];for(var i=1;i<=a.c;i++)a.f.push("img/"+a.k+"-"+(i<1
 /* bộ ảnh mùa lễ: ảnh mẫu thêm vào khi có (để trống thì hiện ô màu) */
 function mk(k,c){var f=[];for(var i=1;i<=c;i++)f.push("img/"+k+"-"+(i<10?"0":"")+i+".webp");return f}
 var M=[
+ {n:"Gia đình Noel",d:"Cây thông, áo len đỏ, cả nhà quây quần",bg:"linear-gradient(160deg,#7a1f1f,#2f4a2c)",f:mk("gia-dinh-noel",4)},
+ {n:"Cặp đôi Noel",d:"Tuyết rơi, đèn lấp lánh, khăn len đôi",bg:"linear-gradient(160deg,#1f3b5a,#8a2b2b)",f:mk("cap-doi-noel",4)},
+ {n:"Gia đình Tết",d:"Áo dài cả nhà, mai đào, bánh chưng",bg:"linear-gradient(160deg,#b8322a,#d9a441)",f:mk("gia-dinh-tet",4)},
+ {n:"Cặp đôi Tết",d:"Áo dài đôi, phố đèn lồng, hoa đào",bg:"linear-gradient(160deg,#c2456a,#e0a36b)",f:mk("cap-doi-tet",4)},
  {n:"Noel áo len camel",d:"Áo len, áo khoác camel, cây thông, sảnh vàng",f:mk("noel-camel",10)},
- {n:"Noel trắng đỏ",d:"Áo khoác đỏ, váy len trắng, đèn Giáng sinh",f:mk("noel-td",10)},
- {n:"Gia đình Noel",d:"Cây thông, áo len đỏ, cả nhà quây quần",bg:"linear-gradient(160deg,#7a1f1f,#2f4a2c)",f:[]},
- {n:"Cặp đôi Noel",d:"Tuyết rơi, đèn lấp lánh, khăn len đôi",bg:"linear-gradient(160deg,#1f3b5a,#8a2b2b)",f:[]},
- {n:"Gia đình Tết",d:"Áo dài cả nhà, mai đào, bánh chưng",bg:"linear-gradient(160deg,#b8322a,#d9a441)",f:[]},
- {n:"Cặp đôi Tết",d:"Áo dài đôi, phố đèn lồng, hoa đào",bg:"linear-gradient(160deg,#c2456a,#e0a36b)",f:[]}
+ {n:"Noel trắng đỏ",d:"Áo khoác đỏ, váy len trắng, đèn Giáng sinh",f:mk("noel-td",10)}
 ];
 function albCard(a,i,t){var cv=a.f.length?'<img src="'+a.f[0]+'" alt="Bộ ảnh '+a.n+'" loading="lazy"><span class="n">'+a.f.length+' ảnh</span>':'<div class="ph0" style="background:'+a.bg+'">'+a.n+'<small>Ảnh mẫu đang cập nhật</small></div>';
 return '<button class="alb" data-t="'+t+'" data-i="'+i+'"><div class="cv">'+cv+'</div>'+(a.f.length>3?'<div class="th">'+a.f.slice(1,4).map(function(x){return '<img src="'+x+'" alt="" loading="lazy">'}).join("")+'</div>':'')+'<div class="in"><h3>'+a.n+'</h3><p>'+a.d+'</p></div></button>'}
@@ -350,11 +351,11 @@ $("albs").innerHTML=A.map(function(a,i){return albCard(a,i,"A")}).join("");
 $("mua").innerHTML=M.map(function(a,i){return albCard(a,i,"M")}).join("");
 var cur=[],idx=0,curA=null;
 document.addEventListener("click",function(e){var b=e.target.closest(".alb");if(!b)return;var a=(b.dataset.t=="A"?A:M)[+b.dataset.i];curA=a;
-if(!a.f.length){$("pk").value=/Gia đình/.test(a.n)?"Gia Đình Noel / Tết":"Cặp Đôi Noel / Tết";$("st").value=a.n;openOrder();return}
+if(!a.f.length&&0){$("pk").value=/Gia đình/.test(a.n)?"Gia Đình Noel / Tết":"Cặp Đôi Noel / Tết";$("st").value=a.n;openOrder();return}
 cur=a.f.map(function(x){return {s:x,t:a.n}});$("alt").textContent=a.n;$("ald").textContent=a.d+" · "+a.f.length+" ảnh";
 $("alg").innerHTML=a.f.map(function(x,i){return '<img src="'+x+'" data-i="'+i+'" alt="Bộ ảnh '+a.n+'">'}).join("");$("al").classList.add("on");$("al").scrollTop=0;requestAnimationFrame(function(){$("al").scrollTop=0})});
 $("alg").onclick=function(e){var im=e.target.closest("img");if(!im)return;show(+im.dataset.i);$("lb").classList.add("on")};
-$("alo").onclick=function(){$("al").classList.remove("on");$("pk").value=/Noel/.test(curA&&curA.n)?"Cặp Đôi Noel / Tết":"Gói Phổ Biến";if(curA)$("st").value=curA.n;openOrder()};
+$("alo").onclick=function(){$("al").classList.remove("on");$("pk").value=/Gia đình/.test(curA&&curA.n)?"Gia Đình Noel / Tết":(/Noel|Tết/.test(curA&&curA.n)?"Cặp Đôi Noel / Tết":"Gói Phổ Biến");if(curA)$("st").value=curA.n;openOrder()};
 function show(i){idx=(i+cur.length)%cur.length;$("lbi").src=cur[idx].s;$("lbi").alt="Bộ ảnh "+cur[idx].t}
 $("pv").onclick=function(){show(idx-1)};$("nx").onclick=function(){show(idx+1)};
 document.addEventListener("keydown",function(e){if(!$("lb").classList.contains("on"))return;if(e.key=="ArrowLeft")show(idx-1);if(e.key=="ArrowRight")show(idx+1);if(e.key=="Escape")$("lb").classList.remove("on")});
