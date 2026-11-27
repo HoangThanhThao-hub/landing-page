@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Vườn Rau Quê</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Lora:ital,wght@0,600;1,500&display=swap">
+<style>
+/* Layout: one narrow phone column; sticky tab bar; chip pickers then a prompt card with copy buttons */
+:root{
+  --bg:#f3f6ee; --surface:#ffffff; --fg:#1f2a1c; --muted:#5d6b57; --line:#d9e2cf;
+  --leaf:#2f7a3a; --leaf-soft:#e2f0dc; --tomato:#c8462c; --tomato-soft:#fbe7e1; --mud:#7a5a3a;
+  --code:#f7f9f3;
+  --f-body:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-display:"Lora",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141a12; --surface:#1d251a; --fg:#e7eee1; --muted:#9fb096; --line:#33402e;
+  --leaf:#7cc480; --leaf-soft:#22351f; --tomato:#f08a6e; --tomato-soft:#3a221b; --mud:#c9a27a;
+  --code:#172014; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#141a12; --surface:#1d251a; --fg:#e7eee1; --muted:#9fb096; --line:#33402e;
+  --leaf:#7cc480; --leaf-soft:#22351f; --tomato:#f08a6e; --tomato-soft:#3a221b; --mud:#c9a27a;
+  --code:#172014; color-scheme:dark }
+*{box-sizing:border-box}
+html,body{background:var(--bg)}
+body{color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 40px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:560px;margin:0 auto}
+header{padding-block:20px 8px}
+h1{font-family:var(--f-display);font-size:28px;line-height:1.15;margin:0;color:var(--leaf);text-wrap:balance}
+.sub{color:var(--muted);margin:4px 0 0;font-size:14px}
+.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;gap:6px;padding-block:10px;border-bottom:1px solid var(--line)}
+.tab{flex:1;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:999px;padding:9px 6px;font:600 14px var(--f-body);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--leaf);border-color:var(--leaf);color:var(--bg)}
+section.view{display:flex;flex-direction:column;gap:18px;padding-top:16px}
+.group h2{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--mud);margin:0 0 8px;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--line);background:var(--surface);color:var(--fg);border-radius:12px;padding:8px 12px;font:500 14px var(--f-body);cursor:pointer;text-align:left}
+.chip[aria-pressed="true"]{border-color:var(--leaf);background:var(--leaf-soft);color:var(--fg);font-weight:600}
+.chip:focus-visible,.tab:focus-visible,.btn:focus-visible{outline:3px solid var(--tomato);outline-offset:2px}
+textarea,input[type=text]{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;font:15px var(--f-body);background:var(--surface);color:var(--fg)}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.btn{border:0;border-radius:12px;padding:12px 16px;font:600 15px var(--f-body);cursor:pointer;background:var(--leaf);color:var(--bg)}
+.btn.ghost{background:var(--surface);color:var(--fg);border:1.5px solid var(--line)}
+.btn.red{background:var(--tomato);color:var(--bg)}
+.btn.small{padding:7px 12px;font-size:13px}
+.out{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:12px}
+.out h3{margin:0;font-size:15px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.tag{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border-radius:6px;background:var(--leaf-soft);color:var(--leaf)}
+.tag.v{background:var(--tomato-soft);color:var(--tomato)}
+.vi{color:var(--muted);font-size:14px;margin:0}
+pre{margin:0;white-space:pre-wrap;word-break:break-word;background:var(--code);border:1px dashed var(--line);border-radius:10px;padding:10px;font:13px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--fg)}
+.scene{border-top:1px solid var(--line);padding-top:12px;display:flex;flex-direction:column;gap:8px}
+.scene:first-of-type{border-top:0;padding-top:0}
+.scene b{color:var(--leaf)}
+.hero{margin-top:12px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px 16px;display:flex;flex-direction:column;gap:12px;text-align:center}
+.hero-label{margin:0;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mud);font-weight:700}
+.hero-scene{margin:0;font-family:var(--f-display);font-size:19px;line-height:1.35;text-wrap:balance}
+.big{display:block;background:var(--leaf);color:var(--bg);text-decoration:none;border-radius:16px;padding:20px 16px;font:700 21px var(--f-body);box-shadow:0 6px 0 color-mix(in srgb,var(--leaf) 60%,#000)}
+.big:active{transform:translateY(3px);box-shadow:0 3px 0 color-mix(in srgb,var(--leaf) 60%,#000)}
+.big:focus-visible{outline:3px solid var(--tomato);outline-offset:3px}
+.steps{margin:0;font-size:14px;color:var(--muted)}
+details.more{margin-top:14px;border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:0 14px}
+details.more>summary{cursor:pointer;padding:14px 0;font-weight:600;color:var(--leaf)}
+details.more .view{padding:0 0 16px}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:999px;font-weight:600;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.on{opacity:1}
+ol.guide{padding-left:20px;margin:0;display:flex;flex-direction:column;gap:10px}
+.note{background:var(--tomato-soft);border-radius:12px;padding:12px;font-size:14px}
+.hint{font-size:13px;color:var(--muted);margin:6px 0 0}
+@media (prefers-reduced-motion:reduce){.toast{transition:none}}
+</style>
+
+<div class="wrap">
+<header>
+  <h1>Vườn Rau Quê</h1>
+  <p class="sub">Tạo video vườn quê thật như ngoài đời, chỉ bằng 1 nút.</p>
+</header>
+
+<section class="hero" aria-live="polite">
+  <p class="hero-label">Cảnh hôm nay</p>
+  <p class="hero-scene" id="hero-scene"></p>
+  <a class="big" id="go" href="https://gemini.google.com/app" target="_blank" rel="noopener" data-copy="p-vid">Lấy video ngay</a>
+  <button class="btn ghost" id="rand" type="button">🎲 Đổi cảnh khác</button>
+  <p class="steps">Bấm <b>Lấy video ngay</b> → Gemini tự mở → <b>bấm giữ ô chat → Dán → Gửi</b>. Chờ 1–2 phút là có video.</p>
+</section>
+
+<details class="more">
+  <summary>Tùy chỉnh cảnh (không bắt buộc)</summary>
+  <section class="view" id="v-one">
+    <div class="group"><h2>Khung cảnh</h2><div class="chips" id="g-place"></div></div>
+    <div class="group"><h2>Cây trồng chính</h2><div class="chips" id="g-crop"></div></div>
+    <div class="group"><h2>Người trong cảnh</h2><div class="chips" id="g-who"></div></div>
+    <div class="group" id="wrap-act"><h2>Đang làm gì</h2><div class="chips" id="g-act"></div></div>
+    <div class="group"><h2>Thời điểm</h2><div class="chips" id="g-time"></div></div>
+    <div class="group"><h2>Góc quay</h2><div class="chips" id="g-cam"></div></div>
+    <div class="group">
+      <h2>Thêm ý riêng</h2>
+      <input type="text" id="extra" placeholder="Ví dụ: có con mèo vàng nằm trên hiên nhà">
+    </div>
+    <p class="hint">Chọn xong, kéo lên bấm nút xanh <b>Lấy video ngay</b>.</p>
+    <div class="out" id="out-one"></div>
+  </section>
+</details>
+
+<details class="more">
+  <summary>Làm cả reel nhiều cảnh</summary>
+  <section class="view" id="v-reel">
+    <div class="group"><h2>Chủ đề reel</h2><div class="chips" id="g-story"></div></div>
+    <div class="group"><h2>Người xuyên suốt reel</h2><div class="chips" id="g-rwho"></div></div>
+    <div class="group"><h2>Số cảnh (mỗi cảnh 8 giây)</h2><div class="chips" id="g-len"></div></div>
+    <div class="out" id="out-reel"></div>
+  </section>
+</details>
+
+<details class="more">
+  <summary>Mẹo cho video thật hơn</summary>
+  <section class="view">
+    <ol class="guide">
+      <li>Video chưa ưng thì gõ "tạo lại" trong Gemini, hoặc bấm <b>Đổi cảnh khác</b>.</li>
+      <li>Muốn nhân vật giống nhau qua nhiều cảnh: tạo ảnh trước bằng câu lệnh ảnh (trong phần Tùy chỉnh), rồi đính kèm ảnh khi tạo video.</li>
+      <li>Ghép nhiều clip thành reel bằng <b>CapCut</b>, giữ tiếng chim, tiếng gà sẵn trong video.</li>
+    </ol>
+  </section>
+</details>
+</div>
+
+<div class="toast" id="toast">Đã chép</div>
+
+<script>
+const STYLE = "Photorealistic, looks like a real photo taken on a modern smartphone by a local villager, vertical 9:16 frame, natural true-to-life colors, soft natural daylight, realistic textures of soil, leaves and water, slight imperfections, rural Vietnam countryside, no text, no watermark, no logo, not oversaturated, not CGI, not a painting.";
+
+const PLACE = [
+ {id:"house",vi:"Nhà ngói + luống rau",en:"a small old one-story Vietnamese countryside house with a faded red clay tile roof, white lime-washed walls and a front porch, with long straight rows of vegetable beds running toward the house along muddy earthen paths, coconut and banana trees around"},
+ {id:"pond",vi:"Ao sen + thuyền nhỏ",en:"a quiet fish pond covered with lotus and water lily pads, a small wooden rowing boat moored at the edge, vegetable beds and bamboo trellises along the pond bank, a tiled-roof country house in the background"},
+ {id:"trellis",vi:"Giàn bầu bí mướp",en:"a long bamboo trellis tunnel covered with gourd, luffa and pumpkin vines with hanging green gourds and yellow flowers, vegetable rows on both sides"},
+ {id:"orchard",vi:"Vườn mít + cây ăn trái",en:"a home fruit garden with a big jackfruit tree heavy with fruits hanging on the trunk, mango, guava and lychee trees, a small pond with ducks, vegetable beds underneath"},
+ {id:"well",vi:"Sân giếng + chum nước",en:"a brick-paved front yard of a country house with an old stone well, large brown clay water jars, potted herbs, and a vegetable garden just beyond the yard"},
+ {id:"path",vi:"Lối đất ven ao vịt",en:"a narrow dirt path between a duck pond and neat vegetable beds, a bamboo fence, ducks swimming, a tiled-roof house far behind palm trees"},
+];
+const CROP = [
+ {id:"mix",vi:"Rau trộn nhiều loại",en:"mixed vegetables: purple perilla, lettuce, bok choy, mustard greens, green onions, chili plants and tomato plants on bamboo stakes"},
+ {id:"tomato",vi:"Cà chua + ớt",en:"tomato plants tied to bamboo stakes heavy with ripe red and green tomatoes, and rows of chili plants with red and green chilies"},
+ {id:"herb",vi:"Tía tô + rau thơm",en:"dense beds of purple-green perilla (tía tô), Vietnamese mint, basil and coriander, lush and fragrant"},
+ {id:"leafy",vi:"Cải + xà lách",en:"neat beds of bok choy, mustard greens, cabbage and lettuce, fresh and dewy"},
+ {id:"squash",vi:"Bí đỏ + mướp",en:"pumpkin vines on the ground with big orange pumpkins, luffa and bitter melon hanging from a bamboo trellis"},
+ {id:"fruit",vi:"Mít, xoài, bưởi",en:"fruit trees: jackfruit with many large fruits, mango, pomelo and kumquat trees with ripe fruits"},
+];
+const WHO = [
+ {id:"none",vi:"Không có người",en:""},
+ {id:"woman",vi:"Cô gái nón lá",en:"a young Vietnamese woman wearing a conical non la hat, a simple faded floral long-sleeve shirt and dark loose trousers, seen from the side or behind, face mostly shaded by the hat"},
+ {id:"grandma",vi:"Bà cụ nón lá",en:"an elderly Vietnamese grandmother wearing a conical non la hat, a brown ao ba ba shirt and black trousers, slightly bent, seen from the side"},
+ {id:"mom",vi:"Mẹ và bé",en:"a Vietnamese mother in a conical hat and simple clothes with her small child of about five years old in a t-shirt, seen from behind or the side"},
+ {id:"grandpa",vi:"Ông cụ",en:"an elderly Vietnamese grandfather in a worn white shirt, rolled-up trousers and a soft hat, seen from the side"},
+];
+const ACT = [
+ {id:"water",vi:"Tưới rau bằng ô doa",en:"slowly watering the vegetable beds with a pair of old metal watering cans, water spraying in soft arcs"},
+ {id:"pick",vi:"Hái cà chua bỏ rổ",en:"picking ripe tomatoes and dropping them into a woven bamboo basket"},
+ {id:"weed",vi:"Nhổ cỏ, xới đất",en:"crouching down pulling weeds and loosening the soil with a small hoe"},
+ {id:"boat",vi:"Chèo thuyền hái sen",en:"rowing a small wooden boat slowly across the pond, reaching out to pick a lotus flower"},
+ {id:"jack",vi:"Hái mít",en:"standing by the jackfruit tree, touching and checking a big ripe jackfruit hanging on the trunk"},
+ {id:"wash",vi:"Rửa rau ở cầu ao",en:"sitting on a small wooden pier at the pond, washing fresh greens in the water, a basket of vegetables beside her"},
+ {id:"feed",vi:"Cho gà vịt ăn",en:"scattering rice grains to a flock of chickens and ducks that gather around"},
+ {id:"walk",vi:"Đi dạo giữa luống",en:"walking slowly along the earthen path between the vegetable rows, carrying a bamboo basket"},
+];
+const TIME = [
+ {id:"dawn",vi:"Sáng sớm có sương",en:"early morning, thin mist over the garden, dew drops on leaves, soft pale light"},
+ {id:"morning",vi:"Nắng sáng trong",en:"clear morning sunshine, gentle warm light, blue sky with a few clouds"},
+ {id:"cloudy",vi:"Trời râm mát",en:"overcast day, soft even diffused light, no harsh shadows, muted natural colors"},
+ {id:"rain",vi:"Vừa tạt mưa xong",en:"just after a light rain, wet soil and puddles on the paths, glistening wet leaves, fresh soft light"},
+ {id:"sunset",vi:"Chiều hoàng hôn",en:"late afternoon golden hour, low warm sun behind the trees, long soft shadows, smoke rising softly from a kitchen chimney"},
+];
+const CAM = [
+ {id:"drone",vi:"Flycam bay tới",img:"high angle aerial drone view looking down over the whole garden and house",vid:"Smooth slow drone shot flying forward over the vegetable rows toward the house, gradually descending"},
+ {id:"walkcam",vi:"Đi bộ giữa luống",img:"eye-level view from the middle of the earthen path, rows of vegetables leading toward the house",vid:"Handheld eye-level walking shot moving slowly forward along the path between the rows, gentle natural camera sway like a person filming on a phone"},
+ {id:"close",vi:"Cận cảnh rau trái",img:"close-up of the vegetables and fruits in the foreground with the rest of the garden softly blurred behind",vid:"Slow close-up camera slide across the leaves and fruits, shallow depth of field, then a gentle rack focus to the background"},
+ {id:"orbit",vi:"Quay vòng quanh",img:"medium wide shot from a slightly low angle",vid:"Slow orbiting camera move circling halfway around the scene, steady and smooth"},
+ {id:"still",vi:"Máy đứng yên",img:"wide static shot from the corner of the garden",vid:"Locked-off static camera on a tripod, only natural movement in the scene: leaves swaying in the breeze, light flickering"},
+ {id:"pullback",vi:"Lùi ra toàn cảnh",img:"medium shot that reveals the garden around",vid:"Slow drone pull-back rising up and away, revealing the whole garden, pond and house"},
+];
+const SOUND = "Ambient sound: birds chirping, roosters in the distance, rustling leaves, light breeze, no music, no speech.";
+
+/* ---------- reel stories ---------- */
+const STORY = [
+ {id:"day",vi:"Một buổi sáng ở vườn",steps:[
+   ["house","mix","none","","dawn","drone"],
+   ["house","herb","P","walk","dawn","walkcam"],
+   ["house","mix","P","water","morning","still"],
+   ["house","tomato","P","pick","morning","close"],
+   ["path","leafy","P","feed","morning","orbit"],
+   ["house","mix","none","","morning","pullback"]]},
+ {id:"harvest",vi:"Mùa thu hoạch",steps:[
+   ["orchard","fruit","none","","morning","drone"],
+   ["house","tomato","P","pick","morning","close"],
+   ["orchard","fruit","P","jack","morning","orbit"],
+   ["trellis","squash","P","walk","morning","walkcam"],
+   ["well","mix","P","wash","cloudy","still"],
+   ["orchard","fruit","none","","sunset","pullback"]]},
+ {id:"pond",vi:"Chiều quê ven ao",steps:[
+   ["pond","mix","none","","sunset","drone"],
+   ["path","herb","P","walk","sunset","walkcam"],
+   ["pond","mix","P","boat","sunset","orbit"],
+   ["pond","leafy","P","wash","sunset","close"],
+   ["path","mix","P","feed","sunset","still"],
+   ["pond","mix","none","","sunset","pullback"]]},
+ {id:"rain",vi:"Vườn sau cơn mưa",steps:[
+   ["house","leafy","none","","rain","drone"],
+   ["house","herb","none","","rain","close"],
+   ["house","mix","P","walk","rain","walkcam"],
+   ["house","tomato","P","pick","rain","close"],
+   ["path","mix","P","weed","rain","still"],
+   ["house","mix","none","","rain","pullback"]]},
+];
+const LEN = [{id:"3",vi:"3 cảnh (~24s)"},{id:"4",vi:"4 cảnh (~32s)"},{id:"6",vi:"6 cảnh (~48s)"}];
+
+const by = (arr,id)=>arr.find(x=>x.id===id);
+let S = {place:"house",crop:"mix",who:"woman",act:"water",time:"morning",cam:"walkcam",extra:"",story:"day",rwho:"woman",len:"4"};
+try{const s=JSON.parse(localStorage.getItem("vrq")||"null"); if(s) S={...S,...s};}catch(e){}
+function save(){try{localStorage.setItem("vrq",JSON.stringify(S))}catch(e){}}
+
+function chips(elId,list,key,onChange){
+  const el=document.getElementById(elId); el.innerHTML="";
+  list.forEach(o=>{const b=document.createElement("button");b.className="chip";b.type="button";b.textContent=o.vi;
+    b.setAttribute("aria-pressed",S[key]===o.id);b.onclick=()=>{S[key]=o.id;save();el.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",c===b));onChange()};el.appendChild(b)});
+}
+function esc(t){return t.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]))}
+
+/* fit activity to place so the scene makes sense */
+function fitAct(placeId,actId){
+  if(actId==="boat"&&placeId!=="pond") return "walk";
+  if(actId==="jack"&&placeId!=="orchard") return "pick";
+  return actId;
+}
+
+function build(o){
+  const place=by(PLACE,o.place), crop=by(CROP,o.crop), who=by(WHO,o.who), time=by(TIME,o.time), cam=by(CAM,o.cam);
+  const actId=fitAct(o.place,o.act), act=by(ACT,actId);
+  const person = who.id!=="none";
+  const extra = o.extra?` Also include: ${o.extra}.`:"";
+  const img = `Create a vertical 9:16 photo. ${cam.img.charAt(0).toUpperCase()+cam.img.slice(1)} of ${place.en}. The garden is planted with ${crop.en}.`+
+    (person?` In the garden, ${who.en}, ${act.en}.`:" No people in the scene.")+
+    ` ${time.en.charAt(0).toUpperCase()+time.en.slice(1)}.${extra} ${STYLE}`;
+  const vid = `Create a vertical 9:16 video. ${cam.vid}. Scene: ${place.en}, planted with ${crop.en}.`+
+    (person?` ${who.en.charAt(0).toUpperCase()+who.en.slice(1)} is ${act.en}, moving slowly and naturally, hands and body anatomically correct.`:" No people, only natural movement: leaves and vines swaying in the breeze, birds flying past.")+
+    ` ${time.en.charAt(0).toUpperCase()+time.en.slice(1)}.${extra} Realistic real-world motion, 24fps, 8 seconds, vertical 9:16. ${STYLE} ${SOUND}`;
+  const vi = `${place.vi}, trồng ${crop.vi.toLowerCase()}`+(person?`, ${who.vi.toLowerCase()} đang ${act.vi.toLowerCase()}`:", không có người")+`. ${time.vi}, ${cam.vi.toLowerCase()}.`+(o.extra?` Thêm: ${o.extra}.`:"");
+  return {img,vid,vi};
+}
+
+function card(title,tagCls,tagTxt,text,id){
+  return `<div class="scene"><h3><span><span class="tag ${tagCls}">${tagTxt}</span> ${title}</span><span class="row"><button class="btn small ghost" data-copy="${id}">Chép</button><a class="btn small" style="text-decoration:none" href="https://gemini.google.com/app" target="_blank" rel="noopener" data-copy="${id}">Chép + mở Gemini</a></span></h3><pre id="${id}">${esc(text)}</pre></div>`;
+}
+
+function renderOne(){
+  document.getElementById("wrap-act").hidden = S.who==="none";
+  const r=build(S);
+  document.getElementById("out-one").innerHTML =
+    `<p class="vi">🌿 ${esc(r.vi)}</p>`+
+    card("Câu lệnh video","v","Video",r.vid,"p-vid")+
+    card("Câu lệnh ảnh (nếu muốn tạo ảnh trước)","","Ảnh",r.img,"p-img2");
+  document.getElementById("hero-scene").textContent = r.vi;
+}
+
+function renderReel(){
+  const st=by(STORY,S.story); const n=+S.len;
+  const idx = n===6?[0,1,2,3,4,5]:n===4?[0,2,3,5]:[0,2,5];
+  let all=[], html=`<p class="vi">Reel "${st.vi}" gồm ${n} cảnh, cùng một khu vườn và cùng một người để nhìn liền mạch. Làm lần lượt từng cảnh: tạo ảnh rồi cho chuyển động.</p>`;
+  html+=`<div class="row"><button class="btn" data-copy="p-all">Chép tất cả câu lệnh</button></div>`;
+  idx.forEach((k,i)=>{
+    const s=st.steps[k];
+    const o={place:s[0],crop:s[1],who:s[2]==="P"?S.rwho:"none",act:s[3]||"walk",time:s[4],cam:s[5],extra:""};
+    if(S.rwho==="none") o.who="none";
+    const r=build(o);
+    html+=`<div class="scene"><b>Cảnh ${i+1}</b><p class="vi">${esc(r.vi)}</p>`+
+      card("Ảnh","","Ảnh",r.img,`r${i}i`)+card("Video","v","Video",r.vid,`r${i}v`)+`</div>`;
+    all.push(`CẢNH ${i+1} – ẢNH:\n${r.img}\n\nCẢNH ${i+1} – VIDEO:\n${r.vid}`);
+  });
+  html+=`<pre id="p-all" hidden>${esc(all.join("\n\n-----\n\n"))}</pre>`;
+  document.getElementById("out-reel").innerHTML=html;
+}
+
+const toast=document.getElementById("toast");
+function showToast(t){toast.textContent=t;toast.classList.add("on");setTimeout(()=>toast.classList.remove("on"),1400)}
+document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-copy]"); if(!b) return;
+  const el=document.getElementById(b.dataset.copy); const text=el.textContent;
+  const fallback=()=>{el.hidden=false;const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);showToast("Đã bôi đen, bấm giữ để chép")};
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(()=>showToast("Đã chép ✓"),fallback)}else fallback();
+});
+
+document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>{
+  document.querySelectorAll(".tab").forEach(x=>x.setAttribute("aria-selected",x===t));
+  ["one","reel","help"].forEach(v=>document.getElementById("v-"+v).hidden = v!==t.dataset.view);
+});
+
+const extra=document.getElementById("extra"); extra.value=S.extra;
+extra.oninput=()=>{S.extra=extra.value.trim();save();renderOne()};
+
+function initOne(){
+  chips("g-place",PLACE,"place",renderOne); chips("g-crop",CROP,"crop",renderOne);
+  chips("g-who",WHO,"who",renderOne); chips("g-act",ACT,"act",renderOne);
+  chips("g-time",TIME,"time",renderOne); chips("g-cam",CAM,"cam",renderOne);
+  renderOne();
+}
+document.getElementById("rand").onclick=()=>{
+  const pick=a=>a[Math.floor(Math.random()*a.length)].id;
+  S.place=pick(PLACE);S.crop=pick(CROP);S.who=pick(WHO.slice(1));S.act=fitAct(S.place,pick(ACT));S.time=pick(TIME);S.cam=pick(CAM);
+  save();initOne();showToast("Đã đổi cảnh mới");
+};
+initOne();
+chips("g-story",STORY,"story",renderReel); chips("g-rwho",WHO,"rwho",renderReel); chips("g-len",LEN,"len",renderReel);
+renderReel();
+</script>
+
+</body>
+</html>
